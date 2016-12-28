@@ -18,7 +18,7 @@ func runRun(dockerCli *command.DockerCli, flags *pflag.FlagSet, opts *runOptions
 		ErrConflictRestartPolicyAndAutoRemove = fmt.Errorf("Conflicting options: --restart and --rm")
 	)
   
-  // 根据flag参数生成配置文件 
+  	// 根据flag参数生成配置文件 
 	config, hostConfig, networkingConfig, err := runconfigopts.Parse(flags, copts)
 
 	// just in case the Parse does not exit
