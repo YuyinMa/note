@@ -17,8 +17,8 @@ func runRun(dockerCli *command.DockerCli, flags *pflag.FlagSet, opts *runOptions
 		ErrConflictAttachDetach               = fmt.Errorf("Conflicting options: -a and -d")
 		ErrConflictRestartPolicyAndAutoRemove = fmt.Errorf("Conflicting options: --restart and --rm")
 	)
-  
-  	// 根据flag参数生成配置文件 
+
+	// 根据flag生成配置文件
 	config, hostConfig, networkingConfig, err := runconfigopts.Parse(flags, copts)
 
 	// just in case the Parse does not exit
@@ -27,6 +27,7 @@ func runRun(dockerCli *command.DockerCli, flags *pflag.FlagSet, opts *runOptions
 		return cli.StatusError{StatusCode: 125}
 	}
 
+	// flag冲突检测
 	if hostConfig.AutoRemove && !hostConfig.RestartPolicy.IsNone() {
 		return ErrConflictRestartPolicyAndAutoRemove
 	}
@@ -34,6 +35,7 @@ func runRun(dockerCli *command.DockerCli, flags *pflag.FlagSet, opts *runOptions
 		fmt.Fprintf(stderr, "WARNING: Disabling the OOM killer on containers without setting a '-m/--memory' limit may be dangerous.\n")
 	}
 
+	// 检测DNS设置
 	if len(hostConfig.DNS) > 0 {
 		// check the DNS settings passed via --dns against
 		// localhost regexp to warn if they are trying to
@@ -48,11 +50,14 @@ func runRun(dockerCli *command.DockerCli, flags *pflag.FlagSet, opts *runOptions
 
 	config.ArgsEscaped = false
 
+	// docker run --detach
+	// 在后台运行容器并打印出容器id
 	if !opts.detach {
 		if err := dockerCli.In().CheckTty(config.AttachStdin, config.Tty); err != nil {
 			return err
 		}
 	} else {
+		// detach 和 attach 不能共存
 		if fl := flags.Lookup("attach"); fl != nil {
 			flAttach = fl.Value.(*opttypes.ListOpts)
 			if flAttach.Len() != 0 {
@@ -60,6 +65,7 @@ func runRun(dockerCli *command.DockerCli, flags *pflag.FlagSet, opts *runOptions
 			}
 		}
 
+		// 关闭 attach
 		config.AttachStdin = false
 		config.AttachStdout = false
 		config.AttachStderr = false
@@ -78,8 +84,10 @@ func runRun(dockerCli *command.DockerCli, flags *pflag.FlagSet, opts *runOptions
 		hostConfig.ConsoleSize[0], hostConfig.ConsoleSize[1] = dockerCli.Out().GetTtySize()
 	}
 
+	// goroutine 开关
 	ctx, cancelFun := context.WithCancel(context.Background())
 
+	// 创建容器
 	createResponse, err := createContainer(ctx, dockerCli, config, hostConfig, networkingConfig, hostConfig.ContainerIDFile, opts.name)
 	if err != nil {
 		reportError(stderr, cmdPath, err.Error(), true)
@@ -153,7 +161,7 @@ func runRun(dockerCli *command.DockerCli, flags *pflag.FlagSet, opts *runOptions
 
 	statusChan := waitExitOrRemoved(ctx, dockerCli, createResponse.ID, hostConfig.AutoRemove)
 
-	//start the container
+	// start the container
 	if err := client.ContainerStart(ctx, createResponse.ID, types.ContainerStartOptions{}); err != nil {
 		// If we have holdHijackedConnection, we should notify
 		// holdHijackedConnection we are going to exit and wait
