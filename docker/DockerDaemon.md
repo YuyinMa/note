@@ -35,6 +35,9 @@ type DaemonCli struct {
 12. initRoute
 
 ### daemon
+daemon 实现了 api/server/route/xxx/backend.go 中的所有方法
+在 initRouter 时将 daemon 实例注入
+
 ### initRouter
 ```go
 routers := []router.Router{
