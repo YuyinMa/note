@@ -53,9 +53,9 @@ myAdvisor是一个收集节点(物理机)上进程级别信息的一个agent，�
 
 6. 检查运行结果，看到process/cpu/mem度量
 
-    ![检查度量](../img/myAdvisor-1.png)
+    ![检查度量](https://github.com/pengqinglan/note/blob/master/img/myAdvisor-1.png)
 
 
-7. 查询 ![Screen Shot 2017-01-05 at 9.00.46 PM](Screen Shot 2017-01-05 at 9.00.46 PM.png)
+7. 查询 ![查询结果](https://github.com/pengqinglan/note/blob/master/img/myAdvisor-2.png)
 
-### 流程图 ![流程图](../img/myAdvisor-2.jpg)
+### 流程图 ![流程图](https://github.com/pengqinglan/note/blob/master/img/myAdvisor-3.png)
