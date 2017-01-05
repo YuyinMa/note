@@ -58,4 +58,4 @@ myAdvisor是一个收集节点(物理机)上进程级别信息的一个agent，�
 
 7. 查询 ![查询结果](https://github.com/pengqinglan/note/blob/master/img/myAdvisor-2.png)
 
-### 流程图 ![流程图](https://github.com/pengqinglan/note/blob/master/img/myAdvisor-3.png)
+### 流程图 ![流程图](https://github.com/pengqinglan/note/blob/master/img/myAdvisor-3.jpg)
