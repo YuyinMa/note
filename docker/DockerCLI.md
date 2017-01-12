@@ -15,6 +15,9 @@ type DockerCli struct {
 ```
 
 ###Client
+
+连接Docker server的一个实例
+
 ```go
 // Client is the API client that performs all operations
 // against a docker server.

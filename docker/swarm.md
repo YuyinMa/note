@@ -141,7 +141,11 @@ Docker Node的信息均来源于Swarm节点上注册的Docker Node。而一个Do
 
 ### 关键流程时序图
 
+#### 创建cluster时序图![Canvas 1](/Users/pengqinglan/Desktop/docker swarm1/Canvas 1.jpg)
 
+#### 发布任务时序图
+
+ ![Canvas 2](/Users/pengqinglan/Desktop/docker swarm1/Canvas 2.jpg)
 
 ## 详细设计
 
@@ -156,6 +160,27 @@ $ swarm manage -H=<manage_ip> token://<token>
 ```
 
 Swarm容器集群创建完成后，就可以采用Docker命令，像使用Docker Engine一样使用Swarm集群创建容器了[1]。
+
+Command在docker/cli/command/swarm/cmd.go，我们可以在这里找到所有swarm管理指令。
+
+```go
+func NewSwarmCommand(dockerCli *command.DockerCli) *cobra.Command {
+	...
+	cmd.AddCommand(
+		newInitCommand(dockerCli),
+		newJoinCommand(dockerCli),
+		newJoinTokenCommand(dockerCli),
+		newUnlockKeyCommand(dockerCli),
+		newUpdateCommand(dockerCli),
+		newLeaveCommand(dockerCli),
+		newUnlockCommand(dockerCli),
+	)
+	return cmd
+  	...
+}
+```
+
+其相关API的实现在docker/docker/daemon/cluster/文件夹中，我们可以在这里找到所有相关API在daemon中的实现。
 
 ### 服务发现模块
 
