@@ -4,6 +4,10 @@ https://shadowsocks.org
 
 不是https://shadowsocks.com
 
+### 版本
+
+有Python、go、C各种版本的server
+
 ### python 和 go版本的区别
 
 python：
@@ -19,7 +23,7 @@ go：
 * 用于提供商业服务
 * 具有流量统计功能
 
-### 安装go
+### shadowsocks-go的安装与配置
 
 1. 下载go语言
 
@@ -63,7 +67,6 @@ go：
 
    ```sh
    $ cd $GOPATH/bin
-   $ touch config.json
    $ cat >> config.json <<EOF
    {
        "server":"127.0.0.1",
@@ -82,3 +85,33 @@ go：
    $ shadowsocks-server > log &
    ```
 
+
+### 安装shadowsocks-libev
+
+1. 下载源码
+
+   ```sh
+   $ wget https://codeload.github.com/shadowsocks/shadowsocks-libev/tar.gz/v2.5.6
+   ```
+
+2. 编译安装
+
+   ```sh
+   $ cd shadowsocks-libev
+   $ sudo apt-get install --no-install-recommends build-essential autoconf libtool libssl-dev gawk debhelper dh-systemd init-system-helpers pkg-config asciidoc xmlto apg libpcre3-dev zlib1g-dev
+   $ dpkg-buildpackage -b -us -uc -i
+   $ cd ..
+   $ sudo dpkg -i shadowsocks-libev*.deb
+   ```
+
+3. 配置启动参数
+
+   ```sh
+   $ sudo vim /etc/shadowsocks-libev/config.json
+   ```
+
+4. 启动服务
+
+   ```sh
+   $ sudo systemctl start shadowsocks-libev
+   ```
