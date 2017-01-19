@@ -37,4 +37,16 @@
 
 ### 拨号取得请求方句柄
 
+1. getRequest
+
+   ```go
+   host, ota, err := getRequest(conn, auth)
+   ```
+
+2. Dail
+
+   ```go
+   remote, err := net.Dial("tcp", host)
+   ```
+
 ### PipeThenClose
