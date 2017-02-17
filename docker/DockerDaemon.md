@@ -32,7 +32,7 @@ type DaemonCli struct {
 9. create daemon
 10. init swarm
 11. initMidware
-12. initRoute
+12. [initRoute](https://github.com/pengqinglan/note/blob/master/docker/DockerDaemon_initRouter.md)
 
 ### code
 
