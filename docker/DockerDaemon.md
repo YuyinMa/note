@@ -29,7 +29,7 @@ type DaemonCli struct {
 6. create server config
 7. new apiServer
 8. apiServer listen
-9. create daemon
+9. [create daemon instance](https://github.com/pengqinglan/note/blob/master/docker/DockerDaemon_daemonInstance.md)
 10. init swarm
 11. initMidware
 12. [initRoute](https://github.com/pengqinglan/note/blob/master/docker/DockerDaemon_initRouter.md)
