@@ -52,9 +52,11 @@ Docker Deamon只有一个主command，并有多个flag
 
 #### Docker Client
 
-1. client/interface.go 定义API接口
+1. client/interface.go  定义Client API接口
 
-2. cli/command/类型/操作.go 封装，调用API
+2. client/***.go  实现Client API，包装http请求
+
+3. cli/command/类型/操作.go 封装，调用Client API，封装command
 
    ```
    client.NetworkConnect(context.Background(), opts.network, opts.container, epConfig)
