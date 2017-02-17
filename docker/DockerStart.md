@@ -18,9 +18,9 @@ cmd、client、cli构成了客户端，包含：
 | ------------- | -------------------------------- |
 | cmd           | 客户端入口，注册并执行命令                    |
 | cli           | 根据API完整定义了command与flag，用于在cmd中注册 |
-| client        | 定义了API接口，并进行代理实现（HTTP请求包装）       |
-| api           | API http服务器的实现，定义路由和handle       |
-| daemon        | API handle的具体实现                  |
+| client        | 定义了Client API接口，并进行实现（HTTP请求包装）       |
+| api           | Daemon API定义，定义路由和注册handle       |
+| daemon        | Daemon API的具体实现                  |
 | container     |                                  |
 | plugin        |                                  |
 | libcontainerd |                                  |
