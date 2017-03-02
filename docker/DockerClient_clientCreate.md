@@ -1,3 +1,27 @@
+### DockerClient 的 client对象创建
+
+在docker/cmd/docker/docker.go中
+
+```go
+opts.Common.SetDefaultOptions(flags)
+dockerPreRun(opts)
+dockerCli.Initialize(opts)
+```
+
+主要是Initialize()函数，具体如下
+
+docker/cli/command/cli.go
+
+```go
+func (cli *DockerCli) Initialize(opts *cliflags.ClientOptions) error {
+	......
+	cli.client, err = NewAPIClientFromFlags(opts.Common, cli.configFile)
+	if err != nil {
+		return err
+	}
+	......
+}
+```
 ### DockerClient 的初始化
 
 DockerClient表示了docker客户端与docker daemon之间建立连接的实例，docker客户端调用docker daemon的API
@@ -13,7 +37,7 @@ func main() {
 	...
 ```
 
-2. docker/cmd/docker/docker.go
+1. docker/cmd/docker/docker.go
 
 ```go
 func newDockerCommand(dockerCli *command.DockerCli) *cobra.Command {
@@ -34,7 +58,7 @@ func newDockerCommand(dockerCli *command.DockerCli) *cobra.Command {
      ...
 ```
 
-3. docker/cli/command/cli.go
+1. docker/cli/command/cli.go
 
 ```go
 func (cli *DockerCli) Initialize(opts *cliflags.ClientOptions) error {
@@ -72,7 +96,7 @@ func (cli *DockerCli) Initialize(opts *cliflags.ClientOptions) error {
 }
 ```
 
-4. docker/cli/command/cli.go
+1. docker/cli/command/cli.go
 
 ```go
 func NewAPIClientFromFlags(opts *cliflags.CommonOptions, configFile *configfile.ConfigFile) (client.APIClient, error) {
