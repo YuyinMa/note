@@ -1,0 +1,42 @@
+### Source
+
+**Stochastic Modeling and Quality Evaluation of Infrastructure-as-a-Service Clouds**
+IEEE Journals & Magazines
+**IEEE Transactions on Automation Science and Engineering**
+2015
+
+### Abstract
+
+Cloud computing is a recently developed new technology for complex systems with massive（大量） service sharing, which is different from the resource sharing of the grid computing systems. 
+
+In a cloud environment, service requests from users go through numerous provider-specific steps from the instant it is submitted to when the requested service is fully delivered. Quality modeling and analysis of clouds are not easy tasks because of the complexity of the automated provisioning（供应） mechanism and dynamically changing cloud environment. 
+
+This work proposes an analytical model-based approach for quality evaluation of Infrastructure-as-a-Service cloud by considering expected request completion time, rejection probability, and system overhead rate as key quality metrics. It also features with the modeling of different warm-up and cool-down strategies of machines and the ability to identify the optimal balance between system overhead and performance. 
+
+To validate the correctness of the proposed model, we obtain simulative quality-of-service (QoS) data and conduct a confidence interval analysis. The result can be used to help design and optimize industrial cloud computing systems.
+
+### Note to practitioners
+
+Analyzing their QoS plays an important role in understanding and improving the quality of cloud computing systems and cloud-based applications. However, it is a great challenge with their increasing scale and complexity. A careful investigation（调查） into existing methods has found their limitations when applied to address the QoS analysis challenge: 
+
+1. incomplete modeling of details such as machine provisioning, request handling, and machine failure/repair process
+2. reliance on measurement-based QoS data that require extensive experimentation and real-system tests
+3. separate modeling of provisioning phases which simplifies the solution but loses accuracy. 
+
+To over-come these limitations, we propose a comprehensive（综合的）quality determination framework for Infrastructure-as-a-Service clouds. It features with: 
+
+1. taking machine provisioning, request handling, machine occupation/releasing, and machine failure/repair process mechanism into a unified（统一的） analytical model
+2. employing（使用） queueing networks as the fundamental means of QoS analysis
+3. analytical solutions of three important QoS metrics
+4. analytical modeling of different strategies of machine warm-up/cool-down and the ability to identify the optimal balance between system overhead and performance
+5. a confidence interval analysis to validate model correctness based on simulative QoS data. 
+
+The proposed（推荐） framework can aid the design and optimization of industrial cloud computing systems and practitioners’ understanding of QoS aspects of cloud-based applications.
+
+### Index terms
+
+* Cloud computing
+* infrastructure-as-a-service (IaaS) 
+* modeling and analysis
+* quality-of-service (QoS).
+

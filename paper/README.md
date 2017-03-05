@@ -20,6 +20,12 @@ SCI（科学引文索引）的扩展版，网络版，收录5900余种期刊文�
 
 中国计算机学会
 
+### 引用格式
+
+1. GB/T 7714     国标
+2. MLA                人文  the Modern Language Association
+3. APA                 自然  the American Psychological Association
+
 ### 参考
 
 [1] kakagood, http://muchong.com/html/201202/4127723.html
