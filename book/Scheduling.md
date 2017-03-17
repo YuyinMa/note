@@ -12,7 +12,7 @@ USA
 
 ### 1. 引言
 
-1. 四个调度的例子（引入）
+1. [四个调度的例子](./Scheduling/四个例子.md)
 2. 企业中的调度机能（ERP）
 3. 本书的大纲
    * Part I (Chapters 2 to 8) 确定性调度模型
@@ -22,4 +22,18 @@ USA
 ### 2. 确定性模型：预热
 
 1. 框架和常见符号等（n、m、i、j）
-2. ​
+
+2. 一个调度问题可以被描述为三元组$\ \alpha \vert \beta \vert \gamma$ （机器环境|特征与约束|调度目标）
+
+3. 三个域的取值
+
+4. 使用符号表示的几个例子
+
+5. 调度的种类
+
+   * Non-Delay Schedule
+   * Active Schedule
+   * Semi-Active Schecule
+   * 三者的关系，韦恩图
+
+   ​
