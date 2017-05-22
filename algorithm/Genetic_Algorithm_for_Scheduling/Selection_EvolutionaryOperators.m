@@ -11,7 +11,8 @@ for k=1:1:Nant
        sumtas = 0;
        for i=1:1:empnum % 15
            % param 1 should be i here
-           sumtas = sumtas + solution(1).ant(i,j);
+           % sumtas = sumtas + solution(1).ant(i,j);
+           sumtas = sumtas + solution(i).ant(i,j);
        end
        solution(k).taskdur(j) = task(j).effort/sumtas; 
     end

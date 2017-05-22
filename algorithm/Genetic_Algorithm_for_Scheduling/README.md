@@ -16,13 +16,13 @@ The resources considered are people with a set of skills, a salary, and a maximu
 
 each person (employee) is denoted with $e_i$ where *i* goes from *1* to *E* (the number of employees). 
 
-**能力**
+**技能**
 
 Let *SK* be the set of skills, and $s_i$ the *i*-th skill for *i* varying from *1* to *S=|SK|*. The skills of the employee  $e_i$ will be denoted with $e_i^{sk}$  that is a subset of *SK*, the monthly salary with $e_i^{sa}$, and the maximum dedication to the project with $e_i^{md}$. The salary and the maximum dedication are both real numbers. The former is expressed in fictitious currency units, while the latter is the ratio between the amount of hours dedicated to the project and the full working day length of the employee. For example, a maximum dedication of *0.75* means that the employee spends at most *75%* of its working day to tasks of the project. A dedication greater than *1.0* means that the employee works overtime, a quite real world feature included in our problem definition.
 
 **任务**
 
-The tasks are denoted with $t_i$ for *i* from *1* to *T* (the number of tasks). Each task $t_i$ has a set of required skills associated to it that we denote with $t_i^{sk}$ and an effort $t_i^{ef}$ expressed in person-per-month (PM). The tasks must be performed according to a Task Precedence Graph (TPG). The TPG indicates what tasks must be completed before the beginning of a new task. The TPG is an acyclic directed graph *G(V,A)* with a vertex set *V={t1, t2, ..., tT}* and an arc set *A* where $(t_i,j_j)$ belongs to *A* if the task $t_i$ must be completed, with no other intervening tasks, before task  can $t_i$ start.
+The tasks are denoted with $t_i$ for *i* from *1* to *T* (the number of tasks). Each task $t_i$ has a set of required skills associated to it that we denote with $t_i^{sk}$ and an effort $t_i^{ef}$ expressed in **person-per-month** (PM). The tasks must be performed according to a Task Precedence Graph (TPG). The TPG indicates what tasks must be completed before the beginning of a new task. The TPG is an acyclic directed graph *G(V,A)* with a vertex set *V={t1, t2, ..., tT}* and an arc set *A* where $(t_i,j_j)$ belongs to *A* if the task $t_i$ must be completed, with no other intervening tasks, before task  can $t_i$ start.
 
 ### 目标
 
