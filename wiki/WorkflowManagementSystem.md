@@ -38,6 +38,16 @@ Pegasus has been used in a number of scientific domains including astronomy, bio
 18. SIPHT
 19. UCLA Genome Center
 
+### How to simulate
+
+**Data:** 
+
+[Workflow Generator](https://confluence.pegasus.isi.edu/display/pegasus/WorkflowGenerator)
+
+**Simulation tool:**
+
+[WorkflowSim](http://workflowsim.org/)
+
 ### References
 
 [1] https://pegasus.isi.edu/overview/
