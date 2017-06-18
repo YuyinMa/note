@@ -21,14 +21,14 @@ Pegasus has been used in a number of scientific domains including astronomy, bio
 1. BroadBand
 2. CGSMD
 3. CNV
-4. **CyberShake**
+4. **CyberShake** 预测地震
 5. FutureGrid
 6. GRIDCHEM
 7. Helio Seismology
 8. IMG
-9. **LIGO**
+9. **LIGO** 测引力波
 10. LQCD
-11. **Montage**
+11. **Montage** 生成天体图像
 12. Montage Galactic Plane
 13. OpenSees Workflows on NeesHub
 14. PedWork
