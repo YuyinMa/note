@@ -52,6 +52,8 @@ WorkflowGenerator 生成的工作流可以使用 [WorkflowSim](http://workflowsi
 
 5. **改进**：可以从能耗方向建立模型，设计调度算法。
 
+6. GPU 运算
+
 ### 5. 问题
 
 * 能否将这个方向的研究作为我专业硕士的毕业设计？
