@@ -54,6 +54,8 @@ WorkflowGenerator 生成的工作流可以使用 [WorkflowSim](http://workflowsi
 
 6. GPU 运算
 
+7. 计算需要大量的时间，那么调度是否可以动态调度？
+
 ### 5. 问题
 
 * 能否将这个方向的研究作为我专业硕士的毕业设计？
