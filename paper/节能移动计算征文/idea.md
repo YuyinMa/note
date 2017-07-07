@@ -33,7 +33,7 @@
 
 **2. 神经网络训练**
 
-**3. 资源共享（流量，带宽，计算能力，电池）**
+**3. 资源共享（流量，带宽，计算能力，电池）**[5]
 
 ### 三、方案
 
@@ -53,7 +53,7 @@
 
 [4] http://www.huaxia.com/xw/zhxw/2017/06/5374557.html
 
-[5] 
+[5] Deng, S., Huang, L., Li, Y., Zhou, H., Wu, Z., Cao, X., … Li, L. (2016). Toward risk reduction for mobile service composition. *IEEE Transactions on Cybernetics*, *46*(8), 1807–1816.
 
 [6] 
 
