@@ -1,36 +1,22 @@
-# Mobile Service Composition Over Oppotunistic Networks
+# QoS-Oriented Self-Organized Mobile Service Composition Over Oppotunistic Networks
 
 ## ABSTRACT
 
 ## I INTRODUCETION
 
-**SOA + SOC [2]**
+​	In recent years, service-oriented computing has become an increasingly important computing paradigm to develop and integrate distributed enterprise information systems [T]. 
 
-​	In recent years, service-oriented computing has become an increasingly important computing paradigm to develop and integrate distributed enterprise information systems [T]. With the rapid developments in mobile devices and wireless technologies, Web services are no longer limited to traditional platforms and they are becoming more flexible and complex. The manufacturers of mobile devices have also recently achieved breakthroughs to extend mobile devices’ capabilities in terms of memory, computational power, storage capacity, and display screens as well as expand their capabilities and functionalities with other integrated devices, such as built-in cameras, infrared ports, and Bluetooth technology [T]. As aresult, theglobal interestof mobileapplications isonthe rise. Both researchers and industrial companies are inspired to pave the road for mobile Web service provisioning [T].
+​	With the rapid developments of mobile devices and wireless communication technologies, web services are no longer limited to traditional platforms and they are becoming more flexible and pervasive **[2]**. 
 
-**Mobile Service Computing (Limitation and energy) [7]** 
+​	The manufacturers of mobile devices will continue make breakthroughs to extend mobile devices’ capabilities in terms of memory, computational power, storage capacity, and so on. Mobile technology’s huge potential brings great opportunities for traditional service computing in the mobile environment **[7]**, As a result, the global interest of mobile applications is on the rise. Both researchers and industrial companies are inspired to pave the road for mobile Web service provisioning [T] **[2]**.
 
-​	Compared to traditional service computing—which is characterized by powerful service hosts, relatively sta- ble networks, and simple interaction patterns—mobile service computing faces  ve inherent challenges: con- stant mobility, limited capability, restricted power, un- guaranteed security, and undetermined willingness.**（要重点说能耗）**
+​	While mobile device have powerful computing and communication capabilities, the high data rate services, however, drain out the energy of the device much faster than before **[Call for Papers]**. 	
 
-1. Constant Mobility
+![OpportunisticComputing](img/OpportunisticComputing.png)
 
-   ​	Mobile devices can frequently change locations, which results in the variation and alteration of wireless networks. For service consumers, this variation might impact the quality of service (QoS) of invoked mobile services, while the alteration can lead to failure. For service providers, their services might become temporarily unreachable due to the failure of wireless connections, while network address changes might lead to services being unaddressable. Thus, determining how to handle user mobility is a major challenge for providing reliable mobile services in highly dynamic mobile wireless environments.
+​	To achieve the goal of reduction of energy consumption, in this paper we advocate a QoS-oriented selforganized mobile service composition approach , where a mobile user in opportunistic can combine and exploit each other’s resources to boost their computing power and overcome the limitations of their own resources without the communication energy footprint and the extreme centralization of mobile cloud computing (As shown in fig.1) **[1]**, 
 
-2. Limited Capability
-
-   ​	Although the capabilities of mobile devices have improved in terms of processing power, memory space, and embedded sensors, they continue to lag behind other computing devices. Mobile devices (smartphones, in particular) are still recognized as resource-constrained computing devices. So, the challenge lies in how to deploy mobile services on mobile devices and properly schedule computational resources for them to ensure that services have high QoS despite resource constraints.
-
-3. Restricted Power
-
-   ​	Although battery technology for mobile devices has improved to considerably lengthen stand-by time, it’s still a big challenge for users to keep their mobile devices working as long as possible, while constantly using them for business or amusement. Because mobile devices consume energy during the execution of mobile services, it’s important to provide an energy-saving mechanism to keep mobile devices working as long as possible while they’re being used to provide or access services.
-
-**Opportunistic Network**
-
-​	Because the pervasive vision revolves around the human user, it can only be achieved by a flexible networking paradigm that adapts to the user instead of expecting the user to adapt. Human users move around freely and cannot be expected to always be within range of an access point or a mesh router. On the other hand, humans are social by nature, and they can very well be expected to come in contact with each other with a relatively high frequency; it is this very expectation that constitutes the basic tenet of opportunistic networking **[1]**.
-
-​	Opportunistic computing provides an appealing alternative to the mobile computing cloud by allowing devices to join forces and leverage heterogeneous resources from other devices **[1 abstract]**. 
-
-​	To complement online mobile crowdsourcing services, in this paper we advocate Crowd Foraging,a QoS-oriented selforganized mobile crowdsourcing framework, where a mobile user can self-organize her task crowdsourcing in a proactive manner by leveraging a massive crowd of opportunistically encountered mobile human workers in realtime. Its main rationality is four-fold. First, opportunistic user encounters are prevalent and sufficient in daily life [T], which offers plenty of opportunities to exploit nearby human intelli- gence for task solving [T], [T], [T]. Second, many mobile crowdsourcing tasks require local knowledge and information (e.g., location-based content sensing [T], [T], [T] and content transmission [T]–[T]), and hence nearby human workers are more adept at executing them than the online workers. Third, D2D communications such as Bluetooth, WiFi-direct and LTE-D2D are promising to replenish traditional cellular communications in terms of user throughput increase, cellular traffic reduction and network coverage extension [T]. At last, this framework shares the similar spirit with the emerging paradigm “cyber foraging” over opportunistic networks, such that mobile users opportunistically exploit nearby device resources to facilitate their computational task processing [T] **[3]**.
+​	Its main rationality is four-fold. First, opportunistic user encounters are prevalent and sufficient in daily life [T], which offers plenty of opportunities to exploit nearby human intelligence for task solving [T], [T], [T]. Second, many mobile tasks require huge computational resources and require high timeliness  (e.g., Tensorflow on mobile, Photoshop on mobile, Game on mobile), and hence nearby human workers are more adept at executing them than the online workers. Third, D2D communications such as Bluetooth, WiFi-direct and LTE-D2D are promising to replenish traditional cellular communications in terms of user throughput increase, cellular traffic reduction and network coverage extension [T]. At last, this framework shares the similar spirit with the emerging paradigm “cyber foraging” over opportunistic networks, such that mobile users opportunistically exploit nearby device resources to facilitate their computational task processing [T] **[3]**.
 
 **Contribution [2]**
 
@@ -72,11 +58,43 @@ To minimize the risk of composition fails and avoid fre- quent recomposition, we
 2. Computing heavy task distribution
 3. 要说明出存在的问题，为下文问题的描述做铺垫
 
-## III PROBLEM FORMULATION
+## III MOBILE SERVICE COMPOSITION MODEL
 
 ​	This section provides clear definitions for all key concepts related to RMSC in this paper **[9]**.
 
-### A. Concept of Node Availability
+#### A. Preliminaries
+
+​	In order to describe the problem addressed in this paper, we first provide the basic concepts of mobile service composition based on the proposed mobility model.
+
+***Definition 1 (Mobile Service):*** A mobile service is a triple $s = (id, Fun, QoS)$, where:
+
+​	1) $id$ is the unique identifier of the service;
+
+​	2) $Fun$ is the set of functions s provides, a function includes the input, output, precondition and result of the service;
+
+​	3) $QoS = \{q\}^n_{j=1}$ is a set of quality attributes, including execution cost, response time, reliability, availability, etc **[9]**.
+
+***Definition 2 (Mobile Service Provider):*** A mobile service provider is a tuple $sp = (id, S)$, where:
+
+​	1) $id$ is the unique identifier of the provider;
+
+​	2) $S$ is the set of mobile services $p$ provides **[9]**.
+
+***Definition 3 (Service Composition Plan):*** A service composition plan is a tuple $scp = (L, G)$, where:
+
+​	1) $L = \{l_1,l_2,…,l_n\}$ is a set of tasks;
+
+​	2) $G = \{g(l_i,l_j)|l_i,l_j \in L\}$ is a set of relations between tasks in $L$.
+
+​	A service composition plan is an abstract description of a business process. Each task li can be realized by invoking an individual service. There may be multiple services with different QoS that can be adopted to fulfill each task. G is used to describe the structure of the composition. $g(l_i, l_j) = 1$ represents that the inputs of $l_j$ depend on the outputs of $l_i$ **[9]**.
+
+***Definition 4 (Mobile Service Composition):*** A mobile service composition is a tuple $sc = (scp, S)$ where:
+
+​	1) $scp$ is the corresponding service composition plan;
+
+​	2) $S$ is the set of component services selected for each taskin $scp$ **[9]**.
+
+#### B. Concept of Node Availability
 
 ​	In wireless mobile networks such as ad hoc or mesh networks, the availability of a node to its neighbour nodes is highly related to the node’s mobility—here it is assumed that battery power is not a concern and as such a node will not out of reach because of battery exhaustion. If node i moves outside the transmission range of its neighbouring node j, then node i is unreachable by node j and as a result the services on node i become unavailable to node j either. Node availability, to some extent, also expresses network availability because if the connection between any two neighbouring nodes in a route from a service provider to a service requester becomes unavailable, then the whole route also becomes unavailable. Here node mobility is utilized to calculate the node availability **[4]**.
 
@@ -119,41 +137,22 @@ $$
 1. 说明最后的指标的含义（表示服务在未来的连通性）
 2. 将最后的指标列为一个重要的服务选择指标
 
-### B. Problem Description [9]
+#### C. QoS Model for Service Composition
 
-​	In order to describe the problem addressed in this paper, we first provide the basic concepts of mobile service composition based on the proposed mobility model.
+For service providers to meet the requirements of ser- vice consumers, they must consider QoS [39]–[41]. Common QoS attributes include response time, price, reliability, and availability, and they can be classified into two categories: 1) positive and 2) negative (denoted as Q+ and Q−). For positive attributes, larger values indicate better performance (e.g., reliability and availability), while for negative attributes, smaller values indicate better performance (e.g., price and response time).
+​	For a composite service instance, the value of each QoS attribute is determined by the QoS values of its concrete com- ponents and orchestration patterns. Table I lists the aggregation functions for response time, price, and reliability for sequen- tial, parallel, choice, and loop composition patterns, where pj represents the execution probability of the jth branch state- ment in the choice structure, and k is the expected number of iterations of the loop. More aggregation functions can be found in [42] and [43]. QoS aggregation functions are always monotone; i.e., higher (lower) values produce a higher (lower) overall result.
+​	For a composite service consisting of multiple component services and various composition patterns, the overall value of each QoS attribute can be calculated by following the standard parse tree from bottom to up and applying the corresponding aggregation functions.
+​	In order to facilitate ranking of different composite service instances in terms of QoS, simple additive weighting (SAW) is used as the QoS utility function to map the QoS vector into a real value. SAW first normalizes the QoS attribute values into real values between 0 and 1, through comparison with the maximal and minimal values; then it sums the normalized values multiplied with a preference weight wt. According to SAW, the QoS utility of a composite service instance csi can be calculated using (1), where, qt(csi) is the aggregated value of the tth QoS attribute of csi, and qt,max and qt,min, respectively, denote the maximal and minimal possible aggregated values of the tth QoS attribute
+$$
+U(csi) = \sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(csi)}{q_{t,max}-q_{t,min}}\times w_t \\
++\sum_{q_t \in Q^+} \frac{q_t(csi)-q_{t,max}}{q_{t,max}-q_{t,min}}\times w_t
+$$
 
-***Definition 1 (Mobile Service):*** A mobile service is a triple $s = (id, Fun, QoS)$, where:
+#### D. Problem Formulation
 
-​	1) $id$ is the unique identifier of the service;
+***Definition 7 (MSSC Service Composition):*** Given a mobile service sharing community mssc, and a service composition request $h$ by a mobile user $u$, select concrete services provided by other mobile users in MSSC to achieve an optimal service composition msc with the shortest response time $L$. Meanwhile, msc should guarantee to run successfully when the service requester and the service providers are moving **[2]**.
 
-​	2) $Fun$ is the set of functions s provides, a function includes the input, output, precondition and result of the service;
-
-​	3) $QoS = \{q\}^n_{j=1}$ is a set of quality attributes, including execution cost, response time, reliability, availability, etc.
-
-***Definition 2 (Mobile Service Provider):*** A mobile service provider is a tuple $sp = (id, S)$, where:
-
-​	1) $id$ is the unique identifier of the provider;
-
-​	2) $S$ is the set of mobile services $p$ provides.
-
-***Definition 3 (Service Composition Plan):*** A service composition plan is a tuple $scp = (L, G)$, where:
-
-​	1) $L = \{l_1,l_2,…,l_n\}$ is a set of tasks;
-
-​	2) $G = \{g(l_i,l_j)|l_i,l_j \in L\}$ is a set of relations between tasks in $L$.
-
-​	A service composition plan is an abstract description of a business process. Each task li can be realized by invoking an individual service. There may be multiple services with different QoS that can be adopted to fulfill each task. G is used to describe the structure of the composition. $g(l_i, l_j) = 1$ represents that the inputs of $l_j$ depend on the outputs of $l_i$.
-
-***Definition 4 (Mobile Service Composition):*** A mobile service composition is a tuple $sc = (scp, S)$ where:
-
-​	1) $scp$ is the corresponding service composition plan;
-
-​	2) $S$ is the set of component services selected for each taskin $scp$.
-
-***Definition 7 (MSSC Service Composition):*** Given a mobile service sharing community mssc, and a service composition request $h$ by a mobile user $u$, select concrete services provided by other mobile users in MSSC to achieve an optimal service composition msc with the shortest response time $L$. Meanwhile, msc should guarantee to run successfully when the service requester and the service providers are moving. 
-
-***Theorem 1:*** The service composition problem in MSSC (Definition 6) is NP-hard.
+***Theorem 1:*** The service composition problem in MSSC (Definition 7) is NP-hard.
 
 ***Proof:*** The standard integer program to find the smallest value of a given objective function $F( \Theta)$ with a feasiable parameter follows [21]:
 $$
@@ -172,7 +171,7 @@ $$
 
 ​	For such a problem, integer programming can be utilized to obtain the optimal solution. However, they might cost much time when the problem size increases. In mobile environment, the requirement on runtime is essential since the environment parameters for computation may vary much within a short time. Therefore, although integer programming can obtain the optimal result, it is not suitable to the problem due to its poor scalability. So one possible way to obtain a satisfactory solu- tion in an accepted execution time is to design a heuristic search method and find the near optimal solution. For exam- ple, metaheuristic algorithms such as GAs and PSO, can be utilized to solve this problem. Among them, we find that KH algorithm can reduce the search space and return high approximate optima. Thus, we propose a solution method based on it to find an approximate optimal solution in polynomial time **[2]**.
 
-### C. Composition Algorithm
+## IV Composition Algorithm
 
 ​	A genetic algorithm (GA) is a search heuristic that mimicsthe process of natural evolution and it is widely employedas the optimization algorithm (Engelbrecht 2007). Someresearchers have applied GA to solve the problem of opti-mal service selection, and it achieves good performance(Canfora et al. 2005; Ma and Zhang 2008; Syu et al. 2011; Wuet al. 2012). However, standard genetic algorithm is prone topremature convergence on local optimum and all individualsin the population tend to be similar, resulting in early termi-nation of evolution. Furthermore, when taking into accountbusiness correlations in service composition, the search forthe optimal solution will be even more difficult, as SC makesmany solutions in the search space infeasible, and QC makessearch landscape more rugged **[11]**.
 
@@ -183,6 +182,8 @@ $$
 ![GeneticEncoding](img/GeneticEncoding.jpg)
 
 ​	In GA, a genome is a genetic representation of the solution. For the optimal service selection problem, a concrete com- posite service is encoded as a genome, and the genome is represented by an integer array with its length equal to the number of involved component services. The i th entry in the array, in turn, refers to the selection result of the abstract ser- vice A Si . That is to say, given that the value of the i th entry is j, it indicates that Si, j is selected to execute ASi . Figure 2 illustrates this genetic encoding **[11]**.
+
+**改进方向： 使用树形编码 [5]**
 
 **Fitness Function [6]**
 
@@ -197,18 +198,37 @@ qc_t - q_t(csi)  if ... \\
 qc_(csi) - qc_t  if ... \\
 0 \  else ... \\
 \end{array} 
-\right.
+\right. \\
+F(csi) = U(csi) + w_{pen} \times gen \times P(csi)
 $$
 
-## IV SIMULATION AND EVALUATION
+**Genetic Operation [6]**
 
-### A. Simulation Setting
+​	To guarantee that each genome in the population is always valid, we extend each genetic operator with special adaptation.
 
-### B. Scalability Evaluation
+1.   Initialization operator:
 
-### C. Effiectiveness Evaluation
+     An empty array with a length equal to the number of services is initialized and random assignment is performed from the first gene to the last. An instance c from the generalized candidates gcnd(s1) of s1 is randomly selected and bound to the first gene. If gra(c) ≥ 2, the following gra(c)-1 genes are assigned a #. After that, the ith gene [i = 1 + gra(c)] is selected to be assigned, and this process loops until the last gene is assigned **[6]**.
 
-## V RELATED WORK
+2. Crossover operator:
+
+     For a genome of length n, there are n − 1 splitting points in total. However, choosing some of them as splitting points will render the resulting genome invalid after crossover, and thus in a genome, the genes belong- ing to the same coarse-grained service instance should not be split. Let sp1 be the set of feasible splitting points in parent1 , and sp2 be that for parent2 . The splitting points that the crossover operator can use are limited to the intersection of sp1 and sp2. For instance, in Fig. 7, sp1 is {1, 3, 4, 5, 6} and sp2 is {1, 2, 3, 7}, and thus, the splitting points that the crossover operator can use is {1, 3}. Note that this intersection may be empty, and in this case, the two parents will be directly copied to the offspring **[6]**.
+
+3. Mutation operator:
+
+     Mutation is used to maintain genetic diversity from one generation of a population to the next. Traditionally, each gene in the genome is selected and mutated with the same probability and in this case, coarse- grained service instances would more likely be replaced. Instead, a service instance is randomly selected with the same probability from all the service instances contained in the rep- resented solution and the corresponding genes of the selected instance are marked to be mutated. Let i be the position of the first marked gene, and c be a new candidate randomly selected from gcnd(si) to replace the original one. If gra(c) is not greater than the number of marked genes, c is assigned to the ith gene and the gene is unmarked. In addition, the fol- lowing gra(c) − 1 genes are assigned a # and are unmarked. Otherwise, it indicates that the selected instance conflicts with existing service instances in the genome. Whether c is adopted or not can lead to quite different results **[6]**.
+
+## V SIMULATION AND EVALUATION
+
+This section describes simulation settings and assesses the scalability of each algorithm. Then it evaluates the effective- ness of multigranularity service composition in comparison with the fine-grained one **[6]**.
+
+#### A. Simulation Setting [6]
+
+#### B. Scalability Evaluation [6]
+
+#### C. Effiectiveness Evaluation [6]
+
+## VI RELATED WORK
 
 Service composition is a significant area of research. As our proposal targets the problem of mobile service composition, we first briefly review the work on how to make such com- position in traditional Internet environment, then we review some recent work on it in dynamic/mobile environments **[2]**.
 
@@ -234,7 +254,7 @@ In addition to VANET, other scenarios, motivating opportunistic network use, are
 
 ## VI CONCLUTION
 
-## VII REFFERENCE
+## REFFERENCE
 
 [1] Giordano, S., & Puccinelli, D. (2011). The Human Element as the Key Enabler of Pervasiveness, 150–156.
 

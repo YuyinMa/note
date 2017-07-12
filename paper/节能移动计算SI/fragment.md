@@ -1,0 +1,3 @@
+### Opportunistic Network
+
+Opportunistic networking is one of the most interesting evolutions of the multihop networking paradigm. opportunistic networks do not consider node mobility a problem but as an opportunity to exploit. In opportunistic networks the mobility of nodes creates contact opportunities among nodes, which can be used to connect parts of the network that are otherwise disconnected. Compare to cloud computing (As shown in fig.1), Opportunistic computing provides an appealing alternative to the mobile computing cloud by allowing devices to join forces and leverage heterogeneous resources from other devices **[1 abstract]**. 
