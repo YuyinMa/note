@@ -8,19 +8,20 @@
 
 ​	While mobile device have powerful computing and communication capabilities, the high data rate services, however, drain out the energy of the device much faster than before **[Call for Papers]**. 	
 
-![OpportunisticComputing](img/OpportunisticComputing.png)
+![OpportunisticComputing](img/fig1.png)
 
 ​	To achieve the goal of reduction of energy consumption, in this paper we advocate a QoS-oriented selforganized mobile service composition approach , where a mobile user in opportunistic can combine and exploit each other’s resources to boost their computing power and overcome the limitations of their own resources without the communication energy footprint and the extreme centralization of mobile cloud computing (As shown in fig.1) **[1]**. Its main rationality is three-fold. First, opportunistic user encounters are prevalent and sufficient in daily life [T], which offers plenty of opportunities to exploit nearby mobile worker for task solving [T], [T], [T]. Second, many mobile tasks require huge computational resources or data trasfer  (e.g., Tensorflow on mobile, Photoshop on mobile, Game on mobile), for an energy consumption and cost perspective, nearby mobile workers are more adept at executing them than the online workers, because this paradigm can reduce data transfer over cellular network which consume more energy than device to device (D2D) communications such as Bluetooth, NFC, WiFi-direct and LTE-D2D  [??]. Third, D2D communications are promising to replenish traditional cellular communications in terms of user throughput increase, cellular traffic reduction and network coverage extension,  in this way, users can save communication fee [T]. In a word, this framework shares the similar spirit with the emerging paradigm “cyber foraging” over opportunistic networks, such that mobile users opportunistically exploit nearby device resources to facilitate their computational task processing, therefore, mobile users can save their betray life and save communication cost [T] **[3]**.
 
 ​	To address the aforementioned challenges and concerns, we propose a new approach for service selections and compositions in mobile environments. The main contributions are:
 
 1. We propose an architecture for mobile service provision [mobile service opportunistic network MSON] to address the problem of service selection for mobile service composition in the mobile encounter enviroment where both service requesters and providers are nonstationary. In such environment,  mobile users can share mobile services through their mobile devices to nearby devics.
-2. For MSON, we propose a node availability model to describe the node availability accroding to mobile user's moving behavior. 
+2. For MSON, we propose a node availability model to describe the users' mobility behavior. 
 3. Based on MSON and the proposed node availability model, we transfer the mobile service composition over opportunistic problem to an optimization problem and propose to utilize the improved Genetic algorithm (GA) to solve it. We conduct aseries of evaluations to validate that our algorithmis approximately optimal and performs much better than other standard composition approaches. We compare it with other population-based optimization methods for both optimality and scalability. 
+
 
 ​	The remainder of this paper is organized as follows. Section II describe the application scenario. Section III introduces the mobile service composition model. The approach to make service compositions is presented in Section IV. Section V presents experimental results. Section VI reviews the related work. Section VI concludes this paper.
 
-## II APPLICATION SCENARIO
+## II MSON AND APPLICATION SCENARIO
 
 In this section, we introduce the mobile service opportunistic network (MSON) formed by multiple mobile users. Within it, users can share services on their own mobile devices through mobile networks. It has three main characteristics as follows **[2]**.
 
@@ -28,7 +29,7 @@ In this section, we introduce the mobile service opportunistic network (MSON) fo
 2. Dynamicity: MSON participants are not stationary. They can enter or leave the self-orginzed group at any time.
 3. Mobility: Services provided by mobile users are not fixed at the same location. Service requesters are also mobile when invoking a mobile service.
 
-![pic1](img/fig1.jpg)
+![pic1](img/fig2.jpg)
 
 ​	Fig.2 illustrates the working procedure of the mobile service provision over opportunistic network. In an opportunistic network scenario, a mobile task requester R can sense near devices exposed service through D2D link and launches a mobile composotion request. 
 
@@ -36,70 +37,65 @@ In this section, we introduce the mobile service opportunistic network (MSON) fo
 
 ​	We should emphasize that, our framework only considers one-hop mechanism for both worker recruitment and result collection, since realistic dataset analyses reveal that users’ one-hop neighbors are sufficient [7] and can cover most range of the whole network in a reasonable time period [10], and contacting a user would incur long delay if the maximum D2D communication hops are larger than two [15]. Compared with multi-hop mechanisms in existing researches [1], [3], [4], [6], [11], [12], this one-hop feature can lower the network overhead (e.g., no need to transfer a large volume of task contents hop by hop) and ensure framework performance with only local information, which is more practical in real life **[3]**.
 
-​	we use an example depicted in Fig.1 to illustrate the related features of the problem of RMSC.
+​	we use an example depicted in Fig.1 to illustrate the related features of the problem of MSON.
 
-​	A mobile user Tom is visiting a national park and record a video of the park. Now he wants to cut a clip of the video and add some effects and speech for the video clip. But he has no such services on his own device. As one option, he can upload the video to cloud services to get the video clip. But the national park is in a rural area where the signal cover- age is not so good. So the video transmission may take long time or even fail. If a video processing service is provided by some nearby mobile devices, Tom has other options to invoke such mobile services on nearby mobile devices through free near field communication techniques. If one service cannot meet his requirement, several services can be composed. For example in Fig. 2, at most three services are needed: 1) video cutting service; 2) video beautifying service; and 3) video dub- bing service. Due to users’ mobility, the availability of service providers to Tom can vary. So invoking services provided by other mobile users may face new challenges that traditional composition methods cannot handle.
-​	First, there exists risk of failure that invoking services provided by mobile users. Due to the limited range of the communication among mobile devices, Tom can only invoke services provided within the required communication distance of the mobile devices. Meanwhile, the other users who are also visiting the gallery keep moving in and out the required dis- tance uncertainly. As a result, there exists risk that the service provider moves out of range when the service is being used, then the composition fails and a recomposition is needed.
-Second, there is limited work dealing with users’ mobil- ity when making service composition in mobile environment. Then once the generated composition solution fails when the service provider moves out of the required communication distance, it needs to recompose services for the target user.
-To minimize the risk of composition fails and avoid fre- quent recomposition, we need to select a service provider with enough availability time for each service such that the com- position can exist to finalize. We refer to a composition with such requirement as a risk-aware service composition. The dif- ficulty for it is the mobility of service requesters and providers. For existing selection methods for service composition, only properties of candidate services are considered. But the mobil- ity of service providers and requesters is ignored. Therefore, the risk of failure of the obtained composition is hardly con- trolled. In this paper, we target at solving the RMSC in the above application scenario **[9]**.
+​	A mobile user Tom is visiting a national park and record a video of the park. Now he wants to cut a clip of the video and add some effects and speech for the video clip. But  due to mobile devices' limited betray, after invoke clip service in his own device, the left power doesn't support his rest tour. 
 
-​	Assume a mobile user Tom wants to invoke a hotel booking service when he is walking from base station A to base station B. Assume that the signal strength of B is stronger than A, the average data transmission rate be- tween Tom’s cellphone and A is 10 Kbps, and the data transmission rate between Tom’s cellphone and B is 20 Kbps. A virtual service provider sp is responsible for se- lecting the service with the best response time for Tom. sp can get the functional and non-functional attributes of service candidates from UDDI. It can also obtain knowledge of the mobile network capability directly from the telecom service provider or from some third parties that monitor signals such as Opensignal2. Thus, sp can make a selection for Tom based on the acquired infor- mation. Suppose that sp finds two candidates that can provide hotel booking service, Ctrip and Elong, which are well-known hotel booking services in China. sp would make the selection decision for Tom depending on the QoS of each service. The booking confirmation wait time is 100 s for Ctrip and 120 s for Elong **[10]**.
+​	As one option, he can upload the video to cloud services to get the video clip, but offloading quest into cloud will result in heavy cellular traffic, that means expensive communication fee and high energy consumption.
 
-**修改方向：**
+​	Meanwhile national park is in a rural area where the signal coverage may be not so good. So the video transmission may take long time or even fail. 
 
-1. Mobile data traffic sharing
-2. Computing heavy task distribution
-3. 要说明出存在的问题，为下文问题的描述做铺垫
+​	If tom in MSON and servel video processing services is provided by some nearby mobile devices, Tom can invoke such mobile services on nearby mobile devices through free near field communication techniques. 
+
+​	If these services cannot meet his requirement, several services can be composed. For example in Fig. 2, at most three services are needed: 1) video cutting service; 2) video beautifying service; and 3) video dubbing service. Due to users’ mobility, the availability of service providers to Tom can vary, we will discuss providers availability next section. In this environment  invoking services provided by other mobile users may face new challenges that traditional composition methods cannot handle **[9]**.
+
+​	
 
 ## III MOBILE SERVICE COMPOSITION MODEL
 
-​	This section provides clear definitions for all key concepts related to RMSC in this paper **[9]**.
+​	This section provides clear description of mobile service composition model related to MSON in this paper **[9]**.
 
 #### A. Preliminaries
 
 ​	In order to describe the problem addressed in this paper, we first provide the basic concepts of mobile service composition based on the proposed mobility model.
 
-***Definition 1 (Mobile Service):*** A mobile service is a triple $s = (id, Fun, QoS)$, where:
+***Definition 1 (Mobile Service):*** A mobile service is a triple $s = (uuid, Fun, QoS)$, where:
 
-​	1) $id$ is the unique identifier of the service;
+​	1) $uuid$ is the unique identifier of the service;
 
 ​	2) $Fun$ is the set of functions s provides, a function includes the input, output, precondition and result of the service;
 
 ​	3) $QoS = \{q\}^n_{j=1}$ is a set of quality attributes, including execution cost, response time, reliability, availability, etc **[9]**.
 
-***Definition 2 (Mobile Service Provider):*** A mobile service provider is a tuple $sp = (id, S)$, where:
+***Definition 2 (Mobile Service Provider):*** A mobile service provider is a tuple $svcp = (uuid, S)$, where:
 
-​	1) $id$ is the unique identifier of the provider;
+​	1) $uuid$ is the unique identifier of the provider;
 
 ​	2) $S$ is the set of mobile services $p$ provides **[9]**.
 
-***Definition 3 (Service Composition Plan):*** A service composition plan is a tuple $scp = (L, G)$, where:
+***Definition 3 (Mobile Service Composition Plan):*** A service composition plan is a tuple $scp = (L, G)$, where:
 
 ​	1) $L = \{l_1,l_2,…,l_n\}$ is a set of tasks;
 
 ​	2) $G = \{g(l_i,l_j)|l_i,l_j \in L\}$ is a set of relations between tasks in $L$.
 
-​	A service composition plan is an abstract description of a business process. Each task li can be realized by invoking an individual service. There may be multiple services with different QoS that can be adopted to fulfill each task. G is used to describe the structure of the composition. $g(l_i, l_j) = 1$ represents that the inputs of $l_j$ depend on the outputs of $l_i$ **[9]**.
-
-***Definition 4 (Mobile Service Composition):*** A mobile service composition is a tuple $sc = (scp, S)$ where:
-
-​	1) $scp$ is the corresponding service composition plan;
-
-​	2) $S$ is the set of component services selected for each taskin $scp$ **[9]**.
+​	A service composition plan is an abstract description of a business process. Each task $l_i$ can be realized by invoking an individual service. There may be multiple services with different QoS that can be adopted to fulfill each task. $G$ is used to describe the structure of the composition. $g(l_i, l_j) = 1$ represents that the inputs of $l_j$ depend on the outputs of $l_i$ **[9]**.
 
 #### B. Concept of Node Availability
 
-​	In wireless mobile networks such as ad hoc or mesh networks, the availability of a node to its neighbour nodes is highly related to the node’s mobility—here it is assumed that battery power is not a concern and as such a node will not out of reach because of battery exhaustion. If node i moves outside the transmission range of its neighbouring node j, then node i is unreachable by node j and as a result the services on node i become unavailable to node j either. Node availability, to some extent, also expresses network availability because if the connection between any two neighbouring nodes in a route from a service provider to a service requester becomes unavailable, then the whole route also becomes unavailable. Here node mobility is utilized to calculate the node availability **[4]**.
+​	In mobile service opportunistic network (MSON) the availability of a node to its neighbour nodes is highly related to the node’s mobility. If node $i$ moves outside the transmission range of its neighbouring node $j$, then node $i$ is unreachable by node $j$ and as a result the services on node $i$ become unavailable to node $j$ either. Node availability, to some extent, also expresses network availability because if the connection between any two neighbouring nodes in a route from a service provider to a service requester becomes unavailable, then the whole route also becomes unavailable. Here node mobility is utilized to calculate the node availability **[4]**.
 
-​	Consider, as illustrated in Fig. 2, two mobile hosts MHi and MHj of the same transmission range R. Each node moves randomly and it is assumed that the moving field is a circle with a radius of r. d represents the distance between MHi and MHj. These three parameters are to be used for calculating the node availability. The transmis- sion range of a node R is known (e.g., pre-defined or changing according to certain algorithm). Suppose the location (i.e., coordinates) of each mobile host is known (e.g., via GPS—global positioning system), then distance d can be calculated using the Euclidean distance formula, i.e.,$\sqrt{{(x_i-x_j)^2}+{y_i-y_j}^2}$ where $(x_i, x_j)$ and $(y_i, y_j)$ are are the coordinates of MHi and MHj respectively. Finally let us discuss how to calculate r **[4]**.
+​	![fig3](img/fig3.png)
 
-​	The moving radius of a mobile host (r) is its speed (s) multiplied by the average service time (t). Here t can be statistically calculated as the average value of last n servings of this component service, namely, $t = \Sigma_{i=1}^{n}t_i/n$. The speed of a mobile host s can be calculated based on its moving distance during a period from t1 to t2 [18], namely: $s = \sqrt{{(x_i-x_j)^2}+{y_i-y_j}^2}/(t_2-t_1)$. Then $r = s \times t$ **[4]**.
+​	Consider, as illustrated in Fig. 2, two mobile hosts $MH_i$ and $MH_j$ of the same transmission range $R$. Each node moves randomly and it is assumed that the moving field is a circle with a radius of $r$. $d$ represents the distance between $MH_i$ and $MH_j$. These three parameters are to be used for calculating the node availability. The transmis- sion range of a node $R$ is known (e.g., pre-defined or changing according to certain algorithm). Suppose the location (i.e., coordinates) of each mobile host is known (e.g., via GPS—global positioning system, **How to get user's moving trace, refer S.Deng's work**), then distance $d$ can be calculated using the Euclidean distance formula, i.e.,$\sqrt{{(x_i-x_j)^2}+{y_i-y_j}^2}$ where $(x_i, x_j)$ and $(y_i, y_j)$ are are the coordinates of $MH_i$ and $MH_j$ respectively. Finally let us discuss how to calculate $r$ **[4]**.
 
-​	Knowing the values of these three parameters R, r, and d, the probability of MHi staying inside the transmission range of MHj (denoted as $P_i^{IN}$ ) can be calculated by
+​	The moving radius of a mobile host ($r$) is its speed ($s$) multiplied by the average service time ($t$). Here $t$ can be statistically calculated as the average value of last $n$ servings of this component service, namely, $t = \Sigma_{i=1}^{n}t_i/n$. The speed of a mobile host $s$ can be calculated based on its moving distance during a period from $t_1$ to $t_2$ [18], namely: $s = \sqrt{{(x_i-x_j)^2}+{y_i-y_j}^2}/(t_2-t_1)$. Then $r = s \times t$ **[4]**.
+
+​	Knowing the values of these three parameters $R$, $r$, and $d$, the probability of $MH_i$ staying inside the transmission range of $MH_j$ (denoted as $P_i^{IN}$ ) can be calculated by
 $$
 P_i^{IN} = \frac{A_i^{IN}}{A_i^T}
 $$
-​	Namely, $P^{IN}_i$ equals to the area of the MHi’smoving field inside the transmission range of MHj (denoted as $A^{IN}_i$) divided by the overall area of the MHi’s moving field ($A^T_i$) **[4]**.
+​	Namely, $P^{IN}_i$ equals to the area of the $MH_i$’s moving field inside the transmission range of $MH_j$ (denoted as $A^{IN}_i$) divided by the overall area of the $MH_i$’s moving field ($A^T_i$) **[4]**.
 
 ​	As shown in Fig. 2, we have	
 $$
@@ -120,22 +116,20 @@ $$
 $$
 P_i^{IN} = \frac{A_i^{IN}}{\pi s^2 t^2}
 $$
-​	The probability of MHi staying inside the transmission range of $MH_j (P^{IN}_i)$ can be calculated. Suppose service $s$ running on MHi is a candidate service for a task running on MHj, and the node availability with regard to service s is denoted as $q_{av}^n(s)$, then finally there is
+​	The probability of MHi staying inside the transmission range of $MH_j (P^{IN}_i)$ can be calculated. Suppose service $s$ running on $MH_i$ is a candidate service for a task running on $MH_j$, and the node availability with regard to service $s$ is denoted as $q_{av}^n(s)$, then finally there is
 $$
 q_{av}^n(s) = P^{IN}_i = \frac{A_i^{IN}}{\pi s^2 t^2}\\\nonumber
 = \frac{\beta R^2 + \alpha r^2 - (R^2 sin\beta cos\beta + r^2 sin\alpha cos\alpha)}{\pi s^2 t^2}
 $$
-**修改方向：**
-
-1. 说明最后的指标的含义（表示服务在未来的连通性）
-2. 将最后的指标列为一个重要的服务选择指标
+​	Note that, node availability $q_{av}^n(s)$ is an important QoS attribute to decide service selection in next section.
 
 #### C. QoS Model for Service Composition
 
-For service providers to meet the requirements of ser- vice consumers, they must consider QoS [39]–[41]. Common QoS attributes include response time, price, reliability, and availability, and they can be classified into two categories: 1) positive and 2) negative (denoted as Q+ and Q−). For positive attributes, larger values indicate better performance (e.g., reliability and availability), while for negative attributes, smaller values indicate better performance (e.g., price and response time).
-​	For a composite service instance, the value of each QoS attribute is determined by the QoS values of its concrete com- ponents and orchestration patterns. Table I lists the aggregation functions for response time, price, and reliability for sequen- tial, parallel, choice, and loop composition patterns, where pj represents the execution probability of the jth branch state- ment in the choice structure, and k is the expected number of iterations of the loop. More aggregation functions can be found in [42] and [43]. QoS aggregation functions are always monotone; i.e., higher (lower) values produce a higher (lower) overall result.
+​	For service providers to meet the requirements of service consumers, they must consider QoS [39]–[41]. Common QoS attributes include response time, price, reliability, and reputation, node availability is an important QoS attribute introduced in this paper to describe users' mobile behavior in MSON. for mobile service composition in this paper. and they can be classified into two categories: 1) positive and 2) negative (denoted as $Q^+$ and $Q^−$). For positive attributes, larger values indicate better performance (e.g., reliability and availability), while for negative attributes, smaller values indicate better performance (e.g., price and response time) **[6]**.	![fig4](img/fig4.png)
+
+​	For a composite service instance, the value of each QoS attribute is determined by the QoS values of its concrete components and orchestration patterns. Table I lists the aggregation functions for response time, price, and reliability for sequential, parallel, choice, and loop composition patterns, where $p_j$ represents the execution probability of the $j$th branch statement in the choice structure, and $k$ is the expected number of iterations of the loop. More aggregation functions can be found in [42] and [43]. QoS aggregation functions are always monotone; i.e., higher (lower) values produce a higher (lower) overall result.
 ​	For a composite service consisting of multiple component services and various composition patterns, the overall value of each QoS attribute can be calculated by following the standard parse tree from bottom to up and applying the corresponding aggregation functions.
-​	In order to facilitate ranking of different composite service instances in terms of QoS, simple additive weighting (SAW) is used as the QoS utility function to map the QoS vector into a real value. SAW first normalizes the QoS attribute values into real values between 0 and 1, through comparison with the maximal and minimal values; then it sums the normalized values multiplied with a preference weight wt. According to SAW, the QoS utility of a composite service instance csi can be calculated using (1), where, qt(csi) is the aggregated value of the tth QoS attribute of csi, and qt,max and qt,min, respectively, denote the maximal and minimal possible aggregated values of the tth QoS attribute
+​	In order to facilitate ranking of different composite service instances in terms of QoS, simple additive weighting (SAW) is used as the QoS utility function to map the QoS vector into a real value. SAW first normalizes the QoS attribute values into real values between $0$ and $1$, through comparison with the maximal and minimal values; then it sums the normalized values multiplied with a preference weight $w_t$. According to SAW, the QoS utility of a composite service instance $csi$ can be calculated using (1), where, $q_t(csi)$ is the aggregated value of the tth QoS attribute of $csi$, and $q_{t,max}$ and $q_{t,min}$, respectively, denote the maximal and minimal possible aggregated values of the $t$th QoS attribute **[6]**.
 $$
 U(csi) = \sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(csi)}{q_{t,max}-q_{t,min}}\times w_t \\
 +\sum_{q_t \in Q^+} \frac{q_t(csi)-q_{t,max}}{q_{t,max}-q_{t,min}}\times w_t
@@ -143,8 +137,13 @@ $$
 
 #### D. Problem Formulation
 
-***Definition 7 (MSSC Service Composition):*** Given a mobile service sharing community mssc, and a service composition request $h$ by a mobile user $u$, select concrete services provided by other mobile users in MSSC to achieve an optimal service composition msc with the shortest response time $L$. Meanwhile, msc should guarantee to run successfully when the service requester and the service providers are moving **[2]**.
+***Definition 4 (MSON Service Composition):*** Given servel mobile user in mobile service opportunistic network (MSON), and a service composition request $h$ by a mobile user $u$, select concrete services provided by other mobile users in MSON to achieve an optimal service composition $msc$ with the best QoS. Meanwhile, $msc$ should guarantee to run successfully when the service requester and the service providers are moving **[2]**.
 
+​	Thus, the MSON service composition problem can be defined as follow:
+$$
+Max. \ U(csi)\\
+s.t. \  Min. Pro_{failed}(msc)
+$$
 ***Theorem 1:*** The service composition problem in MSSC (Definition 7) is NP-hard.
 
 ***Proof:*** The standard integer program to find the smallest value of a given objective function $F( \Theta)$ with a feasiable parameter follows [21]:
@@ -156,19 +155,21 @@ $$
 
 ​	1)  $\Theta *$ belongs to the feasible set.
 
-​	2) $\forall \Theta, F(\Theta) \le F(\Theta)$
+​	2) $\forall \Theta, F(\Theta*) \le F(\Theta)$ .
 
-​	For the problem of selecting optimal services with shortest response time while considering mobility, the vector   $\Theta= (θ_1, . . . , θ_n)$ can describe a possible solution as a service composition with $n$ tasks. An element $θ_i$ in   corresponds to a selected service from the candidates for the ith task. The evaluation function for the parameter vector  is as follows:
+​	For the problem of selecting optimal services with best QoS value while considering mobility, the vector  $\Theta= (θ_1, . . . , θ_n)$ can describe a possible solution as a service composition with $n$ tasks. An element $θ_i$ in corresponds to a selected service from the candidates for the $i$th task. The evaluation function for the parameter vector is as follows:
+$$
+F(\Theta) = \coprod_{\theta_i}rt_{\theta_i}
+$$
+​	The target of the mobile service composition problem in MSON is to find  to obtain the biggest $F( \Theta)$. Thus, the problem is equivalent to the integer program described in (2). An integer programming problem is known to be NP-hard. Then the service composition problem in MSSC is NP-hard.
 
-​	The target of the mobile service composition problem in MSSC is to find  to obtain the smallest $F( \Theta)$. Thus, the problem is equivalent to the integer program described in (2). An integer programming problem is known to be NP-hard. Then the service composition problem in MSSC is NP-hard.
-
-​	For such a problem, integer programming can be utilized to obtain the optimal solution. However, they might cost much time when the problem size increases. In mobile environment, the requirement on runtime is essential since the environment parameters for computation may vary much within a short time. Therefore, although integer programming can obtain the optimal result, it is not suitable to the problem due to its poor scalability. So one possible way to obtain a satisfactory solu- tion in an accepted execution time is to design a heuristic search method and find the near optimal solution. For exam- ple, metaheuristic algorithms such as GAs and PSO, can be utilized to solve this problem. Among them, we find that KH algorithm can reduce the search space and return high approximate optima. Thus, we propose a solution method based on it to find an approximate optimal solution in polynomial time **[2]**.
+​	For such a problem, integer programming can be utilized to obtain the optimal solution. However, they might cost much more time with the increment of problem size. In mobile environment, the requirement on runtime is essential since the environment parameters for computation may vary much within a short time. Therefore, although integer programming can obtain the optimal result, it is not suitable to the problem due to its poor scalability. So one possible way to obtain a satisfactory solution in an accepted execution time is to design a heuristic search method and find the near optimal solution. Forexample, meta-heuristic algorithms such as GAs and PSO, can be utilized to solve this problem. Among them, we find that KH algorithm can reduce the search space and return high approximate optima. Thus, we propose a solution method based on it to find an approximate optimal solution in polynomial time **[2] 修改方法**.
 
 ## IV Composition Algorithm
 
-​	A genetic algorithm (GA) is a search heuristic that mimicsthe process of natural evolution and it is widely employedas the optimization algorithm (Engelbrecht 2007). Someresearchers have applied GA to solve the problem of opti-mal service selection, and it achieves good performance(Canfora et al. 2005; Ma and Zhang 2008; Syu et al. 2011; Wuet al. 2012). However, standard genetic algorithm is prone topremature convergence on local optimum and all individualsin the population tend to be similar, resulting in early termi-nation of evolution. Furthermore, when taking into accountbusiness correlations in service composition, the search forthe optimal solution will be even more difficult, as SC makesmany solutions in the search space infeasible, and QC makessearch landscape more rugged **[11]**.
+​	Genetic algorithm (GA) is a search heuristic that mimicsthe process of natural evolution and it is widely employedas the optimization algorithm (Engelbrecht 2007). Some researchers have applied GA to solve the problem of optimal service selection, and it achieves good performance(Canfora et al. 2005; Ma and Zhang 2008; Syu et al. 2011; Wuet al. 2012). However, standard genetic algorithm is prone topremature convergence on local optimum and all individualsin the population tend to be similar, resulting in early termination of evolution. Furthermore, when taking into account business correlations in service composition, the search for the optimal solution will be even more difficult, as SC makes many solutions in the search space infeasible, and QC makessearch landscape more rugged **[11]**.
 
-​	Due to violations of selection correlations and consumers’global QoS constraints, new individuals (i.e. concrete com-posite services in this paper) generated by the populationinitialization procedure, the crossover operator and the muta-tion operator may not be feasible. Conventionally, there aretwo constraint handling mechanisms in GA to address the infeasible individual problem. One is the penalty mechanism, that is, to give penalty to infeasible individuals when evalu- ating their fitness values. The other is the repair mechanism, that is, to use domain-specific knowledge to fix up those infeasible individuals in the population such that all the indi- viduals in the population are always feasible. As individuals not satisfying end-to-end QoS constraints may have some genes that are essential to build the optimal composite ser- vice, penalty mechanism is adopted to handle them and it will be explained in “fitness function and sharing fitness function” section. Meanwhile, since individuals violating selection cor- relations can be fixed up according to correlation rules, the repair mechanism is employed for these infeasible individu- als and it will be elaborated in “Repair operator” section **[11]**.
+​	Due to violations of selection correlations and consumers’ global QoS constraints, new individuals (i.e. concrete com-posite services in this paper) generated by the populationinitialization procedure, the crossover operator and the muta-tion operator may not be feasible. Conventionally, there aretwo constraint handling mechanisms in GA to address the infeasible individual problem. One is the penalty mechanism, that is, to give penalty to infeasible individuals when evalu- ating their fitness values. The other is the repair mechanism, that is, to use domain-specific knowledge to fix up those infeasible individuals in the population such that all the indi- viduals in the population are always feasible. As individuals not satisfying end-to-end QoS constraints may have some genes that are essential to build the optimal composite ser- vice, penalty mechanism is adopted to handle them and it will be explained in “fitness function and sharing fitness function” section. Meanwhile, since individuals violating selection cor- relations can be fixed up according to correlation rules, the repair mechanism is employed for these infeasible individu- als and it will be elaborated in “Repair operator” section **[11]**.
 
 **Genetic Encoding [11]**
 
