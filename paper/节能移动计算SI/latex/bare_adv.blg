@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: bare_adv.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: mybibtex.bib
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "Wu2014"
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in Giordano2011
+Warning--empty journal in Pu2017
+
+Done.
+You've used 42 entries,
+            4087 wiz_defined-function locations,
+            1067 strings with 15629 characters,
+and the built_in function-call counts, 39388 in all, are:
+= -- 3257
+> -- 953
+< -- 431
++ -- 544
+- -- 145
+* -- 1933
+:= -- 5615
+add.period$ -- 95
+call.type$ -- 42
+change.case$ -- 42
+chr.to.int$ -- 1002
+cite$ -- 44
+duplicate$ -- 2679
+empty$ -- 2912
+format.name$ -- 184
+if$ -- 9254
+int.to.chr$ -- 0
+int.to.str$ -- 42
+missing$ -- 432
+newline$ -- 149
+num.names$ -- 42
+pop$ -- 907
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 3036
+stack$ -- 0
+substring$ -- 2380
+swap$ -- 2420
+text.length$ -- 97
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 42
+warning$ -- 2
+while$ -- 202
+width$ -- 44
+write$ -- 453
+(There were 4 warnings)
