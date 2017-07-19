@@ -79,11 +79,6 @@ L.~Pu, X.~Chen, J.~Xu, and X.~Fu, ``{Crowd Foraging : A QoS-Oriented
   Self-Organized Mobile Crowdsourcing Framework Over Opportunistic Networks},''
   vol.~35, no.~4, pp. 848--862, 2017.
 
-\bibitem{fan2011delque}
-J.~Fan, J.~Chen, Y.~Du, P.~Wang, and Y.~Sun, ``Delque: A socially aware
-  delegation query scheme in delay-tolerant networks,'' \emph{IEEE Transactions
-  on Vehicular Technology}, vol.~60, no.~5, pp. 2181--2193, 2011.
-
 \bibitem{chang2015progressive}
 W.~Chang and J.~Wu, ``Progressive or conservative: Rationally allocate
   cooperative work in mobile social networks,'' \emph{IEEE Transactions on
@@ -125,6 +120,13 @@ S.~Deng, L.~Huang, Y.~Li, H.~Zhou, Z.~Wu, X.~Cao, M.~Y. Kataev, and L.~Li,
 K.~Yang, A.~Galis, and H.-H. Chen, ``{Qos-aware service selection algorithms
   for pervasive service composition in mobile wireless environments},''
   \emph{Mobile Networks and Applications}, vol.~15, no.~4, pp. 488--501, 2010.
+
+\bibitem{chadil2008real}
+N.~Chadil, A.~Russameesawang, and P.~Keeratiwintakorn, ``Real-time tracking
+  management system using gps, gprs and google earth,'' in \emph{Electrical
+  Engineering/Electronics, Computer, Telecommunications and Information
+  Technology, 2008. ECTI-Con 2008. 5th International Conference on},
+  vol.~1.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2008, pp. 393--396.
 
 \bibitem{ko2000location}
 Y.-B. Ko and N.~H. Vaidya, ``Location-aided routing (lar) in mobile ad hoc
@@ -176,71 +178,24 @@ A.~H. Gandomi and A.~H. Alavi, ``Krill herd: a new bio-inspired optimization
   algorithm,'' \emph{Communications in Nonlinear Science and Numerical
   Simulation}, vol.~17, no.~12, pp. 4831--4845, 2012.
 
-\bibitem{gen1996survey}
-M.~Gen and R.~Cheng, ``A survey of penalty techniques in genetic algorithms,''
-  in \emph{Evolutionary Computation, 1996., Proceedings of IEEE International
-  Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 1996, pp.
-  804--809.
-
-\bibitem{tan2010data}
-W.~Tan, Y.~Fan, M.~Zhou, and Z.~Tian, ``Data-driven service composition in
-  enterprise soa solutions: A petri net approach,'' \emph{IEEE Transactions on
-  Automation Science and Engineering}, vol.~7, no.~3, pp. 686--694, 2010.
-
-\bibitem{wang2014constraint}
-P.~Wang, Z.~Ding, C.~Jiang, and M.~Zhou, ``Constraint-aware approach to web
-  service composition,'' \emph{IEEE Transactions on Systems, Man, and
-  Cybernetics: Systems}, vol.~44, no.~6, pp. 770--784, 2014.
-
-\bibitem{deng2016service}
-S.~Deng, H.~Wu, D.~Hu, and J.~L. Zhao, ``Service selection for composition with
-  qos correlations,'' \emph{IEEE Transactions on Services Computing}, vol.~9,
-  no.~2, pp. 291--303, 2016.
-
-\bibitem{sun2012decomposition}
-S.~X. Sun and J.~Zhao, ``A decomposition-based approach for service composition
-  with global qos guarantees,'' \emph{Information Sciences}, vol. 199, pp.
-  138--153, 2012.
-
-\bibitem{kalasapur2007dynamic}
-S.~Kalasapur, M.~Kumar, and B.~A. Shirazi, ``Dynamic service composition in
-  pervasive computing,'' \emph{IEEE Transactions on parallel and distributed
-  systems}, vol.~18, no.~7, 2007.
-
-\bibitem{groba2014opportunistic}
-C.~Groba and S.~Clarke, ``Opportunistic service composition in dynamic ad hoc
-  environments,'' \emph{IEEE Transactions on Services Computing}, vol.~7,
-  no.~4, pp. 642--653, 2014.
-
-\bibitem{passarella2010performance}
-A.~Passarella, M.~Conti, E.~Borgia, and M.~Kumar, ``Performance evaluation of
-  service execution in opportunistic computing,'' in \emph{Proceedings of the
-  13th ACM international conference on Modeling, analysis, and simulation of
-  wireless and mobile systems}.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
-  2010, pp. 291--298.
-
-\bibitem{han2010design}
-S.~Han and Y.~Zhang, ``Design and implementation of service composition
-  protocol based on dsr,'' in \emph{Parallel and Distributed Computing,
-  Applications and Technologies (PDCAT), 2010 International Conference
-  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2010, pp. 323--328.
-
 \bibitem{wang2011exploiting}
 J.~Wang, ``Exploiting mobility prediction for dependable service composition in
   wireless mobile ad hoc networks,'' \emph{IEEE Transactions on Services
   Computing}, vol.~4, no.~1, pp. 44--55, 2011.
 
-\bibitem{acer2011connectivity}
-U.~G. Acer, P.~Drineas, and A.~A. Abouzeid, ``Connectivity in time-graphs,''
-  \emph{Pervasive and Mobile Computing}, vol.~7, no.~2, pp. 160--171, 2011.
+\bibitem{Conti2014}
+M.~Conti and S.~Giordano, ``{Mobile ad hoc networking: milestones, challenges,
+  and new research directions},'' \emph{IEEE Communications Magazine}, vol.~52,
+  no.~1, pp. 85--96, 2014.
 
-\bibitem{ferretti2013shaping}
-S.~Ferretti, ``Shaping opportunistic networks,'' \emph{Computer
-  Communications}, vol.~36, no.~5, pp. 481--503, 2013.
+\bibitem{turkes2016cocoon}
+O.~Turkes, H.~Scholten, and P.~J. Havinga, ``Cocoon: A lightweight
+  opportunistic networking middleware for community-oriented smart mobile
+  applications,'' \emph{Computer networks}, vol. 111, pp. 93--108, 2016.
 
-\bibitem{melodia2013mobile}
-T.~Melodia, H.~Kulhandjian, L.~Kuo, and E.~Demirors, ``Mobile ad hoc
-  networking: cutting edge directions,'' \emph{Advances in Underwater Acoustic
-  Networking}, 2013.
+\bibitem{fortuna2009dynamic}
+C.~Fortuna and M.~Mohorcic, ``Dynamic composition of services for end-to-end
+  information transport,'' \emph{IEEE Wireless Communications}, vol.~16, no.~4,
+  2009.
 
 \end{thebibliography}

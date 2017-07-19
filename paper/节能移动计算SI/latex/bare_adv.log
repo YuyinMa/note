@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  17 JUL 2017 20:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  19 JUL 2017 20:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -274,12 +274,16 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 82.
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
+
+
+LaTeX Warning: Citation `' on page 1 undefined on input line 89.
+
+
+LaTeX Warning: Citation `' on page 1 undefined on input line 89.
+
+
+LaTeX Warning: Citation `' on page 1 undefined on input line 89.
+
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ô in font pplr7t!
@@ -289,7 +293,6 @@ Missing character: There is no ú in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ù in font pplr7t!
-
 <./img/fig1.png, id=1, 392.46625pt x 271.0125pt>
 File: ./img/fig1.png Graphic file (type png)
  <use ./img/fig1.png>
@@ -306,19 +309,19 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1{/usr/local/texlive/2017basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./img/fig1.png>] <./img/fig2.jpg, id=16, 490.83376pt x 317.185pt>
+ <./img/fig1.png>] <./img/fig2.jpg, id=17, 490.83376pt x 317.185pt>
 File: ./img/fig2.jpg Graphic file (type jpg)
  <use ./img/fig2.jpg>
 Package pdftex.def Info: ./img/fig2.jpg used on input line 116.
 (pdftex.def)             Requested size: 180.67499pt x 116.75162pt.
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 129
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 131
 .
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9.53561> on input line 129.
+(Font)              <9.53561> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6.6749> on input line 129.
+(Font)              <6.6749> on input line 131.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.7678> on input line 129.
+(Font)              <4.7678> on input line 131.
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ô in font pplr7t!
@@ -327,29 +330,25 @@ Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ô in font pplr7t!
 
 
-LaTeX Warning: Citation `' on page 2 undefined on input line 135.
+LaTeX Warning: Citation `' on page 2 undefined on input line 137.
 
 
-LaTeX Warning: Citation `' on page 2 undefined on input line 135.
+LaTeX Warning: Citation `' on page 2 undefined on input line 137.
 
 
-LaTeX Warning: Citation `' on page 2 undefined on input line 135.
+LaTeX Warning: Citation `' on page 2 undefined on input line 137.
 
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ô in font pplr7t!
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 140.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 142.
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ã in font pplr7t!
-[2 <./img/fig2.jpg>]
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
@@ -374,6 +373,7 @@ Missing character: There is no ã in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
+[2 <./img/fig2.jpg>]
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
@@ -396,7 +396,7 @@ Missing character: There is no ã in font pplr7t!
 File: ./img/fig3.png Graphic file (type png)
 
 <use ./img/fig3.png>
-Package pdftex.def Info: ./img/fig3.png used on input line 186.
+Package pdftex.def Info: ./img/fig3.png used on input line 188.
 (pdftex.def)             Requested size: 180.67499pt x 81.37119pt.
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
@@ -404,27 +404,13 @@ Missing character: There is no î in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font cmr7!
-Missing character: There is no à in font cmr10!
-Missing character: There is no í in font cmr10!
- [3 <./img/fig3.png>]
-<./img/fig4.png, id=32, 422.57875pt x 203.76125pt>
+ <./img/fig4.png, id=27, 422.57875pt x 203.76125pt>
 File: ./img/fig4.png Graphic file (type png)
- <use ./img/fig4.png>
+
+<use ./img/fig4.png>
 Package pdftex.def Info: ./img/fig4.png used on input line 245.
 (pdftex.def)             Requested size: 180.67499pt x 87.12126pt.
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ã in font pplr7t!
+ [3 <./img/fig3.png>]
 Missing character: There is no Œ in font cmr10!
 Missing character: There is no ∏ in font cmr10!
 Missing character: There is no Œ in font cmr10!
@@ -434,76 +420,30 @@ Missing character: There is no ∏ in font cmr10!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ì in font pplr7t!
 
+
+LaTeX Warning: Citation `' on page 4 undefined on input line 289.
+
+
+LaTeX Warning: Citation `' on page 4 undefined on input line 289.
+
+Missing character: There is no ‚ in font pplr7t!
+Missing character: There is no Ä in font pplr7t!
+Missing character: There is no ã in font pplr7t!
 [4 <./img/fig4.png>]
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ã in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no √ in font cmr10!
-Missing character: There is no ó in font cmr10!
-
-Underfull \vbox (badness 1215) has occurred while \output is active []
-
-Missing character: There is no ‚ in font cmr7!
-Missing character: There is no à in font cmr7!
-Missing character: There is no í in font cmr7!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no à in font cmr10!
+Missing character: There is no à in font cmr10!
  [5]
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ã in font pplr7t!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no à in font cmr10!
-Missing character: There is no à in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no à in font cmr10!
-Missing character: There is no í in font cmr10!
-
-[6]
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
- [7]
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ú in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ù in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ô in font pplr7t!
+ (./bare_adv.bbl [6]) [7
 
-
-LaTeX Warning: Citation `Wu2014' on page 8 undefined on input line 478.
-
-(./bare_adv.bbl [8]) [9] (./bare_adv.aux)
+] (./bare_adv.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -512,13 +452,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2626 strings out of 494437
- 43487 string characters out of 6166646
- 111050 words of memory out of 5000000
- 5936 multiletter control sequences out of 15000+600000
+ 2616 strings out of 494437
+ 43292 string characters out of 6166646
+ 109014 words of memory out of 5000000
+ 5926 multiletter control sequences out of 15000+600000
  49677 words of font info for 99 fonts, out of 8000000 for 9000
  322 hyphenation exceptions out of 8191
- 39i,12n,31p,1861b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,8n,31p,1825b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
 cal/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
@@ -539,10 +479,10 @@ alatino/uplb8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/pal
 atino/uplr8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/palat
 ino/uplri8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/zapfdi
 ng/uzdr.pfb>
-Output written on bare_adv.pdf (9 pages, 443089 bytes).
+Output written on bare_adv.pdf (7 pages, 426363 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 109 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
