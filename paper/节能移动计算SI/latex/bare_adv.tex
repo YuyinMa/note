@@ -23,6 +23,10 @@
 
 
 \usepackage{graphicx}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}} 
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
 
 \newcommand\MYhyperrefoptions{bookmarks=true,bookmarksnumbered=true,
 pdfpagemode={UseOutlines},plainpages=false,pdfpagelabels=true,
@@ -350,6 +354,46 @@ where
 \end{equation}
 
 where $d$ is the tasks number of each $csi$, $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space. 
+
+\begin{algorithm}
+\caption{KH algorithm}
+\label{alg1}
+\begin{algorithmic}
+
+\REQUIRE Lower bound of service candidates $lb$; Up bound of service candidates $ub$; Number of krill individuals $nk$; Number of max iteration $mi$
+
+\ENSURE Individual with best fitness $csi$
+
+\STATE generate $nk$ feasible solutions randomly
+\STATE save them in the population $X$
+
+\FOR{$i=0$ \TO $mi$}
+  \STATE $X_f \leftarrow$ calcuate virtual food location accroding to e.q(3)
+  \IF{$X_f < X_{f(previous)}$}
+    \STATE $X_f = X_{f(previous)}$
+  \ENDIF
+  \FOR{$j=0$ \TO $nk$}
+    \STATE calcuate distance between $X_j$ and $X_f$
+    \STATE // Movement Induced
+    \STATE calculation best krill effect accroding to e.q(4)
+    \STATE calculation neighbors krill effect accroding to e.q(4)
+    \STATE Movement Induced accroding to e.q(4)
+    \STATE // Foraging Motion
+    \STATE calculation foot attraction accroding to e.q(4)
+    \STATE calculation best psition attraction accroding to e.q(4)
+    \STATE Foraging Motion accroding to e.q(4)
+    \STATE // Physical Diffusion
+    \STATE calculation physical diffusion accroding to e.q(4)
+    \STATE // Motion Process
+    \STATE // Crossover
+    \STATE update the position accroding to e.q(4)
+  \ENDFOR 
+\ENDFOR
+
+\end{algorithmic}
+\end{algorithm}
+
+
 
 \section{SIMULATION AND EVALUATION}
 
