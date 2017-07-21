@@ -98,9 +98,9 @@ To achieve the goal of reducing mobile device energy consumption, we propose a Q
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{./img/fig1.png}
-\caption{SensorDistance.}
-\label{fig_sim}
+\includegraphics[width=2.5in]{./img/fig1.jpg}
+\caption{Opportunistic computing}
+\label{fig_opportunistic}
 \end{figure}
 
 To address the aforementioned challenges and concerns, we propose a new approach for mobile service composition in mobile opportunistic network. The main contributions are:
@@ -118,8 +118,8 @@ The remainder of this paper is structured as follows. Section II describe the MS
 \begin{figure}[!t]
 \centering
 \includegraphics[width=2.5in]{./img/fig2.jpg}
-\caption{SensorDistance.}
-\label{fig_sim}
+\caption{MSON}
+\label{fig_mson}
 \end{figure}
 
 In this section, we introduce the mobile service opportunistic network (MSON) formed by multiple mobile users. It has three main characteristics: \cite{Deng2017}.
@@ -146,7 +146,7 @@ In this section, we first give some basic concepts of mobile service composition
 \subsection{Preliminaries}
 In order to describe the problem addressed in this paper, we first provide the basic concepts of mobile service composition.
 
-\textit{Definition 1 (Mobile Service):} A mobile service can be represented as a three-triple $s = (id, info, QoS)$, where:
+\textit{Definition 1 (Mobile Service):} A mobile service can be represented as a three-triple $ms = (id, info, QoS)$, where:
 
 ​	1) $id$ is the unique identifier of the service;
 
@@ -162,7 +162,7 @@ In order to describe the problem addressed in this paper, we first provide the b
 
 ​	3) $c$ is the set of discovered mobile services from nearby mobile service providers.
 
-\textit{Definition 3 (Mobile Service Composition Plan):} A service composition plan is a tuple $scp = (T, R)$, where:
+\textit{Definition 3 (Mobile Service Composition Plan):} A service composition plan is a tuple $mscp = (T, R)$, where:
 
 ​	1) $T = \{t_1,t_2,…,t_n\}$ is a set of tasks;
 
@@ -189,9 +189,9 @@ In mobile service opportunistic network (MSON) the availability of mobile servic
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{./img/fig3.png}
-\caption{SensorDistance.}
-\label{fig_sim}
+\includegraphics[width=2.5in]{./img/fig3.jpg}
+\caption{Sensor Distance}
+\label{fig_sd}
 \end{figure}
 
 As illustrated in Fig. 2, there are two mobile user $i$ and $j$ whose device have the same transmission range $R$. Each user moves randomly and it is assumed that the moving field is a circle with a radius of $r$. $d$ is the distance between $i$ and $j$. We use these three parameters($r,R,d$) to calculate the availability of a mobile service. The transmission range of a node $R$ is known (e.g., pre-defined or changing according to certain algorithm). Suppose that the location of each mobile user is known (e.g., via GPS—global positioning system or other location-based services provided by telecom service providers\cite{chadil2008real}), then distance $d$ can be calculated using the Euclidean distance formula, i.e.,$\sqrt{{(x_i-x_j)^2}+({y_i-y_j})^2}$ where $(x_i, x_j)$ and $(y_i, y_j)$ are the coordinates of user $i$ and $j$ respectively. Finally let us discuss how to calculate $r$ \cite{Yang2010}.
@@ -358,7 +358,7 @@ where $d$ is the tasks number of each $csi$, $UB_j$ and $LB_j$ are upper and low
 \begin{algorithm}
 \caption{KH algorithm}
 \label{alg1}
-\begin{algorithmic}
+\begin{algorithmic}[1]
 
 \REQUIRE Lower bound of service candidates $lb$; Up bound of service candidates $ub$; Number of krill individuals $nk$; Number of max iteration $mi$
 
@@ -366,29 +366,33 @@ where $d$ is the tasks number of each $csi$, $UB_j$ and $LB_j$ are upper and low
 
 \STATE generate $nk$ feasible solutions randomly
 \STATE save them in the population $X$
+\STATE $X_best \leftarrow$ bestRank($X$)
 
 \FOR{$i=0$ \TO $mi$}
-  \STATE $X_f \leftarrow$ calcuate virtual food location accroding to e.q(3)
+  \STATE $X_f \leftarrow$ foodLocation($X$)
   \IF{$X_f < X_{f(previous)}$}
-    \STATE $X_f = X_{f(previous)}$
+    \STATE $X_f \leftarrow X_{f(previous)}$
   \ENDIF
   \FOR{$j=0$ \TO $nk$}
-    \STATE calcuate distance between $X_j$ and $X_f$
+    \STATE $d_{food} \leftarrow$ distance($X_j$ , $X_f$)
+    \STATE $d_{best} \leftarrow$ distance($X_j$ , $X_{best}$)
     \STATE // Movement Induced
-    \STATE calculation best krill effect accroding to e.q(4)
-    \STATE calculation neighbors krill effect accroding to e.q(4)
-    \STATE Movement Induced accroding to e.q(4)
+    \STATE $\alpha^{target} \leftarrow $ bestKrillEffect($X_{best}$, $d_{best}$)
+    \STATE $ds \leftarrow $ neighborDistance($X$)
+    \STATE $\alpha^{local} \leftarrow $ neighborEffect($X$, $ds$)
+    \STATE $N_i \leftarrow$ calcMovementInduced($\alpha^{local}$, $\alpha^{target}$)
     \STATE // Foraging Motion
-    \STATE calculation foot attraction accroding to e.q(4)
-    \STATE calculation best psition attraction accroding to e.q(4)
-    \STATE Foraging Motion accroding to e.q(4)
+    \STATE $\beta_{food} \leftarrow$ foodAttraction($X$, $d_{food}$)
+    \STATE $\beta_{best} \leftarrow$ bestPsitionAttraction($X$, $d_{best}$)
+    \STATE $F_i \leftarrow$ calcForagingMotion($V_f$, $\beta_{food}$, $\beta_{best}$)
     \STATE // Physical Diffusion
-    \STATE calculation physical diffusion accroding to e.q(4)
-    \STATE // Motion Process
-    \STATE // Crossover
-    \STATE update the position accroding to e.q(4)
-  \ENDFOR 
+    \STATE $D_i \leftarrow$ physicalDiffusion($X$, $X_{best}$)
+    \STATE $D_x \leftarrow$ calcMotionProcess($N_i$, $F_i$, $D_i$)
+    \STATE Crossover($X$, $X_{best}$)
+    \STATE UpdatePosition($X$, $D_x$)
+  \ENDFOR
 \ENDFOR
+\RETURN bestRank($X$)
 
 \end{algorithmic}
 \end{algorithm}
@@ -396,13 +400,16 @@ where $d$ is the tasks number of each $csi$, $UB_j$ and $LB_j$ are upper and low
 
 
 \section{SIMULATION AND EVALUATION}
-
-This section first describes simulation settings, then evaluates the effectiveness and scalability of our algorithm \cite{Wu2016}.
-
+In this section, we first disscussed the experimental enviroment settings, and then the approximation-based approach for the service composition problem is evaluated from the perspective of optimality and scalability, respectively.
 \subsection{Simulation Setting}
-Since there is no available realistic datasets involving both user D2D contact records and user interest preference records, we attempt to simulate the scenar- ios for content transcription services by integrating realistic user contact traces with user interest preference in the folkson- omy datasets. Specifically, we consider two typical user con- tact traces: Infocom06 and MIT Reality, where mobile users with Bluetooth-enabled devices periodically detect their peers nearby, and record contacts over several days. The reasons for selecting them are two-fold. First, the inter-encounter time of majority of users in them follows Exponential distribution, as evidenced by the previous researches [19], [22]. Second, Infocom06 and MIT Reality reflect diverse network scenarios (i.e., a dense conference and a sparse campus, respectively). Then, according to the user amount in user contact traces, we randomly select the corresponding number of user interest preference from the CiteULike dataset for simulation \cite{Pu2017}.
+We can not find available realistic datasets which involving both user D2D contact traces and quality of mobile service so far, so we attempt to simulate the scenarios for mobile services provision by integrating realistic user D2D contact traces with quality of Web service datasets. 
 
-In addition, since the existing location-based user mobility datasets such as UCSD and Dartmouth do not involve user D2D contact records, we create a synthetic scenario for location-based services. That is, we consider the virtual city scenario built in ONE simulator where users move on the roads to visit our specified locations in terms of the Working Day Movement Model which captures the exponential property of user inter-encounter time [28]. In detail, we uniformly pick several locations in the city map, and randomly select the corresponding number of locations from Dartmouth dataset to match them. Then, we randomly select the visiting frequencies of a user with respect to those selected locations from the dataset for a mobile user in the scenario. In this context, each mobile user in the simulation will decide the next visiting location according to the (normalized) visiting frequencies, and will get there using the shortest path on the map \cite{Deng2017}.
+We consider MIT Reality dataset as user D2D contact traces, where user location, Bluetooth devices in proximity, application usage, and phone status (such as charging and idle) were collected from 100 users over several months. This dataset can really reflect diverse network scenarios such as a sparse campus and dense conference.
+
+The publicly available quality of Web service (QWS) dataset\cite{zheng2014investigating} can be used to characterize the service candidates. This dataset consists of 4500 Web services from 142 users over 64 different time slices (at 15-minute interval) and each QoS data includes two measurements (response time and throughput), for a mobile service $ms$, response time attribute is randomly selected from the QWS dataset. 
+
+The detailed characteristics for KH algorithm are as follows: the max iteration of 200, population size of 25, foraging speed of 0.02, maximum diffusion speed of 0.005 and maximum induced speed of 0.01. Due to the stochastic nature of KH algorithms, each experiment is repeated for 10 times and the average performance is shown.
+
 \subsection{Scalability Evaluation}
 \subsection{Effectiveness Evaluation}
 

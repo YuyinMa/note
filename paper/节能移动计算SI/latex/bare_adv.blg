@@ -20,45 +20,45 @@ Warning--empty journal in Giordano2011
 Warning--empty journal in Pu2017
 
 Done.
-You've used 33 entries,
+You've used 34 entries,
             4087 wiz_defined-function locations,
-            1020 strings with 14084 characters,
-and the built_in function-call counts, 31219 in all, are:
-= -- 2578
-> -- 756
-< -- 343
-+ -- 431
-- -- 115
-* -- 1539
-:= -- 4448
-add.period$ -- 75
-call.type$ -- 33
-change.case$ -- 33
-chr.to.int$ -- 795
-cite$ -- 35
-duplicate$ -- 2118
-empty$ -- 2305
-format.name$ -- 146
-if$ -- 7331
+            1024 strings with 14204 characters,
+and the built_in function-call counts, 32069 in all, are:
+= -- 2653
+> -- 775
+< -- 352
++ -- 441
+- -- 118
+* -- 1582
+:= -- 4579
+add.period$ -- 77
+call.type$ -- 34
+change.case$ -- 34
+chr.to.int$ -- 813
+cite$ -- 36
+duplicate$ -- 2178
+empty$ -- 2364
+format.name$ -- 150
+if$ -- 7528
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 343
-newline$ -- 122
-num.names$ -- 33
-pop$ -- 718
+int.to.str$ -- 34
+missing$ -- 353
+newline$ -- 125
+num.names$ -- 34
+pop$ -- 736
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2404
+skip$ -- 2470
 stack$ -- 0
-substring$ -- 1887
-swap$ -- 1919
-text.length$ -- 78
+substring$ -- 1930
+swap$ -- 1973
+text.length$ -- 81
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 33
+type$ -- 34
 warning$ -- 2
-while$ -- 161
-width$ -- 35
-write$ -- 362
+while$ -- 166
+width$ -- 36
+write$ -- 373
 (There was 1 error message)

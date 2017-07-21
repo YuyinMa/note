@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  20 JUL 2017 21:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  21 JUL 2017 21:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -188,9 +188,6 @@ LaTeX Warning: Label `fig_sim' multiply defined.
 
 LaTeX Warning: Label `fig_sim' multiply defined.
 
-
-LaTeX Warning: Label `fig_sim' multiply defined.
-
 )
 \openout1 = `bare_adv.aux'.
 
@@ -321,11 +318,11 @@ Missing character: There is no ú in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ù in font pplr7t!
-<./img/fig1.png, id=1, 392.46625pt x 271.0125pt>
-File: ./img/fig1.png Graphic file (type png)
- <use ./img/fig1.png>
-Package pdftex.def Info: ./img/fig1.png used on input line 101.
-(pdftex.def)             Requested size: 180.67499pt x 124.7665pt.
+<./img/fig1.jpg, id=1, 1322.9425pt x 903.375pt>
+File: ./img/fig1.jpg Graphic file (type jpg)
+ <use ./img/fig1.jpg>
+Package pdftex.def Info: ./img/fig1.jpg used on input line 101.
+(pdftex.def)             Requested size: 180.67499pt x 123.37015pt.
 LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 113
 .
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -337,11 +334,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1{/usr/local/texlive/2017basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./img/fig1.png>] <./img/fig2.jpg, id=17, 490.83376pt x 317.185pt>
+ <./img/fig1.jpg>] <./img/fig2.jpg, id=15, 920.43875pt x 533.995pt>
 File: ./img/fig2.jpg Graphic file (type jpg)
  <use ./img/fig2.jpg>
 Package pdftex.def Info: ./img/fig2.jpg used on input line 120.
-(pdftex.def)             Requested size: 180.67499pt x 116.75162pt.
+(pdftex.def)             Requested size: 180.67499pt x 104.81711pt.
 LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 135
 .
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -420,25 +417,25 @@ Missing character: There is no ã in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
- <./img/fig3.png, id=26, 394.47375pt x 177.66376pt>
-File: ./img/fig3.png Graphic file (type png)
+ <./img/fig3.jpg, id=24, 1010.77625pt x 744.7825pt>
+File: ./img/fig3.jpg Graphic file (type jpg)
 
-<use ./img/fig3.png>
-Package pdftex.def Info: ./img/fig3.png used on input line 192.
-(pdftex.def)             Requested size: 180.67499pt x 81.37119pt.
+<use ./img/fig3.jpg>
+Package pdftex.def Info: ./img/fig3.jpg used on input line 192.
+(pdftex.def)             Requested size: 180.67499pt x 133.12317pt.
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no î in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
- <./img/fig4.png, id=27, 422.57875pt x 203.76125pt>
+ <./img/fig4.png, id=25, 422.57875pt x 203.76125pt>
 File: ./img/fig4.png Graphic file (type png)
 
 <use ./img/fig4.png>
 Package pdftex.def Info: ./img/fig4.png used on input line 249.
 (pdftex.def)             Requested size: 180.67499pt x 87.12126pt.
- [3 <./img/fig3.png>]
+ [3 <./img/fig3.jpg>]
 Missing character: There is no Œ in font cmr10!
 Missing character: There is no ∏ in font cmr10!
 Missing character: There is no Œ in font cmr10!
@@ -480,13 +477,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2897 strings out of 494437
- 46560 string characters out of 6166646
- 114457 words of memory out of 5000000
- 6194 multiletter control sequences out of 15000+600000
+ 2901 strings out of 494437
+ 46621 string characters out of 6166646
+ 115469 words of memory out of 5000000
+ 6198 multiletter control sequences out of 15000+600000
  49677 words of font info for 99 fonts, out of 8000000 for 9000
  322 hyphenation exceptions out of 8191
- 39i,8n,31p,1825b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,8n,31p,1825b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
 cal/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
@@ -507,9 +504,9 @@ alatino/uplb8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/pal
 atino/uplr8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/palat
 ino/uplri8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/zapfdi
 ng/uzdr.pfb>
-Output written on bare_adv.pdf (7 pages, 432538 bytes).
+Output written on bare_adv.pdf (7 pages, 924562 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
+ 107 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
