@@ -27,11 +27,6 @@ S.~Deng, L.~Huang, J.~Taheri, J.~Yin, M.~Zhou, and A.~Y. Zomaya,
   Transactions on Systems, Man, and Cybernetics: Systems}, vol.~47, no.~3, pp.
   555--568, 2017.
 
-\bibitem{Deng2016}
-S.~Deng, L.~Huang, H.~Wu, W.~Tan, J.~Taheri, A.~Y. Zomaya, and Z.~Wu, ``{Toward
-  Mobile Service Computing: Opportunities and Challenges},'' \emph{IEEE Cloud
-  Computing}, vol.~3, no.~4, pp. 32--41, 2016.
-
 \bibitem{dinh2013survey}
 H.~T. Dinh, C.~Lee, D.~Niyato, and P.~Wang, ``A survey of mobile cloud
   computing: architecture, applications, and approaches,'' \emph{Wireless
@@ -42,15 +37,28 @@ X.~Hu, X.~Li, E.~Ngai, V.~Leung, and P.~Kruchten, ``Multidimensional
   context-aware social network architecture for mobile crowdsensing,''
   \emph{IEEE Communications Magazine}, vol.~52, no.~6, pp. 78--87, 2014.
 
-\bibitem{Giordano2011}
-S.~Giordano and D.~Puccinelli, ``{The Human Element as the Key Enabler of
-  Pervasiveness},'' pp. 150--156, 2011.
-
 \bibitem{liu2013exploring}
 S.~Liu and A.~D. Striegel, ``Exploring the potential in practice for
   opportunistic networks amongst smart mobile devices,'' in \emph{Proceedings
   of the 19th annual international conference on Mobile computing \&
   networking}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2013, pp. 315--326.
+
+\bibitem{chang2015progressive}
+W.~Chang and J.~Wu, ``Progressive or conservative: Rationally allocate
+  cooperative work in mobile social networks,'' \emph{IEEE Transactions on
+  Parallel and Distributed Systems}, vol.~26, no.~7, pp. 2020--2035, 2015.
+
+\bibitem{heimerl2012communitysourcing}
+K.~Heimerl, B.~Gawalt, K.~Chen, T.~Parikh, and B.~Hartmann,
+  ``Communitysourcing: engaging local crowds to perform expert work via
+  physical kiosks,'' in \emph{Proceedings of the SIGCHI Conference on Human
+  Factors in Computing Systems}.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
+  2012, pp. 1539--1548.
+
+\bibitem{agapie2015crowdsourcing}
+E.~Agapie, J.~Teevan, and A.~Monroy-Hern{\'a}ndez, ``Crowdsourcing in the
+  field: A case study using local crowds for event reporting,'' in \emph{Third
+  AAAI Conference on Human Computation and Crowdsourcing}, 2015.
 
 \bibitem{asadi2014survey}
 A.~Asadi, Q.~Wang, and V.~Mancuso, ``A survey on device-to-device communication
@@ -73,16 +81,6 @@ Y.~Li and W.~Wang, ``Can mobile cloudlets support mobile applications?'' in
 Y.~Zhang, D.~Niyato, and P.~Wang, ``Offloading in mobile cloudlet systems with
   intermittent connectivity,'' \emph{IEEE Transactions on Mobile Computing},
   vol.~14, no.~12, pp. 2516--2529, 2015.
-
-\bibitem{Pu2017}
-L.~Pu, X.~Chen, J.~Xu, and X.~Fu, ``{Crowd Foraging : A QoS-Oriented
-  Self-Organized Mobile Crowdsourcing Framework Over Opportunistic Networks},''
-  vol.~35, no.~4, pp. 848--862, 2017.
-
-\bibitem{chang2015progressive}
-W.~Chang and J.~Wu, ``Progressive or conservative: Rationally allocate
-  cooperative work in mobile social networks,'' \emph{IEEE Transactions on
-  Parallel and Distributed Systems}, vol.~26, no.~7, pp. 2020--2035, 2015.
 
 \bibitem{karaliopoulos2015user}
 M.~Karaliopoulos, O.~Telelis, and I.~Koutsopoulos, ``User recruitment for
@@ -173,6 +171,12 @@ F.~Glover, ``Future paths for integer programming and links to artificial
   intelligence,'' \emph{Computers \& operations research}, vol.~13, no.~5, pp.
   533--549, 1986.
 
+\bibitem{nemhauser1988integer}
+G.~L. Nemhauser and L.~A. Wolsey, ``Integer programming and combinatorial
+  optimization,'' \emph{Wiley, Chichester. GL Nemhauser, MWP Savelsbergh, GS
+  Sigismondi (1992). Constraint Classification for Mixed Integer Programming
+  Formulations. COAL Bulletin}, vol.~20, pp. 8--12, 1988.
+
 \bibitem{gandomi2012krill}
 A.~H. Gandomi and A.~H. Alavi, ``Krill herd: a new bio-inspired optimization
   algorithm,'' \emph{Communications in Nonlinear Science and Numerical
@@ -182,6 +186,11 @@ A.~H. Gandomi and A.~H. Alavi, ``Krill herd: a new bio-inspired optimization
 Z.~Zheng, Y.~Zhang, and M.~R. Lyu, ``Investigating qos of real-world web
   services,'' \emph{IEEE Transactions on Services Computing}, vol.~7, no.~1,
   pp. 32--39, 2014.
+
+\bibitem{Deng2016}
+S.~Deng, L.~Huang, H.~Wu, W.~Tan, J.~Taheri, A.~Y. Zomaya, and Z.~Wu, ``{Toward
+  Mobile Service Computing: Opportunities and Challenges},'' \emph{IEEE Cloud
+  Computing}, vol.~3, no.~4, pp. 32--41, 2016.
 
 \bibitem{wang2011exploiting}
 J.~Wang, ``Exploiting mobility prediction for dependable service composition in
