@@ -33,7 +33,8 @@ t=sf,textfont=sf]{subfig}
 \usepackage{algorithm}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}} 
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
-%\usepackage{cases}
+
+% \usepackage{cases}
 \usepackage{amsmath}
 \usepackage[overload]{empheq}
 \newcommand{\for}{\text{for }}
@@ -431,7 +432,7 @@ where $d$ is the tasks number of each $csi$, $UB_j$ and $LB_j$ are upper and low
 
 \STATE generate $nk$ feasible solutions randomly
 \STATE save them in the population $X$
-\STATE $X_best \leftarrow$ bestRank($X$)
+\STATE $X_{best} \leftarrow$ bestRank($X$)
 
 \FOR{$i=0$ \TO $mi$}
   \STATE $X_f \leftarrow$ foodLocation($X$)
@@ -441,8 +442,9 @@ where $d$ is the tasks number of each $csi$, $UB_j$ and $LB_j$ are upper and low
   \FOR{$j=0$ \TO $nk$}
     \STATE $d_{food} \leftarrow$ distance($X_j$ , $X_f$)
     \STATE $d_{best} \leftarrow$ distance($X_j$ , $X_{best}$)
-    \STATE // Movement Induced
-    \STATE $\alpha^{target} \leftarrow $ bestKrillEffect($X_{best}$, $d_{best}$)
+    \algorithmiccomment Movement Induced
+    \STATE // Movement Induced    
+    \STATE $\alpha^{target} \leftarrow $ bestKrillEffect($X_{best}$, $d_{best}$) 
     \STATE $ds \leftarrow $ neighborDistance($X$)
     \STATE $\alpha^{local} \leftarrow $ neighborEffect($X$, $ds$)
     \STATE $N_i \leftarrow$ calcMovementInduced($\alpha^{local}$, $\alpha^{target}$)
@@ -481,43 +483,43 @@ There are five parameters can be adjusted to improve the KHMSC's performance: po
 \caption{PARAMETERS CONFIGURATION}
 \label{table_example}
 \centering
-\begin{tabular}{cccccc}
+\begin{tabular}{ccccc}
 \hline
-\bfseries Configuration & \bfseries $PS$ & \bfseries $MI$ & \bfseries $V_f$ & \bfseries $D_{max}$ & \bfseries $N_{max}$ \\
+\bfseries Configuration & \bfseries $PS$ & \bfseries $MI$ & \bfseries $V_f$ & \bfseries $D_{max}$  \\
 \hline
-configuration-1 & 10$\sim$100 & 50          & 0.2            & 0.2            & 0.2\\
-configuration-2 & 50          & 10$\sim$100 & 0.2            & 0.2            & 0.2\\
-configuration-3 & 50          & 50          & 0.01$\sim$1.00 & 0.2            & 0.2\\
-configuration-4 & 50          & 50          & 0.2            & 0.01$\sim$1.00 & 0.2\\
-configuration-5 & 50          & 50          & 0.2            & 0.2            & 0.01$\sim$1.00\\
+configuration-1 & 10$\sim$100 & 50          & 0.2            & 0.2            \\
+configuration-2 & 50          & 10$\sim$100 & 0.2            & 0.2            \\
+configuration-3 & 50          & 50          & 0.01$\sim$1.00 & 0.2            \\
+configuration-4 & 50          & 50          & 0.2            & 0.01$\sim$1.00 \\
+configuration-5 & 50          & 50          & 0.2            & 0.2            \\
 \hline
 \end{tabular}
 \end{table}
 
-Figure 9 shows the results of tuning different parameters for our approach. 
+Figure 5 shows the results of tuning different parameters for our approach. 
 
-From Figure 5(a), we observe that with the increase of the population size, the quality of KHMSC solutions is also improved (answers with higher fitness values are found). This is because a larger population size enlarges the overall searching field and improves the probability of finding superior offloading strategies.However, when the population size exceeds a certain value, e.g., N = 50, no significant improvement is observed. Therefore, an excessively large population size has little impact on improving the performance of KHMSC. Similar result occurs in Figure 5(b), which shows the impact of the maximum number of iterations, where the quality of the best solution is increased for higher number of iterations up to a limit: I = 60 in this case.
+From Figure 5(a), we observe that with the increase of the population size, the quality of KHMSC solutions is also improved (answers with higher fitness values are found). This is because a larger population size enlarges the overall searching field and improves the probability of finding superior service composition.However, when the population size exceeds a certain value, e.g., N = 50, no significant improvement is observed. Therefore, an excessively large population size has little impact on improving the performance of KHMSC. Similar result occurs in Figure 5(b), which shows the impact of the maximum number of iterations, where the quality of the best solution is increased for higher number of iterations up to a limit: I = 60 in this case.
 
-Fig. 5(c) shows the impact of the foraging motion speed $V_f$. The performance of KHMSC increases with $V_f$. The best performance is achieved for $V_f = 0.9$ . As $V_f$ increases, the performance of KHMSC increases mainly because when the the foraging motion speed is large, early convergence to a local optimum can be avoided.
+Fig. 5(c) shows the impact of the foraging motion speed $V_f$. The performance of KHMSC increases with $V_f$. The best performance is achieved for $V_f = 0.8$ . As $V_f$ increases, the performance of KHMSC increases mainly because when the the foraging motion speed is large, early convergence to a local optimum can be avoided.
 
 Fig. 5(d) shows the impact of the inertia weight of the induced motion $N_max$. It shows that solution quality is improved up to a limit ($N_max$ = 0.4) and then decreases afterward. This observation shows that although higher values of $N_max$ can lead to better population diversity, their very high values lead to chaotic updating of positions in which the induced motion is not toward appropriate krill individuals.
 
 \begin{figure*}[!t]
 \centering
 \subfloat[Case I]{
-\includegraphics[width=3.5in]{./img/pic5.jpg} 
+\includegraphics[width=3in]{./img/pic5.jpg} 
 \label{PS}}
 \hfil
 \subfloat[Case II]{
-\includegraphics[width=3.5in]{./img/pic6.jpg} 
+\includegraphics[width=3in]{./img/pic6.jpg} 
 \label{MI}}
 
 \subfloat[Case III]{
-\includegraphics[width=3.5in]{./img/pic7.jpg} 
+\includegraphics[width=3in]{./img/pic7.jpg} 
 \label{Vf}}
 \hfil
 \subfloat[Case IV]{
-\includegraphics[width=3.5in]{./img/pic8.jpg} 
+\includegraphics[width=3in]{./img/pic8.jpg} 
 \label{Nmax}}
 
 \caption{Simulation results for the network.} \label{fig_sim}
@@ -527,15 +529,15 @@ Fig. 5(d) shows the impact of the inertia weight of the induced motion $N_max$. 
 \subsection{Optimality Evaluation}
 To verify the the capability of finding the optimal mobile service composition of our algorithms, we compare KHMSC with the basic GA algorithm, basic PSO algorithm and a brute-force algorithm.
 
-\textit{Algorithm 1:} KH-based mobile service composition algorithm as described in Section 4.
+\textbf{Algorithm 1:} KH-based mobile service composition algorithm (KHMSC) which described in Section 4.
 
-\textit{Algorithm 2:} The normal GA that uses uniform crossover and uniform mutation.
+\textbf{Algorithm 2:} A basic GA which uses two-point crossover and uniform mutation.
 
-\textit{Algorithm 3:} The normal PSO that uses uniform crossover and uniform mutation.
+\textbf{Algorithm 3:} A basic PSO.
 
-\textit{Algorithm 4:} A brute-force exhaustive algorithm that traverses all feasible composition to find the optimal solution.
+\textbf{Algorithm 4:} A brute-force algorithm that traverses all feasible composition to find the optimal solution.
 
-To compare the above algorithms with our approach, we tune the parameters for each algorithm to achieve its best performance. The most suitable parameters are shown in Table III.
+To evaluate the optimality of above algorithms, we tune the parameters of each algorithm to achieve its best performance. The most suitable parameters are shown in Table 3.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -547,28 +549,41 @@ To compare the above algorithms with our approach, we tune the parameters for ea
 \bfseries Algorithms & \bfseries Parameter Setting \\
 \hline
 GA  & crossover rate = 0.7; mutate rate = 0.3 \\
-PSO & ss \\
+PSO & inertia weight = 0.8; c1 = 2.0; c2 = 2.0 \\
 \hline
 \end{tabular}
 \end{table}
 
-To evaluate the optimality of the algorithms, we plot the average fitness obtained by all algorithms versus increasing problem size.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{./img/pic10.jpg}
+\caption{Optimality Evaluation}
+\label{fig_oe}
+\end{figure}
 
-The result in Figure 10 shows that, as expected, the brute-force algorithm leads to the best performance with the highest fitness. The basic PSO algorithm has the worst performance with the lowest fitness values. It also shows the highest fluctuations of fitness values because it may easily get trapped by local minima and leads to premature convergence. KHMSC performs better than the basic GA algorithm; it is able to find near optimal composition, mainly because of its knowledge-based crossover and mutation operations.
+The result in Figure 6 shows that, as expected, the brute-force algorithm leads to the best performance with the highest fitness. The basic PSO algorithm has the worst performance with the lowest fitness values. Both KHMSC and Ga can find over 90\% optimal composition before 50 iterations and KHMSC performs little better than the basic GA algorithm. Although GA performs closely to KHMSC, we finally choose KHMSC because it runs almost five times faster than GA, in next subsection we will evaluate the scalability of above four algorithms.
 
+\subsection{Scalability Evaluation}
+In this experiment, we compared the run time of KHMSC with the other algorithms to evaluate the scalability of our algorithm.
 
-\subsection{Scalability Evaluation (task number, candidates number)}
-In this experiment, we compared the runtime of our algorithms with the other algorithms to evaluate the scalability of our algorithm.
+\begin{figure*}[!t]
+\centering
+\subfloat[Case I]{
+\includegraphics[width=3in]{./img/pic11.jpg} 
+\label{PS}}
+\hfil
+\subfloat[Case II]{
+\includegraphics[width=3in]{./img/pic12.jpg} 
+\label{MI}}
 
-a) Impact of Different Numbers of Tasks
-Table V compares the runtime of all algorithms against the number of tasks with a fixed number (100) of services available per task. 
-We observe that the runtime of integer programming is nearly hundreds times of KMSCs. 
-Since the mobile environment is dynamic, the requirement on runtime must be met because the environment parameters for computation may vary much within a short time. 
-Therefore, although integer programming can obtain the optimal result, it is not suitable to the problem in mobile environment due to its poor scalability.
-Furthermore, KMSC also runs fastest as compared with the other two population-based algorithms. This is because induced motion, foraging motion, and physical diffusion in KMSC can be executed in parallel, thereby improving the efficiency. Besides, we can observe that KMSC has a low algorithmic complexity, which is roughly linear with the composition size.
+\caption{Scalability Evaluation.} \label{fig_sim}
+\end{figure*}
 
-b) Impact of Different Numbers of Candidates
-Table VI compares the scalability of all algorithms against an increasing number of candidate services with a fixed number (10) of tasks. Similarly, integer programming also performs with the highest runtime. We note that the runtime of all methods is almost irrelevant to the number of services per task. Hence, all algorithms scale well in this regard. Among all the algorithms, KhMSC always performs with the lowest runtime. Based on these results, we can conclude that our approach maintains acceptable performance (optimality and scalability) with large data sets for both tasks and candidates.
+In order to evaluate the impact of task number on the execution time of our algorithm, The task number is varied from 6 to 30. For each task number, the simulation is repeated 50 times, and the average value is recorded as the result. We observe from figure 7(b) that the run time of brute-force method is almost exponential to the problem size, while the run time of other three meta-heuristic algorithms (KHMSC, GA, PSO) are increases almost linearly with tasks increasing. In mobile environment, due to the dynamic movement and limited of computing resources, algorithm must meet the requirement of finding feasible composition within a short time. Therefore, although brute-force can obtain the optimal result, it is not suitable to the problem due to its poor scalability. 
+
+We also evaluate the impact of candidate services per task, In this experiment, we vary candidate service number from 6 to 30. As shown in figure 7(b), the number of candidate services does not affect the execution time of the three meta-heuristic algorithms, because in the initialization step, the scale of the algorithm is determined, and it is only affected by the algorithm parameters. Similarly, brute-force method is also exponential to the problem size. 
+
+Among all the algorithms, PSO has the lowest run time, then KHMSC and then GA, note that KHMSC runs almost five times faster than GA, but PSO's poor optimality makes it unsuitable for this problem. Based on the experimental results, we can conclude that KHMSC maintains acceptable performance (optimality and scalability) with large data sets for both tasks and candidates.
 
 \section{RELATED WORK}
 Service-oriented computing(SOC) is a novel paradigm to develop and integrate enterprise information system \cite{}, with the development of mobile device and communication technology, the research of mobile service composition has grain much attention from both industry and academia. In this section, we first briefly review some recent work on mobile service composition, then review opportunistic network and its application in mobile network.

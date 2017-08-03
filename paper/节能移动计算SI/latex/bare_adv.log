@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  1 AUG 2017 21:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  3 AUG 2017 22:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -331,21 +331,36 @@ LaTeX Warning: Label `table_example' multiply defined.
 
 LaTeX Warning: Label `table_example' multiply defined.
 
+
+LaTeX Warning: Label `PS' multiply defined.
+
+
+LaTeX Warning: Label `sub@PS' multiply defined.
+
+
+LaTeX Warning: Label `MI' multiply defined.
+
+
+LaTeX Warning: Label `sub@MI' multiply defined.
+
+
+LaTeX Warning: Label `fig_sim' multiply defined.
+
 )
 \openout1 = `bare_adv.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 -- Lines per column: 61 (exact).
 Package caption Info: Begin \AtBeginDocument code.
@@ -413,35 +428,35 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \Hy@linkcounter=\count134
-LaTeX Info: Redefining \[ on input line 52.
-LaTeX Info: Redefining \] on input line 52.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 86.
+LaTeX Info: Redefining \[ on input line 53.
+LaTeX Info: Redefining \] on input line 53.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 87.
  (/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11.04124> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 86.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 87.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 86.
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 86.
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 86
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 87.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 87.
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 87
 .
-LaTeX Font Info:    Try loading font information for U+pzd on input line 86.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 87.
 
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 96.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 97.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
-(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 96.
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 97.
 
 
-LaTeX Warning: Citation `Giordano2011' on page 1 undefined on input line 106.
+LaTeX Warning: Citation `Giordano2011' on page 1 undefined on input line 107.
 
 
-LaTeX Warning: Citation `Balani' on page 1 undefined on input line 106.
+LaTeX Warning: Citation `Balani' on page 1 undefined on input line 107.
 
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
@@ -452,9 +467,9 @@ Missing character: There is no ù in font pplr7t!
 <./img/pic1.png, id=1, 677.53125pt x 426.59375pt>
 File: ./img/pic1.png Graphic file (type png)
  <use ./img/pic1.png>
-Package pdftex.def Info: ./img/pic1.png used on input line 110.
+Package pdftex.def Info: ./img/pic1.png used on input line 111.
 (pdftex.def)             Requested size: 252.94499pt x 159.26274pt.
-LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 122
+LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 123
 .
  [1{/usr/local/texlive/2017basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -463,12 +478,12 @@ LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 122
 File: ./img/pic2.png Graphic file (type png)
 
 <use ./img/pic2.png>
-Package pdftex.def Info: ./img/pic2.png used on input line 129.
+Package pdftex.def Info: ./img/pic2.png used on input line 130.
 (pdftex.def)             Requested size: 252.94499pt x 154.86055pt.
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 144
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 145
 .
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 153.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 154.
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
@@ -522,13 +537,13 @@ Missing character: There is no ã in font pplr7t!
 <./img/pic3.png, id=27, 436.63126pt x 301.125pt>
 File: ./img/pic3.png Graphic file (type png)
  <use ./img/pic3.png>
-Package pdftex.def Info: ./img/pic3.png used on input line 200.
+Package pdftex.def Info: ./img/pic3.png used on input line 201.
 (pdftex.def)             Requested size: 252.94499pt x 174.44585pt.
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
 
-Overfull \hbox (4.85612pt too wide) in alignment at lines 235--239
+Overfull \hbox (4.85612pt too wide) in alignment at lines 236--240
  [][][] []
  []
 
@@ -547,66 +562,87 @@ Missing character: There is no à in font cmr10!
 File: ./img/pic4.png Graphic file (type png)
 
 <use ./img/pic4.png>
-Package pdftex.def Info: ./img/pic4.png used on input line 359.
+Package pdftex.def Info: ./img/pic4.png used on input line 360.
 (pdftex.def)             Requested size: 180.67499pt x 118.41542pt.
 
-Underfull \hbox (badness 1603) in paragraph at lines 389--390
+Underfull \hbox (badness 1603) in paragraph at lines 390--391
 [] []\OT1/ppl/m/n/9.53561 Population $\OML/cmm/m/it/10 X$\OT1/ppl/m/n/9.53561 ;
  Best fit-ness $\OML/cmm/m/it/10 F[]$\OT1/ppl/m/n/9.53561 ; Worst fit-ness
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 403.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 404.
 
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [5 <./img/pic4.png>]
+)
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 445.
+
+
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <9.53561> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 445.
+ [5 <./img/pic4.png>]
 Underfull \vbox (badness 4940) has occurred while \output is active []
 
-
-Overfull \hbox (31.25153pt too wide) in paragraph at lines 484--495
- [][] 
- []
 
 <./img/pic5.jpg, id=51, 1124.2pt x 843.15pt>
 File: ./img/pic5.jpg Graphic file (type jpg)
  <use ./img/pic5.jpg>
-Package pdftex.def Info: ./img/pic5.jpg used on input line 509.
-(pdftex.def)             Requested size: 252.94499pt x 189.70056pt.
+Package pdftex.def Info: ./img/pic5.jpg used on input line 511.
+(pdftex.def)             Requested size: 216.81pt x 162.60599pt.
 
 <./img/pic6.jpg, id=52, 1124.2pt x 843.15pt>
 File: ./img/pic6.jpg Graphic file (type jpg)
  <use ./img/pic6.jpg>
-Package pdftex.def Info: ./img/pic6.jpg used on input line 513.
-(pdftex.def)             Requested size: 252.94499pt x 189.70056pt.
+Package pdftex.def Info: ./img/pic6.jpg used on input line 515.
+(pdftex.def)             Requested size: 216.81pt x 162.60599pt.
 
 <./img/pic7.jpg, id=53, 1124.2pt x 843.15pt>
 File: ./img/pic7.jpg Graphic file (type jpg)
  <use ./img/pic7.jpg>
-Package pdftex.def Info: ./img/pic7.jpg used on input line 517.
-(pdftex.def)             Requested size: 252.94499pt x 189.70056pt.
+Package pdftex.def Info: ./img/pic7.jpg used on input line 519.
+(pdftex.def)             Requested size: 216.81pt x 162.60599pt.
 
 <./img/pic8.jpg, id=54, 1124.2pt x 843.15pt>
 File: ./img/pic8.jpg Graphic file (type jpg)
  <use ./img/pic8.jpg>
-Package pdftex.def Info: ./img/pic8.jpg used on input line 521.
-(pdftex.def)             Requested size: 252.94499pt x 189.70056pt.
+Package pdftex.def Info: ./img/pic8.jpg used on input line 523.
+(pdftex.def)             Requested size: 216.81pt x 162.60599pt.
  [6]
-Underfull \hbox (badness 1418) in paragraph at lines 560--560
- \OT1/phv/b/n/9.53561 5.4 Scal-a-bil-ity Eval-u-a-tion (task num-ber, can-di-da
-tes
- []
+<./img/pic10.jpg, id=58, 1124.2pt x 843.15pt>
+File: ./img/pic10.jpg Graphic file (type jpg)
+ <use ./img/pic10.jpg>
+Package pdftex.def Info: ./img/pic10.jpg used on input line 559.
+(pdftex.def)             Requested size: 216.81pt x 162.60599pt.
 
-[7 <./img/pic5.jpg> <./img/pic6.jpg> <./img/pic7.jpg> <./img/pic8.jpg>]
+<./img/pic11.jpg, id=59, 1124.2pt x 843.15pt>
+File: ./img/pic11.jpg Graphic file (type jpg)
+ <use ./img/pic11.jpg>
+Package pdftex.def Info: ./img/pic11.jpg used on input line 573.
+(pdftex.def)             Requested size: 216.81pt x 162.60599pt.
 
-LaTeX Warning: Citation `Zhang2016' on page 8 undefined on input line 579.
+<./img/pic12.jpg, id=60, 1124.2pt x 843.15pt>
+File: ./img/pic12.jpg Graphic file (type jpg)
+ <use ./img/pic12.jpg>
+Package pdftex.def Info: ./img/pic12.jpg used on input line 577.
+(pdftex.def)             Requested size: 216.81pt x 162.60599pt.
+ [7 <./img/pic5.jpg> <./img/pic6.jpg> <./img/pic7.jpg> <./img/pic8.jpg> <./img/
+pic10.jpg>]
+
+LaTeX Warning: Citation `Zhang2016' on page 8 undefined on input line 594.
 
 
-LaTeX Warning: Citation `Giordano2011' on page 8 undefined on input line 588.
+LaTeX Warning: Citation `Giordano2011' on page 8 undefined on input line 603.
 
 
-LaTeX Warning: Citation `Pu2017' on page 8 undefined on input line 589.
+LaTeX Warning: Citation `Pu2017' on page 8 undefined on input line 604.
 
-(./bare_adv.bbl [8]) [9] (./bare_adv.aux)
+[8 <./img/pic11.jpg> <./img/pic12.jpg>] (./bare_adv.bbl [9]) [10
+
+]
+(./bare_adv.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -615,13 +651,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5181 strings out of 494437
- 83656 string characters out of 6166646
- 168634 words of memory out of 5000000
- 8427 multiletter control sequences out of 15000+600000
+ 5215 strings out of 494437
+ 84266 string characters out of 6166646
+ 168642 words of memory out of 5000000
+ 8455 multiletter control sequences out of 15000+600000
  54445 words of font info for 114 fonts, out of 8000000 for 9000
  322 hyphenation exceptions out of 8191
- 39i,16n,49p,1925b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,16n,49p,1925b,515s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
 cal/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.
@@ -648,10 +684,10 @@ nts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017basic/texmf-dist/font
 s/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/
 type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/t
 ype1/urw/zapfding/uzdr.pfb>
-Output written on bare_adv.pdf (9 pages, 1029499 bytes).
+Output written on bare_adv.pdf (10 pages, 1197452 bytes).
 PDF statistics:
- 144 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 150 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
