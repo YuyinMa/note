@@ -1,26 +1,28 @@
 ### 1. 科学计算与 workflow 调度
 
-#### 1.1 什么是科学计算
+#### 1.1 科学计算
 
-震波的分析进行石油勘探。在生命科学领域，科学家们通过对人类基因组排序来学习人类进化的规律等。科学计算给这些“分析”和“学习”提供了理论依据和方法。
+最新一期的全球超级计算机500强于2017年6月公布，使用我国自主研究CPU的”神威*太湖之光“和”天河二号“携手夺得前两名，美国20年来首次无缘前三。超级计算的竞争逐渐白热化使得高性能计算领域越来越火，科学计算作为高性能计算领域的一类主要应用也受到了越来越多的关注。
 
-科学计算需要处理的数据量巨大。比如CERN的大型对撞机平均每年都会产生millionsof gigabytes 的数据 (source: http://home.cern/about)。这些数据需要被收集，管理以及反复处理，以期从中发现物质的组成和宇宙的起源。这对数据格式、数据存储等的研究提出了很大的挑战。也算是大数据的一个典型应用。
+科学计算是一类传统研究课题，几乎对所有的科学领域都有重要的意义。比如说，在地球物理学中，科学家们利用对地震波的分析进行石油勘探。在生命科学领域，科学家们通过对人类基因组排序来学习人类进化的规律等。科学计算给这些“分析”和“学习”提供了理论依据和方法。
 
-科学计算涉及的计算一般也十分复杂。比如刚提到的石油勘探，为了能从地震波数据中发现有用信息，需要的计算量可以达到10+e22次浮点运算(source: http://blog.csdn.net/zhaogaishan/article/details/4813435)。即使假设我们能fullyutilize天河II的实际峰值运算能力，也需要82小时才能完成一次上述运算。并且，这一计算量会随着数据量的增长进一步增加。也就是说，我们每做一次数据分析，需要等上好几天才能看到分析结果，这显然不是我们希望的 [1]。
+科学计算需要处理的数据量巨大。比如CERN的大型对撞机平均每年都会产生数百万GB的数据 [2]。这些数据需要被收集，管理以及反复处理，以期从中发现物质的组成和宇宙的起源。这对数据格式、数据存储等的研究提出了很大的挑战。也算是大数据的一个典型应用。
 
-#### 1.2 什么是 Scientific Workflows
+科学计算涉及的计算一般也十分复杂。比如刚提到的石油勘探，为了能从地震波数据中发现有用信息，需要的计算量可以达到10+e22次浮点运算[2]。即使假设我们能完全利用天河II的实际峰值运算能力，也需要82小时才能完成一次上述运算。并且，这一计算量会随着数据量的增长进一步增加。也就是说，我们每做一次数据分析，需要等上好几天才能看到分析结果，这显然不是我们希望的 [1]。
 
-在科学计算中，我们会执行一些scientific simulation code 来生成数据，然后执行一些dataanalysis code 来分析数据。在这两个步骤之间，我们通常还会执行一些glue scripts (e.g., data formatconversion) 来自动化这一过程。这些具有数据dependency的codes通常被model成scientific workflow，每个code节点都是workflow中的一个task。我们利用scientific workflow这一模型来**automate** and **optimize**这些dependent tasks的执行 [1]。
+#### 1.2 科学工作流
 
-#### 1.3 什么是 WfMS
+在科学计算中，我们会执行一些科学仿真代码（应用该）来生成数据，然后执行一些数据分析代码（应用）来分析数据。在这两个步骤之间，我们通常还会执行一些胶水脚本 (e.g., data format conversion) 来自动化这一过程。这些具有数据依赖性质的应用通常被模拟成为成科学工作流，每个应用节点都是工作流中的一个任务。我们利用科学工作流这一模型来自动化和优化这些依赖任务的执行 [1]。
+
+#### 1.3 工作流管理系统
 
 我们需要设计专门的workflow management systems (WfMS)来运行和管理workflows[6] 。现有的WfMS分别具有一些自己的特点，而用户可以根据自己的需求从中选择最合适自己的系统来用。例如，Pegasus系统允许用户用XML-basedlanguage来描述workflow，并提供fault recovery 和dataprovenance information等功能。而Kepler系统提供图形界面帮助用户“画出”workflow结构，并且可以很容易将其embedded 到 webportal中。不同的WfMS系统的存在虽然给用户提供了更多的选择，但也增加了软件管理的复杂度。目前的一个研究趋势是，结合现在各种并行计算模型和open-sourced分布式系统，讨论是否能够利用现有系统来运行和管理workflow。其优点是很明显的，既能减少开发时间，又可以增加系统兼容性 [1]。
 
-#### 1.4 Scientific Workflows 的优化
+#### 1.4 科学工作流的调度与优化
 
 在实现了workflow的自动执行后，我们还需要去优化其执行过程，目前一般是通过优化workflowtasks的调度来实现的。对于scientificworkflow的优化一般涉及以下优化目标: 1) the performance of the workflows; 2)resource utilization during workflow executions; or 3) the operational cost forexecuting the workflows. 简单来说，用户们或者是希望他们的科学仿真和数据分析程序执行的越快越好（一般是科学家们），或者是希望计算平台的资源能够被高效地利用（一般是计算平台的管理者）。我们组在workflow的优化问题上也做过一些工作[1][2] [3] 。我们提出的Transformation-based Optimization Framework (ToF) [3]将workflowoptimization operations进行了抽象，并利用这些抽象了的优化操作给不同结构、类型的workflow提供统一的优化。我们的另一篇工作Deco[2] 考虑到了不同workflow优化问题的用户和优化目标的多样性，提出利用declarativelanguage让用户去描述其优化目标，并设计了一个generalized optimization engine来提供相应的优化solution。Workflow的优化还有很多待解决的问题需要我们去探讨，例如HPC上多用户多workflow之间的资源共享问题等 [1]。
 
-### 1.5 应用前景
+#### 1.5 应用前景
 
 * 比较火，国际会议热点，HPC，HPC投资
 
@@ -197,3 +199,7 @@ balabla 等人在 [] 中提出了一种SCS算法，SCS是一个截止时间约�
 ### 4. 参考
 
 [1] Amelie Chi Zhou, http://blog.sciencenet.cn/blog-3224193-1009723.html
+
+[2] http://home.cern/about
+
+[3] http://blog.csdn.net/zhaogaishan/article/details/4813435
