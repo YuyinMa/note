@@ -187,7 +187,7 @@ In order to describe the problem addressed in this paper, we first provide the b
 \subsection{Concept of Mobile Service Availability}
 In mobile service opportunistic network (MSON) the availability of mobile service is highly related to the user’s mobility. If user $i$ moves outside the transmission range of its neighbouring user $j$, then user $i$ is unreachable by user $j$ and as a result the services on user $i$ become unavailable to user $j$ either. Here user mobility is utilized to calculate the mobile service availability \cite{Yang2010}.
 
-\textit{Definition 5 (Mobile Service Availability):} mobile service availability can be represented by a three-tuple $(i, p, ava) $, where
+\textit{Definition 5 (Mobile Service Availability):} mobile service availability can be represented by a three-tuple $(r, p, ava) $, where
 
 ​1) $r$ is the mobile service requester;
 
@@ -205,7 +205,7 @@ In mobile service opportunistic network (MSON) the availability of mobile servic
 
 As illustrated in Fig.3, there are two mobile user $i$ and $j$ whose device have the same transmission range $R$. Each user moves randomly and it is assumed that the moving field is a circle with a radius of $r$. $d$ is the distance between $i$ and $j$. We use these three parameters($r,R,d$) to calculate the availability of a mobile service. The transmission range of a node $R$ is known (e.g., pre-defined or changing according to certain algorithm). Suppose that the location of each mobile user is known (e.g., via GPS data or other location-based services provided by telecommunications service providers \cite{chadil2008real}), then distance $d$ can be calculated using the Euclidean distance formula, i.e.,$\sqrt{{(x_i-x_j)^2}+({y_i-y_j})^2}$ where $(x_i, x_j)$ and $(y_i, y_j)$ are the coordinates of user $i$ and $j$ respectively. Finally let us discuss how to calculate $r$ \cite{Yang2010}.
 
-The moving radius of a mobile user $r$ is its moving speed $v$ multiplied by the average service time $t$. Here $t$ can be statistically calculated as the average value of last $n$ times of service invoke, namely, $t = \Sigma_{i=1}^{n}t_i/n$. The speed of a mobile user $v$ can be calculated based on its moving distance during a period from $t_1$ to $t_2$ \cite{ko2000location}, namely: $s = \sqrt{{(x_i-x_j)^2}+{y_i-y_j}^2}/(t_2-t_1)$, then $r = s \times t$.
+The moving radius of a mobile user $r$ is its moving speed $v$ multiplied by the average service time $t$. Here $t$ can be statistically calculated as the average value of last $n$ times of service invoke, namely, $t = \Sigma_{i=1}^{n}t_i/n$. The speed of a mobile user $v$ can be calculated based on its moving distance during a period from $t_1$ to $t_2$ \cite{ko2000location}, namely: $v = \sqrt{{(x_i-x_j)^2}+{y_i-y_j}^2}/(t_2-t_1)$, then $r = s \times t$.
 
 ​Once we know these three parameters $R$, $r$, and $d$, the probability of user $i$ staying inside the transmission range of user $j$ (denoted as $P_{i,j}^{IN}$ ) can be calculated by
 \begin{equation}
