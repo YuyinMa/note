@@ -108,7 +108,7 @@ To achieve the goal of reducing mobile device energy consumption, we propose a Q
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.5in]{./img/pic1.png}
+\includegraphics[width=3.5in]{./img/pic1.pdf}
 \caption{Opportunistic computing}
 \label{fig_opportunistic}
 \end{figure}
@@ -127,7 +127,7 @@ The remainder of this paper is structured as follows. Section II describe the MS
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.5in]{./img/pic2.png}
+\includegraphics[width=3.5in]{./img/pic2.pdf}
 \caption{Mobile service opportunistic network}
 \label{fig_mson}
 \end{figure}
@@ -198,12 +198,16 @@ In mobile service opportunistic network (MSON) the availability of mobile servic
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.5in]{./img/pic3.png}
+\includegraphics[width=3.5in]{./img/pic3.pdf}
 \caption{Mobile service availability}
 \label{fig_sd}
 \end{figure}
 
-As illustrated in Fig.3, there are two mobile user $i$ and $j$ whose device have the same transmission range $R$. Each user moves randomly and it is assumed that the moving field is a circle with a radius of $r$. $d$ is the distance between $i$ and $j$. We use these three parameters($r,R,d$) to calculate the availability of a mobile service. The transmission range of a node $R$ is known (e.g., pre-defined or changing according to certain algorithm). Suppose that the location of each mobile user is known (e.g., via GPS data or other location-based services provided by telecommunications service providers \cite{chadil2008real}), then distance $d$ can be calculated using the Euclidean distance formula, i.e.,$\sqrt{{(x_i-x_j)^2}+({y_i-y_j})^2}$ where $(x_i, x_j)$ and $(y_i, y_j)$ are the coordinates of user $i$ and $j$ respectively. Finally let us discuss how to calculate $r$ \cite{Yang2010}.
+As illustrated in Fig.3, there are two mobile user $i$ and $j$, assume user $i$ is mobile service requester and user $j$ is mobile service provider, both device have the same transmission range $R$. Each user moves randomly and it is assumed that the moving field is a circle with a radius of $r$. $d$ is the distance between $i$ and $j$. We use these three parameters($r,R,d$) to calculate the availability of a mobile service. The transmission range of a node $R$ is known (e.g., usually 10m for bluetooth, 25m for Wi-Fi). 
+
+Note that most of wireless transaction protocol have defined the Received Signal Strength Indicator, then distance $d$ between mobile user $i$ and user $j$ can be calculated by signal strength, Finally let us discuss how to calculate $r$ \cite{Yang2010}.
+
+%Suppose that the location of each mobile user is known (e.g., via GPS data or other location-based services provided by telecommunications service providers \cite{chadil2008real}), then distance $d$ can be calculated using the Euclidean distance formula, i.e.,$\sqrt{{(x_i-x_j)^2}+({y_i-y_j})^2}$ where $(x_i, x_j)$ and $(y_i, y_j)$ are the coordinates of user $i$ and $j$ respectively. 
 
 The moving radius of a mobile user $r$ is its moving speed $v$ multiplied by the average service time $t$. Here $t$ can be statistically calculated as the average value of last $n$ times of service invoke, namely, $t = \Sigma_{i=1}^{n}t_i/n$. The speed of a mobile user $v$ can be calculated based on its moving distance during a period from $t_1$ to $t_2$ \cite{ko2000location}, namely: $v = \sqrt{{(x_i-x_j)^2}+{y_i-y_j}^2}/(t_2-t_1)$, then $r = s \times t$.
 
@@ -214,7 +218,7 @@ P_{i,j}^{IN} = \frac{S_i^{IN}}{S_i^T}
 Namely, $P^{IN}_{i,j}$ equals to the area of the user $i$ moving field inside the transmission range of user $j$ (denoted as $S^{IN}_i$) divided by the overall area of the user $i$ moving field ($S^T_i$) .
 \begin{eqnarray}
 \alpha = arccos(\frac{r^2+d^2-R^2}{2r\times d}) \\\nonumber
-\beta = arccos(\frac{R^2+d^2-r^2}{2r\times d})
+\beta = arccos(\frac{R^2+d^2-r^2}{2R\times d})
 \end{eqnarray}
 Then,
 \setlength{\arraycolsep}{0.0em}
@@ -252,10 +256,10 @@ For mobile service requesters to select candidate service, QoS must be considere
 \hline
 \bfseries Pattern & \bfseries Resopnse Time & \bfseries Availability \\
 \hline
-sequence & $\sum_{i=1}^{n}q_{time}(S_i)$ & $\sum_{i=1}^{n}q_{price}(S_i)$ \\
-parallel & $Max\{q_{time}(S_i)\}$ & $\sum_{i=1}^{n}q_{price}(S_i)$ \\
-choice & $\sum_{j=1}^{n} p_j \times q_{time}(S_j)$ & $\sum_{j=1}^{n} p_j \times q_{price}(S_j)$ \\
-loop & $k \times q_{time}(S_i)$ & $k \times q_{price}(S_i)$ \\
+sequence & $\sum_{i=1}^{n}q_{rt}(S_i)$ & $\sum_{i=1}^{n}q_{ava}(S_i)$ \\
+parallel & $Max\{q_{rt}(S_i)\}$ & $\sum_{i=1}^{n}q_{ava}(S_i)$ \\
+choice & $\sum_{j=1}^{n} p_j \times q_{rt}(S_j)$ & $\sum_{j=1}^{n} p_j \times q_{ava}(S_j)$ \\
+loop & $k \times q_{rt}(S_i)$ & $k \times q_{ava}(S_i)$ \\
 \hline
 \end{tabular}
 \end{table}
@@ -264,8 +268,8 @@ For a composite service instance $csi$, its each QoS attribute is determined by 
 
 In order to facilitate ranking of different composite service instances $csi$ in terms of QoS, we utilize simple additive weighting (SAW) as the QoS utility function to map the QoS value into a real value. SAW first normalizes the QoS attribute values into real values between $0$ and $1$, through comparison with the maximal and minimal values; then it sums the normalized values multiplied with a preference weight $w_t$. According to SAW, the QoS utility of a $csi$ can be calculated using e.q (7), where, $q_t(csi)$ is the aggregated value of the $t$-th QoS attribute of $csi$, and $q_{t,max}$ and $q_{t,min}$, respectively, denote the maximal and minimal possible aggregated values of the $t$-th QoS attribute \cite{Wu2016}.
 \begin{eqnarray}
-U(csi) = \sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(csi)}{q_{t,max}-q_{t,min}}\times w_t \\\nonumber
-+\sum_{q_t \in Q^+} \frac{q_t(csi)-q_{t,max}}{q_{t,max}-q_{t,min}}\times w_t
+U(csi) = (\sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(csi)}{q_{t,max}-q_{t,min}})\times w_t \\\nonumber
++(\sum_{q_t \in Q^+} \frac{q_t(csi)-q_{t,min}}{q_{t,max}-q_{t,min}})\times w_t
 \end{eqnarray}
 
 \subsection{Problem Formulation}
@@ -357,7 +361,7 @@ where $D^{max}$ is the maximum diffusion speed and $\delta \in [-1, 1]$ is a ran
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{./img/pic4.png}
+\includegraphics[width=2.5in]{./img/pic4.pdf}
 \caption{Cross over}
 \label{fig_opportunistic}
 \end{figure}
@@ -483,14 +487,16 @@ There are four parameters can be adjusted to improve the KHMSC's performance: po
 \caption{PARAMETERS CONFIGURATION}
 \label{table_example}
 \centering
-\begin{tabular}{ccccc}
+\begin{tabular}{cccccc}
 \hline
-\bfseries Configuration & \bfseries $PS$ & \bfseries $MI$ & \bfseries $V_f$ & \bfseries $N_{max}$  \\
+\bfseries $PS$ & \bfseries $MI$ & \bfseries $CR$ & \bfseries $V_f$ & \bfseries $N_{max}$ & \bfseries $D_{max}$ \\
 \hline
-configuration-1 & 10$\sim$100 & 50          & 0.2            & 0.2            \\
-configuration-2 & 50          & 10$\sim$100 & 0.2            & 0.2            \\
-configuration-3 & 50          & 50          & 0.01$\sim$1.00 & 0.2            \\
-configuration-4 & 50          & 50          & 0.2            & 0.01$\sim$1.00 \\
+10$\sim$100 & 50          & 0.6            & 0.8            &  0.3            &  0.2 \\
+20          & 10$\sim$100 & 0.6            & 0.8            &  0.3            &  0.2 \\
+20          & 50          & 0.01$\sim$1.00 & 0.8            &  0.3            &  0.2 \\
+20          & 50          & 0.6            & 0.01$\sim$1.00 &  0.3            &  0.2 \\
+20          & 50          & 0.6            & 0.01           &  0.01$\sim$3.00 &  0.2 \\
+20          & 50          & 0.6            & 0.01           &  0.3            &  0.01$\sim$3.00 \\
 \hline
 \end{tabular}
 \end{table}
@@ -503,19 +509,28 @@ Similarly, Figure 5(b) shows that the value of fitness significantly increased f
 \begin{figure*}[!t]
 \centering
 \subfloat[Case I]{
-\includegraphics[width=3in]{./img/pic5.jpg} 
+\includegraphics[width=2in]{./img/pic5.jpg} 
 \label{PS}}
 \hfil
 \subfloat[Case II]{
-\includegraphics[width=3in]{./img/pic6.jpg} 
+\includegraphics[width=2in]{./img/pic6.jpg} 
+\label{MI}}
+\hfil
+\subfloat[Case II]{
+\includegraphics[width=2in]{./img/pic6.jpg} 
 \label{MI}}
 
+
 \subfloat[Case III]{
-\includegraphics[width=3in]{./img/pic7.jpg} 
+\includegraphics[width=2in]{./img/pic7.jpg} 
 \label{Vf}}
 \hfil
 \subfloat[Case IV]{
-\includegraphics[width=3in]{./img/pic8.jpg} 
+\includegraphics[width=2in]{./img/pic8.jpg} 
+\label{Nmax}}
+\hfil
+\subfloat[Case IV]{
+\includegraphics[width=2in]{./img/pic8.jpg} 
 \label{Nmax}}
 
 \caption{Simulation results for the network.} \label{fig_sim}
@@ -552,10 +567,25 @@ PSO & inertia weight = 0.8; c1 = 2.0; c2 = 2.0 \\
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3in]{./img/pic10.jpg}
+\includegraphics[width=3.5in]{./img/opt-iterations-2.pdf}
 \caption{Optimality Evaluation}
 \label{fig_oe}
 \end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{./img/opt-tasks.pdf}
+\caption{Optimality Evaluation}
+\label{fig_oe}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{./img/opt-candadites.pdf}
+\caption{Optimality Evaluation}
+\label{fig_oe}
+\end{figure}
+
 
 The result in Figure 6 shows that, as expected, the brute-force algorithm leads to the best performance with the highest fitness. The basic PSO algorithm has the worst performance with the lowest fitness values. Both KHMSC and Ga can find over 90\% optimal composition before 50 iterations and KHMSC performs little better than the basic GA algorithm. Although GA performs closely to KHMSC, we finally choose KHMSC because it runs almost five times faster than GA, in next subsection we will evaluate the scalability of above four algorithms.
 
