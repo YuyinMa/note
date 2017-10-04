@@ -33,6 +33,7 @@ t=sf,textfont=sf]{subfig}
 \usepackage{algorithm}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}} 
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
+\usepackage{amsfonts,amssymb}
 
 % \usepackage{cases}
 \usepackage{amsmath}
@@ -172,7 +173,7 @@ In order to describe the problem addressed in this paper, we first provide the b
 
 \textit{Definition 3 (Mobile Service Composition Plan):} A service composition plan is a tuple $mscp = (T, R)$, where:
 
-​1) $T = \{t_1,t_2,…,t_n\}$ is a set of tasks;
+​1) $T = \{t_1,t_2,...,t_n\}$ is a set of tasks;
 
 ​2) $R = \{d(t_i,t_j)|t_i,t_j \in T\}$ is a set of relations between tasks in $T$.
 
@@ -182,7 +183,7 @@ In order to describe the problem addressed in this paper, we first provide the b
 
 ​1) $mscp$ is mobile service composition plan which defined in definition 3;
 
-​2) $S = {s_1, s_2,…,s_n}$ is a set of selected concrete services.
+​2) $S = \{s_1, s_2,...,s_n\}$ is a set of selected concrete services.
 
 \subsection{Concept of Mobile Service Availability}
 In mobile service opportunistic network (MSON) the availability of mobile service is highly related to the user’s mobility. If user $i$ moves outside the transmission range of its neighbouring user $j$, then user $i$ is unreachable by user $j$ and as a result the services on user $i$ become unavailable to user $j$ either. Here user mobility is utilized to calculate the mobile service availability \cite{Yang2010}.
@@ -274,29 +275,32 @@ U(csi) = (\sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(csi)}{q_{t,max}-q_{t,min}})\tim
 
 \subsection{Problem Formulation}
 Base on the above discussion, we can give the definition of the service composition over MSON problem.
-\textit{Definition 6 (MSON Service Composition):} Given a service composition request $req$ by a mobile user $u$, perceive nearby service and select suitable concrete services provided to achieve an optimal service composition instance $csi$ with the best QoS, that is
+
+\textit{Definition 6 (MSON Service Composition):} Given a service composition request $req$ by a mobile user $u$, perceive nearby service and select suitable concrete services to achieve an optimal service composition instance $csi$ with the best QoS, that is
 \begin{eqnarray}
-target \ : \  max \ U(csi)\qquad\  \\\nonumber
-subject \ to: \ i \in \{1,2,3,...,n \}  \\\nonumber
-x_i \in \{1,2,3,...,m \}
+target \ : \  Max \ \{U(csi)\}   \\\nonumber
+s.t. : \ t_i \in \{1,2,3,...,n\}  \\\nonumber
+s_i \in \{1,2,3,...,m \}
 \end{eqnarray}
-where $U(csi)$ is the objection mentioned in e.q (7), $i \in [1,n]$ is the index of the tasks in the composition plan, $x_i \in [1, m]$ is the index of service candidates for the $i$-th task.
+where $U(csi)$ is the objection mentioned in e.q (7), $t_i \in [1,n]$ is the index of the tasks in the composition plan, $s_i \in [1, m]$ is the index of service candidates for the $i$-th task.
 
 \textit{Theorem 1:} The service composition problem over MSON (Definition 6) is NP-hard.
 
-\textit{Proof:} We can reduce our studied problem to a knapsack problem, and this problem can be solved by integer programming. The standard integer program to find the smallest value of a given objective function $F( \Theta)$ with a feasible parameter follows \cite{glover1986future}:
+\textit{Proof:} We can reduce our studied problem to a knapsack problem, and this problem can be solved by integer programming. The standard integer program to find the smallest value of a given objective function $F(x)$ with a feasible parameter follows \cite{glover1986future}:
 \begin{eqnarray}
-inf \ F(\Theta) \qquad \qquad \quad \\\nonumber
-subject \ to: \ \theta_i \in\{1,2,3,...,N\}
+maximize \  : F(x) = c^{T}x     \\\nonumber
+subject \ to: Ax+s = b, \\
+s \ge 0, \\
+x \in \mathbb{Z}^{n}
 \end{eqnarray}
 
-For the problem of selecting optimal services composition over MSON, the vector $\Theta= (\theta_1, . . . , \theta_n)$ can describe a possible solution as a service composition with $n$ tasks. An element $\theta_i$ in corresponds to a selected service from the candidates for the $i$-th task. The optimal solution  $\Theta*$ satisfies the following conditions:
+Where $x$ and $b$ are vectors and $A$ is a matrix, For the problem of selecting optimal services composition over MSON, the vector $x = (x_1, . . . , x_n)$ can describe a possible solution as a service composition with $n$ tasks. An element $x_i$ in corresponds to a selected service from the candidates for the $i$-th task. The optimal solution  $x^*$ satisfies the following conditions:
 
-1) $\Theta *$ belongs to the feasible set.
+1) $x^*$ belongs to the feasible set.
 
-​2) $\forall \Theta, F(\Theta*) \le F(\Theta)$. 
+​2) $\forall x, F(x^*) \le F(x)$. 
 
-The target of the mobile service composition problem in MSON is to find to obtain the biggest $F( \Theta)$. Thus, the problem is equivalent to the integer programming problem which is known to be NP-hard. Then the service composition problem over MSON is NP-hard.
+The target of the mobile service composition problem in MSON is to find to obtain the biggest $F(x)$. Thus, the problem is equivalent to the integer programming problem which is known to be NP-hard. Then the service composition problem over MSON is NP-hard.
 
 \section{Composition Algorithm}
 For the problem we formulate above, integer programming can be utilized to obtain the optimal solution. However, integer programming might cost much more time with the increment of problem size because of its poor scalability \cite{nemhauser1988integer}. To solve this problem in polynomial time, an meta-heuristic algorithms such as GAs and PSO, can be utilized to find the near optimal solution.
@@ -479,6 +483,97 @@ We consider MIT Reality dataset as user D2D contact traces, where user location,
 
 The publicly available quality of Web service (QWS) dataset\cite{zheng2014investigating} can be used to characterize the service candidates. This dataset consists of 4500 Web services from 142 users over 64 different time slices (at 15-minute interval) and each QoS data includes two measurements (response time and throughput), for a mobile service $ms$, response time attribute is randomly selected from the QWS dataset. 
 
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{MSON Users}
+\label{table_example}
+\centering
+\begin{tabular}{|c||c|}
+\hline
+\bfseries Time & \bfseries Available service provider\\
+% user(3).devices_names(500-505)
+\hline
+\hline
+t1 & Rabbit, Tony, S10, BlueRadios, NORTHOLT\\
+\hline
+t2 & Tony, S10, Rabbit, NORTHOLT, BlueRadios\\
+\hline
+t3 & Rabbit, NORTHOLT, BlueRadios, S10, Tony, Henrymobile, S4 \\
+\hline
+t4 & Tony, NORTHOLT, BlueRadios, S10, Rabbit, S4\\
+\hline
+t5 & BlueRadios, S4, AliKatz, NORTHOLT, Rabbit, S25, S10\\
+\hline
+t6 & S25, S10, NORTHOLT, BlueRadios, Rabbit\\
+\hline
+... & ...\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{MSON Provider Information}
+\label{table_example}
+\centering
+\begin{tabular}{|c||c|}
+\hline
+\bfseries Service Provider & \bfseries Exposed Service\\
+% user(3).devices_names(500-505)
+\hline
+\hline
+AliKatz     & $ms_1$, $ms_3$, $ms_7$\\
+\hline 
+BlueRadios  & $ms_1$, $ms_4$, $ms_6$\\
+\hline
+Henrymobile & $ms_2$, $ms_3$\\
+\hline
+NORTHOLT    & $ms_1$, $ms_2$, $ms_4$, $ms_5$ \\
+\hline
+Rabbit      & $ms_2$, $ms_3$\\
+\hline 
+S4          & $ms_1$, $ms_3$, $ms_6$\\
+\hline 
+S10         & $ms_1$, $ms_4$\\
+\hline 
+S25         & $ms_2$, $ms_5$, $ms_7$\\
+\hline 
+Tony        & $ms_2$, $ms_4$, $ms_5$, $ms_7$\\
+\hline 
+... & ...\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{MSON Service Candidates for Consumer}
+\label{table_example}
+\centering
+\begin{tabular}{|c||c|}
+\hline
+\bfseries Time & \bfseries Available service\\
+% user(3).devices_names(500-505)
+\hline
+\hline
+t1     & $ms_1^{(3)}$, $ms_2^{(3)}$, $ms_3^{(1)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
+\hline 
+t2     & $ms_1^{(3)}$, $ms_2^{(3)}$, $ms_3^{(1)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
+\hline
+t2     & $ms_1^{(4)}$, $ms_2^{(4)}$, $ms_3^{(3)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
+\hline
+t4     & $ms_1^{(4)}$, $ms_2^{(3)}$, $ms_3^{(2)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(2)}$, $ms_7^{(1)}$\\
+\hline
+t5     & $ms_1^{(5)}$, $ms_2^{(2)}$, $ms_3^{(3)}$, $ms_4^{(3)}$, $ms_5^{(2)}$, $ms_6^{(2)}$, $ms_7^{(2)}$\\
+\hline 
+t6     & $ms_1^{(3)}$, $ms_2^{(3)}$, $ms_3^{(1)}$, $ms_4^{(3)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
+\hline 
+... & ...\\
+\hline
+\end{tabular}
+\end{table}
+
+
 \subsection{Impact of Parameters}
 There are four parameters can be adjusted to improve the KHMSC's performance: population size $PS$, maximum iteration number $MI$, foraging speed $V_f$ and maximum induced speed $N_max$. As shown in Table 2, we generate five groups of parameters configuration to evaluate the impact of each parameter. For each group of parameters configuration, we tune one parameter and fix the other parameters. For each configuration setting, the KHMSC algorithm is executed 50 times independently and the average performance was recorded.
 
@@ -508,32 +603,32 @@ Similarly, Figure 5(b) shows that the value of fitness significantly increased f
 
 \begin{figure*}[!t]
 \centering
-\subfloat[Case I]{
-\includegraphics[width=2in]{./img/pic5.jpg} 
+\subfloat[]{
+\includegraphics[width=2in]{./img/Param-PS.pdf} 
 \label{PS}}
 \hfil
-\subfloat[Case II]{
-\includegraphics[width=2in]{./img/pic6.jpg} 
+\subfloat[]{
+\includegraphics[width=2in]{./img/Param-MI.pdf} 
 \label{MI}}
 \hfil
-\subfloat[Case II]{
-\includegraphics[width=2in]{./img/pic6.jpg} 
-\label{MI}}
+\subfloat[]{
+\includegraphics[width=2in]{./img/Param-CR.pdf} 
+\label{CR}}
 
 
-\subfloat[Case III]{
-\includegraphics[width=2in]{./img/pic7.jpg} 
+\subfloat[]{
+\includegraphics[width=2in]{./img/Param-Vf.pdf} 
 \label{Vf}}
 \hfil
-\subfloat[Case IV]{
-\includegraphics[width=2in]{./img/pic8.jpg} 
+\subfloat[]{
+\includegraphics[width=2in]{./img/Param-Nmax.pdf} 
 \label{Nmax}}
 \hfil
-\subfloat[Case IV]{
-\includegraphics[width=2in]{./img/pic8.jpg} 
-\label{Nmax}}
+\subfloat[]{
+\includegraphics[width=2in]{./img/Param-Dmax.pdf} 
+\label{Dmax}}
 
-\caption{Simulation results for the network.} \label{fig_sim}
+\caption{Impact of parameters.} \label{fig_sim}
 \end{figure*}
 
 
@@ -565,26 +660,24 @@ PSO & inertia weight = 0.8; c1 = 2.0; c2 = 2.0 \\
 \end{tabular}
 \end{table}
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.5in]{./img/opt-iterations-2.pdf}
-\caption{Optimality Evaluation}
-\label{fig_oe}
-\end{figure}
+\subfloat[]{
+\includegraphics[width=2in]{./img/Opt-Iterations.pdf} 
+\label{PS}}
+\hfil
+\subfloat[]{
+\includegraphics[width=2in]{./img/Opt-Candidates.pdf} 
+\label{MI}}
+\hfil
+\subfloat[]{
+\includegraphics[width=2in]{./img/Opt-Tasks.pdf} 
+\label{CR}}
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.5in]{./img/opt-tasks.pdf}
-\caption{Optimality Evaluation}
-\label{fig_oe}
-\end{figure}
+\caption{Optimality evaluation.} \label{fig_sim}
+\end{figure*}
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.5in]{./img/opt-candadites.pdf}
-\caption{Optimality Evaluation}
-\label{fig_oe}
-\end{figure}
+
 
 
 The result in Figure 6 shows that, as expected, the brute-force algorithm leads to the best performance with the highest fitness. The basic PSO algorithm has the worst performance with the lowest fitness values. Both KHMSC and Ga can find over 90\% optimal composition before 50 iterations and KHMSC performs little better than the basic GA algorithm. Although GA performs closely to KHMSC, we finally choose KHMSC because it runs almost five times faster than GA, in next subsection we will evaluate the scalability of above four algorithms.
@@ -595,14 +688,14 @@ In this experiment, we compared the run time of KHMSC with the other algorithms 
 \begin{figure*}[!t]
 \centering
 \subfloat[Case I]{
-\includegraphics[width=3in]{./img/pic11.jpg} 
-\label{PS}}
+\includegraphics[width=3in]{./img/Sca-Tasks.pdf} 
+\label{Tasks}}
 \hfil
 \subfloat[Case II]{
-\includegraphics[width=3in]{./img/pic12.jpg} 
-\label{MI}}
+\includegraphics[width=3in]{./img/Sca-Candidates.pdf} 
+\label{Candidates}}
 
-\caption{Scalability Evaluation.} \label{fig_sim}
+\caption{Scalability evaluation.} \label{fig_sim}
 \end{figure*}
 
 In order to evaluate the impact of task number on the execution time of our algorithm, The task number is varied from 6 to 30. For each task number, the simulation is repeated 50 times, and the average value is recorded as the result. We observe from figure 7(b) that the run time of brute-force method is almost exponential to the problem size, while the run time of other three meta-heuristic algorithms (KHMSC, GA, PSO) are increases almost linearly with tasks increasing. In mobile environment, due to the dynamic movement and limited of computing resources, algorithm must meet the requirement of finding feasible composition within a short time. Therefore, although brute-force can obtain the optimal result, it is not suitable to the problem due to its poor scalability. 
