@@ -20,43 +20,43 @@ Warning--I didn't find a database entry for "Pu2017"
 Done.
 You've used 34 entries,
             4087 wiz_defined-function locations,
-            1032 strings with 14444 characters,
-and the built_in function-call counts, 31678 in all, are:
-= -- 2612
-> -- 770
-< -- 340
-+ -- 436
-- -- 119
-* -- 1559
-:= -- 4534
+            1031 strings with 14453 characters,
+and the built_in function-call counts, 31201 in all, are:
+= -- 2559
+> -- 767
+< -- 329
++ -- 432
+- -- 120
+* -- 1532
+:= -- 4463
 add.period$ -- 77
 call.type$ -- 34
-change.case$ -- 34
-chr.to.int$ -- 786
+change.case$ -- 33
+chr.to.int$ -- 762
 cite$ -- 34
-duplicate$ -- 2161
-empty$ -- 2365
-format.name$ -- 151
-if$ -- 7440
+duplicate$ -- 2132
+empty$ -- 2353
+format.name$ -- 153
+if$ -- 7331
 int.to.chr$ -- 0
 int.to.str$ -- 34
-missing$ -- 353
+missing$ -- 351
 newline$ -- 125
 num.names$ -- 34
-pop$ -- 743
+pop$ -- 752
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2442
+skip$ -- 2406
 stack$ -- 0
-substring$ -- 1866
-swap$ -- 1939
-text.length$ -- 78
+substring$ -- 1809
+swap$ -- 1900
+text.length$ -- 75
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 34
 warning$ -- 0
-while$ -- 162
+while$ -- 158
 width$ -- 36
-write$ -- 372
+write$ -- 368
 (There were 5 warnings)

@@ -159,10 +159,10 @@ H.~Zheng, W.~Zhao, J.~Yang, and A.~Bouguettaya, ``Qos analysis for web service
   compositions with complex structures,'' \emph{IEEE Transactions on Services
   Computing}, vol.~6, no.~3, pp. 373--386, 2013.
 
-\bibitem{glover1986future}
-F.~Glover, ``Future paths for integer programming and links to artificial
-  intelligence,'' \emph{Computers \& operations research}, vol.~13, no.~5, pp.
-  533--549, 1986.
+\bibitem{papadimitriou1998combinatorial}
+C.~H. Papadimitriou and K.~Steiglitz, \emph{Combinatorial optimization:
+  algorithms and complexity}.\hskip 1em plus 0.5em minus 0.4em\relax Courier
+  Corporation, 1998.
 
 \bibitem{nemhauser1988integer}
 G.~L. Nemhauser and L.~A. Wolsey, ``Integer programming and combinatorial

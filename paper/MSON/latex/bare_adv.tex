@@ -102,10 +102,11 @@ Computer Society, IEEE, IEEEtran, journal, \LaTeX, paper, template.
 \fi
 
 
-\IEEEPARstart{R}{ecent years} have witnessed the rapid development of mobile devices and mobile communication technology, mobile devices has already surpassed stationary Internet hosts in numbers and web services are no longer limited to traditional stationary platforms and they can be more flexible and pervasive. The hardware of mobile devices will continue to make breakthroughs on extending the capabilities of mobile devices in terms of computational power, RAM, storage capacity, and so on \cite{Deng2017}. The huge potential of mobile technology brings a great opportunity to traditional service computing in the mobile environment. As a result, the global interest of mobile service is on the rise and both academia and industry are inspired to pave the way for mobile service provisioning \cite{dinh2013survey,hu2014multidimensional}.
+\IEEEPARstart{R}{ecent years} have witnessed the rapid development of mobile devices and mobile communication technology. 
+mobile devices has already surpassed stationary Internet hosts in numbers. Web services are no longer limited to traditional stationary platforms and they can be more flexible and pervasive. The hardware of mobile devices will continue to make breakthroughs on extending the capabilities of mobile devices in terms of computational power, RAM, storage capacity, and so on \cite{Deng2017}. The huge potential of mobile technology brings a great opportunity to traditional service computing in the mobile environment. As a result, the global interest of mobile service is on the rise and both academia and industry are inspired to pave the way for mobile service provisioning \cite{dinh2013survey,hu2014multidimensional}.
 
 While mobile device have powerful computing and communication capabilities now, the resources-intensive services, however, drain out the energy of the device much faster than before. 
-To achieve the goal of reducing mobile device energy consumption, we propose a QoS-oriented mobile service composition approach in this paper, where a mobile user in mobile opportunistic network can combine and exploit nearby devices' resources to boost their computing power and overcome the limitations of their own resources. As shown in fig.1, this architecture can reduce communication energy consumption and avoid the extreme centralization of traditional mobile cloud computing \cite{Giordano2011}. Its main rationality is three-fold. First, opportunistic user encounters are prevalent and sufficient in daily life \cite{liu2013exploring}, which offers plenty of opportunities to exploit nearby mobile worker for task solving \cite{chang2015progressive,heimerl2012communitysourcing,agapie2015crowdsourcing}. Second, many mobile tasks require huge computational resources or data transfer (e.g., Tensorflow on mobile, Photoshop on mobile, Online video), for energy consumption and cost perspective, nearby mobile service provider are more adept at executing these tasks than the online workers, because this paradigm can reduce data transfer over cellular network which consume more energy than device to device (D2D) communications such as Bluetooth, WiFi and NFC \cite{Balani}. Third, D2D communications are promising to replenish traditional cellular communications in terms of user throughput increase, cellular traffic reduction and network coverage extension, in this way, users can get better quality of service and save communication fee\cite{asadi2014survey}. In a word, this framework shares the similar spirit with the emerging paradigm “cyber foraging” over opportunistic networks, such that mobile users opportunistically exploit nearby device resources to facilitate their computational task processing \cite{shi2012serendipity,li2014can,zhang2015offloading}.
+To achieve the goal of reducing mobile device energy consumption, we propose a QoS-oriented mobile service composition approach in this paper, where a mobile user in mobile opportunistic network can combine and exploit nearby devices' resources to boost their computing power and therefore overcome the limitations of their own resources. As shown in fig.1, this architecture can reduce communication energy consumption and avoid the extreme centralization of traditional mobile cloud computing \cite{Giordano2011}. Its main rationality is three-fold. First, opportunistic user encounters are prevalent and sufficient in daily life \cite{liu2013exploring}, which offers plenty of opportunities to exploit nearby mobile worker for task solving \cite{chang2015progressive,heimerl2012communitysourcing,agapie2015crowdsourcing}. Second, many mobile tasks require huge computational resources or data transfer (e.g., Tensorflow on mobile, Photoshop on mobile, Online video), for energy consumption and cost perspective, nearby mobile service provider are more adept at executing these tasks than the online workers, because this paradigm can reduce data transfer over cellular network which consume more energy than device to device (D2D) communications such as Bluetooth, WiFi and NFC \cite{Balani}. Third, D2D communications are promising to replenish traditional cellular communications in terms of user throughput increase, cellular traffic reduction and network coverage extension, in this way, users can get better quality of service and save communication fee\cite{asadi2014survey}. In a word, this framework shares the similar spirit with the emerging paradigm “cyber foraging” over opportunistic networks, such that mobile users opportunistically exploit nearby device resources to facilitate their computational task processing \cite{shi2012serendipity,li2014can,zhang2015offloading}.
 
 \begin{figure}[!t]
 \centering
@@ -133,11 +134,11 @@ The remainder of this paper is structured as follows. Section II describe the MS
 \label{fig_mson}
 \end{figure}
 
-In this section, we first introduce the characteristics mobile service opportunistic network (MSON), then an example is presented to illustrate its application scenario.
+In this section, we first introduce the characteristics of mobile service opportunistic network (MSON), then an example is presented to illustrate its application scenario.
 
 MSON has three main characteristics:
 
-1) Locality: An MSON is not established through the stable Internet, it do not consider user mobility a problem but as an opportunity to exploit. Mobile user in opportunistic network can discover nearby service and establish self-organized local communication network within sensor distance.
+1) Locality: An MSON is not established through the stable Internet, it do not consider user mobility a problem but as an opportunity to exploit. Mobile user in MSON can discover nearby service and establish self-organized local communication network within sensor distance.
 
 2) Mobility: Services requesters and providers are not fixed at the same location, and they are mobile when invoking or provisioning a mobile service.
 
@@ -286,15 +287,19 @@ where $U(csi)$ is the objection mentioned in e.q (7), $t_i \in [1,n]$ is the ind
 
 \textit{Theorem 1:} The service composition problem over MSON (Definition 6) is NP-hard.
 
-\textit{Proof:} We can reduce our studied problem to a knapsack problem, and this problem can be solved by integer programming. The standard integer program to find the smallest value of a given objective function $F(x)$ with a feasible parameter follows \cite{glover1986future}:
+\textit{Proof:} We can reduce the service composition problem over MSON problem to a knapsack problem, and this problem can be solved by integer programming. 
+The canonical form of integer linear program to search the biggest value of given objective function $F(x)$ can be expressed as follow \cite{papadimitriou1998combinatorial}:
+
 \begin{eqnarray}
 maximize \  : F(x) = c^{T}x     \\\nonumber
-subject \ to: Ax+s = b, \\
-s \ge 0, \\
-x \in \mathbb{Z}^{n}
+subject \ to: Ax \le b, \\\nonumber
+x_i \in \mathbb{Z}^{n} \\\nonumber
+x_i > 0 
 \end{eqnarray}
-
-Where $x$ and $b$ are vectors and $A$ is a matrix, For the problem of selecting optimal services composition over MSON, the vector $x = (x_1, . . . , x_n)$ can describe a possible solution as a service composition with $n$ tasks. An element $x_i$ in corresponds to a selected service from the candidates for the $i$-th task. The optimal solution  $x^*$ satisfies the following conditions:
+Where $n$ is a positive integer, $b$ and $c$ are vectors, $A$ is a matrix.
+%matrix $A$ and vector $b$ construct the constrain of service candidates bounds, vector $c$ means how to map the feasible solution $x$ to objective value.
+For the problem of selecting optimal services composition over MSON, the vector $x = (x_1, . . . , x_n)$ can describe a possible solution as a service composition with $n$ tasks. An element $x_i$ in corresponds to a selected service from the candidates for the $i$-th task.
+The optimal solution  $x^*$ satisfies the following conditions:
 
 1) $x^*$ belongs to the feasible set.
 

@@ -13,6 +13,13 @@ aaaasdad\cite{Wu2014}\cite{Pu2017}.
 ### 编译过程
 
 1. PdfLaTex
+
 2. BibTex
+
+   ```Shell
+   $ bibtex bare_adv.aux
+   ```
+
 3. PdfLaTex
+
 4. PdfLaTex
