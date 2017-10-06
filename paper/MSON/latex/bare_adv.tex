@@ -183,7 +183,7 @@ In order to describe the problem addressed in this paper, we first provide the b
 
 ​A service composition plan is an abstract description of a business process. Each task $t_i$ can be realized by invoking an individual service. $R$ is used to describe the structure of the composition. $d(t_i, t_j) = 1$ represents that the inputs of $t_j$ depend on the outputs of $t_i$.
 
-\textit{Definition 4 (composite service instance):} A service composition instance is a tuple $csi = (mscp, S)$, where:
+\textit{Definition 4 (composite service instance):} A service composition instance is a tuple $CSI = (mscp, S)$, where:
 
 ​1) $mscp$ is mobile service composition plan which defined in definition 3;
 
@@ -269,24 +269,24 @@ loop & $k \times q_{rt}(S_i)$ & $k \times q_{ava}(S_i)$ \\
 \end{tabular}
 \end{table}
 
-For a composite service instance $csi$, its each QoS attribute is determined by its concrete components and orchestration patterns. Table.1 lists the aggregation functions for response time, cost, and availability for sequential, loop, choice, and parallel composition patterns. We can find more aggregation functions found in \cite{jaeger2004qos} and \cite{zheng2013qos}.
+For a composite service instance $CSI$, its each QoS attribute is determined by its concrete components and orchestration patterns. Table.1 lists the aggregation functions for response time, cost, and availability for sequential, loop, choice, and parallel composition patterns. We can find more aggregation functions found in \cite{jaeger2004qos} and \cite{zheng2013qos}.
 
-In order to facilitate ranking of different composite service instances $csi$ in terms of QoS, we utilize simple additive weighting (SAW) as the QoS utility function to map the QoS value into a real value. SAW first normalizes the QoS attribute values into real values between $0$ and $1$, through comparison with the maximal and minimal values; then it sums the normalized values multiplied with a preference weight $w_t$. According to SAW, the QoS utility of a $csi$ can be calculated using e.q (7), where, $q_t(csi)$ is the aggregated value of the $t$-th QoS attribute of $csi$, and $q_{t,max}$ and $q_{t,min}$, respectively, denote the maximal and minimal possible aggregated values of the $t$-th QoS attribute \cite{Wu2016}.
+In order to facilitate ranking of different composite service instances $CSI$ in terms of QoS, we utilize simple additive weighting (SAW) as the QoS utility function to map the QoS value into a real value. SAW first normalizes the QoS attribute values into real values between $0$ and $1$, through comparison with the maximal and minimal values; then it sums the normalized values multiplied with a preference weight $w_t$. According to SAW, the QoS utility of a $CSI$ can be calculated using e.q (7), where, $q_t(CSI)$ is the aggregated value of the $t$-th QoS attribute of $CSI$, and $q_{t,max}$ and $q_{t,min}$, respectively, denote the maximal and minimal possible aggregated values of the $t$-th QoS attribute \cite{Wu2016}.
 \begin{eqnarray}
-U(csi) = (\sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(csi)}{q_{t,max}-q_{t,min}})\times w_t \\\nonumber
-+(\sum_{q_t \in Q^+} \frac{q_t(csi)-q_{t,min}}{q_{t,max}-q_{t,min}})\times w_t
+U(CSI) = (\sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(CSI)}{q_{t,max}-q_{t,min}})\times w_t \\\nonumber
++(\sum_{q_t \in Q^+} \frac{q_t(CSI)-q_{t,min}}{q_{t,max}-q_{t,min}})\times w_t
 \end{eqnarray}
 
 \subsection{Problem Formulation}
 Base on the above discussion, we can give the definition of the service composition over MSON problem.
 
-\textit{Definition 6 (MSON Service Composition):} Given a service composition request $req$ by a mobile user $u$, perceive nearby service and select suitable concrete services to achieve an optimal service composition instance $csi$ with the best QoS, that is
+\textit{Definition 6 (MSON Service Composition):} Given a service composition request $req$ by a mobile user $u$, perceive nearby service and select suitable concrete services to achieve an optimal service composition instance $CSI$ with the best QoS, that is
 \begin{eqnarray}
-target \ : \  Max \ \{U(csi)\}   \\\nonumber
+target \ : \  Max \ \{U(CSI)\}   \\\nonumber
 s.t. : \ t_i \in \{1,2,3,...,n\}  \\\nonumber
 s_i \in \{1,2,3,...,m \}
 \end{eqnarray}
-where $U(csi)$ is the objection mentioned in e.q (7), $t_i \in [1,n]$ is the index of the tasks in the composition plan, $s_i \in [1, m]$ is the index of service candidates for the $i$-th task.
+where $U(CSI)$ is the objection mentioned in e.q (7), $t_i \in [1,n]$ is the index of the tasks in the composition plan, $s_i \in [1, m]$ is the index of service candidates for the $i$-th task.
 
 \textit{Theorem 1:} The service composition problem over MSON (Definition 6) is NP-hard.
 
@@ -310,28 +310,43 @@ The optimal solution  $x^*$ satisfies the following conditions:
 
 The target of the mobile service composition problem in MSON is to find the biggest $F(x)$. Thus, the problem is equivalent to the integer programming problem which is known to be NP-hard. Then the service composition problem over MSON is NP-hard.
 
-\section{Composition Algorithm}
+\section{The ikh algorithm for mobile service composition}
 For the problem we formulate above, integer programming can be utilized to obtain the optimal solution. However, integer programming might cost much more time with the increment of problem size because of its poor scalability \cite{nemhauser1988integer}. To solve this problem in polynomial time, an meta-heuristic algorithms such as GAs and PSO, can be utilized to find the near optimal solution.
-In this section, we will illustrate our algorithm for making mobile service compositions over MSON based on the Krill-Herd algorithm.
+%In this section, we will illustrate our algorithm for making mobile service compositions over MSON based on the Krill-Herd algorithm.
 
-​KH algorithm \cite{gandomi2012krill} is new generic stochastic optimization approach for the global optimization problem which is inspired by predatory behavior and communication behavior of krill. 
-In this paper, the position vector of each krill individual corresponds to a feasible mobile service composition, 
-the foraging motion is to learn from the current optimal service composition. 
-Similarly, the motion induced by other krill individuals means to learn from neighbor mobile service compositions.
-The krill individual with the best position corresponds to the optimal mobile service composition. 
-The KH optimization's target is to find the krill individual with the best position, which means to find the best mobile service composition with the best fitness value. 
-Therefore, once the optimal krill individual is found, the best mobile service composition is obtained.
+KH algorithm \cite{gandomi2012krill} is new generic stochastic optimization approach for the global optimization problem which is inspired by predatory behavior and communication behavior of krill. 
+In this section, we will introduce a Krill-Herd based algorithm which named SKH to solve the mobile service composition over MSON problem.
 
-As shown in equation (10), the position of a krill individual is determined by three main factors: 1) foraging action; 2) movement influenced by other krill; and 3) physical diffusion. 
+\subsection{Encoding}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{./img/pic4.pdf}
+\caption{Krill encoding}
+\label{fig_opportunistic}
+\end{figure}
+
+%In this paper, the position vector of each krill individual corresponds to a feasible mobile service composition,
+In SKH, a concrete service composition is encoded as a krill individual, the krill individual with the best position corresponds to the optimal mobile service composition. The KH optimization's target is to find the krill individual with the best position, which means to find the best mobile service composition with the best QoS Utility. Therefore, once the optimal krill individual is found, the best mobile service composition is obtained.
+
+In this paper, the position vector of each krill individual is represented by an integer array with its length equal to the number of involved tasks. The $i$ th entry in the array, in turn, refers to the selection result of the task $t_i$ . That is to say, given that the value of the $i$ th entry is $j$, it indicates that $ms_{ij}$ is the selected concrete service to execute $t_i$ . Figure 4 illustrates this krill encoding.
+
+
+
+\subsection{Motion operator}
+% 
+% 
+
+As shown in equation (10), in motion operator, the position of each krill individual is determined by three main factors: 1) motion influenced by other krill; 2) foraging action; and 3) physical diffusion. 
 \begin{equation}
-\frac{dcsi_i}{dt} =N_i+F_i+D_i
+\frac{dX_i}{dt} =N_i+F_i+D_i
 \end{equation}
 
-where $csi_i = (s_{i,1}, s_{i,2}, . . . , s_{i,n})$ is $i$-th composition service instance ($csi$), $n$ is the number of tasks in the service composition, $s_{i,j}$ is the selected candidate for the $j$-th task in solution $csi_i$, where $N_i$, $F_i$, and $D_i$ denote the motion influenced by other $csi$, the foraging motion, and the physical diffusion of the $csi_i$, respectively.
+where $X_i = (ms_{1j}, ms_{2k}, . . . , ms_{nc})$ is $i$-th composition service instance $CSI_i$, $n$ is the number of tasks in the service composition, $ms_{jx}$ is the selected candidate for the $j$-th task in solution $X_i$, where $N_i$, $F_i$, and $D_i$ denote the motion influenced by other CSI, the foraging motion, and the physical diffusion, respectively.
 
 1) Movement induced by other krill individuals
 
-Motion induced by other composition service instance $N_i$ can be formulated as follow
+The motion induced by other krill individuals $N_i$ means to learn from neighbor mobile service compositions. It can be formulated as follow:
 \begin{equation}
 N^{new}_i = N^{max}\alpha_i + \omega_n N^{old}_i
 \end{equation}
@@ -341,27 +356,25 @@ where
 \alpha_i = \alpha^{local}+\alpha^{target}
 \end{equation}
 
-$\alpha_i$ is direction of the induced motion and it can be evaluated by target swarm density (target effect $\alpha^{target}$), local swarm density (local effect $\alpha^{local}$). $N^{max}$ is the maximum induced speed, $\omega_n \in [0, 1]$ the inertia weight of the induced motion, $N^{old}_{i}$ is the last induced motion influenced by other $csi$.
+$\alpha_i$ is the direction of the induced motion and it can be evaluated by target swarm density (target effect $\alpha^{target}$), local swarm density (local effect $\alpha^{local}$). $N^{max}$ is the maximum induced speed, $\omega_n \in [0, 1]$ the inertia weight of the induced motion, $N^{old}_{i}$ is the last induced motion influenced by other CSI.
 
 2) Foraging Motion
 
-Foraging Motion $F_i$ covered two parts: the current food location and the information about the previous location. For the $csi$ i, we formulated this motion below:
-
+Similarly, the foraging motion $F_i$ is to learn from the current optimal service composition. 
+$F_i$ has two parts: the current food location and the information about the previous location. 
+For the $CSI_i$, we can formulate this motion as follow:
 \begin{equation}
 F_i = V_f\beta_i + \omega_f F^{old}_i
 \end{equation}
-
 where
-
 \begin{equation}
 \beta_i = \beta_i^{food}+\beta_i^{best}
 \end{equation}
-
-where $V_f$ is the foraging speed (empirically set to $0.8$ in this paper), $\omega_f∈ [0, 1]$ is the inertia weight of foraging, and $F^{old}_i$ is the last foraging motion. $\beta_i$ is the direction of the foraging motion.
+where $V_f$ is the foraging speed (empirically set to $0.8$ in this paper), $\omega_f \in [0, 1]$ is the inertia weight of foraging, and $F^{old}_i$ is the last foraging motion. $\beta_i$ is the direction of the foraging motion.
 
 3) Random diffusion
 
-For the $i$-th $csi$, the physical diffusion is considered to be a random process. This motion includes two components: a maximum diffusion speed and a random directional vector, it can be formulated as follows
+For $CSI_i$, the physical diffusion is considered to be a random process. This motion includes two components: a maximum diffusion speed and a random directional vector, it can be formulated as follows
 
 \begin{equation}
 D_i = D^{max}\delta
@@ -369,11 +382,11 @@ D_i = D^{max}\delta
 
 where $D^{max}$ is the maximum diffusion speed and $\delta \in [-1, 1]$ is a random directional vector. In this paper, the maximum diffusion speed is randomly generated in $[0.2, 0.5]$. 
 
-4) Crossover operator
+\subsection{Stud selection and crossover operator}
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{./img/pic4.pdf}
+\includegraphics[width=3in]{./img/pic5.pdf}
 \caption{Cross over}
 \label{fig_opportunistic}
 \end{figure}
@@ -435,7 +448,7 @@ where
 \Delta t = C_t\sum_{j=1}^{d}(UB_j - LB_j)
 \end{equation}
 
-where $d$ is the tasks number of each $csi$, $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space. The  whole process of KH algorithm is shown in Algorithm 2.
+where $d$ is the tasks number of each $CSI$, $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space. The  whole process of KH algorithm is shown in Algorithm 2.
 
 \begin{algorithm}
 \caption{KH algorithm}
@@ -444,7 +457,7 @@ where $d$ is the tasks number of each $csi$, $UB_j$ and $LB_j$ are upper and low
 
 \REQUIRE Lower bound of service candidates $lb$; Up bound of service candidates $ub$; Number of krill individuals $nk$; Number of max iteration $mi$
 
-\ENSURE Individual with best fitness $csi$
+\ENSURE Individual with best fitness $CSI$
 
 \STATE generate $nk$ feasible solutions randomly
 \STATE save them in the population $X$
@@ -481,7 +494,7 @@ where $d$ is the tasks number of each $csi$, $UB_j$ and $LB_j$ are upper and low
 \end{algorithm}
 
 \section{SIMULATION AND EVALUATION}
-In this section, we first discussed the experimental environment settings, and then the KH-based approach for the mobile service composition algorithm (KHMSC) is evaluated from the perspective of optimality and scalability, respectively.
+In this section, we first discussed the experimental environment settings, and then the improved KH-based approach for the mobile service composition algorithm (IKH) is evaluated from the perspective of optimality and scalability, respectively.
 \subsection{Simulation Setting}
 To evaluate the optimality and scalability of the proposed approaches, the experiment is run on a personal computer with an Intel Core i5 CPU with 2.4 GHz, 4 GB RAM, macOS and Matlab R2015b Edition.
 
@@ -596,20 +609,20 @@ There are four parameters can be adjusted to improve the KHMSC's performance: po
 \hline
 \bfseries $PS$ & \bfseries $MI$ & \bfseries $CR$ & \bfseries $V_f$ & \bfseries $N_{max}$ & \bfseries $D_{max}$ \\
 \hline
-10$\sim$100 & 50          & 0.6            & 0.8            &  0.3            &  0.2 \\
-20          & 10$\sim$100 & 0.6            & 0.8            &  0.3            &  0.2 \\
-20          & 50          & 0.01$\sim$1.00 & 0.8            &  0.3            &  0.2 \\
-20          & 50          & 0.6            & 0.01$\sim$1.00 &  0.3            &  0.2 \\
-20          & 50          & 0.6            & 0.01           &  0.01$\sim$3.00 &  0.2 \\
-20          & 50          & 0.6            & 0.01           &  0.3            &  0.01$\sim$3.00 \\
+1$\sim$60 & 50          & 0.6            & 0.8            &  0.3            &  0.2 \\
+20        & 10$\sim$150 & 0.6            & 0.8            &  0.3            &  0.2 \\
+20        & 50          & 0.01$\sim$1.00 & 0.8            &  0.3            &  0.2 \\
+20        & 50          & 0.6            & 0.01$\sim$3.00 &  0.3            &  0.2 \\
+20        & 50          & 0.6            & 0.01           &  0.01$\sim$2.00 &  0.2 \\
+20        & 50          & 0.6            & 0.01           &  0.3            &  0.01$\sim$3.00 \\
 \hline
 \end{tabular}
 \end{table}
 
 Figure 5 shows the results of tuning different parameters for KHMSC. 
 
-Figure 5(a) shows the impact of population size, we observe that with the increase of population size, the fitness value of KHMSC significantly improved before $PS=50$, and no significant improvement is observed after population size over 50. Therefore, an excessively large population size e.g. $PS=80$ has limited impact on the performance of KHMSC, and it will result in computing resources waste and low timeliness.
-Similarly, Figure 5(b) shows that the value of fitness significantly increased for higher number of iteration times until to a limit: $MI = 60$. Figure 5(c) shows the impact of the foraging speed $V_f$. The performance of KHMSC increases with $V_f$ and the best performance is achieved for $V_f = 0.8$. Figure 5(d) shows the impact of the induced speed $N_max$. It shows that fitness value is continually increased until to a limit: $N_max$ = 0.4 and then it decreases . 
+Figure 5(a) shows the impact of population size, we observe that with the increase of population size, the average QoS Utility of IKH significantly improved before $PS=10$, and no significant improvement is observed after population size over $20$. Therefore, an excessively large population size e.g. $PS=50$ has limited impact on the performance of IKH, and it will result in computing resources waste and high time cost.
+Similarly, Figure 5(b) shows that the value of QoS Utility significantly increased for higher number of iteration times until to a limit: $MI = 60$. Figure 5(c) shows the impact of the foraging speed $V_f$. The performance of KHMSC increases with $V_f$ and the best performance is achieved for $V_f = 0.8$. Figure 5(d) shows the impact of the induced speed $N_max$. It shows that fitness value is continually increased until to a limit: $N_max$ = 0.4 and then it decreases . 
 
 \begin{figure*}[!t]
 \centering

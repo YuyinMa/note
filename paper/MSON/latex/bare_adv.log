@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  5 OCT 2017 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  6 OCT 2017 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -337,6 +337,9 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 LaTeX Warning: Label `fig_opportunistic' multiply defined.
 
 
+LaTeX Warning: Label `fig_opportunistic' multiply defined.
+
+
 LaTeX Warning: Label `table_example' multiply defined.
 
 
@@ -586,116 +589,119 @@ Overfull \hbox (4.85612pt too wide) in alignment at lines 245--249
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
-Missing character: There is no â in font pplr7t!
-Missing character: There is no € in font pplr7t!
-Missing character: There is no ‹ in font pplr7t!
-[4]
-Missing character: There is no â in font cmr10!
-Missing character: There is no ˆ in font cmr10!
-Missing character: There is no ˆ in font cmr10!
- <./img/pic4.pdf, id=143, 1027.84pt x 770.88pt>
+
+Underfull \hbox (badness 1769) in paragraph at lines 313--313
+ \OT1/phv/b/sc/11.04124 4 The ikh al-go-rithm for mo-bile ser-vice
+ []
+
+<./img/pic4.pdf, id=131, 823.30138pt x 485.78177pt>
 File: ./img/pic4.pdf Graphic file (type pdf)
  <use ./img/pic4.pdf>
-Package pdftex.def Info: ./img/pic4.pdf used on input line 376.
-(pdftex.def)             Requested size: 180.67499pt x 135.50592pt.
+Package pdftex.def Info: ./img/pic4.pdf used on input line 324.
+(pdftex.def)             Requested size: 216.81pt x 127.9236pt.
 
-Underfull \hbox (badness 1603) in paragraph at lines 406--407
+[4] <./img/pic5.pdf, id=144, 877.43648pt x 604.0821pt>
+File: ./img/pic5.pdf Graphic file (type pdf)
+ <use ./img/pic5.pdf>
+Package pdftex.def Info: ./img/pic5.pdf used on input line 389.
+(pdftex.def)             Requested size: 216.81pt x 149.2596pt.
+
+[5 <./img/pic4.pdf> <./img/pic5.pdf>]
+Underfull \hbox (badness 1603) in paragraph at lines 419--420
 [] []\OT1/ppl/m/n/9.53561 Population $\OML/cmm/m/it/10 X$\OT1/ppl/m/n/9.53561 ;
  Best fit-ness $\OML/cmm/m/it/10 F[]$\OT1/ppl/m/n/9.53561 ; Worst fit-ness
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 420.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 433.
 
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [5 <./img/pic4.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 461.
+)
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 474.
 
- (/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/omsppl.fd
+
+(/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/omsppl.fd
 File: omsppl.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <9.53561> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 461.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 474.
 
-Overfull \hbox (10.05794pt too wide) in paragraph at lines 501--522
+Overfull \hbox (10.05794pt too wide) in paragraph at lines 514--535
  [][] 
  []
 
-
-Overfull \hbox (11.29216pt too wide) in paragraph at lines 595--607
+[6]
+Overfull \hbox (3.26216pt too wide) in paragraph at lines 608--620
  [][] 
  []
 
-[6] <./img/Param-PS.pdf, id=167, 433.62pt x 289.08pt>
+<./img/Param-PS.pdf, id=185, 433.62pt x 289.08pt>
 File: ./img/Param-PS.pdf Graphic file (type pdf)
  <use ./img/Param-PS.pdf>
-Package pdftex.def Info: ./img/Param-PS.pdf used on input line 618.
+Package pdftex.def Info: ./img/Param-PS.pdf used on input line 631.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-MI.pdf, id=168, 433.62pt x 289.08pt>
+<./img/Param-MI.pdf, id=186, 433.62pt x 289.08pt>
 File: ./img/Param-MI.pdf Graphic file (type pdf)
  <use ./img/Param-MI.pdf>
-Package pdftex.def Info: ./img/Param-MI.pdf used on input line 622.
+Package pdftex.def Info: ./img/Param-MI.pdf used on input line 635.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-CR.pdf, id=169, 433.62pt x 289.08pt>
+<./img/Param-CR.pdf, id=187, 433.62pt x 289.08pt>
 File: ./img/Param-CR.pdf Graphic file (type pdf)
  <use ./img/Param-CR.pdf>
-Package pdftex.def Info: ./img/Param-CR.pdf used on input line 626.
+Package pdftex.def Info: ./img/Param-CR.pdf used on input line 639.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-Vf.pdf, id=170, 433.62pt x 289.08pt>
+<./img/Param-Vf.pdf, id=188, 433.62pt x 289.08pt>
 File: ./img/Param-Vf.pdf Graphic file (type pdf)
  <use ./img/Param-Vf.pdf>
-Package pdftex.def Info: ./img/Param-Vf.pdf used on input line 631.
+Package pdftex.def Info: ./img/Param-Vf.pdf used on input line 644.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-Nmax.pdf, id=171, 433.62pt x 289.08pt>
+<./img/Param-Nmax.pdf, id=189, 433.62pt x 289.08pt>
 File: ./img/Param-Nmax.pdf Graphic file (type pdf)
  <use ./img/Param-Nmax.pdf>
-Package pdftex.def Info: ./img/Param-Nmax.pdf used on input line 635.
+Package pdftex.def Info: ./img/Param-Nmax.pdf used on input line 648.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-Dmax.pdf, id=172, 433.62pt x 289.08pt>
+<./img/Param-Dmax.pdf, id=190, 433.62pt x 289.08pt>
 File: ./img/Param-Dmax.pdf Graphic file (type pdf)
  <use ./img/Param-Dmax.pdf>
-Package pdftex.def Info: ./img/Param-Dmax.pdf used on input line 639.
+Package pdftex.def Info: ./img/Param-Dmax.pdf used on input line 652.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-<./img/Opt-Iterations.pdf, id=173, 433.62pt x 289.08pt>
+<./img/Opt-Iterations.pdf, id=191, 433.62pt x 289.08pt>
 File: ./img/Opt-Iterations.pdf Graphic file (type pdf)
 
 <use ./img/Opt-Iterations.pdf>
-Package pdftex.def Info: ./img/Opt-Iterations.pdf used on input line 677.
+Package pdftex.def Info: ./img/Opt-Iterations.pdf used on input line 690.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Opt-Candidates.pdf, id=174, 433.62pt x 289.08pt>
+<./img/Opt-Candidates.pdf, id=192, 433.62pt x 289.08pt>
 File: ./img/Opt-Candidates.pdf Graphic file (type pdf)
 
 <use ./img/Opt-Candidates.pdf>
-Package pdftex.def Info: ./img/Opt-Candidates.pdf used on input line 681.
+Package pdftex.def Info: ./img/Opt-Candidates.pdf used on input line 694.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Opt-Tasks.pdf, id=175, 433.62pt x 289.08pt>
+<./img/Opt-Tasks.pdf, id=193, 433.62pt x 289.08pt>
 File: ./img/Opt-Tasks.pdf Graphic file (type pdf)
  <use ./img/Opt-Tasks.pdf>
-Package pdftex.def Info: ./img/Opt-Tasks.pdf used on input line 685.
+Package pdftex.def Info: ./img/Opt-Tasks.pdf used on input line 698.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Sca-Tasks.pdf, id=176, 505.89pt x 361.35pt>
+<./img/Sca-Tasks.pdf, id=194, 505.89pt x 361.35pt>
 File: ./img/Sca-Tasks.pdf Graphic file (type pdf)
  <use ./img/Sca-Tasks.pdf>
-Package pdftex.def Info: ./img/Sca-Tasks.pdf used on input line 702.
+Package pdftex.def Info: ./img/Sca-Tasks.pdf used on input line 715.
 (pdftex.def)             Requested size: 216.81pt x 154.86469pt.
 
-<./img/Sca-Candidates.pdf, id=177, 505.89pt x 361.35pt>
+<./img/Sca-Candidates.pdf, id=195, 505.89pt x 361.35pt>
 File: ./img/Sca-Candidates.pdf Graphic file (type pdf)
 
 <use ./img/Sca-Candidates.pdf>
-Package pdftex.def Info: ./img/Sca-Candidates.pdf used on input line 706.
+Package pdftex.def Info: ./img/Sca-Candidates.pdf used on input line 719.
 (pdftex.def)             Requested size: 216.81pt x 154.86469pt.
  [7]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -708,13 +714,13 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 f> <./img/Opt-Candidates.pdf> <./img/Opt-Tasks.pdf> <./img/Sca-Tasks.pdf> <./im
 g/Sca-Candidates.pdf>]
 
-LaTeX Warning: Citation `Zhang2016' on page 9 undefined on input line 723.
+LaTeX Warning: Citation `Zhang2016' on page 9 undefined on input line 736.
 
 
-LaTeX Warning: Citation `Giordano2011' on page 9 undefined on input line 732.
+LaTeX Warning: Citation `Giordano2011' on page 9 undefined on input line 745.
 
 
-LaTeX Warning: Citation `Pu2017' on page 9 undefined on input line 733.
+LaTeX Warning: Citation `Pu2017' on page 9 undefined on input line 746.
 
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
@@ -731,10 +737,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5535 strings out of 494437
- 88392 string characters out of 6166646
- 168979 words of memory out of 5000000
- 8755 multiletter control sequences out of 15000+600000
+ 5540 strings out of 494437
+ 88475 string characters out of 6166646
+ 170979 words of memory out of 5000000
+ 8759 multiletter control sequences out of 15000+600000
  57894 words of font info for 137 fonts, out of 8000000 for 9000
  322 hyphenation exceptions out of 8191
  39i,16n,49p,1935b,515s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -766,10 +772,10 @@ sic/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017basi
 c/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017basic/
 texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017basic/t
 exmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on bare_adv.pdf (10 pages, 806769 bytes).
+Output written on bare_adv.pdf (10 pages, 819857 bytes).
 PDF statistics:
- 467 PDF objects out of 1000 (max. 8388607)
- 346 compressed objects within 4 object streams
+ 484 PDF objects out of 1000 (max. 8388607)
+ 359 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
