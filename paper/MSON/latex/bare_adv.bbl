@@ -109,19 +109,10 @@ C.~Jiang, L.~Gao, L.~Duan, and J.~Huang, ``Exploiting data reuse in mobile
   crowdsensing,'' in \emph{Global Communications Conference (GLOBECOM), 2016
   IEEE}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2016, pp. 1--6.
 
-\bibitem{Deng2016-2}
-S.~Deng, L.~Huang, Y.~Li, H.~Zhou, Z.~Wu, X.~Cao, M.~Y. Kataev, and L.~Li,
-  ``{Toward risk reduction for mobile service composition},'' \emph{IEEE
-  transactions on cybernetics}, vol.~46, no.~8, pp. 1807--1816, 2016.
-
 \bibitem{Yang2010}
 K.~Yang, A.~Galis, and H.-H. Chen, ``{Qos-aware service selection algorithms
   for pervasive service composition in mobile wireless environments},''
   \emph{Mobile Networks and Applications}, vol.~15, no.~4, pp. 488--501, 2010.
-
-\bibitem{ko2000location}
-Y.-B. Ko and N.~H. Vaidya, ``Location-aided routing (lar) in mobile ad hoc
-  networks,'' \emph{Wireless networks}, vol.~6, no.~4, pp. 307--321, 2000.
 
 \bibitem{wu2013predicting}
 J.~Wu, L.~Chen, Y.~Feng, Z.~Zheng, M.~C. Zhou, and Z.~Wu, ``Predicting quality
@@ -174,6 +165,11 @@ G.~L. Nemhauser and L.~A. Wolsey, ``Integer programming and combinatorial
 A.~H. Gandomi and A.~H. Alavi, ``Krill herd: a new bio-inspired optimization
   algorithm,'' \emph{Communications in Nonlinear Science and Numerical
   Simulation}, vol.~17, no.~12, pp. 4831--4845, 2012.
+
+\bibitem{khatib1998stud}
+W.~Khatib and P.~J. Fleming, ``The stud ga: a mini revolution?'' in
+  \emph{International Conference on Parallel Problem Solving from
+  Nature}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 1998, pp. 683--691.
 
 \bibitem{zheng2014investigating}
 Z.~Zheng, Y.~Zhang, and M.~R. Lyu, ``Investigating qos of real-world web

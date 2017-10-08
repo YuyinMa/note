@@ -151,8 +151,7 @@ Fig.2 illustrates the working procedure of the mobile service provision over opp
 
 Note that, our framework only considers one-hop mechanism for both service requester and provider, since some realistic dataset analyses reveal that users' one-hop neighbors are sufficient, compared with multi-hop mechanisms in existing researches \cite{chang2015progressive,karaliopoulos2015user,han2016competition,tuncay2013participant,wu2013homing,jiang2016exploiting,liu2013exploring}, D2D communication which hops are larger than two would incur long delay \cite{li2014can},  this one-hop feature can lower the network overhead (e.g., no need to transfer a large volume of task contents hop by hop) and ensure framework choose only local relatively reliable service. 
 
-We use an example to illustrate the related features of service provision over MSON. Assume a mobile user Mike just complete his tour and now he is on the subway to airport. Now he wants to edit some videos he recorded and add some effects and share these video clips with his friends. But due to mobile devices' limited battery, if he edit videos in his own mobile device, his mobile phone will run out of energy before he reach the destination. As one option, he can upload original videos to cloud and use cloud service to get all things done, but offloading quest into cloud will result in heavy cellular traffic, that means expensive communication fee and high energy consumption. If Mike participate in MSON and several video processing services is provided by some nearby mobile devices, Mike can invoke such mobile services on nearby mobile devices through D2D communication techniques. If these services cannot meet his requirement, several services can be composed. Due to users' mobility, the availability of service to Mike can vary, invoking mobile services provided by other users may face new challenges that traditional composition methods cannot handle. Thus, a mobile service composition model which can capture mobile services' availability need to be proposed, we will discuss mobile service availability in next section \cite{Deng2016-2}.
-
+We use an example to illustrate the related features of service provision over MSON. Assume a mobile user Mike just complete his tour and now he is on the subway to airport. Now he wants to edit some videos he recorded and add some effects and share these video clips with his friends. But due to mobile devices' limited battery, if he edit videos in his own mobile device, his mobile phone will run out of energy before he reach the destination. As one option, he can upload original videos to cloud and use cloud service to get all things done, but offloading quest into cloud will result in heavy cellular traffic, that means expensive communication fee and high energy consumption. If Mike participate in MSON and several video processing services is provided by some nearby mobile devices, Mike can invoke such mobile services on nearby mobile devices through D2D communication techniques. If these services cannot meet his requirement, several services can be composed. Due to users' mobility, the availability of service to Mike can vary, invoking mobile services provided by other users may face new challenges that traditional composition methods cannot handle. Thus, a mobile service composition model which can capture mobile services' availability need to be proposed.
 
 \section{MOBILE SERVICE COMPOSITION MODEL}
 In this section, we first give some basic concepts of mobile service composition, then introduce the concept of mobile service availability, finally we propose a specific QoS model for mobile service composition over opportunistic network.
@@ -171,9 +170,9 @@ In order to describe the problem addressed in this paper, we first provide the b
 
 ​1) $id$ is the unique identifier of a MSON participant;
 
-​2) $P$ is the set of mobile services exposed by mobile service user $u$.
+​2) $P$ is the set of mobile services exposed to other MSON participant.
 
-​3) $C$ is the set of discovered mobile services from nearby mobile service providers.
+​3) $C$ is the set of discovered mobile services from nearby MSON participant.
 
 \textit{Definition 3 (Mobile Service Composition Plan):} A service composition plan is a tuple $mscp = (T, R)$, where:
 
@@ -187,7 +186,7 @@ In order to describe the problem addressed in this paper, we first provide the b
 
 ​1) $mscp$ is mobile service composition plan which defined in definition 3;
 
-​2) $S = \{s_1, s_2,...,s_n\}$ is a set of selected concrete services.
+​2) $S = \{ms_{(1,j)}, ms_{(2,k)},...,ms_{(n,l)}\}$ is a set of selected concrete services. For example, $ms_{1j}$ means the $j$-th service candidate is selected to execute $task_1$.
 
 \subsection{Concept of Mobile Service Availability}
 In MSON the availability of mobile service is highly related to the user’s mobility. If user $j$ moves outside the transmission range of its neighbouring user $i$, then user $j$ is unreachable by user $i$ and as a result the services on user $j$ become unavailable to user $i$ either. Here user mobility is utilized to calculate the mobile service availability \cite{Yang2010}.
@@ -210,11 +209,11 @@ In MSON the availability of mobile service is highly related to the user’s mob
 
 As illustrated in Fig.3, there are two mobile user $i$ and $j$, assume user $i$ is mobile service requester and user $j$ is mobile service provider, both device have the same transmission range $R$. Each user moves randomly and it is assumed that the moving field is a circle with a radius of $r$. $d$ is the distance between $i$ and $j$. We use these three parameters($r,R,d$) to calculate the availability of a mobile service. The transmission range of a node $R$ is known (e.g., usually 10m for bluetooth, 25m for Wi-Fi). 
 
-Note that most of wireless transaction protocol have defined the Received Signal Strength Indicator, then distance $d$ between mobile user $i$ and user $j$ can be calculated by signal strength, Finally let us discuss how to calculate $r$ \cite{Yang2010}.
+Note that most of wireless transaction protocol have defined the Received Signal Strength Indicator, then distance $d$ between mobile user $i$ and user $j$ can be calculated by signal strength \cite{Yang2010}, Finally let us discuss how to calculate $r$.
 
 %Suppose that the location of each mobile user is known (e.g., via GPS data or other location-based services provided by telecommunications service providers \cite{chadil2008real}), then distance $d$ can be calculated using the Euclidean distance formula, i.e.,$\sqrt{{(x_i-x_j)^2}+({y_i-y_j})^2}$ where $(x_i, x_j)$ and $(y_i, y_j)$ are the coordinates of user $i$ and $j$ respectively. 
 
-The moving radius of a mobile user $r$ is its moving speed $v$ multiplied by the average service time $t$. Here $t$ can be statistically calculated as the average value of last $n$ times of service invoke, namely, $t = \Sigma_{i=1}^{n}t_i/n$. The speed of a mobile user $v$ can be calculated based on its moving distance during a period from $t_1$ to $t_2$ \cite{ko2000location}, namely: $v = \sqrt{{(x_i-x_j)^2}+{y_i-y_j}^2}/(t_2-t_1)$, then $r = s \times t$.
+The moving radius of a mobile user $r$ is its moving speed $v$ multiplied by the average service time $t$. Here $t$ can be statistically calculated as the average value of last $n$ times of service invoke, namely, $t = \Sigma_{i=1}^{n}t_i/n$. The speed of a mobile user $v$ can be get through GPS data or other mobile sensor(e.g., Gyro-sensor), then $r = v \times t$.
 
 ​Once we know these three parameters $R$, $r$, and $d$, the probability of user $j$ staying inside the transmission range of user $i$ (denoted as $P_{i \ni j}$ ) can be calculated by
 \begin{equation}
@@ -241,13 +240,15 @@ Therefore, the probability of user $j$ staying inside the transmission range of 
 \begin{equation}
 P_{i \ni j} = \frac{S_{i \bigcap j}}{\pi s^2 t^2}
 \end{equation}
-Suppose a mobile service $s$ running on $j$ is a candidate service for a task requested by user $i$, and the availability of candidate service $s$ can be denoted as $q_{ava}(s)$, that is
-\begin{eqnarray}
-q_{ava}(s) &{} = {}& P_{i \ni j} \\\nonumber
-&& = \frac{S_{i \bigcap j}}{\pi s^2 t^2}\\\nonumber
-&& = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta cos\beta)}{\pi s^2 t^2}
-\end{eqnarray}
-Mobile service availability $q_{ava}(s)$ can capture user's mobile behavior, and we use it as an important QoS attribute to construct QoS model for service composition in next subsection.
+Suppose a mobile service $ms$ running on mobile node $j$ is a candidate service for a task requested by user $i$, and the availability of candidate service $ms$ can be denoted as $q_{ava}(s)$, that is
+\begin{flalign}
+&\text{$q_{ava}(ms) = P_{i \ni j}$}&
+\end{flalign}
+\begin{align*}
+& \ \ \ \ \ \ \ \ = \frac{S_{i \bigcap j}}{\pi s^2 t^2}\\
+& \ \ \ \ \ \ \ \ = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta cos\beta)}{\pi s^2 t^2}
+\end{align*}
+Mobile service availability $q_{ava}(ms)$ can capture user's mobile behavior, and we use it as an important QoS attribute to construct QoS model for service composition in next subsection.
 
 \subsection{QoS Model for Mobile Service Composition}
 For mobile service requesters to select candidate service, QoS must be considered \cite{wu2013predicting,luo2014efficient,luo2016generating}. Generally, QoS attributes include response time, price, reliability, and reputation, we introduce mobile service availability as an important QoS attribute in this paper to describe user's mobility behavior. QoS attributes in this paper can be classified into two categories: positive ($Q^+$) and negative ($Q^{-}$). For positive attributes, larger values indicate better performance (e.g., reputation and availability), while for negative attributes, smaller values indicate better performance (e.g., response time and cost) \cite{Wu2016}.	
@@ -272,41 +273,42 @@ loop & $k \times q_{rt}(S_i)$ & $k \times q_{ava}(S_i)$ \\
 For a composite service instance $CSI$, its each QoS attribute is determined by its concrete components and orchestration patterns. Table.1 lists the aggregation functions for response time, cost, and availability for sequential, loop, choice, and parallel composition patterns. We can find more aggregation functions found in \cite{jaeger2004qos} and \cite{zheng2013qos}.
 
 In order to facilitate ranking of different composite service instances $CSI$ in terms of QoS, we utilize simple additive weighting (SAW) as the QoS utility function to map the QoS value into a real value. SAW first normalizes the QoS attribute values into real values between $0$ and $1$, through comparison with the maximal and minimal values; then it sums the normalized values multiplied with a preference weight $w_t$. According to SAW, the QoS utility of a $CSI$ can be calculated using e.q (7), where, $q_t(CSI)$ is the aggregated value of the $t$-th QoS attribute of $CSI$, and $q_{t,max}$ and $q_{t,min}$, respectively, denote the maximal and minimal possible aggregated values of the $t$-th QoS attribute \cite{Wu2016}.
-\begin{eqnarray}
-U(CSI) = (\sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(CSI)}{q_{t,max}-q_{t,min}})\times w_t \\\nonumber
-+(\sum_{q_t \in Q^+} \frac{q_t(CSI)-q_{t,min}}{q_{t,max}-q_{t,min}})\times w_t
-\end{eqnarray}
+\begin{align}
+U(CSI) = & (\sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(CSI)}{q_{t,max}-q_{t,min}})\times w_t \\\nonumber
+& +(\sum_{q_t \in Q^+} \frac{q_t(CSI)-q_{t,min}}{q_{t,max}-q_{t,min}})\times w_t
+\end{align}
 
 \subsection{Problem Formulation}
 Base on the above discussion, we can give the definition of the service composition over MSON problem.
 
 \textit{Definition 6 (MSON Service Composition):} Given a service composition request $req$ by a mobile user $u$, perceive nearby service and select suitable concrete services to achieve an optimal service composition instance $CSI$ with the best QoS, that is
-\begin{eqnarray}
-target \ : \  Max \ \{U(CSI)\}   \\\nonumber
-s.t. : \ t_i \in \{1,2,3,...,n\}  \\\nonumber
-s_i \in \{1,2,3,...,m \}
-\end{eqnarray}
-where $U(CSI)$ is the objection mentioned in e.q (7), $t_i \in [1,n]$ is the index of the tasks in the composition plan, $s_i \in [1, m]$ is the index of service candidates for the $i$-th task.
+\begin{align}
+maximize      \ \ : \ \ & U(CSI)   \\\nonumber
+subject\ to   \ \ : \ \ & t_i \in \{1,2,3,...,n\}  \\\nonumber
+                        & s_i \in \{1,2,3,...,m \}
+\end{align}
+where $U(CSI)$ is the objective function mentioned in e.q (7), $t_i \in [1,n]$ is the index of the tasks in the composition plan, $s_i \in [1, m]$ is the index of service candidates for the $i$-th task.
 
 \textit{Theorem 1:} The service composition problem over MSON (Definition 6) is NP-hard.
 
 \textit{Proof:} We can reduce the service composition problem over MSON problem to a knapsack problem, and this problem can be solved by integer programming. 
 The canonical form of integer linear program to search the biggest value of given objective function $F(x)$ can be expressed as follow \cite{papadimitriou1998combinatorial}:
 
-\begin{eqnarray}
-maximize \  : F(x) = c^{T}x     \\\nonumber
-subject \ to: Ax \le b, \\\nonumber
-x_i \in \mathbb{Z}^{n} \\\nonumber
-x_i > 0 
-\end{eqnarray}
+\begin{align}
+maximize     \ \ : \ \ & F(X) = c^{T}X     \\\nonumber
+subject\ to  \ \ : \ \ & Ax \le b, \\\nonumber
+               	       & x_i \in \mathbb{Z}^{n} \\\nonumber
+                       & x_i > 0 
+\end{align}
 Where $n$ is a positive integer, $b$ and $c$ are vectors, $A$ is a matrix.
 %matrix $A$ and vector $b$ construct the constrain of service candidates bounds, vector $c$ means how to map the feasible solution $x$ to objective value.
-For the problem of selecting optimal services composition over MSON, the vector $x = (x_1, . . . , x_n)$ can describe a possible solution as a service composition with $n$ tasks. An element $x_i$ in corresponds to a selected service from the candidates for the $i$-th task.
-The optimal solution  $x^*$ satisfies the following conditions:
+For the problem of selecting optimal services composition over MSON, the vector $X = \{ms_{(1,j)}, ms_{(2,k)}. . . , ms_{(n,l)}\}$ can describe a possible solution as a service composition with $n$ tasks. 
+% An element $ms_{1i}$ in corresponds to a selected service from the candidates for the $1$-th task.
+The optimal solution  $X^*$ satisfies the following conditions:
 
-1) $x^*$ belongs to the feasible set.
+1) $X^*$ is a feasible solution.
 
-​2) $\forall x, F(x^*) \le F(x)$. 
+​2) for all feasible $X$, $F(X^*) \le F(X)$. 
 
 The target of the mobile service composition problem in MSON is to find the biggest $F(x)$. Thus, the problem is equivalent to the integer programming problem which is known to be NP-hard. Then the service composition problem over MSON is NP-hard.
 
@@ -315,7 +317,15 @@ For the problem we formulate above, integer programming can be utilized to obtai
 %In this section, we will illustrate our algorithm for making mobile service compositions over MSON based on the Krill-Herd algorithm.
 
 KH algorithm \cite{gandomi2012krill} is new generic stochastic optimization approach for the global optimization problem which is inspired by predatory behavior and communication behavior of krill. 
+% The whole process of the SKH algorithm is shown as fig.4.
 In this section, we will introduce a Krill-Herd based algorithm which named SKH to solve the mobile service composition over MSON problem.
+
+% \begin{figure}[!t]
+% \centering
+% \includegraphics[width=3in]{./img/pic6.pdf}
+% \caption{KH algorithm}
+% \label{fig_opportunistic}
+% \end{figure}
 
 \subsection{Encoding}
 
@@ -329,7 +339,7 @@ In this section, we will introduce a Krill-Herd based algorithm which named SKH 
 %In this paper, the position vector of each krill individual corresponds to a feasible mobile service composition,
 In SKH, a concrete service composition is encoded as a krill individual, the krill individual with the best position corresponds to the optimal mobile service composition. The KH optimization's target is to find the krill individual with the best position, which means to find the best mobile service composition with the best QoS Utility. Therefore, once the optimal krill individual is found, the best mobile service composition is obtained.
 
-In this paper, the position vector of each krill individual is represented by an integer array with its length equal to the number of involved tasks. The $i$ th entry in the array, in turn, refers to the selection result of the task $t_i$ . That is to say, given that the value of the $i$ th entry is $j$, it indicates that $ms_{ij}$ is the selected concrete service to execute $t_i$ . Figure 4 illustrates this krill encoding.
+In this paper, the position vector of each krill individual is represented by an integer array with its length equal to the number of involved tasks. The $i$ th entry in the array, in turn, refers to the selection result of the task $t_i$ . That is to say, given that the value of the $i$ th entry is $j$, it indicates that $ms_{(i,j)}$ is the selected concrete service to execute $t_i$ . Figure 4 illustrates this krill encoding.
 
 
 
@@ -337,12 +347,12 @@ In this paper, the position vector of each krill individual is represented by an
 % 
 % 
 
-As shown in equation (10), in motion operator, the position of each krill individual is determined by three main factors: 1) motion influenced by other krill; 2) foraging action; and 3) physical diffusion. 
+Motion operator is the core of SKH algorithm. As shown in equation (10), the position of each krill individual is determined by three main factors: 1) motion influenced by other krill; 2) foraging action; and 3) physical diffusion. 
 \begin{equation}
 \frac{dX_i}{dt} =N_i+F_i+D_i
 \end{equation}
 
-where $X_i = (ms_{1j}, ms_{2k}, . . . , ms_{nc})$ is $i$-th composition service instance $CSI_i$, $n$ is the number of tasks in the service composition, $ms_{jx}$ is the selected candidate for the $j$-th task in solution $X_i$, where $N_i$, $F_i$, and $D_i$ denote the motion influenced by other CSI, the foraging motion, and the physical diffusion, respectively.
+where individual $X_i = \{ms_{(1,j)}, ms_{(2,k)}, . . . , ms_{(n,l)}\}$ represents the $i$-th composition service instance $CSI_i$, $n$ is the number of tasks in the service composition, $N_i$, $F_i$, and $D_i$ denote the motion influenced by other krill individuals, the foraging motion, and the physical diffusion, respectively.
 
 1) Movement induced by other krill individuals
 
@@ -356,13 +366,13 @@ where
 \alpha_i = \alpha^{local}+\alpha^{target}
 \end{equation}
 
-$\alpha_i$ is the direction of the induced motion and it can be evaluated by target swarm density (target effect $\alpha^{target}$), local swarm density (local effect $\alpha^{local}$). $N^{max}$ is the maximum induced speed, $\omega_n \in [0, 1]$ the inertia weight of the induced motion, $N^{old}_{i}$ is the last induced motion influenced by other CSI.
+$\alpha_i$ is the direction of the induced motion and it can be evaluated by target swarm density (target effect $\alpha^{target}$), local swarm density (local effect $\alpha^{local}$). $N^{max}$ is the maximum induced speed, $\omega_n \in [0, 1]$ the inertia weight of the induced motion, $N^{old}_{i}$ is the last induced motion influenced by other krill individuals.
 
 2) Foraging Motion
 
 Similarly, the foraging motion $F_i$ is to learn from the current optimal service composition. 
 $F_i$ has two parts: the current food location and the information about the previous location. 
-For the $CSI_i$, we can formulate this motion as follow:
+For the individual $X_i$, we can formulate this motion as follow:
 \begin{equation}
 F_i = V_f\beta_i + \omega_f F^{old}_i
 \end{equation}
@@ -374,7 +384,7 @@ where $V_f$ is the foraging speed (empirically set to $0.8$ in this paper), $\om
 
 3) Random diffusion
 
-For $CSI_i$, the physical diffusion is considered to be a random process. This motion includes two components: a maximum diffusion speed and a random directional vector, it can be formulated as follows
+For individual $X_i$, the physical diffusion is considered to be a random process. This motion includes two components: a maximum diffusion speed and a random directional vector, it can be formulated as follows
 
 \begin{equation}
 D_i = D^{max}\delta
@@ -386,58 +396,57 @@ where $D^{max}$ is the maximum diffusion speed and $\delta \in [-1, 1]$ is a ran
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3in]{./img/pic5.pdf}
+\includegraphics[width=2.5in]{./img/pic5.pdf}
 \caption{Cross over}
 \label{fig_opportunistic}
 \end{figure}
 
 
-The crossover operator plays an important role in Genetic algorithm for global optimization, we use this operator in KH algorithm to enhance the search capability. The crossover operator in this paper is controlled by crossover rate $C_{rate}$ which can be obtain as follow:
+The crossover operator plays an important role in Genetic algorithm for global optimization, we use this operator in SKH algorithm to enhance the search capability. The crossover operator in this paper is controlled by crossover rate $C_{rate}$ which can be obtain as follow:
 \begin{equation}
-C_{rate} = 0.8 + 0.2 \times \frac{F_{best}-F_{i}}{F_{best}-F_{worst}}
+C_{rate} = Cr + (1-Cr) \times \frac{U_{best}-U_{i}}{U_{best}-U_{worst}}
 \end{equation}
 
-Where $C_{rate}$ is the $i$-th individual's crossover rate, $F_{i}$ is the $i$-th individual's fitness value, $F_{best}$ is the best fitness value so far, similarly, $F_{worst}$ is the worst fitness value.
+Where $C_r$ is a pre-set fixed crossover rate, $U_{i}$ is the $i$-th individual's QoS Utility, $U_{best}$ is the best QoS Utility value so far, similarly, $U_{worst}$ is the worst QoS Utility value. 
 
-Then we can use $C_{rate}$ to generate $i$-th individual's crossover vector $C_r = \{x_{1}^m,x_{2}^m,...,x_{n}^m\}$, the $j$-th component of $i$-th individual $x_{j}^{m}$ is manipulated as:
+Then we can use $C_{rate}$ to generate $i$-th individual's crossover vector $Cv = \{c_{1},c_{2},...,c_{n}\}$, it can be manipulated as:
 
 \begin{equation}
-x_{j}^m=
+c_{i}=
 \begin{cases}
-1,& rand(0,1) < C_{rate}\\
-0,& other\\
+1,& if \ \ rand(0,1) < C_{rate}\\
+0,& else\\
 \end{cases}
 \end{equation}
 
-For each individual $A$ to crossover, we randomly choose an target individual $B$ from current iteration and the characteristics from $B$ are copied to $A$ according to $C_r$, the crossover operator is shown in fig.4.
+Inspired by SGA \cite{khatib1998stud} (a type of GA that employs the optimal genome for crossover at each generation), we introduce stud selection procedure to improve SKH's search capability.
+
+From algorithm 1, we can see that for each individual $X_i$ to crossover, we choose the optimal individual $Stud$ (i.e., individual with highest QoS Utility value) to mating. As shown in fig.4, the characteristics from $Stud$ are copied to $X$ according to crossover vector $Cv$. 
 
 \begin{algorithm}
 \caption{Crossover operation}
 \label{alg1}
 \begin{algorithmic}[1]
 
-\REQUIRE Population $X$; Best fitness $F_{best}$; Worst fitness $F_{worst}$; Individual $A$ to crossover;
-\STATE $C_{rate} \leftarrow$ calcCrossoverRate($A$, $F_{best}$, $F_{worst}$)
-
+\REQUIRE Population $X$; Individual $X_i$ to crossover; The number of tasks $taskNumber$; 
+\STATE Sort all krill individuals in population $X$ by its fitness value, get optimal individual $Stud$, save best fitness value as $U_{best}$ and worst fitness value as $U_{worst}$
+\STATE $C_{rate} \leftarrow$ calcCrossoverRate($X_i$, $U_{best}$, $U_{worst}$)
 \FOR{$i=0$ \TO $taskNumber$}
 \STATE $r \leftarrow rand(0,1)$
 \IF{$r < C_{rate}$}
-\STATE $C_r[i] \leftarrow 1$
+\STATE $Cv[i] \leftarrow 1$
 \ELSE
-\STATE $C_r[i] \leftarrow 0$
+\STATE $Cv[i] \leftarrow 0$
 \ENDIF
 \ENDFOR
-
-\STATE $B \leftarrow randomSelect(X)$
 \FOR{$i=0$ \TO $taskNumber$}
-\STATE $A[i] \leftarrow A \verb'&'  (1-C_r[i]) + B \verb'&' C_r[i]$ 
+\STATE $X_i[i] \leftarrow X_i \verb'&'  (1-Cv[i]) + Stud \verb'&' Cv[i]$ 
 \ENDFOR
-
 \end{algorithmic}
 \end{algorithm}
 
-5) Update position
-
+\subsection{Update position}
+After the crossover operator of each iteration, the offspring should be evaluated and updated to current evolutionary sequence.
 According to the three motion actions, the time-relied position from time $t$ to $\delta t$ can be formulated by the following equation:
 \begin{equation}
 X_i(t+\Delta t) = X_i(t) + \Delta t \frac{dX_i}{dt}
@@ -448,50 +457,37 @@ where
 \Delta t = C_t\sum_{j=1}^{d}(UB_j - LB_j)
 \end{equation}
 
-where $d$ is the tasks number of each $CSI$, $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space. The  whole process of KH algorithm is shown in Algorithm 2.
+where $d$ is the tasks number of composition service, $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space. Finally, the overall SKH algorithm process can be describe in Algorithm 2.
 
 \begin{algorithm}
-\caption{KH algorithm}
+\caption{SKH algorithm}
 \label{alg2}
 \begin{algorithmic}[1]
 
-\REQUIRE Lower bound of service candidates $lb$; Up bound of service candidates $ub$; Number of krill individuals $nk$; Number of max iteration $mi$
+\REQUIRE Number of population size $PS$, Number of max iteration $MI$;
 
-\ENSURE Individual with best fitness $CSI$
-
-\STATE generate $nk$ feasible solutions randomly
-\STATE save them in the population $X$
-\STATE $X_{best} \leftarrow$ bestRank($X$)
-
-\FOR{$i=0$ \TO $mi$}
-  \STATE $X_f \leftarrow$ foodLocation($X$)
-  \IF{$X_f < X_{f(previous)}$}
-    \STATE $X_f \leftarrow X_{f(previous)}$
-  \ENDIF
-  \FOR{$j=0$ \TO $nk$}
-    \STATE $d_{food} \leftarrow$ distance($X_j$ , $X_f$)
-    \STATE $d_{best} \leftarrow$ distance($X_j$ , $X_{best}$)
-    \algorithmiccomment Movement Induced
-    \STATE // Movement Induced    
-    \STATE $\alpha^{target} \leftarrow $ bestKrillEffect($X_{best}$, $d_{best}$) 
-    \STATE $ds \leftarrow $ neighborDistance($X$)
-    \STATE $\alpha^{local} \leftarrow $ neighborEffect($X$, $ds$)
-    \STATE $N_i \leftarrow$ calcMovementInduced($\alpha^{local}$, $\alpha^{target}$)
-    \STATE // Foraging Motion
-    \STATE $\beta_{food} \leftarrow$ foodAttraction($X$, $d_{food}$)
-    \STATE $\beta_{best} \leftarrow$ bestPsitionAttraction($X$, $d_{best}$)
-    \STATE $F_i \leftarrow$ calcForagingMotion($V_f$, $\beta_{food}$, $\beta_{best}$)
-    \STATE // Physical Diffusion
-    \STATE $D_i \leftarrow$ physicalDiffusion($X$, $X_{best}$)
-    \STATE $D_x \leftarrow$ calcMotionProcess($N_i$, $F_i$, $D_i$)
-    \STATE Crossover($X$, $X_{best}$)
-    \STATE UpdatePosition($X$, $D_x$)
-  \ENDFOR
+\STATE Generate initial population as $X = (X_1, X_2, ..., X_{PS})$
+\STATE Evaluate the fitness value of each krill individual in $X$
+\FOR{$i=0$ \TO $MI$}
+	\FOR{$i=0$ \TO $PS$}
+		\STATE $X_i^{'} \leftarrow motionOperator()$
+		\STATE $X_i^{''} \leftarrow crossoverOperator(X_i^{''})$
+		\STATE $U_i^{'} \leftarrow evaluateFitness(X_i^{'})$
+		\STATE $U_i^{''} \leftarrow evaluateFitness(X_i^{''})$
+		\IF{$U_i^{''} < U_i^{'}$}
+			\STATE update position by equation (18) as $X_{i+1}$
+		\ELSE
+			\STATE accept $X_i^{'}$ as $X_{i+1}$
+		\ENDIF
+	\ENDFOR
 \ENDFOR
-\RETURN bestRank($X$)
-
+\STATE Output best solution
 \end{algorithmic}
 \end{algorithm}
+
+
+
+
 
 \section{SIMULATION AND EVALUATION}
 In this section, we first discussed the experimental environment settings, and then the improved KH-based approach for the mobile service composition algorithm (IKH) is evaluated from the perspective of optimality and scalability, respectively.
@@ -511,24 +507,24 @@ Table 2 is part of encounter data in MIT Reality dataset. We can clear see that 
 \caption{User encounter data}
 \label{table_example}
 \centering
-\begin{tabular}{|c||c|}
+\begin{tabular}{c c}
 \hline
 \bfseries Time & \bfseries Available service provider\\
 % user(3).devices_names(500-505)
-\hline
+% \hline
 \hline
 t1 & Rabbit, Tony, S10, BlueRadios, NORTHOLT\\
-\hline
+% \hline
 t2 & Tony, S10, Rabbit, NORTHOLT, BlueRadios\\
-\hline
+% \hline
 t3 & Rabbit, NORTHOLT, BlueRadios, S10, Tony, Henrymobile, S4 \\
-\hline
+% \hline
 t4 & Tony, NORTHOLT, BlueRadios, S10, Rabbit, S4\\
-\hline
+% \hline
 t5 & BlueRadios, S4, AliKatz, NORTHOLT, Rabbit, S25, S10\\
-\hline
+% \hline
 t6 & S25, S10, NORTHOLT, BlueRadios, Rabbit\\
-\hline
+% \hline
 ... & ...\\
 \hline
 \end{tabular}
@@ -539,30 +535,30 @@ t6 & S25, S10, NORTHOLT, BlueRadios, Rabbit\\
 \caption{Service provider information}
 \label{table_example}
 \centering
-\begin{tabular}{|c||c|}
+\begin{tabular}{c c}
 \hline
 \bfseries Service Provider & \bfseries Exposed Service\\
 % user(3).devices_names(500-505)
 \hline
-\hline
+% \hline
 AliKatz     & $ms_1$, $ms_3$, $ms_7$\\
-\hline 
+% \hline 
 BlueRadios  & $ms_1$, $ms_4$, $ms_6$\\
-\hline
+% \hline
 Henrymobile & $ms_2$, $ms_3$\\
-\hline
+% \hline
 NORTHOLT    & $ms_1$, $ms_2$, $ms_4$, $ms_5$ \\
-\hline
+% \hline
 Rabbit      & $ms_2$, $ms_3$\\
-\hline 
+% \hline 
 S4          & $ms_1$, $ms_3$, $ms_6$\\
-\hline 
+% \hline 
 S10         & $ms_1$, $ms_4$\\
-\hline 
+% \hline 
 S25         & $ms_2$, $ms_5$, $ms_7$\\
-\hline 
+% \hline 
 Tony        & $ms_2$, $ms_4$, $ms_5$, $ms_7$\\
-\hline 
+% \hline 
 ... & ...\\
 \hline
 \end{tabular}
@@ -573,24 +569,24 @@ Tony        & $ms_2$, $ms_4$, $ms_5$, $ms_7$\\
 \caption{Available candidates}
 \label{table_example}
 \centering
-\begin{tabular}{|c||c|}
+\begin{tabular}{c c}
 \hline
 \bfseries Time & \bfseries Available service\\
 % user(3).devices_names(500-505)
 \hline
-\hline
+% \hline
 t1     & $ms_1^{(3)}$, $ms_2^{(3)}$, $ms_3^{(1)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
-\hline 
+% \hline 
 t2     & $ms_1^{(3)}$, $ms_2^{(3)}$, $ms_3^{(1)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
-\hline
+% \hline
 t2     & $ms_1^{(4)}$, $ms_2^{(4)}$, $ms_3^{(3)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
-\hline
+% \hline
 t4     & $ms_1^{(4)}$, $ms_2^{(3)}$, $ms_3^{(2)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(2)}$, $ms_7^{(1)}$\\
-\hline
+% \hline
 t5     & $ms_1^{(5)}$, $ms_2^{(2)}$, $ms_3^{(3)}$, $ms_4^{(3)}$, $ms_5^{(2)}$, $ms_6^{(2)}$, $ms_7^{(2)}$\\
-\hline 
+% \hline 
 t6     & $ms_1^{(3)}$, $ms_2^{(3)}$, $ms_3^{(1)}$, $ms_4^{(3)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
-\hline 
+% \hline 
 ... & ...\\
 \hline
 \end{tabular}
@@ -598,7 +594,7 @@ t6     & $ms_1^{(3)}$, $ms_2^{(3)}$, $ms_3^{(1)}$, $ms_4^{(3)}$, $ms_5^{(2)}$, $
 
 
 \subsection{Impact of Parameters}
-There are four parameters can be adjusted to improve the KHMSC's performance: population size $PS$, maximum iteration number $MI$, foraging speed $V_f$ and maximum induced speed $N_max$. As shown in Table 2, we generate five groups of parameters configuration to evaluate the impact of each parameter. For each group of parameters configuration, we tune one parameter and fix the other parameters. For each configuration setting, the KHMSC algorithm is executed 50 times independently and the average performance was recorded.
+There are four parameters can be adjusted to improve the SKH's performance: population size $PS$, maximum iteration number $MI$, crossover rate $Cr$, foraging speed $V_f$, maximum induced speed $N_max$ and physical diffusion speed. As shown in Table 2, we generate six groups of parameters configuration to evaluate the impact of each parameter. For each group of parameters configuration, we tune one parameter and fix the other parameters. For each configuration setting, the SKH algorithm is executed 50 times independently and the average performance was recorded.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -619,10 +615,21 @@ There are four parameters can be adjusted to improve the KHMSC's performance: po
 \end{tabular}
 \end{table}
 
-Figure 5 shows the results of tuning different parameters for KHMSC. 
+%    KH_profile.NK         = 20;
+%    KH_profile.MI         = 30;
+%    KH_profile.CR         = 0.6;
+%    KH_profile.Vf         = 0.8;
+%    KH_profile.Nmax       = 0.3;
+%    KH_profile.Dmax       = 0.2;
+
+Figure 5 shows the results of tuning different parameters for SKH. 
 
 Figure 5(a) shows the impact of population size, we observe that with the increase of population size, the average QoS Utility of IKH significantly improved before $PS=10$, and no significant improvement is observed after population size over $20$. Therefore, an excessively large population size e.g. $PS=50$ has limited impact on the performance of IKH, and it will result in computing resources waste and high time cost.
-Similarly, Figure 5(b) shows that the value of QoS Utility significantly increased for higher number of iteration times until to a limit: $MI = 60$. Figure 5(c) shows the impact of the foraging speed $V_f$. The performance of KHMSC increases with $V_f$ and the best performance is achieved for $V_f = 0.8$. Figure 5(d) shows the impact of the induced speed $N_max$. It shows that fitness value is continually increased until to a limit: $N_max$ = 0.4 and then it decreases . 
+Similarly, Figure 5(b) shows that the value of QoS Utility significantly increased for higher number of iteration times until to a limit: $MI = 60$. 
+Figure 5(c) shows the impact of the crossover rate $Cr$. The performance of SKH increases with $Cr$ firstly, then decrease, the best performance is achieved for $Cr = 0.6$.
+Figure 5(d) shows the impact of the foraging speed $V_f$. The performance of SKH increases with $V_f$ firstly, then decrease, the best performance is achieved for $V_f = 0.8$.
+Figure 5(e) shows the impact of the induced speed $N_{max}$. The performance of SKH increases with $N_{max}$ firstly, then decrease, the best performance is achieved for $N_{max} = 0.3$.
+Figure 5(F) shows the impact of the physical diffusion speed $D_{max}$. It shows that with the increase of $D_{max}$ the performance of SKH fluctuation slightly, we random generate $D_{max}$ from $[0.2 \sim 0.5]$ in this paper.
 
 \begin{figure*}[!t]
 \centering
@@ -656,9 +663,9 @@ Similarly, Figure 5(b) shows that the value of QoS Utility significantly increas
 
 
 \subsection{Optimality Evaluation}
-To verify the the capability of finding the optimal mobile service composition of our algorithms, we compare KHMSC with the basic GA algorithm, basic PSO algorithm and a brute-force algorithm.
+To verify the the capability of finding the optimal mobile service composition of our algorithms, we compare SKH with the basic GA algorithm, basic PSO algorithm and a brute-force algorithm.
 
-\textbf{Algorithm 1:} KH-based mobile service composition algorithm (KHMSC) which described in Section 4.
+\textbf{Algorithm 1:} KH-based mobile service composition algorithm (SKH) which described in Section 4.
 
 \textbf{Algorithm 2:} A basic GA which uses two-point crossover and uniform mutation.
 
@@ -703,10 +710,10 @@ PSO & inertia weight = 0.8; c1 = 2.0; c2 = 2.0 \\
 
 
 
-The result in Figure 6 shows that, as expected, the brute-force algorithm leads to the best performance with the highest fitness. The basic PSO algorithm has the worst performance with the lowest fitness values. Both KHMSC and Ga can find over 90\% optimal composition before 50 iterations and KHMSC performs little better than the basic GA algorithm. Although GA performs closely to KHMSC, we finally choose KHMSC because it runs almost five times faster than GA, in next subsection we will evaluate the scalability of above four algorithms.
+The result in Figure 6 shows that, as expected, the brute-force algorithm leads to the best performance with the highest fitness. The basic PSO algorithm has the worst performance with the lowest fitness values. Both SKH and Ga can find over 90\% optimal composition before 50 iterations and SKH performs little better than the basic GA algorithm. Although GA performs closely to SKH, we finally choose SKH because it runs almost five times faster than GA, in next subsection we will evaluate the scalability of above four algorithms.
 
 \subsection{Scalability Evaluation}
-In this experiment, we compared the run time of KHMSC with the other algorithms to evaluate the scalability of our algorithm.
+In this experiment, we compared the run time of SKH with the other algorithms to evaluate the scalability of our algorithm.
 
 \begin{figure*}[!t]
 \centering
@@ -721,11 +728,11 @@ In this experiment, we compared the run time of KHMSC with the other algorithms 
 \caption{Scalability evaluation.} \label{fig_sim}
 \end{figure*}
 
-In order to evaluate the impact of task number on the execution time of our algorithm, The task number is varied from 6 to 30. For each task number, the simulation is repeated 50 times, and the average value is recorded as the result. We observe from figure 7(b) that the run time of brute-force method is almost exponential to the problem size, while the run time of other three meta-heuristic algorithms (KHMSC, GA, PSO) are increases almost linearly with tasks increasing. In mobile environment, due to the dynamic movement and limited of computing resources, algorithm must meet the requirement of finding feasible composition within a short time. Therefore, although brute-force can obtain the optimal result, it is not suitable to the problem due to its poor scalability. 
+In order to evaluate the impact of task number on the execution time of our algorithm, The task number is varied from 6 to 30. For each task number, the simulation is repeated 50 times, and the average value is recorded as the result. We observe from figure 7(b) that the run time of brute-force method is almost exponential to the problem size, while the run time of other three meta-heuristic algorithms (SKH, GA, PSO) are increases almost linearly with tasks increasing. In mobile environment, due to the dynamic movement and limited of computing resources, algorithm must meet the requirement of finding feasible composition within a short time. Therefore, although brute-force can obtain the optimal result, it is not suitable to the problem due to its poor scalability. 
 
 We also evaluate the impact of candidate services per task, In this experiment, we vary candidate service number from 6 to 30. As shown in figure 7(b), the number of candidate services does not affect the execution time of the three meta-heuristic algorithms, because in the initialization step, the scale of the algorithm is determined, and it is only affected by the algorithm parameters. Similarly, brute-force method is also exponential to the problem size. 
 
-Among all the algorithms, PSO has the lowest run time, then KHMSC and then GA, note that KHMSC runs almost five times faster than GA, but PSO's poor optimality makes it unsuitable for this problem. Based on the experimental results, we can conclude that KHMSC maintains acceptable performance (optimality and scalability) with large data sets for both tasks and candidates.
+Among all the algorithms, PSO has the lowest run time, then SKH and then GA, note that SKH runs almost five times faster than GA, but PSO's poor optimality makes it unsuitable for this problem. Based on the experimental results, we can conclude that SKH maintains acceptable performance (optimality and scalability) with large data sets for both tasks and candidates.
 
 \section{RELATED WORK}
 Service-oriented computing(SOC) is a novel paradigm to develop and integrate enterprise information system \cite{}, with the development of mobile device and communication technology, the research of mobile service composition has grain much attention from both industry and academia. In this section, we first briefly review some recent work on mobile service composition, then review opportunistic network and its application in mobile network.

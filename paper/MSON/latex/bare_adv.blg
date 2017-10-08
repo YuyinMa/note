@@ -18,45 +18,45 @@ Warning--I didn't find a database entry for "Pu2017"
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 34 entries,
+You've used 33 entries,
             4087 wiz_defined-function locations,
-            1031 strings with 14453 characters,
-and the built_in function-call counts, 31201 in all, are:
-= -- 2559
-> -- 767
-< -- 329
-+ -- 432
-- -- 120
-* -- 1532
-:= -- 4463
-add.period$ -- 77
-call.type$ -- 34
-change.case$ -- 33
-chr.to.int$ -- 762
-cite$ -- 34
-duplicate$ -- 2132
-empty$ -- 2353
-format.name$ -- 153
-if$ -- 7331
+            1024 strings with 14221 characters,
+and the built_in function-call counts, 29987 in all, are:
+= -- 2453
+> -- 724
+< -- 314
++ -- 408
+- -- 112
+* -- 1466
+:= -- 4288
+add.period$ -- 76
+call.type$ -- 33
+change.case$ -- 32
+chr.to.int$ -- 732
+cite$ -- 33
+duplicate$ -- 2053
+empty$ -- 2293
+format.name$ -- 144
+if$ -- 7053
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 351
-newline$ -- 125
-num.names$ -- 34
-pop$ -- 752
+int.to.str$ -- 33
+missing$ -- 336
+newline$ -- 122
+num.names$ -- 33
+pop$ -- 727
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2406
+skip$ -- 2314
 stack$ -- 0
-substring$ -- 1809
-swap$ -- 1900
-text.length$ -- 75
+substring$ -- 1738
+swap$ -- 1816
+text.length$ -- 70
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 34
+type$ -- 33
 warning$ -- 0
-while$ -- 158
-width$ -- 36
-write$ -- 368
+while$ -- 153
+width$ -- 35
+write$ -- 355
 (There were 5 warnings)
