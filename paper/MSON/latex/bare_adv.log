@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  8 OCT 2017 18:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  9 OCT 2017 19:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -462,43 +462,43 @@ e
 \Hy@linkcounter=\count134
 LaTeX Info: Redefining \[ on input line 54.
 LaTeX Info: Redefining \] on input line 54.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 91.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 93.
  (/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11.04124> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 91.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 93.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 91.
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 91
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 93.
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 93
 .
-LaTeX Font Info:    Try loading font information for U+msa on input line 91.
+LaTeX Font Info:    Try loading font information for U+msa on input line 93.
 
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 91.
+LaTeX Font Info:    Try loading font information for U+msb on input line 93.
 
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+pzd on input line 91.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 93.
 
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 91.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 93.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 101.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 103.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
-(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 101.
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 103.
 
 
-LaTeX Warning: Citation `Giordano2011' on page 1 undefined on input line 112.
+LaTeX Warning: Citation `tt' on page 1 undefined on input line 119.
 
 
-LaTeX Warning: Citation `Balani' on page 1 undefined on input line 112.
+LaTeX Warning: Citation `tt' on page 1 undefined on input line 119.
 
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
@@ -509,12 +509,12 @@ Missing character: There is no ù in font pplr7t!
 <./img/pic1.pdf, id=1, 1027.84pt x 770.88pt>
 File: ./img/pic1.pdf Graphic file (type pdf)
  <use ./img/pic1.pdf>
-Package pdftex.def Info: ./img/pic1.pdf used on input line 116.
+Package pdftex.def Info: ./img/pic1.pdf used on input line 123.
 (pdftex.def)             Requested size: 252.94499pt x 189.70828pt.
 
 Underfull \vbox (badness 8151) has occurred while \output is active []
 
-LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 122
+LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 129
 .
  [1{/usr/local/texlive/2017basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -522,11 +522,11 @@ LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 122
  <./img/pic1.pdf>] <./img/pic2.pdf, id=63, 1027.84pt x 770.88pt>
 File: ./img/pic2.pdf Graphic file (type pdf)
  <use ./img/pic2.pdf>
-Package pdftex.def Info: ./img/pic2.pdf used on input line 135.
+Package pdftex.def Info: ./img/pic2.pdf used on input line 142.
 (pdftex.def)             Requested size: 252.94499pt x 189.70828pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 158.
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 161
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 165.
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 168
 .
 
 [2 <./img/pic2.pdf>]
@@ -548,18 +548,12 @@ Missing character: There is no ã in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ã in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ã in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ã in font pplr7t!
-Missing character: There is no ‚ in font pplr7t!
-Missing character: There is no Ä in font pplr7t!
-Missing character: There is no ã in font pplr7t!
+
+Underfull \hbox (badness 2781) in paragraph at lines 188--189
+\OT1/ppl/m/n/9.53561 po-si-tion in-stance $\OML/cmm/m/it/10 csi$ \OT1/ppl/m/n/9
+.53561 can be rep-re-sented as $\OML/cmm/m/it/10 csi \OT1/cmr/m/n/10 =
+ []
+
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ô in font pplr7t!
@@ -572,155 +566,139 @@ Missing character: There is no ã in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
- <./img/pic3.pdf, id=87, 1027.84pt x 770.88pt>
+<./img/pic3.pdf, id=87, 1027.84pt x 770.88pt>
 File: ./img/pic3.pdf Graphic file (type pdf)
-
-<use ./img/pic3.pdf>
-Package pdftex.def Info: ./img/pic3.pdf used on input line 205.
+ <use ./img/pic3.pdf>
+Package pdftex.def Info: ./img/pic3.pdf used on input line 204.
 (pdftex.def)             Requested size: 252.94499pt x 189.70828pt.
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
  [3 <./img/pic3.pdf>]
-Underfull \hbox (badness 1584) in paragraph at lines 302--308
-\OT1/ppl/m/n/9.53561 Where $\OML/cmm/m/it/10 n$ \OT1/ppl/m/n/9.53561 is a pos-i
--tive in-te-ger, $\OML/cmm/m/it/10 b$ \OT1/ppl/m/n/9.53561 and $\OML/cmm/m/it/1
-0 c$ \OT1/ppl/m/n/9.53561 are vec-tors,
- []
-
-
-Underfull \hbox (badness 2790) in paragraph at lines 302--308
-\OT1/ppl/m/n/9.53561 ser-vices com-po-si-tion over MSON, the vec-tor $\OML/cmm/
-m/it/10 X \OT1/cmr/m/n/10 =
- []
-
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
 
-Underfull \hbox (badness 1769) in paragraph at lines 315--315
+Underfull \hbox (badness 1769) in paragraph at lines 314--314
  \OT1/phv/b/sc/11.04124 4 The ikh al-go-rithm for mo-bile ser-vice
  []
 
 <./img/pic4.pdf, id=130, 824.98692pt x 487.83092pt>
 File: ./img/pic4.pdf Graphic file (type pdf)
  <use ./img/pic4.pdf>
-Package pdftex.def Info: ./img/pic4.pdf used on input line 334.
+Package pdftex.def Info: ./img/pic4.pdf used on input line 333.
 (pdftex.def)             Requested size: 216.81pt x 128.20268pt.
 
 [4] <./img/pic5.pdf, id=144, 884.28047pt x 591.215pt>
 File: ./img/pic5.pdf Graphic file (type pdf)
  <use ./img/pic5.pdf>
-Package pdftex.def Info: ./img/pic5.pdf used on input line 399.
+Package pdftex.def Info: ./img/pic5.pdf used on input line 398.
 (pdftex.def)             Requested size: 180.67499pt x 120.7939pt.
 
 [5 <./img/pic4.pdf> <./img/pic5.pdf>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 443.
-
-
-(/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-Overfull \hbox (8.05794pt too wide) in paragraph at lines 510--531
+Overfull \hbox (8.05794pt too wide) in paragraph at lines 504--525
  [][] 
  []
 
 [6]
-Overfull \hbox (3.26216pt too wide) in paragraph at lines 604--616
+Overfull \hbox (3.26216pt too wide) in paragraph at lines 598--610
  [][] 
  []
 
-<./img/Param-PS.pdf, id=185, 433.62pt x 289.08pt>
+<./img/Param-PS.pdf, id=184, 433.62pt x 289.08pt>
 File: ./img/Param-PS.pdf Graphic file (type pdf)
  <use ./img/Param-PS.pdf>
-Package pdftex.def Info: ./img/Param-PS.pdf used on input line 638.
+Package pdftex.def Info: ./img/Param-PS.pdf used on input line 629.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-MI.pdf, id=186, 433.62pt x 289.08pt>
+<./img/Param-MI.pdf, id=185, 433.62pt x 289.08pt>
 File: ./img/Param-MI.pdf Graphic file (type pdf)
  <use ./img/Param-MI.pdf>
-Package pdftex.def Info: ./img/Param-MI.pdf used on input line 642.
+Package pdftex.def Info: ./img/Param-MI.pdf used on input line 633.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-CR.pdf, id=187, 433.62pt x 289.08pt>
+<./img/Param-CR.pdf, id=186, 433.62pt x 289.08pt>
 File: ./img/Param-CR.pdf Graphic file (type pdf)
  <use ./img/Param-CR.pdf>
-Package pdftex.def Info: ./img/Param-CR.pdf used on input line 646.
+Package pdftex.def Info: ./img/Param-CR.pdf used on input line 637.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-Vf.pdf, id=188, 433.62pt x 289.08pt>
+<./img/Param-Vf.pdf, id=187, 433.62pt x 289.08pt>
 File: ./img/Param-Vf.pdf Graphic file (type pdf)
  <use ./img/Param-Vf.pdf>
-Package pdftex.def Info: ./img/Param-Vf.pdf used on input line 651.
+Package pdftex.def Info: ./img/Param-Vf.pdf used on input line 642.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-Nmax.pdf, id=189, 433.62pt x 289.08pt>
+<./img/Param-Nmax.pdf, id=188, 433.62pt x 289.08pt>
 File: ./img/Param-Nmax.pdf Graphic file (type pdf)
  <use ./img/Param-Nmax.pdf>
-Package pdftex.def Info: ./img/Param-Nmax.pdf used on input line 655.
+Package pdftex.def Info: ./img/Param-Nmax.pdf used on input line 646.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-Dmax.pdf, id=190, 433.62pt x 289.08pt>
+<./img/Param-Dmax.pdf, id=189, 433.62pt x 289.08pt>
 File: ./img/Param-Dmax.pdf Graphic file (type pdf)
  <use ./img/Param-Dmax.pdf>
-Package pdftex.def Info: ./img/Param-Dmax.pdf used on input line 659.
+Package pdftex.def Info: ./img/Param-Dmax.pdf used on input line 650.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Opt-Iterations.pdf, id=191, 433.62pt x 289.08pt>
+<./img/Opt-Iterations.pdf, id=190, 433.62pt x 289.08pt>
 File: ./img/Opt-Iterations.pdf Graphic file (type pdf)
 
 <use ./img/Opt-Iterations.pdf>
-Package pdftex.def Info: ./img/Opt-Iterations.pdf used on input line 697.
+Package pdftex.def Info: ./img/Opt-Iterations.pdf used on input line 688.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Opt-Candidates.pdf, id=192, 433.62pt x 289.08pt>
+<./img/Opt-Candidates.pdf, id=191, 433.62pt x 289.08pt>
 File: ./img/Opt-Candidates.pdf Graphic file (type pdf)
 
 <use ./img/Opt-Candidates.pdf>
-Package pdftex.def Info: ./img/Opt-Candidates.pdf used on input line 701.
+Package pdftex.def Info: ./img/Opt-Candidates.pdf used on input line 692.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Opt-Tasks.pdf, id=193, 433.62pt x 289.08pt>
+<./img/Opt-Tasks.pdf, id=192, 433.62pt x 289.08pt>
 File: ./img/Opt-Tasks.pdf Graphic file (type pdf)
  <use ./img/Opt-Tasks.pdf>
-Package pdftex.def Info: ./img/Opt-Tasks.pdf used on input line 705.
+Package pdftex.def Info: ./img/Opt-Tasks.pdf used on input line 696.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-[7] <./img/Sca-Tasks.pdf, id=198, 505.89pt x 361.35pt>
+<./img/Sca-Tasks.pdf, id=193, 505.89pt x 361.35pt>
 File: ./img/Sca-Tasks.pdf Graphic file (type pdf)
-
-<use ./img/Sca-Tasks.pdf>
-Package pdftex.def Info: ./img/Sca-Tasks.pdf used on input line 722.
+ <use ./img/Sca-Tasks.pdf>
+Package pdftex.def Info: ./img/Sca-Tasks.pdf used on input line 715.
 (pdftex.def)             Requested size: 216.81pt x 154.86469pt.
 
-<./img/Sca-Candidates.pdf, id=199, 505.89pt x 361.35pt>
+<./img/Sca-Candidates.pdf, id=194, 505.89pt x 361.35pt>
 File: ./img/Sca-Candidates.pdf Graphic file (type pdf)
 
 <use ./img/Sca-Candidates.pdf>
-Package pdftex.def Info: ./img/Sca-Candidates.pdf used on input line 726.
+Package pdftex.def Info: ./img/Sca-Candidates.pdf used on input line 719.
 (pdftex.def)             Requested size: 216.81pt x 154.86469pt.
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-LaTeX Warning: Citation `Zhang2016' on page 8 undefined on input line 743.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[8 <./img/Param-PS.pdf> <./img/Param-MI.pdf> <./img/Param-CR.pdf> <./img/Param-
-Vf.pdf> <./img/Param-Nmax.pdf> <./img/Param-Dmax.pdf> <./img/Opt-Iterations.pdf
-> <./img/Opt-Candidates.pdf> <./img/Opt-Tasks.pdf>]
+ [8 <./img/Param-PS.pdf> <./img/Param-MI.pdf> <./img/Param-CR.pdf> <./img/Param
+-Vf.pdf> <./img/Param-Nmax.pdf> <./img/Param-Dmax.pdf> <./img/Opt-Iterations.pd
+f> <./img/Opt-Candidates.pdf> <./img/Opt-Tasks.pdf> <./img/Sca-Tasks.pdf> <./im
+g/Sca-Candidates.pdf>]
 
-LaTeX Warning: Citation `Giordano2011' on page 9 undefined on input line 752.
+LaTeX Warning: Citation `Zhang2016' on page 9 undefined on input line 736.
 
 
-LaTeX Warning: Citation `Pu2017' on page 9 undefined on input line 753.
+LaTeX Warning: Citation `Giordano2011' on page 9 undefined on input line 745.
 
-[9 <./img/Sca-Tasks.pdf> <./img/Sca-Candidates.pdf>]
+
+LaTeX Warning: Citation `Pu2017' on page 9 undefined on input line 746.
+
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
 Missing character: There is no ‚ in font pplr7t!
 Missing character: There is no Ä in font pplr7t!
 Missing character: There is no ã in font pplr7t!
- (./bare_adv.bbl) [10]
-(./bare_adv.aux)
+(./bare_adv.bbl [9]) [10] (./bare_adv.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 2.6161pt have occurred.
@@ -733,13 +711,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5543 strings out of 494437
- 88504 string characters out of 6166646
- 166975 words of memory out of 5000000
- 8765 multiletter control sequences out of 15000+600000
- 60683 words of font info for 148 fonts, out of 8000000 for 9000
+ 5504 strings out of 494437
+ 87883 string characters out of 6166646
+ 166963 words of memory out of 5000000
+ 8731 multiletter control sequences out of 15000+600000
+ 60168 words of font info for 146 fonts, out of 8000000 for 9000
  322 hyphenation exceptions out of 8191
- 39i,16n,49p,1935b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,16n,49p,1959b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
 cal/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.
@@ -760,18 +738,17 @@ dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2017basic/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017basic/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2017bas
 ic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texliv
-e/2017basic/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2
-017basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/201
-7basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2017b
-asic/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2017ba
-sic/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017basi
-c/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017basic/
-texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017basic/t
-exmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on bare_adv.pdf (10 pages, 821949 bytes).
+e/2017basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
+2017basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/20
+17basic/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/201
+7basic/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017b
+asic/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017bas
+ic/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017basi
+c/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on bare_adv.pdf (10 pages, 814833 bytes).
 PDF statistics:
- 484 PDF objects out of 1000 (max. 8388607)
- 359 compressed objects within 4 object streams
+ 480 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  81 words of extra memory for PDF output out of 10000 (max. 10000000)
 

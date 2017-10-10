@@ -32,10 +32,11 @@ H.~T. Dinh, C.~Lee, D.~Niyato, and P.~Wang, ``A survey of mobile cloud
   computing: architecture, applications, and approaches,'' \emph{Wireless
   communications and mobile computing}, vol.~13, no.~18, pp. 1587--1611, 2013.
 
-\bibitem{hu2014multidimensional}
-X.~Hu, X.~Li, E.~Ngai, V.~Leung, and P.~Kruchten, ``Multidimensional
-  context-aware social network architecture for mobile crowdsensing,''
-  \emph{IEEE Communications Magazine}, vol.~52, no.~6, pp. 78--87, 2014.
+\bibitem{giordano2011human}
+S.~Giordano and D.~Puccinelli, ``The human element as the key enabler of
+  pervasiveness,'' in \emph{Ad Hoc Networking Workshop (Med-Hoc-Net), 2011 The
+  10th IFIP Annual Mediterranean}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2011, pp. 150--156.
 
 \bibitem{liu2013exploring}
 S.~Liu and A.~D. Striegel, ``Exploring the potential in practice for
@@ -48,17 +49,10 @@ W.~Chang and J.~Wu, ``Progressive or conservative: Rationally allocate
   cooperative work in mobile social networks,'' \emph{IEEE Transactions on
   Parallel and Distributed Systems}, vol.~26, no.~7, pp. 2020--2035, 2015.
 
-\bibitem{heimerl2012communitysourcing}
-K.~Heimerl, B.~Gawalt, K.~Chen, T.~Parikh, and B.~Hartmann,
-  ``Communitysourcing: engaging local crowds to perform expert work via
-  physical kiosks,'' in \emph{Proceedings of the SIGCHI Conference on Human
-  Factors in Computing Systems}.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
-  2012, pp. 1539--1548.
-
-\bibitem{agapie2015crowdsourcing}
-E.~Agapie, J.~Teevan, and A.~Monroy-Hern{\'a}ndez, ``Crowdsourcing in the
-  field: A case study using local crowds for event reporting,'' in \emph{Third
-  AAAI Conference on Human Computation and Crowdsourcing}, 2015.
+\bibitem{balani2007energy}
+R.~Balani, ``Energy consumption analysis for bluetooth, wifi and cellular
+  networks,'' \emph{Online Httpnesl Ee Ucla
+  Edufwdocumentsreports2007PowerAnalysis Pdf}, 2007.
 
 \bibitem{asadi2014survey}
 A.~Asadi, Q.~Wang, and V.~Mancuso, ``A survey on device-to-device communication
@@ -81,17 +75,6 @@ Y.~Li and W.~Wang, ``Can mobile cloudlets support mobile applications?'' in
 Y.~Zhang, D.~Niyato, and P.~Wang, ``Offloading in mobile cloudlet systems with
   intermittent connectivity,'' \emph{IEEE Transactions on Mobile Computing},
   vol.~14, no.~12, pp. 2516--2529, 2015.
-
-\bibitem{karaliopoulos2015user}
-M.~Karaliopoulos, O.~Telelis, and I.~Koutsopoulos, ``User recruitment for
-  mobile crowdsensing over opportunistic networks,'' in \emph{Computer
-  Communications (INFOCOM), 2015 IEEE Conference on}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, 2015, pp. 2254--2262.
-
-\bibitem{han2016competition}
-Y.~Han, T.~Luo, D.~Li, and H.~Wu, ``Competition-based participant recruitment
-  for delay-sensitive crowdsourcing applications in d2d networks,'' \emph{IEEE
-  Transactions on Mobile Computing}, vol.~15, no.~12, pp. 2987--2999, 2016.
 
 \bibitem{tuncay2013participant}
 G.~S. Tuncay, G.~Benincasa, and A.~Helmy, ``Participant recruitment and data
