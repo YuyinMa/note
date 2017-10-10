@@ -97,11 +97,11 @@ K.~Yang, A.~Galis, and H.-H. Chen, ``{Qos-aware service selection algorithms
   for pervasive service composition in mobile wireless environments},''
   \emph{Mobile Networks and Applications}, vol.~15, no.~4, pp. 488--501, 2010.
 
-\bibitem{wu2013predicting}
-J.~Wu, L.~Chen, Y.~Feng, Z.~Zheng, M.~C. Zhou, and Z.~Wu, ``Predicting quality
-  of service for selection by neighborhood-based collaborative filtering,''
-  \emph{IEEE Transactions on Systems, Man, and Cybernetics: Systems}, vol.~43,
-  no.~2, pp. 428--439, 2013.
+\bibitem{Wu2016}
+Q.~Wu, F.~Ishikawa, Q.~Zhu, and D.-H. Shin, ``{QoS-Aware Multigranularity
+  Service Composition: Modeling and Optimization},'' \emph{IEEE Transactions on
+  Systems, Man, and Cybernetics: Systems}, vol.~46, no.~11, pp. 1565--1577,
+  2016.
 
 \bibitem{luo2014efficient}
 X.~Luo, M.~Zhou, Y.~Xia, and Q.~Zhu, ``An efficient non-negative
@@ -114,12 +114,6 @@ X.~Luo, M.~Zhou, Y.~Xia, Q.~Zhu, A.~C. Ammari, and A.~Alabdulwahab,
   ``Generating highly accurate predictions for missing qos data via aggregating
   nonnegative latent factor models,'' \emph{IEEE transactions on neural
   networks and learning systems}, vol.~27, no.~3, pp. 524--537, 2016.
-
-\bibitem{Wu2016}
-Q.~Wu, F.~Ishikawa, Q.~Zhu, and D.-H. Shin, ``{QoS-Aware Multigranularity
-  Service Composition: Modeling and Optimization},'' \emph{IEEE Transactions on
-  Systems, Man, and Cybernetics: Systems}, vol.~46, no.~11, pp. 1565--1577,
-  2016.
 
 \bibitem{jaeger2004qos}
 M.~C. Jaeger, G.~Rojec-Goldmann, and G.~Muhl, ``Qos aggregation for web service
@@ -164,6 +158,10 @@ S.~Deng, L.~Huang, H.~Wu, W.~Tan, J.~Taheri, A.~Y. Zomaya, and Z.~Wu, ``{Toward
   Mobile Service Computing: Opportunities and Challenges},'' \emph{IEEE Cloud
   Computing}, vol.~3, no.~4, pp. 32--41, 2016.
 
+\bibitem{Zhang2016qos}
+C.~Zhang, L.~Zhang, and G.~Zhang, ``Qos-aware mobile service selection
+  algorithm,'' \emph{Mobile Information Systems}, vol. 2016, 2016.
+
 \bibitem{wang2011exploiting}
 J.~Wang, ``Exploiting mobility prediction for dependable service composition in
   wireless mobile ad hoc networks,'' \emph{IEEE Transactions on Services
@@ -183,5 +181,11 @@ O.~Turkes, H.~Scholten, and P.~J. Havinga, ``Cocoon: A lightweight
 C.~Fortuna and M.~Mohorcic, ``Dynamic composition of services for end-to-end
   information transport,'' \emph{IEEE Wireless Communications}, vol.~16, no.~4,
   2009.
+
+\bibitem{Pu2017crowd}
+L.~Pu, X.~Chen, J.~Xu, and X.~Fu, ``Crowd foraging: A qos-oriented
+  self-organized mobile crowdsourcing framework over opportunistic networks,''
+  \emph{IEEE Journal on Selected Areas in Communications}, vol.~35, no.~4, pp.
+  848--862, 2017.
 
 \end{thebibliography}

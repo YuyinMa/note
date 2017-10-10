@@ -77,7 +77,7 @@ E-mail: see http://www.michaelshell.org/contact.html
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-Mobile service computing is a promising paradigm capable of utilizing the pervasive mobile computational resources around us. Mobile users can exploit nearby mobile service to boost their computing power and therefore overcome the limitations of their own resources. In this paper, we first look into the realization of self-organized mobile service composition on opportunistic networks, and propose a framework named mobile service opportunistic network(MSON) to address the dynamic and mobile characteristic in mobile environment. Then formulate the service composition over MSON as an optimal problem and utilize improved Krill-Herd algorithm(IHK) to solve it. Lastly, a real-world opportunistic network data and QoS data is used to verify our approach's effectiveness and efficiency.
+Opportunistic mobile service computing is a promising paradigm capable of utilizing the pervasive mobile computational resources around us. Mobile users can exploit nearby mobile service to boost their computing power and therefore overcome the limitations of their own resources. In this paper, we first propose a framework named mobile service opportunistic network(MSON) and a QoS model for service composition to address the dynamic and mobile characteristic in mobile environment. Then formulate the service composition over MSON as an optimal problem and utilize improved Krill-Herd algorithm(IHK) to solve it. Lastly, a real-world opportunistic network data and QoS data is used to verify our approach's effectiveness and efficiency.
 
 % To evaluate the effectiveness and efficiency of our approach, we obtain experimental performance data through a real-world opportunistic network. The experimental results demonstrate that our approach can obtain superior solutions as compared with current standard composition methods in mobile environments. It can yield near-optimal solutions and has a nearly linear complexity with respect to a problem size.
 
@@ -116,7 +116,7 @@ The huge potential of mobile technology brings a great opportunity to traditiona
 Nowadays, most of mobile applications are content-based(e.g., News app, video app, music app) and there are no need for every mobile user to request these content through expensive and power-hungry cellular network.
 While mobile device have powerful computing and communication capabilities now, the resources-intensive mobile applications, however, drain out the energy of the device much faster than before. 
 
-To achieve the goal of saving communication cost and reducing mobile device energy consumption, we propose a QoS-oriented mobile service composition approach in this paper, where a mobile user in mobile service opportunistic network can combine and exploit nearby devices' resources to boost their computing power and therefore overcome the limitations of their own resources \cite{giordano2011human}. As shown in Fig. 1, this architecture can reduce communication energy consumption and avoid the extreme centralization of traditional mobile cloud computing \cite{giordano2011human}. Its main rationality is three-fold. First, opportunistic user encounters are prevalent and sufficient in daily life \cite{liu2013exploring}, which offers plenty of opportunities to exploit nearby mobile worker for task solving \cite{chang2015progressive,tt,tt}. Second, many mobile tasks require huge computational resources or data transfer (e.g., Tensorflow on mobile, Photoshop on mobile, Online video), for energy consumption and cost perspective, nearby mobile service provider are more adept at executing these tasks than the online workers, because this paradigm can reduce data transfer over cellular network which consume more energy than device to device (D2D) communications such as Bluetooth, WiFi and NFC \cite{balani2007energy}. Third, D2D communications are promising to replenish traditional cellular communications in terms of user throughput increase, cellular traffic reduction and network coverage extension, in this way, users can get better quality of service and save communication fee\cite{asadi2014survey}. In a word, this framework shares the similar spirit with the emerging paradigm “cyber foraging” over opportunistic networks, such that mobile users opportunistically exploit nearby device resources to facilitate their computational task processing \cite{shi2012serendipity,li2014can,zhang2015offloading}.
+To achieve the goal of saving communication cost and reducing mobile device energy consumption, we propose a QoS-oriented mobile service composition approach in this paper, where a mobile user in mobile service opportunistic network can combine and exploit nearby devices' resources to boost their computing power and therefore overcome the limitations of their own resources \cite{giordano2011human}. As shown in Fig. 1, this architecture can reduce communication energy consumption and avoid the extreme centralization of traditional mobile cloud computing \cite{giordano2011human}. Its main rationality is three-fold. First, opportunistic user encounters are prevalent and sufficient in daily life \cite{liu2013exploring}, which offers plenty of opportunities to exploit nearby mobile worker for task solving \cite{chang2015progressive}. Second, many mobile tasks require huge computational resources or data transfer (e.g., Tensorflow on mobile, Photoshop on mobile, Online video), for energy consumption and cost perspective, nearby mobile service provider are more adept at executing these tasks than the online workers, because this paradigm can reduce data transfer over cellular network which consume more energy than device to device (D2D) communications such as Bluetooth, WiFi and NFC \cite{balani2007energy}. Third, D2D communications are promising to replenish traditional cellular communications in terms of user throughput increase, cellular traffic reduction and network coverage extension, in this way, users can get better quality of service and save communication cost\cite{asadi2014survey}. In a word, this framework shares the similar spirit with the emerging paradigm "cyber foraging" over opportunistic networks, such that mobile users opportunistically exploit nearby device resources to facilitate their computational task processing \cite{shi2012serendipity,li2014can,zhang2015offloading}.
 
 \begin{figure}[!t]
 \centering
@@ -131,7 +131,8 @@ To address the aforementioned challenges and concerns, we propose a new approach
 
 2) For MSON, we propose a mobile service QoS model for service provision which consider mobile service's availability as an important QoS attribute to capture user's mobility behavior.
 
-3) Based on MSON and the proposed mobile service QoS model, we transfer the mobile service composition problem to an optimal problem and use a improved Krill-Herd algorithm (IKH) to solve it. A series of evaluations have been conduct to validate the optimality and scalability of our algorithm, and it shows our algorithm can get approximately optimal solution and better performance than other standard composition approaches. 
+3) Based on MSON and the proposed mobile service QoS model, we transfer the mobile service composition problem to an optimal problem and use an improved Krill-Herd algorithm (IKH) to solve it. 
+% A series of evaluations have been conduct to validate the optimality and scalability of our algorithm, and it shows our algorithm can get approximately optimal solution and better performance than other standard composition approaches. 
 
 The remainder of this paper is structured as follows. Section II describe the MSON framework and its application scenario. Section III introduces the mobile service composition model. The approach to make service compositions is presented in Section IV. Section V presents experiments and evaluations. Section VI reviews the related work. Section VI concludes this paper.
 
@@ -144,7 +145,7 @@ The remainder of this paper is structured as follows. Section II describe the MS
 \label{fig_mson}
 \end{figure}
 
-In this section, we first introduce the characteristics of mobile service opportunistic network (MSON), then an user case is presented to illustrate its application scenario.
+In this section, we first introduce the characteristics of mobile service opportunistic network (MSON), then a user case is presented to illustrate its application scenario.
 
 MSON has three main characteristics:
 
@@ -214,16 +215,12 @@ Note that most of wireless transaction protocol have defined the RSSI (Received 
 
 The moving radius of a mobile user $r$ is its moving speed $v$ multiplied by the average service time $t$. Here $t$ can be statistically calculated as the average value of last $n$ times of service invoke, namely, $t = \Sigma_{i=1}^{n}t_i/n$. The speed of a mobile user $v$ can be get through GPS data or other mobile sensor(e.g., Gyro-sensor), then $r = v \times t$.
 
-​Once we know these three parameters $R$, $r$, and $d$, the probability of user $j$ staying inside the transmission range of user $i$ (denoted as $P_{i \ni j}$ ) can be calculated by
+​Once we know these three parameters $R$, $r$, and $d$, the probability of user $j$ staying inside the transmission range of user $i$ (denoted as $P_{i,j}^{IN}$ ) can be calculated by
 \begin{equation}
-P_{i \ni j} = \frac{S_{i \bigcap j}}{S_j}
+P_{i,j}^{IN} = \frac{S_{i \bigcap j}}{S_j}
 \end{equation}
-Namely, $P_{i \ni j}$ equals to the area of the user $j$ moving field inside the transmission range of user $i$ (denoted as $S_{i \bigcap j}$) divided by the overall area of the user $j$ moving field ($S_j$). $S_{i \bigcap j}$ can be calculated as follow
-\begin{eqnarray}
-\alpha = arccos(\frac{r^2+d^2-R^2}{2r\times d}) \\\nonumber
-\beta = arccos(\frac{R^2+d^2-r^2}{2R\times d})
-\end{eqnarray}
-Then,
+Where $S_{i \bigcap j}$ is the area of the user $j$ moving field inside the transmission range of user $i$, $S_j$ is the overall area of the user $j$ moving field. $S_{i \bigcap j}$ can be calculated as follow
+% Where $P_{i,j}^{IN}$ is the area of the user $j$ moving field inside the transmission range of user $i$ (denoted as $S_{i \bigcap j}$) divided by the overall area of the user $j$ moving field ($S_j$). $S_{i \bigcap j}$ can be calculated as follow
 \setlength{\arraycolsep}{0.0em}
 \begin{eqnarray}
 S_{i \bigcap j}&{}={} & [(\frac{2\alpha}{2\pi} \times \pi r^2)-(\frac{r sin\alpha cos\alpha}{2} \times 2)]\\\nonumber
@@ -231,26 +228,31 @@ S_{i \bigcap j}&{}={} & [(\frac{2\alpha}{2\pi} \times \pi r^2)-(\frac{r sin\alph
 &&= \alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta cos\beta)
 \end{eqnarray}
 \setlength{\arraycolsep}{5pt}
+Where,
+\begin{eqnarray}
+\alpha = arccos(\frac{r^2+d^2-R^2}{2r\times d}) \\\nonumber
+\beta = arccos(\frac{R^2+d^2-r^2}{2R\times d})
+\end{eqnarray}
 $S_j$ can be calculated by
 \begin{equation}
 S_j = \pi r^2 = \pi \times (s \times t)^2
 \end{equation}
-Therefore, the probability of user $j$ staying inside the transmission range of user $i$, $(P_{i \ni j})$, can be calculated as follow
+Therefore, the probability of user $j$ staying inside the transmission range of user $i$ (i.e., $P_{i,j}^{IN}$) can be calculated as follow
 \begin{equation}
-P_{i \ni j} = \frac{S_{i \bigcap j}}{\pi s^2 t^2}
+P_{i,j}^{IN} = \frac{S_{i \bigcap j}}{\pi s^2 t^2}
 \end{equation}
 Suppose a mobile service $ms$ running on mobile node $j$ is a candidate service for a task requested by user $i$, and the availability of candidate service can be calculated as follow
 \begin{flalign}
-&\text{$q_{ava}(ms) = P_{i \ni j}$}&
+&\text{$q_{ava}(ms) = P_{i,j}^{IN}$}&
 \end{flalign}
 \begin{align*}
 & \ \ \ \ \ \ \ \ = \frac{S_{i \bigcap j}}{\pi s^2 t^2}\\
 & \ \ \ \ \ \ \ \ = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta cos\beta)}{\pi s^2 t^2}
 \end{align*}
-Mobile service availability $q_{ava}(ms)$ can capture user's mobile behavior, and we use it as an important QoS attribute to construct QoS model for service composition in next subsection.
+Mobile service availability can capture user's mobile behavior, and we use it as an important QoS attribute to construct QoS model for service composition in next subsection.
 
 \subsection{QoS Model for Mobile Service Composition}
-For mobile service requesters to select candidate service, QoS must be considered \cite{wu2013predicting,luo2014efficient,luo2016generating}. Generally, QoS attributes include response time, price, reliability, and reputation, we introduce mobile service availability as an important QoS attribute in this paper to describe user's mobility behavior. QoS attributes in this paper can be classified into two categories: positive ($Q^+$) and negative ($Q^{-}$). For positive attributes, larger values indicate better performance (e.g., reputation and availability), while for negative attributes, smaller values indicate better performance (e.g., response time and cost) \cite{Wu2016}.	
+For mobile service requesters to select candidate service, QoS must be considered \cite{Wu2016,luo2014efficient,luo2016generating}. Generally, QoS attributes include response time, price, reliability, and reputation, we introduce mobile service availability as an important QoS attribute in this paper to describe user's mobility behavior. QoS attributes in this paper can be classified into two categories: positive ($Q^+$) and negative ($Q^{-}$). For positive attributes, larger values indicate better performance (e.g., reputation and availability), while for negative attributes, smaller values indicate better performance (e.g., response time and cost).
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -273,8 +275,8 @@ For a composite service instance $CSI$, its each QoS attribute is determined by 
 
 In order to facilitate ranking of different composite service instances $csi$ in terms of QoS, we utilize simple additive weighting (SAW) as the QoS utility function to map the QoS value into a real value. SAW first normalizes the QoS attribute values into real values between $0$ and $1$, through comparison with the maximal and minimal values; then it sums the normalized values multiplied with a preference weight $w_t$. According to SAW, the QoS utility of a $csi$ can be calculated using e.q (7), where, $q_t(csi)$ is the aggregated value of the type-$t$ QoS attribute of $csi$, and $q_{t,max}$ and $q_{t,min}$, respectively, denote the maximal and minimal possible aggregated values of the $t$-th QoS attribute \cite{Wu2016}.
 \begin{align}
-U(csi) = & (\sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(csi)}{q_{t,max}-q_{t,min}})\times w_t \\\nonumber
-& +(\sum_{q_t \in Q^+} \frac{q_t(csi)-q_{t,min}}{q_{t,max}-q_{t,min}})\times w_t
+U(csi) = & \sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(csi)}{q_{t,max}-q_{t,min}}\times w_t \\\nonumber
+& +\sum_{q_t \in Q^+} \frac{q_t(csi)-q_{t,min}}{q_{t,max}-q_{t,min}}\times w_t
 \end{align}
 
 \subsection{Problem Formulation}
@@ -494,11 +496,9 @@ We consider MIT Reality dataset as user D2D contact traces, where user location,
 
 The publicly available quality of Web service (QWS) dataset\cite{zheng2014investigating} can be used to characterize the service candidates. This dataset consists of 4500 Web services from 142 users over 64 different time slices (at 15-minute interval) and each QoS data includes two measurements (response time and throughput), for a mobile service, response time attribute is randomly selected from the QWS dataset. 
 
-Table 2 is part of D2D contract traces in MIT Reality dataset. We can clear see that for user $u$, there are five nearby devices within D2D transmission distance at time $time_1$. These device users can be regarded as MSON participant who provision mobile services. Table 3 shows MSON participant and the services they exposed to nearby devices. These mobile service are random chosen from QWS dataset. Table 4 is the Cartesian product of Table 2 and Table 4, it shows how many kinds of services user can exploit at a certain time and how many candidates for each task. For example, there are seven kinds of services available at time $time_1$ and there are three candidates for task $t_1$.
-
 \begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
-\caption{User encounter data}
+\renewcommand{\arraystretch}{1.5}
+\caption{User $u$ 's D2D contract traces}
 \label{table_example}
 \centering
 \begin{tabular}{c c}
@@ -526,7 +526,7 @@ t6 & S25, S10, NORTHOLT, BlueRadios, Rabbit\\
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
-\caption{Service provider information}
+\caption{Services exposed by provider}
 \label{table_example}
 \centering
 \begin{tabular}{c c}
@@ -535,23 +535,23 @@ t6 & S25, S10, NORTHOLT, BlueRadios, Rabbit\\
 % user(3).devices_names(500-505)
 \hline
 % \hline
-AliKatz     & $ms_1$, $ms_3$, $ms_7$\\
+AliKatz     & $ms_1$, $ms_2$, $ms_3$, $ms_4$\\
 % \hline 
-BlueRadios  & $ms_1$, $ms_4$, $ms_6$\\
+BlueRadios  & $ms_1$, $ms_5$\\
 % \hline
-Henrymobile & $ms_2$, $ms_3$\\
+Henrymobile & $ms_2$, $ms_4$\\
 % \hline
-NORTHOLT    & $ms_1$, $ms_2$, $ms_4$, $ms_5$ \\
+NORTHOLT    & $ms_4$, $ms_5$, $ms_6$ \\
 % \hline
-Rabbit      & $ms_2$, $ms_3$\\
+Rabbit      & $ms_1$, $ms_4$\\
 % \hline 
-S4          & $ms_1$, $ms_3$, $ms_6$\\
+S4          & $ms_1$, $ms_2$\\
 % \hline 
-S10         & $ms_1$, $ms_4$\\
+S10         & $ms_6$, $ms_7$\\
 % \hline 
-S25         & $ms_2$, $ms_5$, $ms_7$\\
+S25         & $ms_4$, $ms_5$\\
 % \hline 
-Tony        & $ms_2$, $ms_4$, $ms_5$, $ms_7$\\
+Tony        & $ms_1$, $ms_4$\\
 % \hline 
 ... & ...\\
 \hline
@@ -559,7 +559,7 @@ Tony        & $ms_2$, $ms_4$, $ms_5$, $ms_7$\\
 \end{table}
 
 \begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.8}
 \caption{Available candidates}
 \label{table_example}
 \centering
@@ -569,30 +569,45 @@ Tony        & $ms_2$, $ms_4$, $ms_5$, $ms_7$\\
 % user(3).devices_names(500-505)
 \hline
 % \hline
-t1     & $ms_1^{(3)}$, $ms_2^{(3)}$, $ms_3^{(1)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
+t1     & $ms_1^{(3)}$, $ms_4^{(3)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$ \\
 % \hline 
-t2     & $ms_1^{(3)}$, $ms_2^{(3)}$, $ms_3^{(1)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
+t2     & $ms_1^{(3)}$, $ms_4^{(3)}$, $ms_5^{(2)}$, $ms_6^{(2)}$, $ms_7^{(1)}$ \\
 % \hline
-t2     & $ms_1^{(4)}$, $ms_2^{(4)}$, $ms_3^{(3)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
+t2     & $ms_1^{(4)}$, $ms_2^{(2)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(2)}$, $ms_7^{(1)}$ \\
 % \hline
-t4     & $ms_1^{(4)}$, $ms_2^{(3)}$, $ms_3^{(2)}$, $ms_4^{(4)}$, $ms_5^{(2)}$, $ms_6^{(2)}$, $ms_7^{(1)}$\\
+t4     & $ms_1^{(4)}$, $ms_2^{(1)}$, $ms_4^{(3)}$, $ms_5^{(2)}$, $ms_6^{(2)}$, $ms_7^{(1)}$ \\
 % \hline
-t5     & $ms_1^{(5)}$, $ms_2^{(2)}$, $ms_3^{(3)}$, $ms_4^{(3)}$, $ms_5^{(2)}$, $ms_6^{(2)}$, $ms_7^{(2)}$\\
+t5     & $ms_1^{(4)}$, $ms_2^{(2)}$, $ms_3^{(1)}$, $ms_4^{(4)}$, $ms_5^{(3)}$, $ms_6^{(2)}$, $ms_7^{(1)}$ \\
 % \hline 
-t6     & $ms_1^{(3)}$, $ms_2^{(3)}$, $ms_3^{(1)}$, $ms_4^{(3)}$, $ms_5^{(2)}$, $ms_6^{(1)}$, $ms_7^{(1)}$\\
+t6     & $ms_1^{(2)}$, $ms_4^{(3)}$, $ms_5^{(3)}$, $ms_6^{(2)}$, $ms_7^{(1)}$ \\
 % \hline 
 ... & ...\\
 \hline
 \end{tabular}
 \end{table}
 
+Table 2 is part of D2D contract traces in MIT Reality dataset. For example, there there are five nearby devices within D2D transmission distance at time $t1$ and these devices can be regarded as MSON participant who provision mobile services. Table 3 shows MSON participant and the services they exposed to nearby devices. These mobile service are random chosen from QWS dataset. Table 4 is the Cartesian product of Table 2 and Table 3, it shows how many kinds of services user can exploit at a certain time and how many candidates for each kind of service (i.e., task). For example, there are five kinds of services available at time $t1$ and there are three candidates for task $t_1$, three candidates for task $t_4$, two candidates for task $t_5$, one candidates for task $t_6$ and one candidates for task $t_7$.
+
 
 \subsection{Impact of Parameters}
 There are six parameters can be adjusted to improve the IKH's performance: population size $PS$, maximum iteration number $MI$, crossover rate $Cr$, foraging speed $V_f$, maximum induced speed $N_{max}$ and physical diffusion speed $D_{max}$. As shown in Table 5, we generate six groups of parameters configuration to evaluate the impact of each parameter. For each group of parameters configuration, we tune one parameter and fix the other parameters. For each configuration setting, the IKH algorithm is executed 50 times independently and the average performance was recorded.
 
+%    KH_profile.NK         = 20;
+%    KH_profile.MI         = 30;
+%    KH_profile.CR         = 0.6;
+%    KH_profile.Vf         = 0.8;
+%    KH_profile.Nmax       = 0.3;
+%    KH_profile.Dmax       = 0.2;
+Fig. 5(a) shows the impact of population size, we observe that with the increase of population size, the average QoS utility of IKH significantly improved before $PS=10$, and no significant improvement is observed after population size over $20$. Therefore, an excessively large population size (e.g., $PS=50$) has limited impact on the performance of IKH, and it will result in computing resources waste and high time cost.
+Similarly, Fig. 5(b) shows that the value of QoS utility significantly increased for higher number of iteration times until to a limit: $MI = 60$. 
+Fig. 5(c) shows the impact of the crossover rate $Cr$. The performance of SKH increases with $Cr$ firstly, then decrease, the best performance is achieved for $Cr = 0.6$.
+Fig. 5(d) shows the impact of the foraging speed $V_f$. The performance of SKH increases with $V_f$ firstly, then decrease, the best performance is achieved for $V_f = 0.8$.
+Fig. 5(e) shows the impact of the induced speed $N_{max}$. The performance of SKH increases with $N_{max}$ firstly, then decrease, the best performance is achieved for $N_{max} = 0.3$.
+Fig. 5(f) shows the impact of the physical diffusion speed $D_{max}$. It shows that with the increase of $D_{max}$ the performance of SKH fluctuation slightly, with loss of generality, we random generate $D_{max}$ from $[0.2 \sim 0.5]$ in this paper.
+
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
-\caption{PARAMETERS CONFIGURATION}
+\caption{parameters configuration}
 \label{table_example}
 \centering
 \begin{tabular}{cccccc}
@@ -609,18 +624,6 @@ There are six parameters can be adjusted to improve the IKH's performance: popul
 \end{tabular}
 \end{table}
 
-%    KH_profile.NK         = 20;
-%    KH_profile.MI         = 30;
-%    KH_profile.CR         = 0.6;
-%    KH_profile.Vf         = 0.8;
-%    KH_profile.Nmax       = 0.3;
-%    KH_profile.Dmax       = 0.2;
-Fig. 5(a) shows the impact of population size, we observe that with the increase of population size, the average QoS utility of IKH significantly improved before $PS=10$, and no significant improvement is observed after population size over $20$. Therefore, an excessively large population size (e.g., $PS=50$) has limited impact on the performance of IKH, and it will result in computing resources waste and high time cost.
-Similarly, Fig. 5(b) shows that the value of QoS utility significantly increased for higher number of iteration times until to a limit: $MI = 60$. 
-Fig. 5(c) shows the impact of the crossover rate $Cr$. The performance of SKH increases with $Cr$ firstly, then decrease, the best performance is achieved for $Cr = 0.6$.
-Fig. 5(d) shows the impact of the foraging speed $V_f$. The performance of SKH increases with $V_f$ firstly, then decrease, the best performance is achieved for $V_f = 0.8$.
-Fig. 5(e) shows the impact of the induced speed $N_{max}$. The performance of SKH increases with $N_{max}$ firstly, then decrease, the best performance is achieved for $N_{max} = 0.3$.
-Fig. 5(f) shows the impact of the physical diffusion speed $D_{max}$. It shows that with the increase of $D_{max}$ the performance of SKH fluctuation slightly, with loss of generality, we random generate $D_{max}$ from $[0.2 \sim 0.5]$ in this paper.
 
 \begin{figure*}[!t]
 \centering
@@ -668,7 +671,7 @@ To evaluate the optimality of above algorithms, we tune the parameters of each a
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
-\caption{PARAMETER SETTING OF DIFFERENT ALGORITHMS}
+\caption{Parameters setting for different algorithms}
 \label{table_example}
 \centering
 \begin{tabular}{cc}
@@ -688,21 +691,18 @@ PSO & inertia weight = 0.8; c1 = 2.0; c2 = 2.0 \\
 \label{PS}}
 \hfil
 \subfloat[]{
-\includegraphics[width=2in]{./img/Opt-Candidates.pdf} 
+\includegraphics[width=2in]{./img/Opt-Tasks.pdf} 
 \label{MI}}
 \hfil
 \subfloat[]{
-\includegraphics[width=2in]{./img/Opt-Tasks.pdf} 
+\includegraphics[width=2in]{./img/Opt-Candidates.pdf} 
 \label{CR}}
 
 \caption{Optimality evaluation.} \label{fig_sim}
 \end{figure*}
 
-
-
-
 The result in Fig. 7(a) shows that, as expected, the brute-force algorithm leads to the best performance with the highest QoS utility value. The basic PSO algorithm has the worst performance with the lowest QoS utility values. Both IKH and Ga can find over 95\% optimal composition before 30 iterations and SKH performs little better than the basic GA algorithm. 
-Fig. 7(a) shows that with the increasement of task number and service candidate number, our approach performs better than other algorithms.
+Fig. 7(a) and Fig. 7(b) shows that with the increasement of task number and service candidate number, our approach performs better than other algorithms.
 Although GA performs closely to IHK, IHK's superiority is it runs more faster than GA, in next subsection we will evaluate the scalability of above four algorithms.
 
 \subsection{Scalability Evaluation}
@@ -733,7 +733,8 @@ Service-oriented computing(SOC) is a novel paradigm to develop and integrate ent
 \subsection{mobile service composition}
 Mobile service computing is the combination of service computing and mobile computing, With the development of mobile device and application industry, more and more study have emerged to address the problem of mobile service composition. 
 Deng et al. \cite{Deng2016} presented an detailed introduction to mobile service computing, they first discussed the limitations of mobile computing, then classify mobile service computing into three categories: C2M, M2M, Hybrid. They also discussed the challenge toward mobile service provision and mobile service consumption in terms of performance, energy and security perspective. At their \cite{Deng2017} work, they proposed a mobile service sharing community to address the problem of service provision in mobile environment. They extent the random way point(RWP) model to capture user mobility and utilize the meta-heuristic algorithm to solve the service composition problem. Yang et al. \cite{Yang2010} presented a comprehensive QoS model specifically for pervasive services. They considered not only mobile wireless network characteristics but also user-perceived factors, and devised a corresponding formula to calculate the QoS criterion. 
-zhang et al. \cite{Zhang2016} gives a context-aware service selection algorithm based on Genetic Algorithm to solve the problem of mobile service selection, they introduce a tree-encoding method to improve the capacity and efficiency of GA. However, this work did not consider user mobility.
+Zhang2016
+zhang et al. \cite{Zhang2016qos} gives a context-aware service selection algorithm based on Genetic Algorithm to solve the problem of mobile service selection, they introduce a tree-encoding method to improve the capacity and efficiency of GA. However, this work did not consider user mobility.
 Wang et al. \cite{wang2011exploiting} solve the problem of dependable service composition in wireless mobile ad hoc networks by taking the mobility prediction of the service providers into consideration.
 They use a probability-free model and a probabilistic model to characterize the uncertainty to compose a service that can tolerate the uncertain mobility of service provider. However, this work only focus on the case of sequential service workflows and the heuristic algorithms they presented does not seek the optimal QoS service compositions.
 
@@ -742,8 +743,8 @@ Opportunistic networking is one of the most interesting evolutions of the multi-
 Marco et al. \cite{Conti2014} give a review of opportunistic network and regarded it as the first step in people-centric networking, they also discuss the focused research problem such as mobility model and routing problem.
 Turkes et al. \cite{turkes2016cocoon} proposed a middleware named Cocoon to support mobile opportunistic network, they design a routing protocol above Wi-Fi and Bluetooth standards, their experiments which use real-world data setups show that Cocoon performs well on the aspects of dissemination rate, delivery latency and energy consumption.
 Fortuna et al. \cite{fortuna2009dynamic} presented an review of dynamic service composition over both wired and wireless environment, However, their work does not present any technical details to describe how to composite service in mobile networks.
-Giordano et al. \cite{Giordano2011} proposed a novel paradigm that utilize Opportunistic computing as an appealing complement to the mobile computing cloud, in this way, mobile device can combine and exploit heterogeneous resources from other devices.
-Pu et al. \cite{Pu2017} presented QoS-oriented self-organized mobile crowdsourcing framework, in this work, the prevalent and sufficient characteristics of opportunistic user encounters in our daily life are utilized to solve crowdsourcing problem.
+Giordano et al. \cite{giordano2011human} proposed a novel paradigm that utilize Opportunistic computing as an appealing complement to the mobile computing cloud, in this way, mobile device can combine and exploit heterogeneous resources from other devices.
+Pu et al. \cite{Pu2017crowd} presented QoS-oriented self-organized mobile crowdsourcing framework, in this work, the prevalent and sufficient characteristics of opportunistic user encounters in our daily life are utilized to solve crowdsourcing problem.
 \section{CONCLUSIONS AND FURTHER STUDIES}
 In this paper, we propose a comprehensive framework for optimal mobile service compositing on mobile environment. We present a mobile service opportunistic network model(MSON) that fully integrates human mobility behavior factors for mobile service provisioning and introduce a QoS model for mobile service composition. Then we formulate the mobile service composition over MSON problem as an optimal problem to maximize the quality of service composition, propose an improved Krill-herd(IKH) algorithm to solve it, and a case study based on real-world opportunistic network and some well-known web service dataset show that our proposed approach outperforms current standard composition methods in mobile environments.
 

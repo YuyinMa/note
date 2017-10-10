@@ -8,55 +8,51 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: mybibtex.bib
-Warning--I didn't find a database entry for "tt"
 Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "Zhang2016"
-Warning--I didn't find a database entry for "Giordano2011"
-Warning--I didn't find a database entry for "Pu2017"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 30 entries,
+You've used 31 entries,
             4087 wiz_defined-function locations,
-            1011 strings with 13456 characters,
-and the built_in function-call counts, 26665 in all, are:
-= -- 2195
-> -- 624
-< -- 279
-+ -- 352
-- -- 95
-* -- 1298
-:= -- 3850
-add.period$ -- 69
-call.type$ -- 30
-change.case$ -- 29
+            1012 strings with 13607 characters,
+and the built_in function-call counts, 27071 in all, are:
+= -- 2232
+> -- 629
+< -- 280
++ -- 354
+- -- 96
+* -- 1317
+:= -- 3928
+add.period$ -- 71
+call.type$ -- 31
+change.case$ -- 30
 chr.to.int$ -- 648
-cite$ -- 30
-duplicate$ -- 1833
-empty$ -- 2037
-format.name$ -- 123
-if$ -- 6261
+cite$ -- 31
+duplicate$ -- 1870
+empty$ -- 2073
+format.name$ -- 125
+if$ -- 6351
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 296
-newline$ -- 113
-num.names$ -- 30
-pop$ -- 634
+int.to.str$ -- 31
+missing$ -- 302
+newline$ -- 116
+num.names$ -- 31
+pop$ -- 647
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2061
+skip$ -- 2094
 stack$ -- 0
-substring$ -- 1539
-swap$ -- 1614
-text.length$ -- 63
+substring$ -- 1540
+swap$ -- 1636
+text.length$ -- 64
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 30
+type$ -- 31
 warning$ -- 0
-while$ -- 138
-width$ -- 32
-write$ -- 324
-(There were 5 warnings)
+while$ -- 139
+width$ -- 33
+write$ -- 333
+(There was 1 warning)
