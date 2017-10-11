@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  10 OCT 2017 18:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  11 OCT 2017 11:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -544,9 +544,6 @@ Underfull \hbox (badness 2781) in paragraph at lines 189--190
 
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
-Missing character: There is no ™ in font pplr7t!
-Missing character: There is no â in font pplr7t!
-Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
@@ -557,7 +554,7 @@ Missing character: There is no ‹ in font pplr7t!
 <./img/pic3.pdf, id=98, 928.19533pt x 676.15274pt>
 File: ./img/pic3.pdf Graphic file (type pdf)
  <use ./img/pic3.pdf>
-Package pdftex.def Info: ./img/pic3.pdf used on input line 205.
+Package pdftex.def Info: ./img/pic3.pdf used on input line 212.
 (pdftex.def)             Requested size: 252.94499pt x 184.2557pt.
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
@@ -568,20 +565,20 @@ Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
 
-Underfull \hbox (badness 1769) in paragraph at lines 316--316
+Underfull \hbox (badness 1769) in paragraph at lines 315--315
  \OT1/phv/b/sc/11.04124 4 The ikh al-go-rithm for mo-bile ser-vice
  []
 
 <./img/pic4.pdf, id=136, 824.98692pt x 487.83092pt>
 File: ./img/pic4.pdf Graphic file (type pdf)
  <use ./img/pic4.pdf>
-Package pdftex.def Info: ./img/pic4.pdf used on input line 335.
+Package pdftex.def Info: ./img/pic4.pdf used on input line 334.
 (pdftex.def)             Requested size: 216.81pt x 128.20268pt.
 
 [4] <./img/pic5.pdf, id=152, 884.28047pt x 591.215pt>
 File: ./img/pic5.pdf Graphic file (type pdf)
  <use ./img/pic5.pdf>
-Package pdftex.def Info: ./img/pic5.pdf used on input line 400.
+Package pdftex.def Info: ./img/pic5.pdf used on input line 399.
 (pdftex.def)             Requested size: 180.67499pt x 120.7939pt.
 
 [5 <./img/pic4.pdf> <./img/pic5.pdf>]
@@ -688,10 +685,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 5501 strings out of 494437
- 87855 string characters out of 6166646
- 164967 words of memory out of 5000000
- 8728 multiletter control sequences out of 15000+600000
+ 5503 strings out of 494437
+ 87896 string characters out of 6166646
+ 164975 words of memory out of 5000000
+ 8730 multiletter control sequences out of 15000+600000
  60168 words of font info for 146 fonts, out of 8000000 for 9000
  322 hyphenation exceptions out of 8191
  39i,16n,49p,1950b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -722,7 +719,7 @@ e/2017basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
 asic/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017bas
 ic/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017basi
 c/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on bare_adv.pdf (10 pages, 882369 bytes).
+Output written on bare_adv.pdf (10 pages, 882751 bytes).
 PDF statistics:
  488 PDF objects out of 1000 (max. 8388607)
  361 compressed objects within 4 object streams

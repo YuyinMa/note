@@ -148,10 +148,21 @@ W.~Khatib and P.~J. Fleming, ``The stud ga: a mini revolution?'' in
   \emph{International Conference on Parallel Problem Solving from
   Nature}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 1998, pp. 683--691.
 
+\bibitem{eagle2006reality}
+N.~Eagle and A.~S. Pentland, ``Reality mining: sensing complex social
+  systems,'' \emph{Personal and ubiquitous computing}, vol.~10, no.~4, pp.
+  255--268, 2006.
+
 \bibitem{zheng2014investigating}
 Z.~Zheng, Y.~Zhang, and M.~R. Lyu, ``Investigating qos of real-world web
   services,'' \emph{IEEE Transactions on Services Computing}, vol.~7, no.~1,
   pp. 32--39, 2014.
+
+\bibitem{papazoglou2003service}
+M.~P. Papazoglou, ``Service-oriented computing: Concepts, characteristics and
+  directions,'' in \emph{Web Information Systems Engineering, 2003. WISE 2003.
+  Proceedings of the Fourth International Conference on}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, 2003, pp. 3--12.
 
 \bibitem{Deng2016}
 S.~Deng, L.~Huang, H.~Wu, W.~Tan, J.~Taheri, A.~Y. Zomaya, and Z.~Wu, ``{Toward
