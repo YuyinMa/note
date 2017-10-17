@@ -158,6 +158,17 @@ Z.~Zheng, Y.~Zhang, and M.~R. Lyu, ``Investigating qos of real-world web
   services,'' \emph{IEEE Transactions on Services Computing}, vol.~7, no.~1,
   pp. 32--39, 2014.
 
+\bibitem{wu2013transactional}
+Q.~Wu and Q.~Zhu, ``Transactional and qos-aware dynamic service composition
+  based on ant colony optimization,'' \emph{Future Generation Computer
+  Systems}, vol.~29, no.~5, pp. 1112--1119, 2013.
+
+\bibitem{abadi2016tensorflow}
+M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
+  A.~Davis, J.~Dean, M.~Devin \emph{et~al.}, ``Tensorflow: Large-scale machine
+  learning on heterogeneous distributed systems,'' \emph{arXiv preprint
+  arXiv:1603.04467}, 2016.
+
 \bibitem{papazoglou2003service}
 M.~P. Papazoglou, ``Service-oriented computing: Concepts, characteristics and
   directions,'' in \emph{Web Information Systems Engineering, 2003. WISE 2003.

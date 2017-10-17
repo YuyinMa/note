@@ -263,10 +263,10 @@ For mobile service requesters to select candidate service, QoS must be considere
 \hline
 \bfseries Pattern & \bfseries Resopnse Time & \bfseries Availability \\
 \hline
-sequence & $\sum_{i=1}^{n}q_{rt}(S_i)$ & $\sum_{i=1}^{n}q_{ava}(S_i)$ \\
-parallel & $Max\{q_{rt}(S_i)\}$ & $\sum_{i=1}^{n}q_{ava}(S_i)$ \\
+sequence & $\sum_{i=1}^{n}q_{rt}(S_i)$ & $\prod_{i=1}^{n}q_{ava}(S_i)$ \\
+parallel & $Max\{q_{rt}(S_i)\}$ & $\prod_{i=1}^{n}q_{ava}(S_i)$ \\
 choice & $\sum_{j=1}^{n} p_j \times q_{rt}(S_j)$ & $\sum_{j=1}^{n} p_j \times q_{ava}(S_j)$ \\
-loop & $k \times q_{rt}(S_i)$ & $k \times q_{ava}(S_i)$ \\
+loop & $k \times q_{rt}(S_i)$ & $[q_{ava}(S_i)]^{k}$ \\
 \hline
 \end{tabular}
 \end{table}
@@ -497,6 +497,13 @@ We consider MIT Reality dataset \cite{eagle2006reality} as user D2D contact trac
 The publicly available quality of Web service (QWS) dataset\cite{zheng2014investigating} can be used to characterize the service candidates. This dataset consists of 4500 Web services from 142 users over 64 different time slices (at 15-minute interval) and each QoS data includes two measurements (response time and throughput).
 % for a mobile service, response time attribute is randomly selected from the QWS dataset. 
 
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=5in]{./img/DAG.pdf}
+\caption{The composition plan for case study.}
+\label{fig_DAG}
+\end{figure*}
+
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.5}
 \caption{User $u$ 's D2D contract traces}
@@ -588,6 +595,8 @@ t6     & $ms_1^{(2)}$, $ms_4^{(3)}$, $ms_5^{(3)}$, $ms_6^{(2)}$, $ms_7^{(1)}$ \\
 \end{table}
 
 Table 2 is part of D2D contract traces in MIT Reality dataset. For example, there there are five nearby devices within D2D transmission distance at time $t1$ and these devices can be regarded as MSON participant who provision mobile services. Table 3 shows MSON participants and the services they exposed to nearby devices. These mobile service are random chosen from QWS dataset. Table 4 is the Cartesian product of Table 2 and Table 3, it shows how many kinds of services user can exploit at a certain time and how many candidates for each kind of service (i.e., task). For example, there are five kinds of service available at time $t1$ and there are three candidates for task $t_1$, three candidates for task $t_4$, two candidates for task $t_5$, one candidate for task $t_6$ and one candidate for task $t_7$.
+
+Fig. 9 shows three mobile service composition plans for case study in this section.  Fig. 9(a) is a well known composition plan for booking tickets \cite{wu2013transactional}, it has 6 tasks. Fig. 9(b) is a simple workflow with 12 tasks for Tensorflow \cite{abadi2016tensorflow}, Tensorflow is a heterogeneous distributed system for machine learning and it already can be deployed in mobile devices. Fig. 9(c) is a scientific workflow with 24 tasks for Montage. Montage is an astronomical image mosaic engine, it can be used for simulating some picture edit application in mobile phone. We use these three kinds of composition plans to represent different meaningful service composition with different tasks.
 
 
 \subsection{Impact of Parameters}
