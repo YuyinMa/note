@@ -78,7 +78,7 @@ pdfkeywords={Computer Society, IEEEtran, journal, LaTeX, paper,
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-Opportunistic mobile service computing is a promising paradigm capable of utilizing the pervasive mobile computational resources around us. Mobile users can exploit nearby mobile service to boost their computing power and therefore overcome the limitations of their own resources. In this paper, we first propose a framework named mobile service opportunistic network (MSON) and a QoS model for service composition to address the dynamic and mobile characteristic in mobile environment. Then formulate the service composition over MSON as an optimal problem and utilize improved Krill-Herd algorithm (IHK) to solve it. Lastly, a real-world opportunistic network data and QoS data is used to verify our approach's effectiveness and efficiency.
+Opportunistic mobile service computing is a promising paradigm capable of utilizing the pervasive mobile computational resources around us. Mobile users can exploit nearby mobile service to boost their computing power and therefore overcome the limitations of their own resources. In this paper, we first propose a framework named mobile service opportunistic network (MSON) and a QoS model for service composition to address the dynamic and mobile characteristic in mobile environment. Then formulate the service composition over MSON as an optimal problem and utilize an improved Krill-Herd algorithm to solve it. Lastly, a real-world opportunistic network data and QoS data is used to verify our approach's effectiveness and efficiency.
 
 % To evaluate the effectiveness and efficiency of our approach, we obtain experimental performance data through a real-world opportunistic network. The experimental results demonstrate that our approach can obtain superior solutions as compared with current standard composition methods in mobile environments. It can yield near-optimal solutions and has a nearly linear complexity with respect to a problem size.
 
@@ -132,10 +132,30 @@ To address the aforementioned challenges and concerns, we propose a new approach
 
 2) For MSON, we propose a mobile service QoS model for service provision which consider mobile service's availability as an important QoS attribute to capture user's mobility behavior.
 
-3) Based on MSON and the proposed mobile service QoS model, we transfer the mobile service composition problem to an optimal problem and use an improved Krill-Herd algorithm (IKH) to solve it. 
+3) Based on MSON and the proposed mobile service QoS model, we transfer the mobile service composition problem to an optimal problem and propose a Krill-Herd based algorithm to solve it. 
 % A series of evaluations have been conduct to validate the optimality and scalability of our algorithm, and it shows our algorithm can get approximately optimal solution and better performance than other standard composition approaches. 
 
 The remainder of this paper is structured as follows. Section II describe the MSON framework and its application scenario. Section III introduces the mobile service composition model. The approach to make service compositions is presented in Section IV. Section V presents experiments and evaluations. Section VI reviews the related work. Section VI concludes this paper.
+
+\section{RELATED WORK}
+Service-oriented computing (SOC) is a novel paradigm to develop and integrate enterprise information system \cite{papazoglou2003service}, with the development of mobile device and communication technology, the research of mobile service composition has grain much attention from both industry and academia. In this section, we first briefly review some recent work on mobile service composition, then review opportunistic network and its application in mobile devices.
+
+\subsection{mobile service composition}
+Mobile service computing is the combination of service computing and mobile computing, With the development of mobile device and application industry, more and more study have emerged to address the problem of mobile service composition. 
+Deng et al. \cite{Deng2016} presented an detailed introduction to mobile service computing, they first discussed the limitations of mobile computing, then classify mobile service computing into three categories: C2M, M2M, Hybrid. They also discussed the challenge toward mobile service provision and mobile service consumption in terms of performance, energy and security perspective. At their \cite{Deng2017} work, they proposed a mobile service sharing community to address the problem of service provision in mobile environment. They extent the random way point (RWP) model to capture user mobility and utilize the meta-heuristic algorithm to solve the service composition problem. Yang et al. \cite{Yang2010} presented a comprehensive QoS model specifically for pervasive services. They considered not only mobile wireless network characteristics but also user-perceived factors, and devised a corresponding formula to calculate the QoS criterion. 
+Zhang2016
+zhang et al. \cite{Zhang2016qos} gives a context-aware service selection algorithm based on Genetic Algorithm to solve the problem of mobile service selection, they introduce a tree-encoding method to improve the capacity and efficiency of GA. However, this work did not consider user mobility.
+Wang et al. \cite{wang2011exploiting} solve the problem of dependable service composition in wireless mobile ad hoc networks by taking the mobility prediction of the service providers into consideration.
+They use a probability-free model and a probabilistic model to characterize the uncertainty to compose a service that can tolerate the uncertain mobility of service provider. However, this work only focus on the case of sequential service workflows and the heuristic algorithms they presented does not seek the optimal QoS service compositions.
+
+\subsection{mobile opportunistic network}
+Opportunistic networking is one of the most interesting evolutions of the multi-hop networking paradigm. Instead of constructing stable end-to-end paths as in the Internet, opportunistic networks do not consider node mobility a problem but as an opportunity to exploit. 
+Marco et al. \cite{Conti2014} give a review of opportunistic network and regarded it as the first step in people-centric networking, they also discuss the focused research problem such as mobility model and routing problem.
+Turkes et al. \cite{turkes2016cocoon} proposed a middleware named Cocoon to support mobile opportunistic network, they design a routing protocol above Wi-Fi and Bluetooth standards, their experiments which use real-world data setups show that Cocoon performs well on the aspects of dissemination rate, delivery latency and energy consumption.
+Fortuna et al. \cite{fortuna2009dynamic} presented an review of dynamic service composition over both wired and wireless environment, However, their work does not present any technical details to describe how to composite service in mobile networks.
+Giordano et al. \cite{giordano2011human} proposed a novel paradigm that utilize Opportunistic computing as an appealing complement to the mobile computing cloud, in this way, mobile device can combine and exploit heterogeneous resources from other devices.
+Pu et al. \cite{Pu2017crowd} presented QoS-oriented self-organized mobile crowdsourcing framework, in this work, the prevalent and sufficient characteristics of opportunistic user encounters in our daily life are utilized to solve crowdsourcing problem.
+
 
 \section{MSON AND APPLICATION SCENARIO}
 
@@ -242,13 +262,11 @@ Therefore, the probability of user $j$ staying inside the transmission range of 
 P_{i,j}^{IN} = \frac{S_{i \bigcap j}}{\pi s^2 t^2}
 \end{equation}
 Suppose a mobile service $ms$ running on mobile node $j$ is a candidate service for a task requested by user $i$, and the availability of candidate service can be calculated as follow
-\begin{flalign}
-&\text{$q_{ava}(ms) = P_{i,j}^{IN}$}&
-\end{flalign}
-\begin{align*}
-& \ \ \ \ \ \ \ \ = \frac{S_{i \bigcap j}}{\pi s^2 t^2}\\
+\begin{align}
+& \text{$q_{ava}(ms) = P_{i,j}^{IN}$} \\\nonumber
+& \ \ \ \ \ \ \ \ = \frac{S_{i \bigcap j}}{\pi s^2 t^2}\\\nonumber
 & \ \ \ \ \ \ \ \ = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta cos\beta)}{\pi s^2 t^2}
-\end{align*}
+\end{align}
 Mobile service availability can capture user's mobile behavior, and we use it as an important QoS attribute to construct QoS model for service composition in next subsection.
 
 \subsection{QoS Model for Mobile Service Composition}
@@ -313,13 +331,13 @@ The optimal solution  $X^*$ satisfies the following conditions:
 
 The target of the mobile service composition problem over MSON is to find the biggest $F(x)$. Thus, the problem is equivalent to the integer programming problem which is known to be NP-hard. Then the service composition problem over MSON is NP-hard.
 
-\section{The ikh algorithm for mobile service composition}
+\section{The kh-based algorithm for mobile service composition}
 For the problem we formulate above, integer programming can be utilized to obtain the optimal solution. However, integer programming might cost much more time with the increment of problem size because of its poor scalability \cite{nemhauser1988integer}. To solve this problem in polynomial time, an meta-heuristic algorithms such as GAs and PSO, can be utilized to find the near optimal solution.
 %In this section, we will illustrate our algorithm for making mobile service compositions over MSON based on the Krill-Herd algorithm.
 
 Krill-Herd algorithm \cite{gandomi2012krill} is new generic stochastic optimization approach for the global optimization problem which is inspired by predatory behavior and communication behavior of krill. 
 % The whole process of the IKH algorithm is shown as fig.4.
-In this section, we will introduce an improved Krill-Herd algorithm (IKH) to solve the problem of mobile service composition over MSON.
+In this section, we will introduce a Krill-Herd based algorithm to solve the problem of mobile service composition over MSON.
 
 % \begin{figure}[!t]
 % \centering
@@ -338,7 +356,7 @@ In this section, we will introduce an improved Krill-Herd algorithm (IKH) to sol
 \end{figure}
 
 %In this paper, the position vector of each krill individual corresponds to a feasible mobile service composition,
-In IKH, composite service instance is encoded as a krill individual, the krill individual with the best position corresponds to the optimal mobile service composition. The target of algorithm is to find the krill individual with the best position, which means to find the best mobile service composition with the best QoS utility. Therefore, once the optimal krill individual is found, the best mobile service composition is obtained.
+In KH, composite service instance is encoded as a krill individual, the krill individual with the best position corresponds to the optimal mobile service composition. The target of algorithm is to find the krill individual with the best position, which means to find the best mobile service composition with the best QoS utility. Therefore, once the optimal krill individual is found, the best mobile service composition is obtained.
 
 In this paper, the position vector of each krill individual is represented by an integer array with its length equal to the number of involved tasks. The $i$-th entry in the array, in turn, refers to the selection result of the task $t_i$ . That is to say, given that the value of the $i$-th entry is $j$, it indicates that $ms_{(i,j)}$ is the selected concrete service to execute $t_i$. Fig. 4 illustrates this krill encoding.
 
@@ -348,7 +366,7 @@ In this paper, the position vector of each krill individual is represented by an
 % 
 % 
 
-Motion operator is the key component of IKH algorithm. As shown in e.q (10), the position of each krill individual is determined by three main factors: 1) motion influenced by other krill; 2) foraging action; 3) physical diffusion. 
+Motion operator is the key component of KH algorithm. As shown in e.q (10), the position of each krill individual is determined by three main factors: 1) motion influenced by other krill; 2) foraging action; 3) physical diffusion. 
 \begin{equation}
 \frac{dX_i}{dt} =N_i+F_i+D_i
 \end{equation}
@@ -403,7 +421,7 @@ where $D_{max}$ is the maximum diffusion speed and $\delta \in [-1, 1]$ is a ran
 \end{figure}
 
 
-The crossover operator plays an important role in Genetic algorithm for global optimization, we use this operator in IKH algorithm to enhance the search capability. The crossover operator in this paper is controlled by a dynamic crossover rate $C_{rate}$ which can be obtain as follow
+The crossover operator plays an important role in Genetic algorithm for global optimization, we use this operator in KH algorithm to enhance the search capability. The crossover operator in this paper is controlled by a dynamic crossover rate $C_{rate}$ which can be obtain as follow
 \begin{equation}
 C_{rate} = Cr + (1-Cr) \times \frac{U_{best}-U_{i}}{U_{best}-U_{worst}}
 \end{equation}
@@ -420,7 +438,7 @@ c_{i}=
 \end{cases}
 \end{equation}
 
-Inspired by SGA \cite{khatib1998stud} (a type of GA which employs the optimal genome for crossover at each generation), we introduce stud selection procedure to improve IKH's search capability.
+Inspired by SGA \cite{khatib1998stud} (a type of GA which employs the optimal genome for crossover at each generation), we introduce stud selection procedure to improve KH's search capability.
 From algorithm 1, we can see that for each individual $X_i$ to crossover, we choose the optimal individual $Stud$ (i.e., the individual with highest QoS utility value) to mating. As shown in Fig. 5, the characteristics from individual $Stud$ are copied to individual $X_i$ according to crossover vector $Cv$. 
 
 \begin{algorithm}
@@ -457,10 +475,10 @@ where
 \Delta t = C_t\sum_{j=1}^{n}(UB_j - LB_j)
 \end{equation}
 
-where $n$ is the tasks number of composition service, $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space and we set it to $1/2n$ in this paper. Finally, the overall IKH algorithm process can be describe in Algorithm 2.
+where $n$ is the tasks number of composition service, $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space and we set it to $1/2n$ in this paper. Finally, the overall KH algorithm process can be describe in Algorithm 2.
 
 \begin{algorithm}
-\caption{IKH algorithm}
+\caption{KH algorithm}
 \label{alg2}
 \begin{algorithmic}[1]
 
@@ -486,7 +504,7 @@ where $n$ is the tasks number of composition service, $UB_j$ and $LB_j$ are uppe
 \end{algorithm}
 
 \section{SIMULATION AND EVALUATION}
-In this section, we first discussed the experimental environment settings, and then the improved KH-based approach for the mobile service composition algorithm (IKH) is evaluated from the perspective of optimality and scalability, respectively.
+In this section, we first discussed the experimental environment settings, and then the KH-based approach for the mobile service composition algorithm is evaluated from the perspective of optimality and scalability, respectively.
 \subsection{Simulation Setting}
 To evaluate the optimality and scalability of the proposed approaches, the experiment is run on a personal computer with an Intel Core i5 CPU with 2.4 GHz, 4 GB RAM, macOS and Matlab R2015b Edition.
 
@@ -496,13 +514,6 @@ We consider MIT Reality dataset \cite{eagle2006reality} as user D2D contact trac
 
 The publicly available quality of Web service (QWS) dataset\cite{zheng2014investigating} can be used to characterize the service candidates. This dataset consists of 4500 Web services from 142 users over 64 different time slices (at 15-minute interval) and each QoS data includes two measurements (response time and throughput).
 % for a mobile service, response time attribute is randomly selected from the QWS dataset. 
-
-\begin{figure*}[!t]
-\centering
-\includegraphics[width=5in]{./img/DAG.pdf}
-\caption{The composition plan for case study.}
-\label{fig_DAG}
-\end{figure*}
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.5}
@@ -596,11 +607,52 @@ t6     & $ms_1^{(2)}$, $ms_4^{(3)}$, $ms_5^{(3)}$, $ms_6^{(2)}$, $ms_7^{(1)}$ \\
 
 Table 2 is part of D2D contract traces in MIT Reality dataset. For example, there there are five nearby devices within D2D transmission distance at time $t1$ and these devices can be regarded as MSON participant who provision mobile services. Table 3 shows MSON participants and the services they exposed to nearby devices. These mobile service are random chosen from QWS dataset. Table 4 is the Cartesian product of Table 2 and Table 3, it shows how many kinds of services user can exploit at a certain time and how many candidates for each kind of service (i.e., task). For example, there are five kinds of service available at time $t1$ and there are three candidates for task $t_1$, three candidates for task $t_4$, two candidates for task $t_5$, one candidate for task $t_6$ and one candidate for task $t_7$.
 
-Fig. 9 shows three mobile service composition plans for case study in this section.  Fig. 9(a) is a well known composition plan for booking tickets \cite{wu2013transactional}, it has 6 tasks. Fig. 9(b) is a simple workflow with 12 tasks for Tensorflow \cite{abadi2016tensorflow}, Tensorflow is a heterogeneous distributed system for machine learning and it already can be deployed in mobile devices. Fig. 9(c) is a scientific workflow with 24 tasks for Montage. Montage is an astronomical image mosaic engine, it can be used for simulating some picture edit application in mobile phone. We use these three kinds of composition plans to represent different meaningful service composition with different tasks.
+\subsection{Case study}
+In this section, we present a case study of different service composition plan in mobile environment, to compare traditional mobile service composition approaches with our proposed framework. Fig. 9 shows three mobile service composition plans for case study. Fig. 9(a) is a well known composition plan for booking tickets \cite{wu2013transactional}, it has 6 tasks. Fig. 9(b) is a simple workflow with 12 tasks for Tensorflow \cite{abadi2016tensorflow}, Tensorflow is a heterogeneous distributed system for machine learning and it already can be deployed in mobile devices. Fig. 9(c) is a scientific workflow with 24 tasks for Montage. Montage is an astronomical image mosaic engine, it can be used for simulating some picture edit application in mobile phone. We use these three kinds of composition plans to represent different meaningful service composition with different tasks.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=5in]{./img/DAG.pdf}
+\caption{The composition plan for case study.}
+\label{fig_DAG}
+\end{figure*}
 
 
-\subsection{Impact of Parameters}
-There are six parameters can be adjusted to improve the IKH's performance: population size $PS$, maximum iteration number $MI$, crossover rate $Cr$, foraging speed $V_f$, maximum induced speed $N_{max}$ and physical diffusion speed $D_{max}$. As shown in Table 5, we generate six groups of parameters configuration to evaluate the impact of each parameter. For each group of parameters configuration, we tune one parameter and fix the other parameters. For each configuration setting, the IKH algorithm is executed 50 times independently and the average performance was recorded.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{./img/Task-6.pdf}
+\caption{Case I}
+\label{fig_DAG}
+\end{figure}
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{./img/Task-12.pdf}
+\caption{Case II}
+\label{fig_DAG}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{./img/Task-24.pdf}
+\caption{Case III}
+\label{fig_DAG}
+\end{figure}
+
+As shown by Fig. 7(a), Fig. 8(a) and Fig. 9(a), our proposed method achieves higher success probability (by almost 100% 
+for Case I, average 95% 
+for Case II, and average 90% 
+for Case III). From Fig. 7(b), Fig. 8(b) and Fig. 9(b) we can see, the solutions made by traditional mobile service composition approach which doesn't consider mobile service availability some times perform better than our method (especially in Case I). That is because our method consider both response time and service availability as optimization Object and in most of time our method can get the same performance as their approach. But in real mobile environment, low success probability means more time cost. A successful service composition response time is shown in Fig. 7(c), Fig. 8(c) and Fig. 9(c), it indicates that our method perform better in actual mobile environment.
+
+Intuitively, the disadvantage of a non-availability approach lies in that it ignores mobility characteristic of mobile users. It therefore tends to choose the best provider who's QoS data is outstanding but will be not available in few second.
+
+
+
+
+% \subsection{Impact of Parameters}
+% There are six parameters can be adjusted to improve the IKH's performance: population size $PS$, maximum iteration number $MI$, crossover rate $Cr$, foraging speed $V_f$, maximum induced speed $N_{max}$ and physical diffusion speed $D_{max}$. As shown in Table 5, we generate six groups of parameters configuration to evaluate the impact of each parameter. For each group of parameters configuration, we tune one parameter and fix the other parameters. For each configuration setting, the IKH algorithm is executed 50 times independently and the average performance was recorded.
 
 %    KH_profile.NK         = 20;
 %    KH_profile.MI         = 30;
@@ -608,155 +660,139 @@ There are six parameters can be adjusted to improve the IKH's performance: popul
 %    KH_profile.Vf         = 0.8;
 %    KH_profile.Nmax       = 0.3;
 %    KH_profile.Dmax       = 0.2;
-Fig. 5(a) shows the impact of population size, we observe that with the increase of population size, the average QoS utility of IKH significantly improved before $PS=10$, and no significant improvement is observed after population size over $20$. Therefore, an excessively large population size (e.g., $PS=50$) has limited impact on the performance of IKH, and it will result in computing resources waste and high time cost.
-Similarly, Fig. 5(b) shows that the value of QoS utility significantly increased for higher number of iteration times until to a limit: $MI = 30$. 
-Fig. 5(c) shows the impact of the crossover rate $Cr$. The performance of KH increases with $Cr$ firstly, then decrease, the best performance is achieved for $Cr = 0.6$.
-Fig. 5(d) shows the impact of the foraging speed $V_f$. The performance of IKH increases with $V_f$ firstly, then decrease, the best performance is achieved for $V_f = 0.8$.
-Fig. 5(e) shows the impact of the induced speed $N_{max}$. The performance of IKH increases with $N_{max}$ firstly, then decrease, the best performance is achieved for $N_{max} = 0.3$.
-Fig. 5(f) shows the impact of the physical diffusion speed $D_{max}$. It shows that with the increase of $D_{max}$ the performance of IKH fluctuation irregularly and slightly, without loss of generality, we random generate $D_{max}$ from $[0.2 \sim 0.5]$ in this paper.
+% Fig. 5(a) shows the impact of population size, we observe that with the increase of population size, the average QoS utility of IKH significantly improved before $PS=10$, and no significant improvement is observed after population size over $20$. Therefore, an excessively large population size (e.g., $PS=50$) has limited impact on the performance of IKH, and it will result in computing resources waste and high time cost.
+% Similarly, Fig. 5(b) shows that the value of QoS utility significantly increased for higher number of iteration times until to a limit: $MI = 30$. 
+% Fig. 5(c) shows the impact of the crossover rate $Cr$. The performance of KH increases with $Cr$ firstly, then decrease, the best performance is achieved for $Cr = 0.6$.
+% Fig. 5(d) shows the impact of the foraging speed $V_f$. The performance of IKH increases with $V_f$ firstly, then decrease, the best performance is achieved for $V_f = 0.8$.
+% Fig. 5(e) shows the impact of the induced speed $N_{max}$. The performance of IKH increases with $N_{max}$ firstly, then decrease, the best performance is achieved for $N_{max} = 0.3$.
+% Fig. 5(f) shows the impact of the physical diffusion speed $D_{max}$. It shows that with the increase of $D_{max}$ the performance of IKH fluctuation irregularly and slightly, without loss of generality, we random generate $D_{max}$ from $[0.2 \sim 0.5]$ in this paper.
 
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
-\caption{parameters configuration}
-\label{table_example}
-\centering
-\begin{tabular}{cccccc}
-\hline
-\bfseries $PS$ & \bfseries $MI$ & \bfseries $CR$ & \bfseries $V_f$ & \bfseries $N_{max}$ & \bfseries $D_{max}$ \\
-\hline
-1$\sim$60 & 50          & 0.6            & 0.8            &  0.3            &  0.2 \\
-20        & 10$\sim$150 & 0.6            & 0.8            &  0.3            &  0.2 \\
-20        & 50          & 0.01$\sim$1.00 & 0.8            &  0.3            &  0.2 \\
-20        & 50          & 0.6            & 0.01$\sim$3.00 &  0.3            &  0.2 \\
-20        & 50          & 0.6            & 0.01           &  0.01$\sim$2.00 &  0.2 \\
-20        & 50          & 0.6            & 0.01           &  0.3            &  0.01$\sim$3.00 \\
-\hline
-\end{tabular}
-\end{table}
-
-
-\begin{figure*}[!t]
-\centering
-\subfloat[]{
-\includegraphics[width=2in]{./img/Param-PS.pdf} 
-\label{PS}}
-\hfil
-\subfloat[]{
-\includegraphics[width=2in]{./img/Param-MI.pdf} 
-\label{MI}}
-\hfil
-\subfloat[]{
-\includegraphics[width=2in]{./img/Param-CR.pdf} 
-\label{CR}}
+% \begin{table}[!t]
+% \renewcommand{\arraystretch}{1.3}
+% \caption{parameters configuration}
+% \label{table_example}
+% \centering
+% \begin{tabular}{cccccc}
+% \hline
+% \bfseries $PS$ & \bfseries $MI$ & \bfseries $CR$ & \bfseries $V_f$ & \bfseries $N_{max}$ & \bfseries $D_{max}$ \\
+% \hline
+% 1$\sim$60 & 50          & 0.6            & 0.8            &  0.3            &  0.2 \\
+% 20        & 10$\sim$150 & 0.6            & 0.8            &  0.3            &  0.2 \\
+% 20        & 50          & 0.01$\sim$1.00 & 0.8            &  0.3            &  0.2 \\
+% 20        & 50          & 0.6            & 0.01$\sim$3.00 &  0.3            &  0.2 \\
+% 20        & 50          & 0.6            & 0.01           &  0.01$\sim$2.00 &  0.2 \\
+% 20        & 50          & 0.6            & 0.01           &  0.3            &  0.01$\sim$3.00 \\
+% \hline
+% \end{tabular}
+% \end{table}
 
 
-\subfloat[]{
-\includegraphics[width=2in]{./img/Param-Vf.pdf} 
-\label{Vf}}
-\hfil
-\subfloat[]{
-\includegraphics[width=2in]{./img/Param-Nmax.pdf} 
-\label{Nmax}}
-\hfil
-\subfloat[]{
-\includegraphics[width=2in]{./img/Param-Dmax.pdf} 
-\label{Dmax}}
+% \begin{figure*}[!t]
+% \centering
+% \subfloat[]{
+% \includegraphics[width=2in]{./img/Param-PS.pdf} 
+% \label{PS}}
+% \hfil
+% \subfloat[]{
+% \includegraphics[width=2in]{./img/Param-MI.pdf} 
+% \label{MI}}
+% \hfil
+% \subfloat[]{
+% \includegraphics[width=2in]{./img/Param-CR.pdf} 
+% \label{CR}}
 
-\caption{Impact of parameters.} \label{fig_sim}
-\end{figure*}
+
+% \subfloat[]{
+% \includegraphics[width=2in]{./img/Param-Vf.pdf} 
+% \label{Vf}}
+% \hfil
+% \subfloat[]{
+% \includegraphics[width=2in]{./img/Param-Nmax.pdf} 
+% \label{Nmax}}
+% \hfil
+% \subfloat[]{
+% \includegraphics[width=2in]{./img/Param-Dmax.pdf} 
+% \label{Dmax}}
+
+% \caption{Impact of parameters.} \label{fig_sim}
+% \end{figure*}
 
 
-\subsection{Optimality Evaluation}
-To verify the the capability of finding the optimal mobile service composition of our algorithms, we compare IKH with the basic GA algorithm, basic PSO algorithm and a brute-force algorithm.
+% \subsection{Optimality Evaluation}
+% To verify the the capability of finding the optimal mobile service composition of our algorithms, we compare IKH with the basic GA algorithm, basic PSO algorithm and a brute-force algorithm.
 
-\textbf{Algorithm 1:} Improved Krill-herd mobile service composition algorithm (IKH) which described in Section 4.
+% \textbf{Algorithm 1:} Improved Krill-herd mobile service composition algorithm (IKH) which described in Section 4.
 
-\textbf{Algorithm 2:} A basic GA which uses two-point crossover and uniform mutation.
+% \textbf{Algorithm 2:} A basic GA which uses two-point crossover and uniform mutation.
 
-\textbf{Algorithm 3:} A basic PSO.
+% \textbf{Algorithm 3:} A basic PSO.
 
-\textbf{Algorithm 4:} A brute-force algorithm that traverses all feasible composition to find the optimal solution.
+% \textbf{Algorithm 4:} A brute-force algorithm that traverses all feasible composition to find the optimal solution.
 
-To evaluate the optimality of above algorithms, we tune the parameters of each algorithm to achieve its best performance. The most suitable parameters are shown in Table 6.
+% To evaluate the optimality of above algorithms, we tune the parameters of each algorithm to achieve its best performance. The most suitable parameters are shown in Table 6.
 
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
-\caption{Parameters setting for different algorithms}
-\label{table_example}
-\centering
-\begin{tabular}{cc}
-\hline
-\bfseries Algorithms & \bfseries Parameter Setting \\
-\hline
-GA  & crossover rate = 0.7; mutate rate = 0.3 \\
-PSO & inertia weight = 0.8; c1 = 2.0; c2 = 2.0 \\
-\hline
-\end{tabular}
-\end{table}
+% \begin{table}[!t]
+% \renewcommand{\arraystretch}{1.3}
+% \caption{Parameters setting for different algorithms}
+% \label{table_example}
+% \centering
+% \begin{tabular}{cc}
+% \hline
+% \bfseries Algorithms & \bfseries Parameter Setting \\
+% \hline
+% GA  & crossover rate = 0.7; mutate rate = 0.3 \\
+% PSO & inertia weight = 0.8; c1 = 2.0; c2 = 2.0 \\
+% \hline
+% \end{tabular}
+% \end{table}
 
-\begin{figure*}[!t]
-\centering
-\subfloat[]{
-\includegraphics[width=2in]{./img/Opt-Iterations.pdf} 
-\label{PS}}
-\hfil
-\subfloat[]{
-\includegraphics[width=2in]{./img/Opt-Tasks.pdf} 
-\label{MI}}
-\hfil
-\subfloat[]{
-\includegraphics[width=2in]{./img/Opt-Candidates.pdf} 
-\label{CR}}
+% \begin{figure*}[!t]
+% \centering
+% \subfloat[]{
+% \includegraphics[width=2in]{./img/Opt-Iterations.pdf} 
+% \label{PS}}
+% \hfil
+% \subfloat[]{
+% \includegraphics[width=2in]{./img/Opt-Tasks.pdf} 
+% \label{MI}}
+% \hfil
+% \subfloat[]{
+% \includegraphics[width=2in]{./img/Opt-Candidates.pdf} 
+% \label{CR}}
 
-\caption{Optimality evaluation.} \label{fig_sim}
-\end{figure*}
+% \caption{Optimality evaluation.} \label{fig_sim}
+% \end{figure*}
 
-The result in Fig. 7(a) shows that, as expected, the brute-force algorithm leads to the best performance with the highest QoS utility value. The basic PSO algorithm has the worst performance with the lowest QoS utility values. Both IKH and Ga can find over 95\% optimal composition before 30 iterations and IKH performs little better than the basic GA algorithm. 
-Fig. 7(a) and Fig. 7(b) shows that with the increasement of task number and service candidate number, our approach performs better than other algorithms.
-Although GA performs closely to IHK, IHK's superiority is it runs more faster than GA, in next subsection we will evaluate the scalability of above four algorithms.
+% The result in Fig. 7(a) shows that, as expected, the brute-force algorithm leads to the best performance with the highest QoS utility value. The basic PSO algorithm has the worst performance with the lowest QoS utility values. Both IKH and Ga can find over 95\% optimal composition before 30 iterations and IKH performs little better than the basic GA algorithm. 
+% Fig. 7(a) and Fig. 7(b) shows that with the increasement of task number and service candidate number, our approach performs better than other algorithms.
+% Although GA performs closely to IHK, IHK's superiority is it runs more faster than GA, in next subsection we will evaluate the scalability of above four algorithms.
 
-\subsection{Scalability Evaluation}
-In this experiment, we compared the run time of IKH with the other algorithms to evaluate the scalability of our algorithm.
 
-\begin{figure*}[!t]
-\centering
-\subfloat[Case I]{
-\includegraphics[width=3in]{./img/Sca-Tasks.pdf} 
-\label{Tasks}}
-\hfil
-\subfloat[Case II]{
-\includegraphics[width=3in]{./img/Sca-Candidates.pdf} 
-\label{Candidates}}
+% \subsection{Scalability Evaluation}
+% In this experiment, we compared the run time of IKH with the other algorithms to evaluate the scalability of our algorithm.
 
-\caption{Scalability evaluation.} \label{fig_sim}
-\end{figure*}
+% \begin{figure*}[!t]
+% \centering
+% \subfloat[Case I]{
+% \includegraphics[width=3in]{./img/Sca-Tasks.pdf} 
+% \label{Tasks}}
+% \hfil
+% \subfloat[Case II]{
+% \includegraphics[width=3in]{./img/Sca-Candidates.pdf} 
+% \label{Candidates}}
 
-In order to evaluate the impact of task number on the execution time of our algorithm, The task number is varied from 6 to 25. For each task number, the simulation is repeated 50 times, and the average performance was recorded as the result. We observe from Fig. 8(a) that with the increasement of task number, the run time of brute-force method is almost exponential to the problem size, while the run time of other three meta-heuristic algorithms (IKH, GA, PSO) are increases almost linearly with tasks increasing. In mobile environment, due to the dynamic movement and limited of computing resources, algorithm must meet the requirement of finding feasible composition within a short time. Therefore, although brute-force can obtain the optimal result, it is not suitable to the problem due to its poor scalability. 
+% \caption{Scalability evaluation.} \label{fig_sim}
+% \end{figure*}
 
-We also evaluate the impact of candidate services per task, In this experiment, we vary candidate service number from 6 to 25. As shown in Fig. 8(b), the number of candidate services does not affect the execution time of the three meta-heuristic algorithms, because in the initialization step, the scale of the algorithm is determined, and it is only affected by the algorithm parameters. Similarly, brute-force method is also exponential to the problem size. 
+% In order to evaluate the impact of task number on the execution time of our algorithm, The task number is varied from 6 to 25. For each task number, the simulation is repeated 50 times, and the average performance was recorded as the result. We observe from Fig. 8(a) that with the increasement of task number, the run time of brute-force method is almost exponential to the problem size, while the run time of other three meta-heuristic algorithms (IKH, GA, PSO) are increases almost linearly with tasks increasing. In mobile environment, due to the dynamic movement and limited of computing resources, algorithm must meet the requirement of finding feasible composition within a short time. Therefore, although brute-force can obtain the optimal result, it is not suitable to the problem due to its poor scalability. 
 
-Among all the algorithms, PSO has the lowest run time, then IKH, finally GA. But PSO's poor optimality makes it unsuitable for this problem, IKH runs almost five times faster than GA. Based on the experimental results, we can conclude that IKH maintains acceptable performance (optimality and scalability) with large data sets for both tasks and candidates.
+% We also evaluate the impact of candidate services per task, In this experiment, we vary candidate service number from 6 to 25. As shown in Fig. 8(b), the number of candidate services does not affect the execution time of the three meta-heuristic algorithms, because in the initialization step, the scale of the algorithm is determined, and it is only affected by the algorithm parameters. Similarly, brute-force method is also exponential to the problem size. 
 
-\section{RELATED WORK}
-Service-oriented computing (SOC) is a novel paradigm to develop and integrate enterprise information system \cite{papazoglou2003service}, with the development of mobile device and communication technology, the research of mobile service composition has grain much attention from both industry and academia. In this section, we first briefly review some recent work on mobile service composition, then review opportunistic network and its application in mobile devices.
+% Among all the algorithms, PSO has the lowest run time, then IKH, finally GA. But PSO's poor optimality makes it unsuitable for this problem, IKH runs almost five times faster than GA. Based on the experimental results, we can conclude that IKH maintains acceptable performance (optimality and scalability) with large data sets for both tasks and candidates.
 
-\subsection{mobile service composition}
-Mobile service computing is the combination of service computing and mobile computing, With the development of mobile device and application industry, more and more study have emerged to address the problem of mobile service composition. 
-Deng et al. \cite{Deng2016} presented an detailed introduction to mobile service computing, they first discussed the limitations of mobile computing, then classify mobile service computing into three categories: C2M, M2M, Hybrid. They also discussed the challenge toward mobile service provision and mobile service consumption in terms of performance, energy and security perspective. At their \cite{Deng2017} work, they proposed a mobile service sharing community to address the problem of service provision in mobile environment. They extent the random way point (RWP) model to capture user mobility and utilize the meta-heuristic algorithm to solve the service composition problem. Yang et al. \cite{Yang2010} presented a comprehensive QoS model specifically for pervasive services. They considered not only mobile wireless network characteristics but also user-perceived factors, and devised a corresponding formula to calculate the QoS criterion. 
-Zhang2016
-zhang et al. \cite{Zhang2016qos} gives a context-aware service selection algorithm based on Genetic Algorithm to solve the problem of mobile service selection, they introduce a tree-encoding method to improve the capacity and efficiency of GA. However, this work did not consider user mobility.
-Wang et al. \cite{wang2011exploiting} solve the problem of dependable service composition in wireless mobile ad hoc networks by taking the mobility prediction of the service providers into consideration.
-They use a probability-free model and a probabilistic model to characterize the uncertainty to compose a service that can tolerate the uncertain mobility of service provider. However, this work only focus on the case of sequential service workflows and the heuristic algorithms they presented does not seek the optimal QoS service compositions.
 
-\subsection{mobile opportunistic network}
-Opportunistic networking is one of the most interesting evolutions of the multi-hop networking paradigm. Instead of constructing stable end-to-end paths as in the Internet, opportunistic networks do not consider node mobility a problem but as an opportunity to exploit. 
-Marco et al. \cite{Conti2014} give a review of opportunistic network and regarded it as the first step in people-centric networking, they also discuss the focused research problem such as mobility model and routing problem.
-Turkes et al. \cite{turkes2016cocoon} proposed a middleware named Cocoon to support mobile opportunistic network, they design a routing protocol above Wi-Fi and Bluetooth standards, their experiments which use real-world data setups show that Cocoon performs well on the aspects of dissemination rate, delivery latency and energy consumption.
-Fortuna et al. \cite{fortuna2009dynamic} presented an review of dynamic service composition over both wired and wireless environment, However, their work does not present any technical details to describe how to composite service in mobile networks.
-Giordano et al. \cite{giordano2011human} proposed a novel paradigm that utilize Opportunistic computing as an appealing complement to the mobile computing cloud, in this way, mobile device can combine and exploit heterogeneous resources from other devices.
-Pu et al. \cite{Pu2017crowd} presented QoS-oriented self-organized mobile crowdsourcing framework, in this work, the prevalent and sufficient characteristics of opportunistic user encounters in our daily life are utilized to solve crowdsourcing problem.
 \section{CONCLUSIONS AND FURTHER STUDIES}
-In this paper, we propose a comprehensive framework for optimal mobile service compositing on mobile environment. We present a mobile service opportunistic network model (MSON) that fully integrates human mobility behavior factors for mobile service provisioning and introduce a QoS model for mobile service composition. Then we formulate the mobile service composition over MSON problem as an optimal problem to maximize the quality of service composition, propose an improved Krill-herd (IKH) algorithm to solve it, and a case study based on real-world opportunistic network and some well-known web service dataset show that our proposed approach outperforms current standard composition methods in mobile environments.
+In this paper, we propose a comprehensive framework for optimal mobile service compositing on mobile environment. We present a mobile service opportunistic network model (MSON) that fully integrates human mobility behavior factors for mobile service provisioning and introduce a QoS model for mobile service composition. Then we formulate the mobile service composition over MSON problem as an optimal problem to maximize the quality of service composition, propose a Krill-herd based algorithm to solve it, and a case study based on real-world opportunistic network and some well-known web service dataset show that our proposed approach outperforms current standard composition methods in mobile environments.
 
 We plan to consider the following topics for future work: 1) Some prediction methods (e.g., hidden Markov model and neural networks) can be used to predict user future's movement to formulate a better user mobility model; 2) more QoS metrics (e.g., service price and service reputation) are supposed to be analyzed and blends into our QoS model; 3) this work doesn't consider Service-Level-Agreement (SLA) constrains. We intend to consider SLA constraints and introduce corresponding algorithms to generate better composition.
 
