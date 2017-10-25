@@ -76,6 +76,52 @@ Y.~Zhang, D.~Niyato, and P.~Wang, ``Offloading in mobile cloudlet systems with
   intermittent connectivity,'' \emph{IEEE Transactions on Mobile Computing},
   vol.~14, no.~12, pp. 2516--2529, 2015.
 
+\bibitem{papazoglou2003service}
+M.~P. Papazoglou, ``Service-oriented computing: Concepts, characteristics and
+  directions,'' in \emph{Web Information Systems Engineering, 2003. WISE 2003.
+  Proceedings of the Fourth International Conference on}.\hskip 1em plus 0.5em
+  minus 0.4em\relax IEEE, 2003, pp. 3--12.
+
+\bibitem{Deng2016}
+S.~Deng, L.~Huang, H.~Wu, W.~Tan, J.~Taheri, A.~Y. Zomaya, and Z.~Wu, ``{Toward
+  Mobile Service Computing: Opportunities and Challenges},'' \emph{IEEE Cloud
+  Computing}, vol.~3, no.~4, pp. 32--41, 2016.
+
+\bibitem{Yang2010}
+K.~Yang, A.~Galis, and H.-H. Chen, ``{Qos-aware service selection algorithms
+  for pervasive service composition in mobile wireless environments},''
+  \emph{Mobile Networks and Applications}, vol.~15, no.~4, pp. 488--501, 2010.
+
+\bibitem{Zhang2016qos}
+C.~Zhang, L.~Zhang, and G.~Zhang, ``Qos-aware mobile service selection
+  algorithm,'' \emph{Mobile Information Systems}, vol. 2016, 2016.
+
+\bibitem{wang2011exploiting}
+J.~Wang, ``Exploiting mobility prediction for dependable service composition in
+  wireless mobile ad hoc networks,'' \emph{IEEE Transactions on Services
+  Computing}, vol.~4, no.~1, pp. 44--55, 2011.
+
+\bibitem{Conti2014}
+M.~Conti and S.~Giordano, ``{Mobile ad hoc networking: milestones, challenges,
+  and new research directions},'' \emph{IEEE Communications Magazine}, vol.~52,
+  no.~1, pp. 85--96, 2014.
+
+\bibitem{turkes2016cocoon}
+O.~Turkes, H.~Scholten, and P.~J. Havinga, ``Cocoon: A lightweight
+  opportunistic networking middleware for community-oriented smart mobile
+  applications,'' \emph{Computer networks}, vol. 111, pp. 93--108, 2016.
+
+\bibitem{fortuna2009dynamic}
+C.~Fortuna and M.~Mohorcic, ``Dynamic composition of services for end-to-end
+  information transport,'' \emph{IEEE Wireless Communications}, vol.~16, no.~4,
+  2009.
+
+\bibitem{Pu2017crowd}
+L.~Pu, X.~Chen, J.~Xu, and X.~Fu, ``Crowd foraging: A qos-oriented
+  self-organized mobile crowdsourcing framework over opportunistic networks,''
+  \emph{IEEE Journal on Selected Areas in Communications}, vol.~35, no.~4, pp.
+  848--862, 2017.
+
 \bibitem{tuncay2013participant}
 G.~S. Tuncay, G.~Benincasa, and A.~Helmy, ``Participant recruitment and data
   collection framework for opportunistic sensing: a comparative analysis,'' in
@@ -91,11 +137,6 @@ J.~Wu, M.~Xiao, and L.~Huang, ``Homing spread: Community home-based multi-copy
 C.~Jiang, L.~Gao, L.~Duan, and J.~Huang, ``Exploiting data reuse in mobile
   crowdsensing,'' in \emph{Global Communications Conference (GLOBECOM), 2016
   IEEE}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2016, pp. 1--6.
-
-\bibitem{Yang2010}
-K.~Yang, A.~Galis, and H.-H. Chen, ``{Qos-aware service selection algorithms
-  for pervasive service composition in mobile wireless environments},''
-  \emph{Mobile Networks and Applications}, vol.~15, no.~4, pp. 488--501, 2010.
 
 \bibitem{Wu2016}
 Q.~Wu, F.~Ishikawa, Q.~Zhu, and D.-H. Shin, ``{QoS-Aware Multigranularity
@@ -168,46 +209,5 @@ M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
   A.~Davis, J.~Dean, M.~Devin \emph{et~al.}, ``Tensorflow: Large-scale machine
   learning on heterogeneous distributed systems,'' \emph{arXiv preprint
   arXiv:1603.04467}, 2016.
-
-\bibitem{papazoglou2003service}
-M.~P. Papazoglou, ``Service-oriented computing: Concepts, characteristics and
-  directions,'' in \emph{Web Information Systems Engineering, 2003. WISE 2003.
-  Proceedings of the Fourth International Conference on}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, 2003, pp. 3--12.
-
-\bibitem{Deng2016}
-S.~Deng, L.~Huang, H.~Wu, W.~Tan, J.~Taheri, A.~Y. Zomaya, and Z.~Wu, ``{Toward
-  Mobile Service Computing: Opportunities and Challenges},'' \emph{IEEE Cloud
-  Computing}, vol.~3, no.~4, pp. 32--41, 2016.
-
-\bibitem{Zhang2016qos}
-C.~Zhang, L.~Zhang, and G.~Zhang, ``Qos-aware mobile service selection
-  algorithm,'' \emph{Mobile Information Systems}, vol. 2016, 2016.
-
-\bibitem{wang2011exploiting}
-J.~Wang, ``Exploiting mobility prediction for dependable service composition in
-  wireless mobile ad hoc networks,'' \emph{IEEE Transactions on Services
-  Computing}, vol.~4, no.~1, pp. 44--55, 2011.
-
-\bibitem{Conti2014}
-M.~Conti and S.~Giordano, ``{Mobile ad hoc networking: milestones, challenges,
-  and new research directions},'' \emph{IEEE Communications Magazine}, vol.~52,
-  no.~1, pp. 85--96, 2014.
-
-\bibitem{turkes2016cocoon}
-O.~Turkes, H.~Scholten, and P.~J. Havinga, ``Cocoon: A lightweight
-  opportunistic networking middleware for community-oriented smart mobile
-  applications,'' \emph{Computer networks}, vol. 111, pp. 93--108, 2016.
-
-\bibitem{fortuna2009dynamic}
-C.~Fortuna and M.~Mohorcic, ``Dynamic composition of services for end-to-end
-  information transport,'' \emph{IEEE Wireless Communications}, vol.~16, no.~4,
-  2009.
-
-\bibitem{Pu2017crowd}
-L.~Pu, X.~Chen, J.~Xu, and X.~Fu, ``Crowd foraging: A qos-oriented
-  self-organized mobile crowdsourcing framework over opportunistic networks,''
-  \emph{IEEE Journal on Selected Areas in Communications}, vol.~35, no.~4, pp.
-  848--862, 2017.
 
 \end{thebibliography}

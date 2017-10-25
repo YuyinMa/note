@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  19 OCT 2017 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  20 OCT 2017 10:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -332,32 +332,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \EQ_tag_box=\box33
 \g_EQ_temprow_int=\count127
 )
-(./bare_adv.aux
-
-LaTeX Warning: Label `fig_opportunistic' multiply defined.
-
-
-LaTeX Warning: Label `fig_opportunistic' multiply defined.
-
-
-LaTeX Warning: Label `table_example' multiply defined.
-
-
-LaTeX Warning: Label `table_example' multiply defined.
-
-
-LaTeX Warning: Label `table_example' multiply defined.
-
-
-LaTeX Warning: Label `fig_DAG' multiply defined.
-
-
-LaTeX Warning: Label `fig_DAG' multiply defined.
-
-
-LaTeX Warning: Label `fig_DAG' multiply defined.
-
-)
+(./bare_adv.aux)
 \openout1 = `bare_adv.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -564,50 +539,53 @@ File: ./img/DAG.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./img/DAG.pdf used on input line 615.
 (pdftex.def)             Requested size: 361.34999pt x 240.66089pt.
 
-<./img/Task-6.pdf, id=193, 494.44272pt x 523.35478pt>
+<./img/Task-6.pdf, id=193, 430.92043pt x 683.54713pt>
 File: ./img/Task-6.pdf Graphic file (type pdf)
  <use ./img/Task-6.pdf>
 Package pdftex.def Info: ./img/Task-6.pdf used on input line 624.
-(pdftex.def)             Requested size: 252.94499pt x 267.72993pt.
+(pdftex.def)             Requested size: 231.26378pt x 366.84662pt.
 
-<./img/Task-12.pdf, id=194, 494.84805pt x 522.33792pt>
+<./img/Task-12.pdf, id=194, 426.4929pt x 674.9951pt>
 File: ./img/Task-12.pdf Graphic file (type pdf)
  <use ./img/Task-12.pdf>
 Package pdftex.def Info: ./img/Task-12.pdf used on input line 632.
-(pdftex.def)             Requested size: 252.94499pt x 266.99455pt.
+(pdftex.def)             Requested size: 231.26378pt x 366.01627pt.
 
-<./img/Task-24.pdf, id=195, 488.55733pt x 523.34988pt>
+<./img/Task-24.pdf, id=195, 419.2705pt x 674.52779pt>
 File: ./img/Task-24.pdf Graphic file (type pdf)
  <use ./img/Task-24.pdf>
 Package pdftex.def Info: ./img/Task-24.pdf used on input line 639.
-(pdftex.def)             Requested size: 252.94499pt x 270.96162pt.
+(pdftex.def)             Requested size: 231.26378pt x 372.06184pt.
 
 [7]
-Underfull \vbox (badness 1019) has occurred while \output is active []
 
- [8 <./img/DAG.pdf> <./img/Task-6.pdf> <./img/Task-12.pdf>]
+LaTeX Warning: Text page 8 contains only floats.
+
+
+LaTeX Warning: Text page 8 contains only floats.
+
+[8 <./img/DAG.pdf> <./img/Task-6.pdf> <./img/Task-12.pdf, page is rotated 270 d
+egrees>]
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
- (./bare_adv.bbl [9 <./img/Task-24.pdf>]) [10
+ (./bare_adv.bbl [9 <./img/Task-24.pdf, page is rotated 270 degrees>])
+[10
 
 ] (./bare_adv.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 2.6161pt have occurred.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 5450 strings out of 494437
- 86851 string characters out of 6166646
- 164831 words of memory out of 5000000
- 8685 multiletter control sequences out of 15000+600000
+ 5458 strings out of 494437
+ 87000 string characters out of 6166646
+ 164856 words of memory out of 5000000
+ 8693 multiletter control sequences out of 15000+600000
  59014 words of font info for 145 fonts, out of 8000000 for 9000
  322 hyphenation exceptions out of 8191
  39i,16n,38p,1950b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -638,7 +616,7 @@ e/2017basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
 asic/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017bas
 ic/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017basi
 c/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on bare_adv.pdf (10 pages, 780032 bytes).
+Output written on bare_adv.pdf (10 pages, 780506 bytes).
 PDF statistics:
  360 PDF objects out of 1000 (max. 8388607)
  255 compressed objects within 3 object streams
