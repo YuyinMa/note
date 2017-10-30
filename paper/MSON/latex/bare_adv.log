@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  20 OCT 2017 10:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  30 OCT 2017 11:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -416,58 +416,61 @@ e
 \Hy@linkcounter=\count134
 LaTeX Info: Redefining \[ on input line 54.
 LaTeX Info: Redefining \] on input line 54.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 94.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 99.
  (/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11.04124> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 94.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 99.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 94.
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 94
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 99.
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 99
 .
-LaTeX Font Info:    Try loading font information for U+msa on input line 94.
+LaTeX Font Info:    Try loading font information for U+msa on input line 99.
 
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 94.
+LaTeX Font Info:    Try loading font information for U+msb on input line 99.
 
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+pzd on input line 94.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 99.
 
 (/usr/local/texlive/2017basic/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 104.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 109.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
-(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 104.
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 109.
 
 <./img/pic1.pdf, id=1, 947.51642pt x 630.22469pt>
 File: ./img/pic1.pdf Graphic file (type pdf)
  <use ./img/pic1.pdf>
-Package pdftex.def Info: ./img/pic1.pdf used on input line 124.
+Package pdftex.def Info: ./img/pic1.pdf used on input line 128.
 (pdftex.def)             Requested size: 252.94499pt x 168.23964pt.
-LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 133
+
+Underfull \vbox (badness 1755) has occurred while \output is active []
+
+LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 134
 .
  [1{/usr/local/texlive/2017basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
  <./img/pic1.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 143.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 149.
  <./img/pic2.pdf, id=64, 968.65495pt x 546.96466pt>
 File: ./img/pic2.pdf Graphic file (type pdf)
-
-<use ./img/pic2.pdf>
-Package pdftex.def Info: ./img/pic2.pdf used on input line 164.
+ <use ./img/pic2.pdf>
+Package pdftex.def Info: ./img/pic2.pdf used on input line 169.
 (pdftex.def)             Requested size: 252.94499pt x 142.82506pt.
- [2 <./img/pic2.pdf>]
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 190
+
+[2 <./img/pic2.pdf>]
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 202
 .
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
@@ -487,74 +490,60 @@ Missing character: There is no ‹ in font pplr7t!
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
-
-Underfull \hbox (badness 2781) in paragraph at lines 210--211
-\OT1/ppl/m/n/9.53561 po-si-tion in-stance $\OML/cmm/m/it/10 csi$ \OT1/ppl/m/n/9
-.53561 can be rep-re-sented as $\OML/cmm/m/it/10 csi \OT1/cmr/m/n/10 =
- []
-
-Missing character: There is no â in font pplr7t!
-Missing character: There is no € in font pplr7t!
-Missing character: There is no ‹ in font pplr7t!
-Missing character: There is no â in font pplr7t!
-Missing character: There is no € in font pplr7t!
-Missing character: There is no ‹ in font pplr7t!
-Missing character: There is no â in font pplr7t!
-Missing character: There is no € in font pplr7t!
-Missing character: There is no ‹ in font pplr7t!
-[3] <./img/pic3.pdf, id=101, 928.19533pt x 676.15274pt>
+ <./img/pic3.pdf, id=92, 928.19533pt x 676.15274pt>
 File: ./img/pic3.pdf Graphic file (type pdf)
- <use ./img/pic3.pdf>
-Package pdftex.def Info: ./img/pic3.pdf used on input line 233.
+
+<use ./img/pic3.pdf>
+Package pdftex.def Info: ./img/pic3.pdf used on input line 236.
 (pdftex.def)             Requested size: 252.94499pt x 184.2557pt.
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 280.
-
-[4 <./img/pic3.pdf>]
+ [3]
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 283.
+ [4 <./img/pic3.pdf>]
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
- <./img/pic4.pdf, id=150, 824.98692pt x 487.83092pt>
-File: ./img/pic4.pdf Graphic file (type pdf)
 
-<use ./img/pic4.pdf>
-Package pdftex.def Info: ./img/pic4.pdf used on input line 353.
+<./img/pic4.pdf, id=150, 824.98692pt x 487.83092pt>
+File: ./img/pic4.pdf Graphic file (type pdf)
+ <use ./img/pic4.pdf>
+Package pdftex.def Info: ./img/pic4.pdf used on input line 356.
 (pdftex.def)             Requested size: 216.81pt x 128.20268pt.
- [5 <./img/pic4.pdf>]
-<./img/pic5.pdf, id=171, 884.28047pt x 591.215pt>
+
+<./img/pic5.pdf, id=151, 884.28047pt x 591.215pt>
 File: ./img/pic5.pdf Graphic file (type pdf)
  <use ./img/pic5.pdf>
-Package pdftex.def Info: ./img/pic5.pdf used on input line 418.
+Package pdftex.def Info: ./img/pic5.pdf used on input line 421.
 (pdftex.def)             Requested size: 180.67499pt x 120.7939pt.
- [6 <./img/pic5.pdf>]
-Overfull \hbox (8.05794pt too wide) in paragraph at lines 523--544
+ [5 <./img/pic4.pdf>] [6 <./img/pic5.pdf>]
+Overfull \hbox (8.05794pt too wide) in paragraph at lines 526--547
  [][] 
  []
 
 <./img/DAG.pdf, id=192, 1817.8715pt x 1210.71548pt>
 File: ./img/DAG.pdf Graphic file (type pdf)
  <use ./img/DAG.pdf>
-Package pdftex.def Info: ./img/DAG.pdf used on input line 615.
+Package pdftex.def Info: ./img/DAG.pdf used on input line 618.
 (pdftex.def)             Requested size: 361.34999pt x 240.66089pt.
 
 <./img/Task-6.pdf, id=193, 430.92043pt x 683.54713pt>
 File: ./img/Task-6.pdf Graphic file (type pdf)
  <use ./img/Task-6.pdf>
-Package pdftex.def Info: ./img/Task-6.pdf used on input line 624.
+Package pdftex.def Info: ./img/Task-6.pdf used on input line 627.
 (pdftex.def)             Requested size: 231.26378pt x 366.84662pt.
 
 <./img/Task-12.pdf, id=194, 426.4929pt x 674.9951pt>
 File: ./img/Task-12.pdf Graphic file (type pdf)
  <use ./img/Task-12.pdf>
-Package pdftex.def Info: ./img/Task-12.pdf used on input line 632.
+Package pdftex.def Info: ./img/Task-12.pdf used on input line 635.
 (pdftex.def)             Requested size: 231.26378pt x 366.01627pt.
 
 <./img/Task-24.pdf, id=195, 419.2705pt x 674.52779pt>
 File: ./img/Task-24.pdf Graphic file (type pdf)
  <use ./img/Task-24.pdf>
-Package pdftex.def Info: ./img/Task-24.pdf used on input line 639.
+Package pdftex.def Info: ./img/Task-24.pdf used on input line 642.
 (pdftex.def)             Requested size: 231.26378pt x 372.06184pt.
 
 [7]
@@ -584,11 +573,11 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  5458 strings out of 494437
  87000 string characters out of 6166646
- 164856 words of memory out of 5000000
+ 166856 words of memory out of 5000000
  8693 multiletter control sequences out of 15000+600000
  59014 words of font info for 145 fonts, out of 8000000 for 9000
  322 hyphenation exceptions out of 8191
- 39i,16n,38p,1950b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,16n,38p,1073b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017basic/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/lo
 cal/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
 r/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.
@@ -616,7 +605,7 @@ e/2017basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/
 asic/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017bas
 ic/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/texlive/2017basi
 c/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on bare_adv.pdf (10 pages, 780506 bytes).
+Output written on bare_adv.pdf (10 pages, 779699 bytes).
 PDF statistics:
  360 PDF objects out of 1000 (max. 8388607)
  255 compressed objects within 3 object streams
