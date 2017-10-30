@@ -55,8 +55,10 @@ pdfkeywords={Computer Society, IEEEtran, journal, LaTeX, paper,
 
 \title{Availability-aware Mobile Service Composition Over Oppotunistic Networks}
 
-\author{QingLan~Peng,~\IEEEmembership{Student Member,~IEEE,}
-        ChunRong~Wu,~\IEEEmembership{Student Member,~IEEE,}
+\author{XX~X,~
+		% \IEEEmembership{Student Member,~IEEE,}
+		XX~X,~\IEEEmembership{Senior Member,~IEEE,}
+        XX~X,~\IEEEmembership{Fellow,~IEEE,}
         % and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
 
 % \IEEEcompsocitemizethanks{\IEEEcompsocthanksitem M. Shell was with the Department
@@ -113,11 +115,11 @@ Mobile Computing, Mobile opportunistic network, Mobile Service Composition, Serv
 \fi
 
 
-\IEEEPARstart{R}{ecent years} have witnessed the rapid development of mobile devices and mobile communication. 
+\IEEEPARstart{R}{ecent years} have witnessed the rapid development of mobile devices (e.g., smartphones, tablets, wearable devices, etc.) and mobile communication. Mobile devices are changing the way people getting the information and the people’s daily lives because they allow you multiple ways of communicating almost at any time and from any location \cite{satyanarayanan2010mobile}.
 The number of mobile devices is still booming and it has already surpassed stationary Internet hosts.
-Web services are no longer limited to traditional stationary platforms and they can be more flexible and pervasive. 
-The hardware of mobile devices will continue to make breakthroughs on extending the capabilities of mobile devices in terms of computational power, random access memories (RAM), storage capacity, and so on \cite{Deng2017}. 
-The huge potential of mobile technology brings a great opportunity to traditional service computing in the mobile environment. As a result, the global interest of mobile service is on the rise and both academia and industry are inspired to pave the way for mobile service provisioning \cite{dinh2013survey}.
+Mobile services are also developed and provided with a significant rate, at the same time, the requirements from mobile users are also becoming more complicated, i.e., more complicated applications are needed to be run on mobile devices such as virtual reality applications \cite{bastug2017toward} or machine learning applications \cite{abadi2016tensorflow} on mobile phones.
+However, because mobile devices have many limitations on their hardware resources (e.g., computational resource, battery life, memory, and storage) and communication facilities (e.g., mobility and security), the gap between demand for executing complex tasks and availability of limited resources are increasing everyday.
+As a result, the global interest of mobile service is on the rise and both academia and industry are inspired to pave the way for mobile service provisioning \cite{dinh2013survey}.
 
 Opportunistic computing is promising complementary to conventional service computing. As illustrated in Fig.1, the basic idea of opportunistic computing is to allow the users to utilize the resources and services that other users share, by exploiting the direct physical contacts between the users, and the resulting potential to exchange data through a direct connection between their devices (e.g. through wireless connection or Bluetooth). Resources and services available on mobile devices can be directly shared among users in a elastic and on-demand way without time-consuming and energy-requiring interactions with pre-existing infrastructure, either at the networking level (e.g., cellular networks) or at the computing/service level (e.g., the cloud). 
 Note that, mobile tasks usually require huge computational resources or data transfer (e.g., Tensorflow on mobile, Photoshop on mobile, Online video). Nearby mobile service provider are thus more adept, in terms of energy-efficiency, at executing these tasks than the online services or nodes with the help of device
@@ -154,7 +156,7 @@ Wang et al. \cite{wang2011exploiting} model dependable service composition in wi
 They use a probability-free model and a probabilistic model to characterize the uncertainty of composing. A service that can tolerate a certain level of the mobility of service providers. However, for simplicity of their proposed model, they focus on only the workflows. Besides, the heuristic algorithms they presented fails to decide the optimal compositional plan.
 
 \subsection{mobile opportunistic network}
-Opportunistic networking is one of the most interesting evolutions of the multi-hop networking paradigm. Instead of constructing stable end-to-end paths as in the Internet, opportunistic networks do not consider node mobility a problem but as an opportunity to exploit. 
+Opportunistic networking is one of the most promising evolutions of the traditional multi-hop networking. Instead of relying itself on stable end-to-end paths as in the Internet, opportunistic networks do not consider node mobility a problem but as an useful opportunity. 
 Marco et al. \cite{Conti2014} give a review of opportunistic network and regarded it as the first step in people-centric networking, they also discuss the focused research problem such as mobility model and routing problem.
 Turkes et al. \cite{turkes2016cocoon} proposed a middleware named Cocoon to support mobile opportunistic network, they design a routing protocol above Wi-Fi and Bluetooth standards, their experiments which use real-world data setups show that Cocoon performs well on the aspects of dissemination rate, delivery latency and energy consumption.
 Fortuna et al. \cite{fortuna2009dynamic} presented an review of dynamic service composition over both wired and wireless environment, However, their work does not present any technical details to describe how to composite service in mobile networks.
@@ -217,36 +219,31 @@ and $t_j$, case in which $t_i$ is said to be the parent task of $t_j$ and $t_j$ 
 %\textit{Definition 4 (composite service instance):} A service composition instance $csi$ can be represented as $csi = \{ms_{(1,j)}, ms_{(2,k)},...,ms_{(n,l)}\}$, where $ms_{(j,k)}$ is the selected concrete services. For example, $ms_{(1,j)}$ means the $j$-th service candidate is selected to execute $task_1$.
 
 \subsection{Mobile Service Availability}
-In an MSON, the availability of mobile service is variable and dynamically by users' mobility. 
-
-If a user $j$ moves outside the transmission range of its neighbouring user $i$, then user $j$ is unreachable for user $i$ and consequently the services on user $j$ become unavailable to user $i$ \cite{Yang2010}.
-
-% \textit{Definition 5 (Mobile Service Availability):} mobile service availability can be represented by a three-tuple $(r, p, ava) $, where
-​% 1) $r$ is the mobile service requester;
-​% 2) $p$ is the mobile service provider;
-​% 3) $ava$ is the mobile service availability value between requester and provider, $ava \in [0,1)$, and $ava=0$ means service provider moves out of transmission range.
-
-As illustrated by an example in Fig. 3, there are two mobile users $i$ and $j$ with identical transmission rage R. User $i$ is a mobile service requester while user $j$ a mobile service provider. Each user moves randomly and it is assumed that the moving area is a circle with a radius of $r$. $d$ is the distance between $i$ and $j$. We use these three parameters ($r,R,d$) to calculate the availability of a mobile service. The transmission range of a node $R$ is known (e.g., usually 10m for bluetooth and 25m for Wi-Fi). 
-
-Note that most of wireless transaction protocols have defined the RSSI (Received Signal Strength Indicator), then distance $d$ between mobile user $i$ and user $j$ can be calculated by signal strength, Finally let us discuss how to calculate $r$.
-
-%Suppose that the location of each mobile user is known (e.g., via GPS data or other location-based services provided by telecommunications service providers \cite{chadil2008real}), then distance $d$ can be calculated using the Euclidean distance formula, i.e.,$\sqrt{{(x_i-x_j)^2}+({y_i-y_j})^2}$ where $(x_i, x_j)$ and $(y_i, y_j)$ are the coordinates of user $i$ and $j$ respectively. 
-
-The moving radius of a mobile user $r$ is its moving speed $v$ multiplied by the average service time $t$. Here $t$ can be statistically calculated as the average value of last $n$ times of service invoke, namely, $t = \Sigma_{i=1}^{n}t_i/n$. The speed of a mobile user $v$ can be get through GPS data or other mobile sensor (e.g., Gyro-sensor), then $r = v \times t$.
-
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.5in]{./img/pic3.pdf}
+\includegraphics[width=3in]{./img/pic3.pdf}
 \caption{Mobile service availability}
 \label{fig_sd}
 \end{figure}
+In an MSON, the availability of mobile service is variable and dynamically by users' mobility. 
+As illustrated by an example in Fig. 3, there are two mobile users $i$ and $j$ with identical transmission rage R. User $i$ is a mobile service requester while user $j$ a mobile service provider. Each user moves randomly and it is assumed that the moving area is a circle with a radius of $r$. $d$ is the distance between $i$ and $j$. If user $j$ moves outside the transmission range of its neighbouring user $i$, then user $j$ is unreachable for user $i$ and consequently the services on user $j$ become unavailable to user $i$ \cite{Yang2010}.
 
-​Once we know these three parameters $R$, $r$, and $d$, the probability of user $j$ staying inside the transmission range of user $i$ (denoted as $P_{i,j}^{IN}$ ) can be calculated by
+Suppose a mobile service running on mobile node $j$ is a candidate service for a task requested by user $i$, and the availability of candidate service (denote as $Ava(i,j)$) can be calculated as follow: 
+\begin{align}
+& \text{$Ava(i,j) = P_{i,j}^{IN}$} 
+\end{align}
+Where $P_{i,j}^{IN}$ is the probability of user $j$ staying inside the transmission range of user $i$ and it can be calculated by:
 \begin{equation}
 P_{i,j}^{IN} = \frac{S_{i \bigcap j}}{S_j}
 \end{equation}
-Where $S_{i \bigcap j}$ is the area of the user $j$ moving field inside the transmission range of user $i$, $S_j$ is the overall area of the user $j$ moving field. $S_{i \bigcap j}$ can be calculated as follow
-% Where $P_{i,j}^{IN}$ is the area of the user $j$ moving field inside the transmission range of user $i$ (denoted as $S_{i \bigcap j}$) divided by the overall area of the user $j$ moving field ($S_j$). $S_{i \bigcap j}$ can be calculated as follow
+Where $S_{i \bigcap j}$ is the area of the user $j$ moving field inside the transmission range of user $i$, $S_j$ is the moving field area of the user $j$.
+
+We use $r$, $R$ and $d$ to calculate $S_{i \bigcap j}$ and $S_j$. 
+The transmission range of a node $R$ is a preset value (e.g., usually 10m for bluetooth and 25m for Wi-Fi). 
+Note that most of wireless transaction protocols have defined the RSSI (Received Signal Strength Indicator), then distance $d$ between mobile user $i$ and user $j$ can be calculated by signal strength.  
+The moving radius of a mobile user $r$ is its moving speed $v$ multiplied by the average service time $t$. Here $t$ can be statistically calculated as the average value of last $n$ times of service invoke, namely, $t = \Sigma_{i=1}^{n}t_i/n$. The speed of a mobile user $v$ can be get through GPS data or other mobile sensor (e.g., Gyro-sensor), then $r = v \times t$. ​
+
+Finally, $S_{i \bigcap j}$ can be calculated as follow:
 \setlength{\arraycolsep}{0.0em}
 \begin{align}
 S_{i \bigcap j} & =  [(\frac{2\alpha}{2\pi} \times \pi r^2)-(\frac{r sin\alpha cos\alpha}{2} \times 2)]\\\nonumber
@@ -259,20 +256,22 @@ Where
 \alpha = arccos(\frac{r^2+d^2-R^2}{2r\times d}) \\\nonumber
 \beta = arccos(\frac{R^2+d^2-r^2}{2R\times d})
 \end{eqnarray}
-$S_j$ can be calculated by
-\begin{equation}
-S_j = \pi r^2 = \pi \times (s \times t)^2
-\end{equation}
-Therefore, the probability of user $j$ staying inside the transmission range of user $i$ (i.e., $P_{i,j}^{IN}$) can be calculated as follow
-\begin{equation}
-P_{i,j}^{IN} = \frac{S_{i \bigcap j}}{\pi s^2 t^2}
-\end{equation}
-Suppose a mobile service $ms$ running on mobile node $j$ is a candidate service for a task requested by user $i$, and the availability of candidate service can be calculated as follow
+
+$S_j$ can be calculated by:
 \begin{align}
-& \text{$q_{ava}(ms) = P_{i,j}^{IN}$} \\\nonumber
-& \ \ \ \ \ \ \ \ = \frac{S_{i \bigcap j}}{\pi s^2 t^2}\\\nonumber
-& \ \ \ \ \ \ \ \ = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta cos\beta)}{\pi s^2 t^2}
+S_j & = \pi r^2 \\\nonumber
+& = \pi \times (s \times t)^2
 \end{align}
+
+Therefore, the availability of mobile service between requester $i$ and provider $j$ in a certain time can be calculated as follow:
+
+\begin{align}
+& \text{$Ava(i,j) = P_{i,j}^{IN}$} \\\nonumber
+& \ \ \ \ \ \ = \frac{S_{i \bigcap j}}{S_j}\\\nonumber
+& \ \ \ \ \ \ = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta cos\beta)}{\pi s^2 t^2}
+\end{align}
+
+
 Mobile service availability can capture user's mobile behavior, and we use it as an important QoS attribute to construct QoS model for service composition in next subsection.
 
 \subsection{QoS Model for Mobile Service Composition}

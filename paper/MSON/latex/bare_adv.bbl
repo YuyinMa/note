@@ -21,66 +21,37 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{Deng2017}
-S.~Deng, L.~Huang, J.~Taheri, J.~Yin, M.~Zhou, and A.~Y. Zomaya,
-  ``{Mobility-aware service composition in mobile communities},'' \emph{IEEE
-  Transactions on Systems, Man, and Cybernetics: Systems}, vol.~47, no.~3, pp.
-  555--568, 2017.
+\bibitem{satyanarayanan2010mobile}
+M.~Satyanarayanan, ``Mobile computing: the next decade,'' in \emph{Proceedings
+  of the 1st ACM workshop on mobile cloud computing \& services: social
+  networks and beyond}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2010, p.~5.
+
+\bibitem{bastug2017toward}
+E.~Bastug, M.~Bennis, M.~M{\'e}dard, and M.~Debbah, ``Toward interconnected
+  virtual reality: Opportunities, challenges, and enablers,'' \emph{IEEE
+  Communications Magazine}, vol.~55, no.~6, pp. 110--117, 2017.
+
+\bibitem{abadi2016tensorflow}
+M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
+  A.~Davis, J.~Dean, M.~Devin \emph{et~al.}, ``Tensorflow: Large-scale machine
+  learning on heterogeneous distributed systems,'' \emph{arXiv preprint
+  arXiv:1603.04467}, 2016.
 
 \bibitem{dinh2013survey}
 H.~T. Dinh, C.~Lee, D.~Niyato, and P.~Wang, ``A survey of mobile cloud
   computing: architecture, applications, and approaches,'' \emph{Wireless
   communications and mobile computing}, vol.~13, no.~18, pp. 1587--1611, 2013.
 
-\bibitem{giordano2011human}
-S.~Giordano and D.~Puccinelli, ``The human element as the key enabler of
-  pervasiveness,'' in \emph{Ad Hoc Networking Workshop (Med-Hoc-Net), 2011 The
-  10th IFIP Annual Mediterranean}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2011, pp. 150--156.
-
-\bibitem{liu2013exploring}
-S.~Liu and A.~D. Striegel, ``Exploring the potential in practice for
-  opportunistic networks amongst smart mobile devices,'' in \emph{Proceedings
-  of the 19th annual international conference on Mobile computing \&
-  networking}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2013, pp. 315--326.
-
-\bibitem{chang2015progressive}
-W.~Chang and J.~Wu, ``Progressive or conservative: Rationally allocate
-  cooperative work in mobile social networks,'' \emph{IEEE Transactions on
-  Parallel and Distributed Systems}, vol.~26, no.~7, pp. 2020--2035, 2015.
-
 \bibitem{balani2007energy}
 R.~Balani, ``Energy consumption analysis for bluetooth, wifi and cellular
   networks,'' \emph{Online Httpnesl Ee Ucla
   Edufwdocumentsreports2007PowerAnalysis Pdf}, 2007.
 
-\bibitem{asadi2014survey}
-A.~Asadi, Q.~Wang, and V.~Mancuso, ``A survey on device-to-device communication
-  in cellular networks,'' \emph{IEEE Communications Surveys \& Tutorials},
-  vol.~16, no.~4, pp. 1801--1819, 2014.
-
-\bibitem{shi2012serendipity}
-C.~Shi, V.~Lakafosis, M.~H. Ammar, and E.~W. Zegura, ``Serendipity: enabling
-  remote computing among intermittently connected mobile devices,'' in
-  \emph{Proceedings of the thirteenth ACM international symposium on Mobile Ad
-  Hoc Networking and Computing}.\hskip 1em plus 0.5em minus 0.4em\relax ACM,
-  2012, pp. 145--154.
-
-\bibitem{li2014can}
-Y.~Li and W.~Wang, ``Can mobile cloudlets support mobile applications?'' in
-  \emph{Infocom, 2014 proceedings ieee}.\hskip 1em plus 0.5em minus 0.4em\relax
-  IEEE, 2014, pp. 1060--1068.
-
-\bibitem{zhang2015offloading}
-Y.~Zhang, D.~Niyato, and P.~Wang, ``Offloading in mobile cloudlet systems with
-  intermittent connectivity,'' \emph{IEEE Transactions on Mobile Computing},
-  vol.~14, no.~12, pp. 2516--2529, 2015.
-
-\bibitem{papazoglou2003service}
-M.~P. Papazoglou, ``Service-oriented computing: Concepts, characteristics and
-  directions,'' in \emph{Web Information Systems Engineering, 2003. WISE 2003.
-  Proceedings of the Fourth International Conference on}.\hskip 1em plus 0.5em
-  minus 0.4em\relax IEEE, 2003, pp. 3--12.
+\bibitem{giordano2011human}
+S.~Giordano and D.~Puccinelli, ``The human element as the key enabler of
+  pervasiveness,'' in \emph{Ad Hoc Networking Workshop (Med-Hoc-Net), 2011 The
+  10th IFIP Annual Mediterranean}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2011, pp. 150--156.
 
 \bibitem{Deng2016}
 S.~Deng, L.~Huang, H.~Wu, W.~Tan, J.~Taheri, A.~Y. Zomaya, and Z.~Wu, ``{Toward
@@ -122,6 +93,22 @@ L.~Pu, X.~Chen, J.~Xu, and X.~Fu, ``Crowd foraging: A qos-oriented
   \emph{IEEE Journal on Selected Areas in Communications}, vol.~35, no.~4, pp.
   848--862, 2017.
 
+\bibitem{Deng2017}
+S.~Deng, L.~Huang, J.~Taheri, J.~Yin, M.~Zhou, and A.~Y. Zomaya,
+  ``{Mobility-aware service composition in mobile communities},'' \emph{IEEE
+  Transactions on Systems, Man, and Cybernetics: Systems}, vol.~47, no.~3, pp.
+  555--568, 2017.
+
+\bibitem{li2014can}
+Y.~Li and W.~Wang, ``Can mobile cloudlets support mobile applications?'' in
+  \emph{Infocom, 2014 proceedings ieee}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 2014, pp. 1060--1068.
+
+\bibitem{chang2015progressive}
+W.~Chang and J.~Wu, ``Progressive or conservative: Rationally allocate
+  cooperative work in mobile social networks,'' \emph{IEEE Transactions on
+  Parallel and Distributed Systems}, vol.~26, no.~7, pp. 2020--2035, 2015.
+
 \bibitem{tuncay2013participant}
 G.~S. Tuncay, G.~Benincasa, and A.~Helmy, ``Participant recruitment and data
   collection framework for opportunistic sensing: a comparative analysis,'' in
@@ -137,6 +124,12 @@ J.~Wu, M.~Xiao, and L.~Huang, ``Homing spread: Community home-based multi-copy
 C.~Jiang, L.~Gao, L.~Duan, and J.~Huang, ``Exploiting data reuse in mobile
   crowdsensing,'' in \emph{Global Communications Conference (GLOBECOM), 2016
   IEEE}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2016, pp. 1--6.
+
+\bibitem{liu2013exploring}
+S.~Liu and A.~D. Striegel, ``Exploring the potential in practice for
+  opportunistic networks amongst smart mobile devices,'' in \emph{Proceedings
+  of the 19th annual international conference on Mobile computing \&
+  networking}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2013, pp. 315--326.
 
 \bibitem{Wu2016}
 Q.~Wu, F.~Ishikawa, Q.~Zhu, and D.-H. Shin, ``{QoS-Aware Multigranularity
@@ -203,11 +196,5 @@ Z.~Zheng, Y.~Zhang, and M.~R. Lyu, ``Investigating qos of real-world web
 Q.~Wu and Q.~Zhu, ``Transactional and qos-aware dynamic service composition
   based on ant colony optimization,'' \emph{Future Generation Computer
   Systems}, vol.~29, no.~5, pp. 1112--1119, 2013.
-
-\bibitem{abadi2016tensorflow}
-M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
-  A.~Davis, J.~Dean, M.~Devin \emph{et~al.}, ``Tensorflow: Large-scale machine
-  learning on heterogeneous distributed systems,'' \emph{arXiv preprint
-  arXiv:1603.04467}, 2016.
 
 \end{thebibliography}
