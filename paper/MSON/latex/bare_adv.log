@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  31 OCT 2017 18:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  1 NOV 2017 16:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -451,14 +451,11 @@ Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ™ in font pplr7t!
 
-<./img/pic1.pdf, id=1, 947.51642pt x 630.22469pt>
+<./img/pic1.pdf, id=1, 946.45128pt x 605.37967pt>
 File: ./img/pic1.pdf Graphic file (type pdf)
  <use ./img/pic1.pdf>
 Package pdftex.def Info: ./img/pic1.pdf used on input line 125.
-(pdftex.def)             Requested size: 252.94499pt x 168.23964pt.
-
-Underfull \vbox (badness 1755) has occurred while \output is active []
-
+(pdftex.def)             Requested size: 252.94499pt x 161.79196pt.
 LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 136
 .
  [1{/usr/local/texlive/2017basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -467,14 +464,14 @@ LaTeX Font Info:    Calculating math sizes for size <7.02625> on input line 136
  <./img/pic1.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 157.
- <./img/pic2.pdf, id=64, 968.65495pt x 546.96466pt>
+ <./img/pic2.pdf, id=68, 968.52129pt x 546.22238pt>
 File: ./img/pic2.pdf Graphic file (type pdf)
- <use ./img/pic2.pdf>
-Package pdftex.def Info: ./img/pic2.pdf used on input line 177.
-(pdftex.def)             Requested size: 252.94499pt x 142.82506pt.
 
-[2]
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 210
+<use ./img/pic2.pdf>
+Package pdftex.def Info: ./img/pic2.pdf used on input line 179.
+(pdftex.def)             Requested size: 252.94499pt x 142.6479pt.
+ [2]
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 212
 .
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
@@ -485,156 +482,160 @@ Missing character: There is no ‹ in font pplr7t!
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
- <./img/pic3.pdf, id=68, 928.19533pt x 676.15274pt>
+ <./img/pic3.pdf, id=72, 914.97241pt x 674.86926pt>
 File: ./img/pic3.pdf Graphic file (type pdf)
- <use ./img/pic3.pdf>
-Package pdftex.def Info: ./img/pic3.pdf used on input line 228.
-(pdftex.def)             Requested size: 216.81pt x 157.9364pt.
 
-[3 <./img/pic2.pdf> <./img/pic3.pdf>]
+<use ./img/pic3.pdf>
+Package pdftex.def Info: ./img/pic3.pdf used on input line 230.
+(pdftex.def)             Requested size: 216.81pt x 159.9124pt.
+ [3 <./img/pic2.pdf> <./img/pic3.pdf>]
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 280.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 282.
  [4]
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
 
-<./img/pic4.pdf, id=150, 825.82024pt x 486.27614pt>
+<./img/pic4.pdf, id=148, 826.73235pt x 485.82011pt>
 File: ./img/pic4.pdf Graphic file (type pdf)
  <use ./img/pic4.pdf>
-Package pdftex.def Info: ./img/pic4.pdf used on input line 356.
-(pdftex.def)             Requested size: 216.81pt x 127.66052pt.
+Package pdftex.def Info: ./img/pic4.pdf used on input line 358.
+(pdftex.def)             Requested size: 216.81pt x 127.40736pt.
 
-[5 <./img/pic4.pdf>] <./img/pic5.pdf, id=171, 884.28047pt x 591.215pt>
+[5 <./img/pic4.pdf>] <./img/pic5.pdf, id=169, 873.18059pt x 590.72643pt>
 File: ./img/pic5.pdf Graphic file (type pdf)
 
 <use ./img/pic5.pdf>
-Package pdftex.def Info: ./img/pic5.pdf used on input line 415.
-(pdftex.def)             Requested size: 180.67499pt x 120.7939pt.
+Package pdftex.def Info: ./img/pic5.pdf used on input line 417.
+(pdftex.def)             Requested size: 180.67499pt x 122.22641pt.
  [6 <./img/pic5.pdf>]
-Overfull \hbox (8.05794pt too wide) in paragraph at lines 520--541
+Overfull \hbox (8.05794pt too wide) in paragraph at lines 522--543
  [][] 
  []
 
 
-Overfull \hbox (3.26216pt too wide) in paragraph at lines 628--640
+Overfull \hbox (3.26216pt too wide) in paragraph at lines 616--628
  [][] 
  []
 
-<./img/Param-PS.pdf, id=192, 433.62pt x 289.08pt>
+<./img/Param-PS.pdf, id=190, 433.62pt x 289.08pt>
 File: ./img/Param-PS.pdf Graphic file (type pdf)
  <use ./img/Param-PS.pdf>
-Package pdftex.def Info: ./img/Param-PS.pdf used on input line 647.
+Package pdftex.def Info: ./img/Param-PS.pdf used on input line 636.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-MI.pdf, id=193, 433.62pt x 289.08pt>
+<./img/Param-MI.pdf, id=191, 433.62pt x 289.08pt>
 File: ./img/Param-MI.pdf Graphic file (type pdf)
  <use ./img/Param-MI.pdf>
-Package pdftex.def Info: ./img/Param-MI.pdf used on input line 651.
+Package pdftex.def Info: ./img/Param-MI.pdf used on input line 640.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-CR.pdf, id=194, 433.62pt x 289.08pt>
+<./img/Param-CR.pdf, id=192, 433.62pt x 289.08pt>
 File: ./img/Param-CR.pdf Graphic file (type pdf)
  <use ./img/Param-CR.pdf>
-Package pdftex.def Info: ./img/Param-CR.pdf used on input line 655.
+Package pdftex.def Info: ./img/Param-CR.pdf used on input line 644.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-Vf.pdf, id=195, 433.62pt x 289.08pt>
+<./img/Param-Vf.pdf, id=193, 433.62pt x 289.08pt>
 File: ./img/Param-Vf.pdf Graphic file (type pdf)
  <use ./img/Param-Vf.pdf>
-Package pdftex.def Info: ./img/Param-Vf.pdf used on input line 660.
+Package pdftex.def Info: ./img/Param-Vf.pdf used on input line 649.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-Nmax.pdf, id=196, 433.62pt x 289.08pt>
+<./img/Param-Nmax.pdf, id=194, 433.62pt x 289.08pt>
 File: ./img/Param-Nmax.pdf Graphic file (type pdf)
  <use ./img/Param-Nmax.pdf>
-Package pdftex.def Info: ./img/Param-Nmax.pdf used on input line 664.
+Package pdftex.def Info: ./img/Param-Nmax.pdf used on input line 653.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-<./img/Param-Dmax.pdf, id=197, 433.62pt x 289.08pt>
+<./img/Param-Dmax.pdf, id=195, 433.62pt x 289.08pt>
 File: ./img/Param-Dmax.pdf Graphic file (type pdf)
  <use ./img/Param-Dmax.pdf>
-Package pdftex.def Info: ./img/Param-Dmax.pdf used on input line 668.
+Package pdftex.def Info: ./img/Param-Dmax.pdf used on input line 657.
 (pdftex.def)             Requested size: 144.54pt x 96.35828pt.
 
-[7] <./img/DAG.pdf, id=202, 1817.8715pt x 1210.71548pt>
+<./img/DAG.pdf, id=196, 1817.8715pt x 1210.71548pt>
 File: ./img/DAG.pdf Graphic file (type pdf)
  <use ./img/DAG.pdf>
-Package pdftex.def Info: ./img/DAG.pdf used on input line 678.
+Package pdftex.def Info: ./img/DAG.pdf used on input line 665.
 (pdftex.def)             Requested size: 361.34999pt x 240.66089pt.
 
-<./img/Task-6.pdf, id=203, 597.51233pt x 845.0471pt>
+[7] <./img/Task-6.pdf, id=201, 597.51233pt x 845.0471pt>
 File: ./img/Task-6.pdf Graphic file (type pdf)
- <use ./img/Task-6.pdf>
-Package pdftex.def Info: ./img/Task-6.pdf used on input line 687.
-(pdftex.def)             Requested size: 231.26378pt x 327.06554pt.
 
-<./img/Task-12.pdf, id=204, 597.51233pt x 845.0471pt>
+<use ./img/Task-6.pdf>
+Package pdftex.def Info: ./img/Task-6.pdf used on input line 701.
+(pdftex.def)             Requested size: 216.81pt x 306.62798pt.
+ <./img/Task-12.pdf, id=202, 597.51233pt x 845.0471pt>
 File: ./img/Task-12.pdf Graphic file (type pdf)
- <use ./img/Task-12.pdf>
-Package pdftex.def Info: ./img/Task-12.pdf used on input line 695.
-(pdftex.def)             Requested size: 231.26378pt x 327.06554pt.
 
-<./img/Task-24.pdf, id=205, 597.51233pt x 845.0471pt>
+<use ./img/Task-12.pdf>
+Package pdftex.def Info: ./img/Task-12.pdf used on input line 709.
+(pdftex.def)             Requested size: 216.81pt x 306.62798pt.
+ <./img/Task-24.pdf, id=203, 597.51233pt x 845.0471pt>
 File: ./img/Task-24.pdf Graphic file (type pdf)
- <use ./img/Task-24.pdf>
-Package pdftex.def Info: ./img/Task-24.pdf used on input line 702.
-(pdftex.def)             Requested size: 231.26378pt x 327.06554pt.
 
-Underfull \vbox (badness 2980) has occurred while \output is active []
+<use ./img/Task-24.pdf>
+Package pdftex.def Info: ./img/Task-24.pdf used on input line 716.
+(pdftex.def)             Requested size: 216.81pt x 306.62798pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./img/Param-PS.pdf> <./img/Param-MI.pdf> <./img/Param-CR.pdf> <./img/Param
+-Vf.pdf> <./img/Param-Nmax.pdf> <./img/Param-Dmax.pdf> <./img/DAG.pdf>]
+
+LaTeX Warning: Text page 9 contains only floats.
+
+[9 <./img/Task-6.pdf> <./img/Task-12.pdf> <./img/Task-24.pdf>]
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
 Missing character: There is no â in font pplr7t!
 Missing character: There is no € in font pplr7t!
 Missing character: There is no ‹ in font pplr7t!
-
-(./bare_adv.bbl [8 <./img/Param-PS.pdf> <./img/Param-MI.pdf> <./img/Param-CR.pd
-f> <./img/Param-Vf.pdf> <./img/Param-Nmax.pdf> <./img/Param-Dmax.pdf>] [9 <./im
-g/DAG.pdf> <./img/Task-6.pdf> <./img/Task-12.pdf>]) [10 <./img/Task-24.pdf>]
-(./bare_adv.aux) ) 
+ (./bare_adv.bbl) [10] (./bare_adv.aux) ) 
 Here is how much of TeX's memory you used:
  5483 strings out of 494437
  87409 string characters out of 6166646
- 166980 words of memory out of 5000000
+ 166979 words of memory out of 5000000
  8711 multiletter control sequences out of 15000+600000
  57379 words of font info for 135 fonts, out of 8000000 for 9000
  322 hyphenation exceptions out of 8191
- 39i,16n,49p,1073b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017basic/texmf-dist/fonts/enc/dvips/base
-/8r.enc}</usr/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmex10.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfont
-s/cmextra/cmex7.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/public
-/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2017basic/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2017basic/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017basic/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017basic/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017basic/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2017basic/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017basi
-c/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2017ba
-sic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2017
-basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texli
-ve/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
-xlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
-/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></
-usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></us
-r/local/texlive/2017basic/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/
-local/texlive/2017basic/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/l
-ocal/texlive/2017basic/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/loc
-al/texlive/2017basic/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local
-/texlive/2017basic/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/local/
-texlive/2017basic/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on bare_adv.pdf (10 pages, 911304 bytes).
+ 39i,16n,49p,916b,557s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017basic/texmf-di
+st/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017basic/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017basic/texmf-dist/fon
+ts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2017basic/texmf-
+dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2017basi
+c/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017
+basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2
+017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texliv
+e/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/tex
+live/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/
+texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/l
+ocal/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
+/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
+sr/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+5.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy7.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/public/amsfont
+s/symbols/msbm10.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/h
+elvetic/uhvb8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/hel
+vetic/uhvr8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/helve
+tic/uhvro8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/palati
+no/uplb8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/palatino
+/uplr8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/palatino/u
+plri8a.pfb></usr/local/texlive/2017basic/texmf-dist/fonts/type1/urw/zapfding/uz
+dr.pfb>
+Output written on bare_adv.pdf (10 pages, 905665 bytes).
 PDF statistics:
- 487 PDF objects out of 1000 (max. 8388607)
- 360 compressed objects within 4 object streams
+ 485 PDF objects out of 1000 (max. 8388607)
+ 357 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

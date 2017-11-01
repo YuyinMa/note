@@ -128,14 +128,14 @@ Mobile services are also developed and provided at a significant rate, at the sa
 \end{figure}
 
 Opportunistic computing is promising complementary to conventional mobile cloud computing. As illustrated in Fig.1, the basic idea of opportunistic computing is to allow the users to utilize the resources and services that other users share, by exploiting the direct physical contacts between the users, and the resulting potential to exchange data through a direct connection between their devices (e.g. through wireless connection or Bluetooth). Resources and services available on mobile devices can be directly shared among users in a elastic and on-demand way without time-consuming and energy-requiring interactions with pre-existing infrastructure, either at the networking level (e.g., cellular networks) or at the computing/service level (e.g., the cloud). 
-Note that, mobile tasks usually require huge computational resources or data transfer (e.g., Tensorflow on mobile, Photoshop on mobile, Online video). Nearby mobile service provider are thus more adept, in terms of energy-efficiency, at executing these tasks than the online services or nodes with the help of device
+Note that, mobile tasks usually require huge computational resources or data transfer (e.g., Tensorflow on mobile, Video editor on mobile, Online video). Nearby mobile service provider are thus more adept, in terms of energy-efficiency, at executing these tasks than the online services or nodes with the help of device
 to device (D2D) communications such as Bluetooth, WiFi and NFC \cite{balani2007energy}. D2D communications are featured by extensively-reduced data transfer delays and required energy than traditional cellular network. Thus it provides better user-perceived service quality in terms of reduced waiting time and improved service responsiveness. It is promising to replenish traditional cellular communications in terms of user throughput increase, cellular traffic reduction and network coverage extension. 
 
-However, due to the change of application environment and application object, service computing in mobile environment faces two inherent challenges.
+However, due to the completely different application patterns compared with traditional service computing, service computing in mobile environment faces two inherent challenges.
 
-1) Constant Mobility: Mobile users change their locations frequently, which results in the variation of service availability. Thus, determining how to handle user mobility is a major challenge for providing reliable mobile services in highly dynamic mobile wireless environments.
+1) Constant Mobility: Mobile users may change their locations vary frequently in mobile environment, which results in the variation of service availability. Thus, determining how to handle user mobility is a major challenge for providing reliable mobile services in highly dynamic mobile environments.
 
-2) Limited Resource: Mobile devices have limited computing capability compare with other stationary computing devices. But mobile service composition plan must be generated as fast as possible because the availability of mobile service may vary much within a short time. Therefore, composition algorithm must have fast convergence rate and good scalability.
+2) Limited Resource: Mobile devices have limited computing capability compared with other stationary hosts. And mobile service composition plan must be generated as fast as possible because the availability of mobile service may vary much within a short time. Therefore, how to design an appropriate service selection and composition algorithms which have fast convergence rate and good scalability is another key challenge.
 
 To address the aforementioned challenges and concerns, we propose an availability-aware mobile service composition approach in this paper, where a mobile user in mobile service opportunistic network are allowed to combine and exploit, through D2D communications, nearby devices' resources with time-varying availability (in contrast, traditional approaches mainly consider fully-available mobile services) to boost their computing power and therefore overcome the limitations of their own resources \cite{giordano2011human}. 
 
@@ -156,16 +156,25 @@ The main contributions are:
 
 \subsection{mobile service composition}
 Mobile service composition refers to the technique of creating composite services with the help of smaller, simpler and easily executable services or components over mobile networks. Recent technological advances in novel mobile device design and development as well as wireless networking materialize a vision where devices all around a user, either embedded as a part of smart spaces, or being carried by other users
-near by, are enabled to present services probably useful. Users sometimes look for services that are not pre-existent on any device but can be dynamically built by appropriately combining already existing ones. For this purpose, extensive research efforts are carried out in this direction. For example, Deng et al. \cite{Deng2016} classify mobile service composition methods into three categories: C2M, M2M, Hybrid. They also discussed the challenge toward mobile service provisioning and mobile service composition in terms of performance, energy and security perspective. They also proposed a mobile-service-sharing-community model and extend the random way point (RWP) model to capture user mobility. They utilize the meta-heuristic algorithm to decide the optimal compositional plan. Yang et al. \cite{Yang2010} present a comprehensive QoS model specifically for pervasive services. They consider not only mobile wireless network characteristics but also user-perceived factors. They derive a corresponding formula to calculate the QoS criterion. 
-zhang et al. \cite{Zhang2016qos} consider a context-aware service selection algorithm based on Genetic Algorithm, They introduce a tree-encoding method to improve the capacity and efficiency of GA. However, for simplicity of the proposed model, they do not consider user mobility.
-Wang et al. \cite{wang2011exploiting} model dependable service composition in wireless mobile ad hoc networks by considering mobility prediction of the service providers.
-They use a probability-free model and a probabilistic model to characterize the uncertainty of composing. A service that can tolerate a certain level of the mobility of service providers. However, for simplicity of their proposed model, they focus on only the workflows. Besides, the heuristic algorithms they presented fails to decide the optimal compositional plan.
+near by, are enabled to present services probably useful. Users sometimes look for services that are not pre-existent on any device but can be dynamically built by appropriately combining already existing ones. For this purpose, extensive research efforts are carried out in this direction. 
+For example, Wang et al. \cite{wang2011exploiting} model dependable service composition in wireless mobile ad hoc networks by considering mobility prediction of the service providers.
+They use a probability-free model and a probabilistic model to characterize the uncertainty of composing. A service that can tolerate a certain level of the mobility of service providers. However, for simplicity of their proposed model, the approach they proposed only apply to the sequential workflows.
 
-\subsection{mobile opportunistic network}
+zhang et al. \cite{Zhang2016qos} consider a context-aware mobile service selection algorithm based on Genetic Algorithm, They introduce a tree-encoding method to improve the capacity and efficiency of GA. However, for simplicity of the proposed model, they do not consider user mobility.
+
+Christin Groba et al. present a novel service composition protocol that allocates and invokes service providers opportunistically to minimise the impact of topology changes and to reduce failure.
+
+Davide Mascitti et al. proposed an opportunistic computing model for service selection and composition, however, their work do not consider user mobility.
+
+Umair Sadiq et al
+
+Deng et al. \cite{Deng2016} classify mobile service composition methods into three categories: C2M, M2M, Hybrid. They also discussed the challenge toward mobile service provisioning and mobile service composition in terms of performance, energy and security perspective. They also proposed a mobile-service-sharing-community model and extend the random way point (RWP) model to capture user mobility. They utilize the meta-heuristic algorithm to decide the optimal compositional plan. 
+
+
+\subsection{service composition over opportunistic network}
 Opportunistic networking is one of the most promising evolutions of the traditional multi-hop networking. Instead of relying itself on stable end-to-end paths as in the Internet, opportunistic networks do not consider node mobility a problem but as an useful opportunity. 
 Marco et al. \cite{Conti2014} give a review of opportunistic network and regarded it as the first step in people-centric networking, they also discuss the focused research problem such as mobility model and routing problem.
 Turkes et al. \cite{turkes2016cocoon} proposed a middleware named Cocoon to support mobile opportunistic network, they design a routing protocol above Wi-Fi and Bluetooth standards, their experiments which use real-world data setups show that Cocoon performs well on the aspects of dissemination rate, delivery latency and energy consumption.
-Fortuna et al. \cite{fortuna2009dynamic} presented an review of dynamic service composition over both wired and wireless environment, However, their work does not present any technical details to describe how to composite service in mobile networks.
 Giordano et al. \cite{giordano2011human} proposed a novel paradigm that utilize Opportunistic computing as an appealing complement to the mobile computing cloud, in this way, mobile device can combine and exploit heterogeneous resources from other devices.
 Pu et al. \cite{Pu2017crowd} presented QoS-oriented self-organized mobile crowdsourcing framework, in this work, the prevalent and sufficient characteristics of opportunistic user encounters in our daily life are utilized to solve crowdsourcing problem.
 
@@ -605,20 +614,6 @@ t6     & $ms_1^{(2)}$, $ms_4^{(3)}$, $ms_5^{(3)}$, $ms_6^{(2)}$, $ms_7^{(1)}$ \\
 Table 2 is part of D2D contract traces in MIT Reality dataset. For example, there there are five nearby devices within D2D transmission distance at time $t1$ and these devices can be regarded as MSON participant who provision mobile services. Table 3 shows MSON participants and the services they exposed to nearby devices. These mobile service are random chosen from QWS dataset. Table 4 is the Cartesian product of Table 2 and Table 3, it shows how many kinds of services user can exploit at a certain time and how many candidates for each kind of service (i.e., task). For example, there are five kinds of service available at time $t1$ and there are three candidates for task $t_1$, three candidates for task $t_4$, two candidates for task $t_5$, one candidate for task $t_6$ and one candidate for task $t_7$.
 
 \subsection{Impact of Parameters}
-There are six parameters can be adjusted to improve the IKH's performance: population size $PS$, maximum iteration number $MI$, crossover rate $Cr$, foraging speed $V_f$, maximum induced speed $N_{max}$ and physical diffusion speed $D_{max}$. As shown in Table 5, we generate six groups of parameters configuration to evaluate the impact of each parameter. For each group of parameters configuration, we tune one parameter and fix the other parameters. For each configuration setting, the IKH algorithm is executed 50 times independently and the average performance was recorded.
-
-%    KH_profile.NK         = 20;
-%    KH_profile.MI         = 30;
-%    KH_profile.CR         = 0.6;
-%    KH_profile.Vf         = 0.8;
-%    KH_profile.Nmax       = 0.3;
-%    KH_profile.Dmax       = 0.2;
-Fig. 5(a) shows the impact of population size, we observe that with the increase of population size, the average QoS utility of IKH significantly improved before $PS=10$, and no significant improvement is observed after population size over $20$. Therefore, an excessively large population size (e.g., $PS=50$) has limited impact on the performance of IKH, and it will result in computing resources waste and high time cost.
-Similarly, Fig. 5(b) shows that the value of QoS utility significantly increased for higher number of iteration times until to a limit: $MI = 30$. 
-Fig. 5(c) shows the impact of the crossover rate $Cr$. The performance of KH increases with $Cr$ firstly, then decrease, the best performance is achieved for $Cr = 0.6$.
-Fig. 5(d) shows the impact of the foraging speed $V_f$. The performance of IKH increases with $V_f$ firstly, then decrease, the best performance is achieved for $V_f = 0.8$.
-Fig. 5(e) shows the impact of the induced speed $N_{max}$. The performance of IKH increases with $N_{max}$ firstly, then decrease, the best performance is achieved for $N_{max} = 0.3$.
-Fig. 5(f) shows the impact of the physical diffusion speed $D_{max}$. It shows that with the increase of $D_{max}$ the performance of IKH fluctuation irregularly and slightly, without loss of generality, we random generate $D_{max}$ from $[0.2 \sim 0.5]$ in this paper.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
@@ -639,6 +634,7 @@ Fig. 5(f) shows the impact of the physical diffusion speed $D_{max}$. It shows t
 \end{tabular}
 \end{table}
 
+There are six parameters can be adjusted to improve the IKH's performance: population size $PS$, maximum iteration number $MI$, crossover rate $Cr$, foraging speed $V_f$, maximum induced speed $N_{max}$ and physical diffusion speed $D_{max}$. As shown in Table 5, we generate six groups of parameters configuration to evaluate the impact of each parameter. For each group of parameters configuration, we tune one parameter and fix the other parameters. For each configuration setting, the IKH algorithm is executed 50 times independently and the average performance was recorded.
 
 \begin{figure*}[!t]
 \centering
@@ -670,8 +666,6 @@ Fig. 5(f) shows the impact of the physical diffusion speed $D_{max}$. It shows t
 \caption{Impact of parameters.} \label{fig_sim}
 \end{figure*}
 
-\subsection{Case study}
-In this section, we present a case study of different service composition plan in mobile environment, to compare traditional mobile service composition approaches with our proposed framework. Fig. 9 shows three mobile service composition plans for case study. Fig. 9(a) is a well known composition plan for booking tickets \cite{wu2013transactional}, it has 6 tasks. Fig. 9(b) is a simple workflow with 12 tasks for Tensorflow \cite{abadi2016tensorflow}, Tensorflow is a heterogeneous distributed system for machine learning and it already can be deployed in mobile devices. Fig. 9(c) is a scientific workflow with 24 tasks for Montage. Montage is an astronomical image mosaic engine, it can be used for simulating some picture edit application in mobile phone. We use these three kinds of composition plans to represent different meaningful service composition with different tasks.
 
 \begin{figure*}[!t]
 \centering
@@ -680,11 +674,38 @@ In this section, we present a case study of different service composition plan i
 \label{fig_DAG}
 \end{figure*}
 
+%    KH_profile.NK         = 20;
+%    KH_profile.MI         = 30;
+%    KH_profile.CR         = 0.6;
+%    KH_profile.Vf         = 0.8;
+%    KH_profile.Nmax       = 0.3;
+%    KH_profile.Dmax       = 0.2;
+Fig. 5(a) shows the impact of population size, we observe that with the increase of population size, the average QoS utility of IKH significantly improved before $PS=10$, and no significant improvement is observed after population size over $20$. Therefore, an excessively large population size (e.g., $PS=50$) has limited impact on the performance of IKH, and it will result in computing resources waste and high time cost.
+Similarly, Fig. 5(b) shows that the value of QoS utility significantly increased for higher number of iteration times until to a limit: $MI = 30$. 
+Fig. 5(c) shows the impact of the crossover rate $Cr$. The performance of KH increases with $Cr$ firstly, then decrease, the best performance is achieved for $Cr = 0.6$.
+Fig. 5(d) shows the impact of the foraging speed $V_f$. The performance of IKH increases with $V_f$ firstly, then decrease, the best performance is achieved for $V_f = 0.8$.
+Fig. 5(e) shows the impact of the induced speed $N_{max}$. The performance of IKH increases with $N_{max}$ firstly, then decrease, the best performance is achieved for $N_{max} = 0.3$.
+Fig. 5(f) shows the impact of the physical diffusion speed $D_{max}$. It shows that with the increase of $D_{max}$ the performance of IKH fluctuation irregularly and slightly, without loss of generality, we random generate $D_{max}$ from $[0.2 \sim 0.5]$ in this paper.
+
+
+
+
+
+
+
+\subsection{Case study}
+
+
+
+In this section, we present a case study of different service composition plan in mobile environment, to compare traditional mobile service composition approaches with our proposed framework. Fig. 9 shows three mobile service composition plans for case study. Fig. 9(a) is a well known composition plan for booking tickets \cite{wu2013transactional}, it has 6 tasks. Fig. 9(b) is a simple workflow with 12 tasks for Tensorflow \cite{abadi2016tensorflow}, Tensorflow is a heterogeneous distributed system for machine learning and it already can be deployed in mobile devices. Fig. 9(c) is a scientific workflow with 24 tasks for Montage. Montage is an astronomical image mosaic engine, it can be used for simulating some picture edit application in mobile phone. We use these three kinds of composition plans to represent different meaningful service composition with different tasks.
+
+
+
 
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.2in]{./img/Task-6.pdf}
+\includegraphics[width=3in]{./img/Task-6.pdf}
 \caption{Case I}
 \label{Task-6}
 \end{figure}
@@ -692,14 +713,14 @@ In this section, we present a case study of different service composition plan i
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.2in]{./img/Task-12.pdf}
+\includegraphics[width=3in]{./img/Task-12.pdf}
 \caption{Case II}
 \label{Task-12}
 \end{figure}
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.2in]{./img/Task-24.pdf}
+\includegraphics[width=3in]{./img/Task-24.pdf}
 \caption{Case III}
 \label{Task-24}
 \end{figure}
