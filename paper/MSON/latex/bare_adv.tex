@@ -157,26 +157,25 @@ The main contributions are:
 \subsection{mobile service composition}
 Mobile service composition refers to the technique of creating composite services with the help of smaller, simpler and easily executable services or components over mobile networks. Recent technological advances in novel mobile device design and development as well as wireless networking materialize a vision where devices all around a user, either embedded as a part of smart spaces, or being carried by other users
 near by, are enabled to present services probably useful. Users sometimes look for services that are not pre-existent on any device but can be dynamically built by appropriately combining already existing ones. For this purpose, extensive research efforts are carried out in this direction. 
-For example, Wang et al. \cite{wang2011exploiting} model dependable service composition in wireless mobile ad hoc networks by considering mobility prediction of the service providers.
+For example, Deng et al. \cite{Deng2016} classify mobile service composition methods into three categories: C2M, M2M, Hybrid. They also discussed the challenge toward mobile service provisioning and mobile service composition in terms of performance, energy and security perspective. 
+Later, Deng et al. \cite{Deng2017} proposed a mobile-service-sharing-community model and extend the random way point (RWP) model to capture user mobility. They utilize the meta-heuristic algorithm to decide the optimal compositional plan. 
+Wang et al. \cite{wang2011exploiting} model dependable service composition in wireless mobile ad hoc networks by considering mobility prediction of the service providers.
 They use a probability-free model and a probabilistic model to characterize the uncertainty of composing. A service that can tolerate a certain level of the mobility of service providers. However, for simplicity of their proposed model, the approach they proposed only apply to the sequential workflows.
-
+Yang et al. \cite{Yang2010} present a comprehensive QoS model specifically for pervasive services. They consider not only mobile wireless network characteristics but also user-perceived factors. They derive a corresponding formula to calculate the QoS criterion.
 zhang et al. \cite{Zhang2016qos} consider a context-aware mobile service selection algorithm based on Genetic Algorithm, They introduce a tree-encoding method to improve the capacity and efficiency of GA. However, for simplicity of the proposed model, they do not consider user mobility.
+Christin Groba et al. \cite{groba2014opportunistic} present a novel service composition protocol that allocates and invokes service providers opportunistically to minimise the impact of topology changes and to reduce failure.
 
-Christin Groba et al. present a novel service composition protocol that allocates and invokes service providers opportunistically to minimise the impact of topology changes and to reduce failure.
-
-Davide Mascitti et al. proposed an opportunistic computing model for service selection and composition, however, their work do not consider user mobility.
-
-Umair Sadiq et al
-
-Deng et al. \cite{Deng2016} classify mobile service composition methods into three categories: C2M, M2M, Hybrid. They also discussed the challenge toward mobile service provisioning and mobile service composition in terms of performance, energy and security perspective. They also proposed a mobile-service-sharing-community model and extend the random way point (RWP) model to capture user mobility. They utilize the meta-heuristic algorithm to decide the optimal compositional plan. 
-
-
-\subsection{service composition over opportunistic network}
-Opportunistic networking is one of the most promising evolutions of the traditional multi-hop networking. Instead of relying itself on stable end-to-end paths as in the Internet, opportunistic networks do not consider node mobility a problem but as an useful opportunity. 
+\subsection{mobile opportunistic network}
+Opportunistic networking is one of the most promising evolutions of the traditional multi-hop networking. 
+Instead of relying itself on stable end-to-end paths as in the Internet, opportunistic networks do not consider node mobility a problem but as an useful opportunity. 
 Marco et al. \cite{Conti2014} give a review of opportunistic network and regarded it as the first step in people-centric networking, they also discuss the focused research problem such as mobility model and routing problem.
 Turkes et al. \cite{turkes2016cocoon} proposed a middleware named Cocoon to support mobile opportunistic network, they design a routing protocol above Wi-Fi and Bluetooth standards, their experiments which use real-world data setups show that Cocoon performs well on the aspects of dissemination rate, delivery latency and energy consumption.
 Giordano et al. \cite{giordano2011human} proposed a novel paradigm that utilize Opportunistic computing as an appealing complement to the mobile computing cloud, in this way, mobile device can combine and exploit heterogeneous resources from other devices.
+Umair Sadiq et al. \cite{sadiq2015service} propose a algorithm for service composition in opportunistic network. They use Levy walk mobility model and SLAW mobility model to represents some scenarios where each node is equally likely to meet any other node. user mobility. Multi-hops mechanism is used to provides a direct measure for reachability of nodes between devices when an end-to-end connected path does not exist.
 Pu et al. \cite{Pu2017crowd} presented QoS-oriented self-organized mobile crowdsourcing framework, in this work, the prevalent and sufficient characteristics of opportunistic user encounters in our daily life are utilized to solve crowdsourcing problem.
+Zhan el al. \cite{zhan2017time} propose a time-sensitive incentive-aware mechanism for mobile opportunistic crowdsensing data collection. They formulate the interaction among data carrier and mobile relay users as a two-user cooperative game and apply a asymmetric Nash bargain solution to obtain the optimal cooperation decision and transfer payment.
+
+It can be seen that the limitation of the existing work lie in: 1) the availability of mobile service is varying fastly in real-world scenario due to the mobility of human. Algorithm which doesn't consider service availability as optimization objective or consider service availability is full stable may lead to high invoking fail rate, and recompose after fail result in high response time. 2) the work \cite{sadiq2015service} and \cite{Deng2017} consider RWP and  Levy model as mobility model, these model borrow concepts and methods from random walks and Brownian motion. However, several studies highlighted that individual trajectories are far from random, possessing a high degree of regularity and predictability. And different mobility model applies to different application environment, e.g., mobility behavior a fixed office place is totally different with a crowded subway, thus, it is difficult to find a suitable which can apply to every scenario. Therefore, an QoS attribute which can be calculated in real-time to indicate service availability is more suitable than these long-range mobility model to guide composition plan to optimal.
 
 
 \section{mobile service opportunistic network}
