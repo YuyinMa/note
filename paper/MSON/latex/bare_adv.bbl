@@ -109,6 +109,33 @@ Y.~Zhan, Y.~Xia, Y.~Liu, F.~Li, and Y.~Wang, ``Time-sensitive data collection
   with incentive-aware for mobile opportunistic crowdsensing,'' \emph{IEEE
   Transactions on Vehicular Technology}, 2017.
 
+\bibitem{barbosa2017human}
+H.~Barbosa-Filho, M.~Barthelemy, G.~Ghoshal, C.~R. James, M.~Lenormand,
+  T.~Louail, R.~Menezes, J.~J. Ramasco, F.~Simini, and M.~Tomasini, ``Human
+  mobility: Models and applications,'' \emph{arXiv preprint arXiv:1710.00004},
+  2017.
+
+\bibitem{bettstetter2003node}
+C.~Bettstetter, G.~Resta, and P.~Santi, ``The node distribution of the random
+  waypoint mobility model for wireless ad hoc networks,'' \emph{IEEE
+  Transactions on mobile computing}, vol.~2, no.~3, pp. 257--269, 2003.
+
+\bibitem{navidi2004improving}
+W.~Navidi, T.~Camp, and N.~Bauer, ``Improving the accuracy of random waypoint
+  simulations through steady-state initialization,'' in \emph{Proceedings of
+  the 15th International Conference on Modeling and Simulation}, 2004, pp.
+  319--326.
+
+\bibitem{camp2002survey}
+T.~Camp, J.~Boleng, and V.~Davies, ``A survey of mobility models for ad hoc
+  network research,'' \emph{Wireless communications and mobile computing},
+  vol.~2, no.~5, pp. 483--502, 2002.
+
+\bibitem{Deng2016-2}
+S.~Deng, L.~Huang, Y.~Li, H.~Zhou, Z.~Wu, X.~Cao, M.~Y. Kataev, and L.~Li,
+  ``{Toward risk reduction for mobile service composition},'' \emph{IEEE
+  transactions on cybernetics}, vol.~46, no.~8, pp. 1807--1816, 2016.
+
 \bibitem{li2014can}
 Y.~Li and W.~Wang, ``Can mobile cloudlets support mobile applications?'' in
   \emph{Infocom, 2014 proceedings ieee}.\hskip 1em plus 0.5em minus 0.4em\relax
