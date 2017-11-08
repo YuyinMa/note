@@ -34,6 +34,11 @@ t=sf,textfont=sf]{subfig}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}} 
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
 \usepackage{amsfonts,amssymb}
+\usepackage{tikz}
+
+\newcommand\encircle[1]{%
+  \tikz[baseline=(X.base)] 
+    \node (X) [draw, shape=circle, inner sep=0] {\strut #1};}
 
 % \usepackage{cases}
 \usepackage{amsmath}
@@ -285,57 +290,108 @@ Ava(i,j) = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\bet
 \end{align}
 
 \subsection{System Model}
-For mobile service requesters to select candidate service, QoS must be considered \cite{Wu2016,luo2014efficient,luo2016generating}. Generally, QoS attributes include response time, price, reliability, and reputation, we introduce mobile service availability as an important QoS attribute in this paper to describe user's mobility behavior. QoS attributes in this paper can be classified into two categories: positive ($Q^+$) and negative ($Q^{-}$). For positive attributes, larger values indicate better performance (e.g., reputation and availability), while for negative attributes, smaller values indicate better performance (e.g., response time and cost).
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{./img/DAG2.pdf}
+\caption{A sample schedule}
+\label{A sample schedule}
+\end{figure}
+
+A Mobile Service Composition Schedule $mscs = (T, E)$ is expressed as a directed acyclic graph (DAG), where $T = \{ t_1, t_2, ..., t_n \}$ is a set of tasks and $E$ is a set of directed edges. An edge $e_{ij}$ of the form $(t_i,t_j)$ indicates that a data dependency between $t_i$ and $t_j$ exists and $t_i/t_j$ are the parent/child tasks respectively. A child task is executed after all its parent tasks are completed. A sample Schedule is illustrated in Fig. 1. The most commonly-used composition constructs (a.k.a. composition patterns) for service orchestration include: Sequence, Choice, Parallel and Loop. We denote them by symbols $\rightarrow$, \encircle{C}, \encircle{P} and \encircle{L}, respectively.
+
+An MSON supports mobile service composition schedule through service providers. If a mobile user is MSON participant, he can decide a set of services of his mobile device to expose to other participants, $P = \{es_1, es_2, ..., es_m \}$. Also he can perceive services exposed by other users, $S = \{s_1^{(i)}, s_2^{(j)}, ..., s_n^{(k)} \}$, $s_n^{(k)}$ means there $k$ candidate services for task $t_i$. It is assumed that a service provider can provide services in parallel.
+
+The execution order of a schedule can be expressed by assigning an index to each task. The index ranges from $1$ to $m$ and the $i$-th item indicates the order of executing $t_i$. The relationship between each task and its index can be described by a function $l : T \rightarrow N^+$ and encoded as a vector containing a permutation of $1$ to $m$. If $i$ occurs before $k$ in order, it does not necessarily indicate that the execution of $t_i$ is earlier than $t_k$. The starting time of tasks is decided by the completion time of their preceding tasks.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3in]{./img/DAG3.pdf}
+\caption{Responsetime}
+\label{Responsetime}
+\end{figure}
+
+As shown in Fig. 3, The overall response time of a $mscs$ is made up of execution time of task $e_i$ and data transfer time $x_i^k$. If task $t_i$ connects $t_k$ through edge $e_{i,k}$ and they are executed by different providers, the transfer time, $x_{i,k}$, is inevitable because inter-provider data and control signal transfer is required. Otherwise, $x_{i,k} = 0$ if both tasks are on the same provider.
+
+$mscs$ tasks executed by different providers usually exhibit varying performance. Moreover, a task executed by the same provider at different time may exhibit fluctuating performance. In this paper, we use the average execution time of recent $n$ trials to represent expected execution time.
 
 \begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.9}
 \caption{Examples of aggregation functions for QoS}
 \label{aggregation functions}
 \centering
-\begin{tabular}{ccc}
+\begin{tabular}{cc}
 \hline
-\bfseries Pattern & \bfseries Resopnse Time & \bfseries Availability \\
+\bfseries Pattern &  \bfseries Availability \\
 \hline
-sequence & $\sum_{i=1}^{n}q_{rt}(S_i)$ & $\prod_{i=1}^{n}q_{ava}(S_i)$ \\
-parallel & $Max\{q_{rt}(S_i)\}$ & $\prod_{i=1}^{n}q_{ava}(S_i)$ \\
-choice & $\sum_{j=1}^{n} p_j \times q_{rt}(S_j)$ & $\sum_{j=1}^{n} p_j \times q_{ava}(S_j)$ \\
-loop & $k \times q_{rt}(S_i)$ & $[q_{ava}(S_i)]^{k}$ \\
+sequence &  $\prod_{i=1}^{n}Ava(S_i)$ \\
+parallel &  $\prod_{i=1}^{n}Ava(S_i)$ \\
+choice   &  $\sum_{i=1}^{n} p_i \times Ava(S_i)$ \\
+loop     &  $[Ava(S_i)]^{k}$ \\
 \hline
 \end{tabular}
 \end{table}
 
-A service composition instance $csi$ can be represented as $csi = \{s_{(1,i)}, s_{(2,j)},...,s_{(n,k)}\}$, where $s_{(j,k)}$ is the selected concrete services. For example, $s_{(1,i)}$ means the $i$-th service candidate is selected to execute $task_1$. For a $csi$, its each QoS attribute is determined by its concrete components and orchestration patterns. Table.1 lists the aggregation functions for response time and availability for sequential, loop, choice, and parallel composition patterns. We can find more aggregation functions found in \cite{jaeger2004qos} and \cite{zheng2013qos}.
-
-In order to facilitate ranking of different composite service instances $csi$ in terms of QoS, we utilize simple additive weighting (SAW) as the QoS utility function to map the QoS value into a real value. SAW first normalizes the QoS attribute values into real values between $0$ and $1$, through comparison with the maximal and minimal values; then it sums the normalized values multiplied with a preference weight $w_t$. According to SAW, the QoS utility of a $csi$ can be calculated using e.q (6), where, $q_t(csi)$ is the aggregated value of the type-$t$ QoS attribute of $csi$, and $q_{t,max}$ and $q_{t,min}$, respectively, denote the maximal and minimal possible aggregated values of the type-$t$ QoS attribute \cite{Wu2016}.
-\begin{align}
-U(csi) = & \sum_{q_t \in Q^-} \frac{q_{t,max}-q_t(csi)}{q_{t,max}-q_{t,min}}\times w_t \\\nonumber
-& +\sum_{q_t \in Q^+} \frac{q_t(csi)-q_{t,min}}{q_{t,max}-q_{t,min}}\times w_t
-\end{align}
 
 \subsection{Problem Formulation}
-Base on the above discussion, we can give the definition of the service composition over MSON problem.
 
-\textit{Definition 4 (MSON Service Composition):} Given a service composition request $req$ by a mobile user $u$, perceive nearby service and select suitable concrete services to achieve an optimal service composition instance $csi$ with the best QoS, that is
+Given a service composition request $req$ by a mobile user $u$, perceive nearby service and select suitable concrete services to achieve an optimal service composition schedule with the best response time $RT$ while meeting the service availability constraint. The resulting problem can therefore be formulated as:
 \begin{align}
-maximize      \ \ : \ \ & U(csi)   \\\nonumber
-subject\ to   \ \ : \ \ & t_i \in \{1,2,3,...,n\}  \\\nonumber
-                        & s_i \in \{1,2,3,...,m \}
+Min  \ \ \  : \ \ \ & RT   \\\nonumber
+s.t \ \ \ : \ \ \ & \tau \le A
 \end{align}
-where $U(csi)$ is the objective function mentioned in e.q (6), $t_i \in [1,n]$ is the index of the tasks in the composition plan, $s_i \in [1, m]$ is the index of service candidates for the $i$-th task.
+Where $A$ is user's availability on availability. $\tau$ is the estimated availability to accomplish the $mscs$, it can be get by aggregation functions shown in Table 1.
+
+The derivation of $\tau$ requires some efforts. $\tau$ can be calculated as the estimated ending time of the last task in the $mssc$:
+\begin{align}
+\tau = d_m
+\end{align}
+where $d_i$ denotes the estimated ending time of task $t_i$.
+
+$d_i$ can be iteratively calculated as:
+\begin{align}
+d_i = e_i + b_i
+\end{align}
+where $b_i$ denotes the estimated starting time of executing $t_i$ and $e_i$ the execution time of $t_i$ itself.
+
+$b_i$ is decided by the estimated ending time of its immediately preceding tasks and the time required for data transfer. Let $\gamma_i$ denote the estimated time that all earlier tasks executed in the same provider to $t_i$ finished, we have:
+\begin{align}
+\gamma_i =  max\{d_j \mid l(j) < l(i) \wedge w(i) = w(j) \}
+\end{align}
+where $l(j) < l(i)$ indicates that $t_j$’s order index is smaller than that of $t_i$ and $w(i) = w(j)$ means that $t_i$ and $t_j$ are scheduled into the same provider.
+
+Note that the dependency constraint requires that a task be executed only if its all immediately preceding ones successfully terminate and transfer data. We use $y_i$ to denote the estimated earliest time that the described condition holds for $t_i$.
+\begin{align}
+y_i = max \{d_k + x_{k,i} \mid t_k \ \in \ ^{*}t_i \} 
+\end{align}
+where $^{*}t_i$ denotes the immediately preceding tasks of $t_i$ , i.e., those which directly connect $t_i$ through edges in the $mscs$.
+The earliest possible time to execute $t_i$, $b_i$, can therefore be calculated as:
+\begin{align}
+b_i = max \{ \gamma_i, y_i \}
+\end{align}
+The entry task of a $mscs$ has no preceding tasks and therefore its estimated ending time is obtained as:
+\begin{align}
+d_1 = b_1 + e_1
+\end{align}
+Where $b_1$ can be obtained as:
+\begin{align}
+b_1 = \delta + e_{entry, 1}
+\end{align}
+where $\delta$ is the time between receiving a service composition request and a schedule plan is generated.
 
 \textit{Theorem 1:} The service composition problem over MSON (Definition 6) is NP-hard.
 
 \textit{Proof:} We can reduce the service composition problem over MSON problem to a knapsack problem, and this problem can be solved by integer programming. 
 The canonical form of integer linear program to search the optimal solution of this problem can be expressed as follow \cite{papadimitriou1998combinatorial}:\
 \begin{align}
-maximize     \ \ : \ \ & F(X) = c^{T}X     \\\nonumber
-subject\ to  \ \ : \ \ & Ax \le b, \\\nonumber
+Min     \ \ : \ \ \ & F(X) = c^{T}X     \\\nonumber
+s.t  \ \ : \ \ \ & Ax \le b, \\\nonumber
                	       & x_i \in \mathbb{Z}^{n} \\\nonumber
                        & x_i > 0 
 \end{align}
-Where $F(x)$ is objective function, $X$ is feasible solution, $n$ is a positive integer, $b$ and $c$ are vectors, $A$ is a matrix.
+Where $F(x)$ is an objective function, $X$ is a feasible solution, $n$ is a positive integer, $b$ and $c$ are vectors, $A$ is a matrix.
 %matrix $A$ and vector $b$ construct the constrain of service candidates bounds, vector $c$ means how to map the feasible solution $x$ to objective value.
-For the problem of selecting optimal services composition over MSON, the vector $X = \{s_{(1,i)}, s_{(2,j)}. . . , s_{(n,k)}\}$ can describe a feasible solution as a service composition with $n$ tasks. 
+
+For the service selection and composition problem, the vector $X = \{s_{(1,i)}, s_{(2,j)}. . . , s_{(n,k)}\}$ can describe a feasible solution as a service composition with $n$ tasks. 
 % An element $ms_{1i}$ in corresponds to a selected service from the candidates for the $1$-th task.
 The optimal solution  $X^*$ satisfies the following conditions:
 
@@ -343,7 +399,7 @@ The optimal solution  $X^*$ satisfies the following conditions:
 
 ​2) for all feasible $X$, $F(X^*) \le F(X)$. 
 
-The target of the mobile service composition problem over MSON is to find the biggest $F(x)$. Thus, the problem is equivalent to the integer programming problem which is known to be NP-hard. Then the service composition problem over MSON is NP-hard.
+The target of the mobile service composition problem over MSON is to find the smallest $F(x)$. Thus, the problem is equivalent to the integer programming problem which is known to be NP-hard. Then the problem we formulate is NP-hard.
 
 \section{The kh-based algorithm for mobile service composition}
 For the problem we formulate above, integer programming can be utilized to obtain the optimal solution. However, integer programming might cost much more time with the increment of problem size because of its poor scalability \cite{nemhauser1988integer}. To solve this problem in polynomial time, an meta-heuristic algorithms such as GAs and PSO, can be utilized to find the near optimal solution.
