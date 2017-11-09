@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: bare_adv.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: mybibtex.bib
+Repeated entry---line 632 of file mybibtex.bib
+ : @article{dinh2013survey
+ :                        ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 643 of file mybibtex.bib
+ : @article{groba2014opportunistic
+ :                                ,
+I'm skipping whatever remains of this entry
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 40 entries,
+            4087 wiz_defined-function locations,
+            1055 strings with 15506 characters,
+and the built_in function-call counts, 34749 in all, are:
+= -- 2844
+> -- 870
+< -- 347
++ -- 484
+- -- 142
+* -- 1691
+:= -- 5041
+add.period$ -- 89
+call.type$ -- 40
+change.case$ -- 39
+chr.to.int$ -- 798
+cite$ -- 40
+duplicate$ -- 2414
+empty$ -- 2637
+format.name$ -- 179
+if$ -- 8143
+int.to.chr$ -- 0
+int.to.str$ -- 40
+missing$ -- 403
+newline$ -- 143
+num.names$ -- 40
+pop$ -- 879
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 2679
+stack$ -- 0
+substring$ -- 1901
+swap$ -- 2100
+text.length$ -- 81
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 40
+warning$ -- 0
+while$ -- 173
+width$ -- 42
+write$ -- 422
+(There were 2 error messages)

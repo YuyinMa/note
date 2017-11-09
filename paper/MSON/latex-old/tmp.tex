@@ -1,0 +1,160 @@
+
+The first motion Fi covered two parts: the current food location and the information about the previous location. For the krill i, we formulated this motion below:
+
+where
+
+and V is the foraging speed, ω is the inertia weight of the foraging f old f
+motion in (0,1) Fi is the last foraging motion.
+
+The direction led by the second movement Ni, αi, is estimated
+by the three effects: target effect, local effect, and repulsive effect. For a krill i, it can be formulated below:
+
+and Nmax is the maximum induced speed, ωn is the inertia weight of the second motion in (0,1) Nold is the last motion influenced by
+other krill.
+
+For the ith krill, as a matter of fact, the physical diffusion
+is a random process. This motion includes two components: a maximum diffusion speed and an oriented vector. The expression of physical diffusion can be given below
+
+where Dmax is the maximum diffusion speed, and δ is the oriented vector whose values are random numbers between  1 and 1.
+According to the three above-analyzed actions, the time-relied position from time t to tþΔt can be formulated by the following equation:
+
+Most importantly, note that Δt is an important parameter and should be regulated in terms of the special real-life problem. The reason is that, to some extent, this parameter can be treated as a scale factor of the speed and features the variations of the global best attraction, and its value is of vital importance in determining the speed of the convergence and how the KH works. More details about regular KH approach and the three main moves can be referred as [3,33].
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+It is known that an optimization algorithm should be capable of searching spaces of arbitrary dimensionality. Therefore, the following Lagrangian model is generalized to an $n$ dimensional decision space \cite{gandomi2012krill}:
+
+\begin{equation}
+\frac{dX_i}{dt} =N_i+F_i+D_i
+\end{equation}
+
+where $X_i = (x_{i1}, x_{i2}, . . . , x_{in})$ is the position vector of the $i$-th krill individual (composition service instance $csi$), $n$ is the number of tasks in the service composition, $x_{ij}$ is the selected candidate for the $j$-th task in solution $X_i$, where $N_i$, $F_i$, and $D_i$ denote the motion influenced by other krill individals, the foraging motion, and the physical diffusion of the krill $i$, respectively.
+
+2) Motion Induced by Other Krill Individuals $N_i$: This step is to optimize each composition by learning from other feasible compositions. The direction of motion induced by other krill individuals (feasible compositions) , this operation can be defined as follow
+
+\begin{equation}
+N^{new}_i = N^{max}\alpha_i + \omega_n N^{old}_i
+\end{equation}
+
+where
+
+\begin{equation}
+\alpha_i = \alpha^{local}+\alpha^{target}
+\end{equation}
+
+and $N^{max}$ is the maximum induced speed, $\omega_n \in [0, 1]$ the inertia weight of the induced motion, $N^{old}_{i}$ is the induced motion of the previous iteration, $\alpha_i$ is the direction of the induced motion, $\alpha^{local}$ is the local effect provided by neighbor mobile service compositions and $\alpha^{target}$ is the target direction effect provided by the local optimal composition result.
+
+The effect of the neighbors can be regarded as an attractive/repulsive tendency among the feasible compositions for a local search. Such effect of the neighbors in a krill movement individual is determined as
+
+\begin{eqnarray}
+\alpha_i^{local} = \sum_{j=1}^{k}\hat{F}_{i,j}\hat{X}_{i,j}\\
+\hat{X}_{i,j} = \frac{X_i-X_j}{\Vert X_i-X_j \Vert + \varepsilon}\\
+\hat{F}_{i,j} = \frac{F_i-F_j}{F_{worst}-F_{best}}\\
+\end{eqnarray}
+
+where $F_{worst}$ and $F_{best}$ are the worst and best fitness values of mobile service compositions at the current iteration. $F_i$ is the fitness value of the $i$-th $csi$ calculated by (3), $F_j$ is the fitness value of the $j$-th $(j = 1,2,...,k)$ neighbor $csi$, and $k$ is the number of the neighbor mobile service compositions. For avoiding the singularities, a small positive number $\varepsilon = 0.0001$ is added to the denominator \cite{gandomi2012krill}.
+
+
+For choosing neighbors, the sensing distance for the $i$-th service composition can be calculated as follow
+
+\begin{equation}
+d_{s,i} = \frac{1}{5N}\sum_{j=1}^{N}\Vert X_i-X_j \Vert
+\end{equation}
+
+where $N$ is the population size. If the distance of two service composition vectors is less than $d_{s,i}$, they are assumed as neighbors.
+
+​To evaluate the target effect of each service composition, the optimal service composition of the current iteration with the best fitness value is taken into account by using
+
+\begin{equation}
+\alpha^{target}_{i} = C^{best}\hat{F}_{best}\hat{X}_{best}
+\end{equation}
+
+where, $C^{best}$ is the effective coefficient of the service composition with the best fitness to the $i$-th service composition. This coefficient is defined since $\alpha^{target}$ leads the solution to the local optima and it should be more effective than other neighbor service compositions. The value of $C^{best}$ is defined as follow
+
+\begin{equation}
+C^{best} = 2(rand+\frac{I}{I_{max}})
+\end{equation}
+
+where $rand \in [0, 1]$ is a random value to enhance exploration, $I$ is the actual iteration count, and $I_{max}$ is the maximum number of iterations.
+
+3) Foraging Motion $F_i$: Besides getting knowledge from its neighbors, a mobile service composition also gets knowledge from global optima, which is expressed as food attraction in the foraging motion. That means the KH algorithm not only gets partial knowledge but also global knowledge. The foraging motion is influenced by two main factors, 1) new food locations, 2) previous experiences about food locations. For the $i$-th mobile service composition, this motion can be defined as follows:
+
+\begin{equation}
+F_i = V_f\beta_i + \omega_f F^{old}_i
+\end{equation}
+
+where $V_f$ is the foraging speed (empirically set to $0.02$ in this paper), $\omega_f∈ [0, 1]$ is the inertia weight of foraging motion, and $F^{old}_i$ is the foraging motion in the previous iteration. $\beta_i$ is the direction of the foraging motion
+
+\begin{equation}
+\beta_i = \beta_i^{food}+\beta_i^{best}
+\end{equation}
+
+where $\beta^{food}_i$ is the attractive food and $\beta^{best}_i$ is the effect of the best fitness value of the $i$-th mobile service composition so far. 
+
+In KH, the virtual center of food concentration is approximately calculated according to the fitness value distribution of krill individuals, as it is inspired by "center of mass." It is formulated as follows:
+
+\begin{eqnarray}
+X^{food} = \frac{\Sigma_{i=1}^N \frac{1}{F_i}X_i}{\Sigma_{i=1}^{N}\frac{1}{F_i}}
+\end{eqnarray}
+
+The food attraction for the $i$-th service composition can be determined as follows:
+
+\begin{equation}
+\beta^{food}_{i} = C^{food}F_{food}X_{food}
+\end{equation}
+
+where $C^{food}$ is the food coefficient. As the effect of food in the krill herding decreases during the time, the food coefficient is determined as
+
+\begin{equation}
+C^{food} = 2(1-\frac{I}{I_{max}})
+\end{equation}
+
+The food attraction is defined to possibly attract the mobile service composition to get close to the global optimum. Based on this definition, the service compositions normally gather around the global optima after some iterations. This can be considered as an efficient global optimization strategy to help improve the convergence of the KH algorithm. The effect of the fitness value of the $i$-th mobile service composition can be calculated as follows:
+
+\begin{equation}
+\beta_i^{best} = \hat{F}_{i,best}\hat{X}_{i,best}
+\end{equation}
+
+where $\hat{X}_{i,best}$ is the best previously generated position of the $i$-th krill individual.
+
+4) Physical Diffusion $D_i$: This step aims to keep the diversity of generated mobile service compositions in each iteration and avoid an early convergence. The physical diffusion of the service compositions is considered to be a random process. This motion can be expressed in terms of a maximum diffusion speed and a random directional vector, it can be formulated as follows:
+
+\begin{equation}
+D_i = D^{max}\delta
+\end{equation}
+
+where $D^{max}$ is the maximum diffusion speed and $\delta$ is a random directional vector with $\delta_i \in [−1, 1]$. In this paper, the maximum diffusion speed is randomly generated in $[0.002, 0.01]$. The better service composition is initialized, the fewer movements are required to find the optimal answer. The effect of the induced motion from other mobile service compositions and foraging motion gradually decreases with increasing iterations. Thus, (19) is modified to gradually decrease the random speed over iterations, that is
+
+\begin{equation}
+D_i = D^{max}(1-\frac{I}{I_{max}})\delta
+\end{equation}
+
+5) Position Update: In KH, defined motions frequently change the positions of krill individual/mobile service compositions to get better fitness value. The foraging motion and induced motion by other krill individuals/mobile service compositions contain two global and two local strategies. These are working in parallel to make KH a powerful optimization algorithm. Using different effective parameters of the motion over time, the position vector of a krill individual/mobile service composition at time $t + \Delta t$ can be calculated as:
+
+\begin{equation}
+X_i(t+\Delta t) = X_i(t) + \Delta t \frac{dX_i}{dt}
+\end{equation}
+
+where $\Delta t$ is a scale factor of the speed vector and is set according to a search space, it can be obtained from
+
+\begin{equation}
+\Delta t = C_t\sum_{j=1}^{d}(UB_j - LB_j)
+\end{equation}
+
+where $d$ is the total number of tasks in each mobile service composition, and $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space. Lower values of $C_t$ lead to slower motion of krill individuals/monile service compositions, i.e., a thorough search.
