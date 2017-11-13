@@ -47,6 +47,33 @@ R.~Balani, ``Energy consumption analysis for bluetooth, wifi and cellular
   networks,'' \emph{Online Httpnesl Ee Ucla
   Edufwdocumentsreports2007PowerAnalysis Pdf}, 2007.
 
+\bibitem{Conti2014}
+M.~Conti and S.~Giordano, ``{Mobile ad hoc networking: milestones, challenges,
+  and new research directions},'' \emph{IEEE Communications Magazine}, vol.~52,
+  no.~1, pp. 85--96, 2014.
+
+\bibitem{turkes2016cocoon}
+O.~Turkes, H.~Scholten, and P.~J. Havinga, ``Cocoon: A lightweight
+  opportunistic networking middleware for community-oriented smart mobile
+  applications,'' \emph{Computer networks}, vol. 111, pp. 93--108, 2016.
+
+\bibitem{giordano2011human}
+S.~Giordano and D.~Puccinelli, ``The human element as the key enabler of
+  pervasiveness,'' in \emph{Ad Hoc Networking Workshop (Med-Hoc-Net), 2011 The
+  10th IFIP Annual Mediterranean}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2011, pp. 150--156.
+
+\bibitem{Pu2017crowd}
+L.~Pu, X.~Chen, J.~Xu, and X.~Fu, ``Crowd foraging: A qos-oriented
+  self-organized mobile crowdsourcing framework over opportunistic networks,''
+  \emph{IEEE Journal on Selected Areas in Communications}, vol.~35, no.~4, pp.
+  848--862, 2017.
+
+\bibitem{zhan2017time}
+Y.~Zhan, Y.~Xia, Y.~Liu, F.~Li, and Y.~Wang, ``Time-sensitive data collection
+  with incentive-aware for mobile opportunistic crowdsensing,'' \emph{IEEE
+  Transactions on Vehicular Technology}, 2017.
+
 \bibitem{Deng2016}
 S.~Deng, L.~Huang, H.~Wu, W.~Tan, J.~Taheri, A.~Y. Zomaya, and Z.~Wu, ``{Toward
   Mobile Service Computing: Opportunities and Challenges},'' \emph{IEEE Cloud
@@ -81,33 +108,6 @@ C.~Zhang, L.~Zhang, and G.~Zhang, ``Qos-aware mobile service selection
 J.~Wang, ``Exploiting mobility prediction for dependable service composition in
   wireless mobile ad hoc networks,'' \emph{IEEE Transactions on Services
   Computing}, vol.~4, no.~1, pp. 44--55, 2011.
-
-\bibitem{Conti2014}
-M.~Conti and S.~Giordano, ``{Mobile ad hoc networking: milestones, challenges,
-  and new research directions},'' \emph{IEEE Communications Magazine}, vol.~52,
-  no.~1, pp. 85--96, 2014.
-
-\bibitem{turkes2016cocoon}
-O.~Turkes, H.~Scholten, and P.~J. Havinga, ``Cocoon: A lightweight
-  opportunistic networking middleware for community-oriented smart mobile
-  applications,'' \emph{Computer networks}, vol. 111, pp. 93--108, 2016.
-
-\bibitem{giordano2011human}
-S.~Giordano and D.~Puccinelli, ``The human element as the key enabler of
-  pervasiveness,'' in \emph{Ad Hoc Networking Workshop (Med-Hoc-Net), 2011 The
-  10th IFIP Annual Mediterranean}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
-  2011, pp. 150--156.
-
-\bibitem{Pu2017crowd}
-L.~Pu, X.~Chen, J.~Xu, and X.~Fu, ``Crowd foraging: A qos-oriented
-  self-organized mobile crowdsourcing framework over opportunistic networks,''
-  \emph{IEEE Journal on Selected Areas in Communications}, vol.~35, no.~4, pp.
-  848--862, 2017.
-
-\bibitem{zhan2017time}
-Y.~Zhan, Y.~Xia, Y.~Liu, F.~Li, and Y.~Wang, ``Time-sensitive data collection
-  with incentive-aware for mobile opportunistic crowdsensing,'' \emph{IEEE
-  Transactions on Vehicular Technology}, 2017.
 
 \bibitem{barbosa2017human}
 H.~Barbosa-Filho, M.~Barthelemy, G.~Ghoshal, C.~R. James, M.~Lenormand,
@@ -168,6 +168,13 @@ S.~Liu and A.~D. Striegel, ``Exploring the potential in practice for
   of the 19th annual international conference on Mobile computing \&
   networking}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2013, pp. 315--326.
 
+\bibitem{wu2001personal}
+H.-K. Wu, M.-H. Jin, J.-T. Horng, and C.-Y. Ke, ``Personal paging area design
+  based on mobile's moving behaviors,'' in \emph{INFOCOM 2001. Twentieth Annual
+  Joint Conference of the IEEE Computer and Communications Societies.
+  Proceedings. IEEE}, vol.~1.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2001, pp. 21--30.
+
 \bibitem{el2010tqos}
 J.~El~Hadad, M.~Manouvrier, and M.~Rukoz, ``Tqos: Transactional and qos-aware
   selection algorithm for automatic web service composition,'' \emph{IEEE
@@ -183,10 +190,9 @@ A.~H. Gandomi and A.~H. Alavi, ``Krill herd: a new bio-inspired optimization
   algorithm,'' \emph{Communications in Nonlinear Science and Numerical
   Simulation}, vol.~17, no.~12, pp. 4831--4845, 2012.
 
-\bibitem{khatib1998stud}
-W.~Khatib and P.~J. Fleming, ``The stud ga: a mini revolution?'' in
-  \emph{International Conference on Parallel Problem Solving from
-  Nature}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 1998, pp. 683--691.
+\bibitem{wang2014stud}
+G.-G. Wang, A.~H. Gandomi, and A.~H. Alavi, ``Stud krill herd algorithm,''
+  \emph{Neurocomputing}, vol. 128, pp. 363--370, 2014.
 
 \bibitem{eagle2006reality}
 N.~Eagle and A.~S. Pentland, ``Reality mining: sensing complex social
@@ -197,11 +203,6 @@ N.~Eagle and A.~S. Pentland, ``Reality mining: sensing complex social
 Z.~Zheng, Y.~Zhang, and M.~R. Lyu, ``Investigating qos of real-world web
   services,'' \emph{IEEE Transactions on Services Computing}, vol.~7, no.~1,
   pp. 32--39, 2014.
-
-\bibitem{deng2016service}
-S.~Deng, H.~Wu, D.~Hu, and J.~L. Zhao, ``Service selection for composition with
-  qos correlations,'' \emph{IEEE Transactions on Services Computing}, vol.~9,
-  no.~2, pp. 291--303, 2016.
 
 \bibitem{wu2013transactional}
 Q.~Wu and Q.~Zhu, ``Transactional and qos-aware dynamic service composition
