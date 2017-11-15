@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  10 NOV 2017 17:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.5)  14 NOV 2017 11:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -725,12 +725,12 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 197--198
  [][] 
  []
 
-[3 <./img/pic2.pdf>] <./img/pic3.pdf, id=104, 914.97241pt x 674.86926pt>
+[3 <./img/pic2.pdf>] <./img/pic3.pdf, id=104, 915.72945pt x 673.84525pt>
 File: ./img/pic3.pdf Graphic file (type pdf)
 
 <use ./img/pic3.pdf>
 Package pdftex.def Info: ./img/pic3.pdf used on input line 230.
-(pdftex.def)             Requested size: 216.81pt x 159.9124pt.
+(pdftex.def)             Requested size: 216.81pt x 159.53609pt.
  [4 <./img/pic3.pdf>]
 <./img/DAG2.pdf, id=137, 836.69896pt x 226.96404pt>
 File: ./img/DAG2.pdf Graphic file (type pdf)
@@ -874,7 +874,7 @@ cal/texlive/2017basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
 exlive/2017basic/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texli
 ve/2017basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
 17basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (11 pages, 865733 bytes).
+Output written on bare_jrnl.pdf (11 pages, 865961 bytes).
 PDF statistics:
  495 PDF objects out of 1000 (max. 8388607)
  363 compressed objects within 4 object streams
