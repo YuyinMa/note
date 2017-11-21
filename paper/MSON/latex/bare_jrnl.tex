@@ -46,14 +46,28 @@
 
 \title{Availability-aware Mobile Service Composition Over Oppotunistic Networks}
 
-\author{Michael~Shell,~\IEEEmembership{Member,~IEEE,}
-        John~Doe,~\IEEEmembership{Fellow,~OSA,}
-        and~Jane~Doe,~\IEEEmembership{Life~Fellow,~IEEE}% <-this % stops a space
-\thanks{M. Shell was with the Department
-of Electrical and Computer Engineering, Georgia Institute of Technology, Atlanta,
-GA, 30332 USA e-mail: (see http://www.michaelshell.org/contact.html).}% <-this % stops a space
-\thanks{J. Doe and J. Doe are with Anonymous University.}% <-this % stops a space
-\thanks{Manuscript received April 19, 2005; revised August 26, 2015.}}
+\author{Qinglan Peng,
+        Mengchu Zhou, ~\IEEEmembership{Fellow,~IEEE,}
+        Yunni Xia*, ~\IEEEmembership{Senior member,~IEEE,}
+        Shuiguang Deng, ~\IEEEmembership{Senior member,~IEEE,}
+        Xin Luo, ~\IEEEmembership{Senior member,~IEEE,}
+        Qingsheng Zhu,
+        Wanbo Zheng
+
+
+\thanks{This work is in part supported by NSFC under Grant No. 61472051; Fundamental Research Funds for the Central Universities under project Nos. 106112014CDJZR185503 and CDJZR12180012; Science foundation of
+Chongqing Nos. cstc2014jcyjA40010 and cstc2014jcyjA90027; Chongqing Social Undertakings and Livelihood Security Science and Technology Innovation Project Special Program No. cstc2016shmszx90002; China Postdoctoral Science Foundation No. 2015M570770; Chongqing Postdoctoral Science special Foundation No. Xm2015078; Universities’ Sci-tech Achievements Transformation Project of Chongqing No. KJZH17104.}
+
+\thanks{Qinglan Peng, Yunni Xia, and Qingsheng Zhu are with the school of computers, Chongqing University, Chongqing 400030, China (emails: qlp@cqu.edu.cn, xiayunni@hotmail.com, qszhu@cqu.edu.cn, wbzheng2008@cqu.edu.cn)}
+
+\thanks{X. Luo is with Chinese Academy of Sciences, Chongqing Institute of Green and Intelligent
+Technology, Chongqing 400714, China (luoxin21@gmail.com)}
+
+\thanks{M. C. Zhou is with Department of Electrical and Computer Engineering, New Jersey Institute of Technology, Newark, NJ 07102, USA (email:zhou@njit.edu).}
+
+\thanks{Yunni Xia is the corresponding author of this work.}
+}
+
 
 % The paper headers
 \markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
@@ -71,7 +85,7 @@ Opportunistic mobile service computing is a promising paradigm capable of utiliz
 Nevertheless, various challenges, especially its quality-of-service (QoS) and optimal scheduling, are yet to be addressed. Existing studies and related scheduling strategies consider mobile users to be fully stable and available.
 In this paper, instead, we propose a framework named mobile service opportunistic network (MSON) and an availability-aware schedule model for service composition. 
 We then formulate the problem into an optimization problem and utilize an improved Krill-Herd algorithm to solve it.
-Finally, we carry out a case study based on some well-known web service workflows and a real-world dataset (the D2D contact traces of MIT Reality dataset and the response time data of QWS dataset). The comparison implies that our proposed approach outperforms traditional approaches, especially those considering stable and fully available mobille services.
+Finally, we carry out a case study based on some well-known web service composition templates and a real-world dataset. The comparison suggest that our proposed approach outperforms traditional approaches, especially those which consider stable and fully available mobile services  in their models and algorithms..
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
@@ -85,16 +99,16 @@ Mobile Computing, Mobile opportunistic network, Mobile Service Composition, Serv
 
 \noindent
 \begin{tabular}{@{} l p{7.36cm} }
-\textbf{CMS}  &   Composite mobile service \\
-\textbf{C2M}  &   Cloud to Mobile pattern\\
-\textbf{D2D}  &   Device to Device communications \\
-\textbf{GA}   &   Genetic algorithm \\
-\textbf{KH}   &   Krill-Herd algorithm \\
-\textbf{MSON} &   Mobile service opportunistic network \\
-\textbf{M2M}  &   Mobile to Mobile pattern \\
-\textbf{RWP}  &   Random way point mobility model \\
-\textbf{QoS}  &   Quality of Service \\
-\textbf{SLA}  &   Service-level-agreement \\
+\textbf{CMS}   &   Composite mobile service \\
+\textbf{C2M}   &   Cloud to Mobile pattern\\
+\textbf{D2D}   &   Device to Device communications \\
+\textbf{GA}    &   Genetic algorithm \\
+\textbf{KH}    &   Krill-Herd algorithm \\
+\textbf{MSCON} &   Mobile service composition over opportunistic network \\
+\textbf{M2M}   &   Mobile to Mobile pattern \\
+\textbf{RWP}   &   Random way point mobility model \\
+\textbf{QoS}   &   Quality of Service \\
+\textbf{SLA}   &   Service-level-agreement \\
 \end{tabular}
 
 ~\\
@@ -106,26 +120,26 @@ Mobile Computing, Mobile opportunistic network, Mobile Service Composition, Serv
 \begin{tabular}{@{} l p{7.36cm} }
 $\alpha$      &   Half of consumer central angle \\
 $\beta$       &   Half of provider central angle \\
-$\gamma_{i}$  &   The estimated time that all earlier tasks scheduled to the same provider to $t_i$ finished \\
-$\delta$      &   The time between initiate a CMS request and a corresponding schedule is generated \\
-$\tau$        &   The estimated reliability to accomplish the workflow \\
-$Ava(s)$      &   The function to get the service's availability \\
-$b_i$         &   The estimated start time of $t_i$ \\
+$\gamma_{i}$  &   The estimated time that all earlier tasks scheduled to the same provider to $t_i$ are accomplished  \\
+$\delta$      &   The time between the arrival of a CMS request and the generation of its corresponding schedule \\
+$\tau$        &   The estimated reliability of the accomplish the workflow \\
+$Ava(s)$      &   The function to identify availability of service $s$ \\
+$b_i$         &   The estimated starting time of $t_i$ \\
 $C$           &   The user-recommended constraint of the reliability of the schedule \\
 $data_{i,k}$  &   The transfer time between $t_i$ and $t_k$ \\
-$d_i$         &   The estimated end time of $t_i$ \\
+$d_i$         &   The estimated ending time of $t_i$ \\
 $e_i$         &   The estimated execution time of $t_i$ \\
 $e_{i,j}$     &   The edge connecting $t_i$ and $t_j$ \\
 $l(i)$        &   The function to identify the index of $t_i$ \\
-$P$           &   Available mobile service pool \\
+$P$           &   A pool of available mobile services \\
 $R$           &   Transmission range of a node \\
-$RT$          &   The estimated response time of a schedule \\
+$RT$          &   The estimated execution time of a schedule \\
 $t_i$         &   The $i$-th task of a workflow \\
 $\bar{t}$     &   The average service time of a concrete service \\
 $t_{entry}$   &   The dummy beginning task of a workflow \\
 $t_{exit}$    &   The dummy ending task of a workflow \\
-$w(i)$        &   The function to identify the provider on which task $t_i$ is to be scheduled into \\
-$y_i$         &   the estimated earliest time that all immediately preceding ones successfully terminate and transfer data \\
+$w(i)$        &   The function to identify the provider that $t_i$ is scheduled into \\
+$y_i$         &   the estimated earliest time that all immediately preceding tasks successfully terminate and transfer data \\
 \end{tabular}
 
 \IEEEpeerreviewmaketitle
@@ -137,8 +151,8 @@ $y_i$         &   the estimated earliest time that all immediately preceding one
 The number of mobile devices is still booming and it has already surpassed stationary Internet hosts.
 Mobile services are also developed and provided at a significant rate, at the same time, the requirements from mobile users are becoming more demanding, i.e., more complicated applications are needed to be run on mobile devices such as virtual reality applications on mobile phones \cite{bastug2017toward} or machine learning applications \cite{abadi2016tensorflow} on mobile phones. However, because of the limited hardware resources of mobile devices (e.g., computational resource, battery life, memory, and storage), these resources-intensive tasks are usually offloaded to mobile computing cloud \cite{dinh2013survey}, which result in high data transfer costs (energy cost and communication fee) and high latency.
 
-Opportunistic computing is promising complementary to conventional mobile cloud computing. As illustrated in Fig.1, the basic idea of opportunistic computing is to allow the users to utilize the resources and services that other users share, by exploiting the direct physical contacts between the users, and the resulting potential to exchange data through a direct connection between their devices (e.g., through Wi-Fi or Bluetooth). Resources and services available on mobile devices can be directly shared among users in a elastic and on-demand way without time-consuming and energy-requiring interactions with pre-existing infrastructure, either at the networking level (e.g., cellular networks) or at the computing/service level (e.g., the mobile computing cloud). 
-Note that, mobile tasks usually require huge computational resources or data transfer (e.g., Tensorflow on mobile, Video editor on mobile and Online video). Nearby mobile service provider are thus more adept, in terms of energy-efficiency, at executing these tasks than the online services or nodes with the help of device to device (D2D) communications such as Bluetooth, Wi-Fi and NFC \cite{balani2007energy}. D2D communications are featured by extensively-reduced data transfer delays and required energy than traditional cellular network. Thus it provides better user-perceived service quality in terms of reduced waiting time and improved service responsiveness. It is promising to replenish traditional cellular communications in terms of user throughput increase, cellular traffic reduction and network coverage extension. 
+Opportunistic computing is a promising complementary to conventional mobile cloud computing. As illustrated in Fig.1, the basic idea of opportunistic computing is to allow the users to utilize the resources and services that other users share, by exploiting the direct physical contacts between the users, and the resulting potential to exchange data through a direct connection between their devices (e.g., through Wi-Fi or Bluetooth). Resources and services available on mobile devices can be directly shared among users in a elastic and on-demand way without time-consuming and energy-requiring interactions with pre-existing infrastructure, either at the networking level (e.g., cellular networks) or at the computing/service level (e.g., the mobile computing cloud). 
+Note that, mobile tasks usually require huge computational resources or data transfer (e.g., Tensorflow on mobile, Video editor on mobile and Online video). Nearby mobile service provider are thus more adept, in terms of energy-efficiency, at executing these tasks than the online services or nodes with the help of device to device (D2D) communications such as Bluetooth, Wi-Fi and NFC \cite{balani2007energy}. D2D communications are featured by extensively-reduced data transfer delays and required energy than traditional cellular network. Thus it provides better user-perceived service quality in terms of reduced waiting time and improved service responsiveness. It is widely believed to have potential to replenish traditional cellular communications by providing increased user throughput, reduced cellular traffic, and extened network coverage.
 
 \begin{figure}[!t]
 \centering
@@ -149,47 +163,53 @@ Note that, mobile tasks usually require huge computational resources or data tra
 
 However, due to the completely different application patterns compared with traditional service computing, service computing in mobile environment faces two inherent challenges.
 
-1) Constant Mobility: Mobile users may change their locations vary frequently in mobile environment, which results in the variation of service availability. Thus, determining how to handle user mobility is a major challenge for providing reliable mobile services in highly dynamic mobile environments.
+1) Constant Mobility: Mobile users may change their locations very frequently in mobile environment and thus service availability could be fluctuating and time-varying. It is therefore difficult to guarantee high availability of composite services when their underlying mobile services are with time-varying availability or even unavailable. However, for simplicity of their proposed models and algorithms, most existing works consider fully-available mobile services.
 
-2) Limited Resource: Mobile devices have limited computing capability compared with other stationary hosts. And mobile service composition schedule must be generated as fast as possible because the availability of mobile service may vary much within a short time. Therefore, how to design a service selection and composition algorithms with fast convergence rate and good scalability is another key challenge.
+2) Limited Resource: Mobile devices have limited computing capability compared with stationary ones. Designing scheduling algorithms with high time-complexity should be avoided.
+Moreover, such algorithms are supposed to be highly time-efficient because mobile services themselves are with time-varying availability/QoS and only fast ones avoid ineffective scheduling, as well. 
+Nevertheless, the underlying problem for optimal scheduling and composition is well acknowledged to be NP-hard. It is therefore a great challenge to guarantee both low time-complexity and optimallity of such algorithms.
 
-To address the aforementioned challenges and concerns, we propose an availability-aware mobile service composition approach in this paper, where a mobile user in mobile service opportunistic network are allowed to combine and exploit, through D2D communications, nearby devices' resources with time-varying availability (in contrast, traditional approaches mainly consider fully-available mobile services) to boost their computing power and therefore overcome the limitations of their own resources. 
+To address the aforementioned challenges and concerns in this work, we propose an availability-aware mobile service composition approach, called mobile service composition over opportunistic network, MSCON for short, where mobile users in mobile service opportunistic network are allowed to combine and exploit, through D2D communications, nearby devices' resources. Instead of assuming fully available mobile services, we consider time-varying availability of services due to their run-time mobility and develop availability-aware deadline/reliability estimation models for service compositions. Based on the deadline estimation model, we present a Krill-Herd-based algorithm to decide optimal composition schedules at run-time aiming at minimized deadline with guaranteed reliability. To validate our proposed approach, we carry out a case study based on some well-known web service composition templates and a real-world dataset (the D2D contact traces of MIT Reality dataset and the response time data of QWS dataset).
 
-The main contributions are:
+% The main contributions are:
 
-1) We propose a framework (mobile service opportunistic network, MSON in short) to address the problem of service provisioning in the mobile encounter environment where both service requesters and providers are nonstationary and with time-varying availability. In such environment, mobile user can invoke services exposed by nearby mobile devices through D2D links.
+% 1) We propose a framework (mobile service opportunistic network, MSON in short) to address the problem of service provisioning in the mobile encounter environment where both service requesters and providers are nonstationary and with time-varying availability. In such environment, mobile user can invoke services exposed by nearby mobile devices through D2D links.
 
-2) For MSON, we propose a availability-aware schedule model for service composition to capture users' mobility behavior.
+% 2) For MSON, we propose a availability-aware schedule model for service composition to capture users' mobility behavior.
 
-3) Based on MSON and the proposed availability-aware schedule model, we formulate the mobile service composition problem to an optimization problem and propose a Krill-Herd-based algorithm to solve it. 
+% 3) Based on MSON and the proposed availability-aware schedule model, we formulate the mobile service composition problem to an optimization problem and propose a Krill-Herd-based algorithm to solve it. 
 
 
 \section{RELATED WORK}
 
 \subsection{mobile opportunistic network}
-Opportunistic networking is one of the most promising evolutions of the traditional multi-hop networking. 
-Instead of relying itself on stable end-to-end paths as in the Internet, opportunistic networks do not consider node mobility a problem but as an useful opportunity. 
-Marco et al. \cite{Conti2014} give a review of opportunistic network and regarded it as the first step in people-centric networking, they also discuss the focused research problem such as mobility model and routing problem.
-Turkes et al. \cite{turkes2016cocoon} proposed a middleware named Cocoon to support mobile opportunistic network, they design a routing protocol above Wi-Fi and Bluetooth standards, their experiments which use real-world data setups show that Cocoon performs well on the aspects of dissemination rate, delivery latency and energy consumption.
-Giordano et al. \cite{giordano2011human} proposed a novel paradigm that utilize Opportunistic computing as an appealing complement to the mobile computing cloud, in this way, mobile device can combine and exploit heterogeneous resources from other devices.
-Pu et al. \cite{Pu2017crowd} presented QoS-oriented self-organized mobile crowdsourcing framework, in this work, the prevalent and sufficient characteristics of opportunistic user encounters in our daily life are utilized to solve crowdsourcing problem.
-Zhan el al. \cite{zhan2017time} propose a time-sensitive incentive-aware mechanism for mobile opportunistic crowdsensing data collection. They formulate the interaction among data carrier and mobile relay users as a two-user cooperative game and apply a asymmetric Nash bargain solution to obtain the optimal cooperation decision and transfer payment.
+Opportunistic networking is one of the most promising evolutions of the traditional multi-hop one. 
+Instead of relying itself on stable end-to-end paths through Internet, opportunistic networks do not consider node mobility a problem but as an useful opportunity. 
+Extensive research efforts have been paid into this direction. For example, Marco \emph{et al}. \cite{Conti2014} give a review of opportunistic networks and regarded it as the first step in people-centric networking, they also discuss challenges to be addressed, especially the mobility modeling and routing-plan decision problems.
+Turkes \emph{et al}. \cite{turkes2016cocoon} propose a middleware named Cocoon for mobile opportunistic network. They design a routing protocol on Wi-Fi and Bluetooth connections and and show that their proposed protocol performs well in terms of dissemination rate, delivery latency and energy consumption.
+Giordano \emph{et al}. \cite{giordano2011human} consider mobile clouds supported by opportunistic computing, where mobile device can combine and exploit heterogeneous resources from other devices.
+Pu \emph{et al}. \cite{Pu2017crowd} present a QoS-oriented self-organized mobile crowdsourcing framework where prevalent opportunistic user encounters in our daily life are utilized to solve crowdsourcing problem.
+Zhan \emph{el al}. \cite{zhan2017time} propose a time-sensitive incentive-aware mechanism for mobile opportunistic crowdsensing. They formulate the interaction among data carrier and mobile relay users as a two-user cooperative game and apply a asymmetric Nash bargain strategy to obtain the optimal cooperation plan.
 
 \subsection{mobile service composition}
 Mobile service composition refers to the technique of creating composite services with the help of smaller, simpler and easily executable services or components over mobile networks. Recent technological advances in novel mobile device design and development as well as wireless networking materialize a vision where devices all around a user, either embedded as a part of smart spaces, or being carried by other users
-near by, are enabled to present services probably useful. Users sometimes look for services that are not pre-existent on any device but can be dynamically built by appropriately combining already existing ones. For this purpose, extensive research efforts are carried out in this direction. 
-For example, Deng et al. \cite{Deng2016} classify mobile service composition methods into three categories: Cloud to Mobile (C2M), Mobile to Mobile (M2M), Hybrid. They also discussed the challenge toward mobile service provisioning and mobile service composition in terms of performance, energy and security perspective. 
-Later, Deng et al. \cite{Deng2017} proposed a mobile-service-sharing-community model and extend the random way point (RWP) model to capture user mobility. They utilize the meta-heuristic algorithm to decide the optimal compositional plan. 
-Umair Sadiq et al. \cite{sadiq2015service} propose a algorithm for service composition in opportunistic network. They use Levy walk mobility model and SLAW mobility model to represents some scenarios where each node is equally likely to meet any other node. Multi-hops mechanism is used to provides a direct measure for reachability of nodes between devices when an end-to-end connected path does not exist.
-Christin Groba et al. \cite{groba2014opportunistic} present a novel service composition protocol that allocates and invokes service providers opportunistically to minimise the impact of topology changes and to reduce failure.
-Yang et al. \cite{Yang2010} present a comprehensive QoS model specifically for pervasive services. They consider not only mobile wireless network characteristics but also user-perceived factors. They derive a corresponding formula to calculate the QoS criterion.
-zhang et al. \cite{Zhang2016qos} consider a context-aware mobile service selection algorithm based on Genetic Algorithm, They introduce a tree-encoding method to improve the capacity and efficiency of GA. However, for simplicity of the proposed model, they do not consider user mobility.
-Wang et al. \cite{wang2011exploiting} model dependable service composition in wireless mobile ad hoc networks by considering mobility prediction of the service providers.
-They use a probability-free model and a probabilistic model to characterize the uncertainty of composing. A service that can tolerate a certain level of the mobility of service providers. However, for simplicity of their proposed model, the approach they proposed only apply to the sequential workflows.
+near by, are enabled to present services probably useful. Users sometimes look for services that are not pre-existent on any device. Otherwise, they dynamically built fresh new services by appropriately combining already existing ones. Extensive research efforts are carried out in this direction. 
+For example, Deng et al. \cite{Deng2016} classify mobile service composition methods into three categories: Cloud to Mobile (C2M), Mobile to Mobile (M2M) and Hybrid. They also discuss related challenges, e.g., performance guarantee, energy efficiency, and security.
+Later, Deng et al. \cite{Deng2017} propose a mobile-service-sharing-community model and extend the random way point (RWP) model to model user mobility. They utilize a meta-heuristic algorithm to decide the optimal compositional plan. 
+Umair Sadiq et al. \cite{sadiq2015service} use Levy walk model and SLAW model, where each node is equally likely to meet any other one. Reachability of nodes between devices are guaranteed and supported by their multi-hop connections when their end-to-end connected paths fail.
+Christin Groba et al. \cite{groba2014opportunistic} present a novel service composition protocol with guarantee of system reliability. It allocates and invokes service providers opportunistically to minimize the impact of topology changes.
+Yang et al. \cite{Yang2010} present a comprehensive QoS model for pervasive services. They consider not only mobile wireless network characteristics but also user-perceived factors. They derive a corresponding formula to calculate the QoS criterion.
+zhang et al. \cite{Zhang2016qos} consider a bio-inspired and context-aware mobile service selection algorithm, They introduce a tree-encoding method to improve the capacity and efficiency of genetic operations of GA. However, for simplicity, they do not consider user mobility.
+Wang et al. \cite{wang2011exploiting} present a predictive approach for dependable service composition where mobility of service providers are predicted at run-time.
+They employ a probability-free model and a probabilistic model to characterize the uncertainty of composing. A service is assumed to be able to tolerate a certain level of the mobility of service providers. However, for simplicity, they consider the sequential pattern of service compositions only.
 
-It can be seen that the limitation of the existing work lie in: 1) the availability of mobile service is varying fastly in real-world scenario due to the mobility of human. Algorithm which doesn't consider the impact of service availability or consider service availability is full stable may lead to high invoking fail rate, and recompose failed services result in high response time. 2) the work \cite{Deng2017} and \cite{sadiq2015service} consider RWP and  Levy model as mobility model, which borrow concepts and methods from random walks and Brownian motion. However, several studies \cite{barbosa2017human, bettstetter2003node, navidi2004improving} highlighted that individual trajectories are far from random, possessing a high degree of regularity and predictability. And different mobility model applies to different application environment \cite{camp2002survey}, e.g., mobility behavior in a fixed office place is totally different with a crowded subway, thus, it is difficult to find such a model which can apply to every scenario. Therefore, an availability-aware schedule model is more suitable than these long-range mobility model to guide composition schedule to optimal. 
-3) some works \cite{wang2011exploiting} \cite{Deng2016-2} use probabilistic model to characterize the uncertainty (i.e, composite service invocation fails because of any one of its concrete service is unavailable). They assume the probability of provider staying within the required distance to the service requester obey a certain rule or distribution. However, in real-world scenario, it is hard to find such a generalized rule or distribution due to different spatial Layout and human traffic (e.g, people flow in a fixed office cubicle is totally different with people flow in a crowded shopping mall). 
-The above limitations could be well avoided by using a service availability analysis instead. We therefore introduce an availability-aware schedule model which can better capture users mobility. We then feed a Krill-Herd-based algorithm current availability of candidate services, and generate composition schedule at run-time.
+However, existing works are limited in several ways: 
+1) for simplicity, most works consider fully-available services in their QoS determination models and scheduling algorithms. However, real-world mobile services are usually with unreliable and time-varying availability, as suggested by our test data given later.  
+2) various works consider RWP and  Levy model where mobility of services are assumed to follow random walks and Brownian motion patterns. However, recent several studies, e.g, \cite{barbosa2017human, bettstetter2003node, navidi2004improving}, show that individual trajectories are far from random, possessing a high degree of regularity and predictability. And different mobility model applies to different application environment \cite{camp2002survey}, e.g., mobility behavior in a fixed office place is totally different with a crowded subway, thus, it is difficult to find such a model which can apply to every scenario. Therefore, an availability-aware schedule model is more suitable than these long-range mobility model to guide composition schedule to optimal. 
+3) some works, e.g, \cite{wang2011exploiting}, \cite{Deng2016-2} use probabilistic model to characterize the uncertainty of composite services and consider unavailability of composing concrete services lead to failure of service compositions.
+
+They assume the probability that a provider stays within the required distance to its corresponding service requester follows a certain rule or distribution. However, such distribution in real-world scenarios could be general due to unpredictable and uncertain spatial Layout and human traffic (e.g, people flow in a fixed office cubicle is totally different from that in a crowded shopping mall). 
+The above limitations could be well avoided by using a service availability prediction mechanism and a Krill-Herd-based algorithm to decide composition schedules??? where
 
 \section{modeling availability-aware mobile service composition}
 \begin{figure}[!t]
@@ -199,12 +219,11 @@ The above limitations could be well avoided by using a service availability anal
 \label{fig_mson}
 \end{figure}
 
-\subsection{Mobile Service Opportunistic Network Framework}
-Fig. 2 illustrates how the mobile services discovery and provision over MSON. In an MSON, a mobile service requester can perceive mobile services exposed by nearby devices through D2D links and launch a composite mobile service (CMS). A composer process, which is in charge of discovering available mobile services nearby, selecting appropriate concrete services, and composing selected services can be implemented and deployed on the mobile device. All concrete services interact with the composer directly.
+\subsection{Mobile Service over Opportunistic Network Framework}
+Fig. 2 illustrates how the mobile services discovery and provision function over an opportunistic network: a mobile service requester perceives mobile services exposed by nearby devices through D2D links and launches a service composition request (SCR). A composer process is in charge of discovering available mobile services nearby, selecting appropriate concrete services, and composing selected services. It can be implemented and deployed on mobile devices. All concrete services interact with the composer directly.
 
-Note that, we consider only one-hop D2D links for both service requesters and providers. 
-Because D2D communications which hops are larger than two would incur network overhead \cite{li2014can} while one-hope communications can lower the delay (e.g., no need to transfer a large volume of task contents hop by hop) and ensure framework choose only local relatively reliable service. 
-Besides, some existing researches \cite{chang2015progressive,tuncay2013participant,wu2013homing,jiang2016exploiting,liu2013exploring} reveal that users' one-hop neighbors are sufficient enough, compared with multi-hop mechanisms.
+Note that, we consider one-hop D2D links for both service requesters and providers due to the fact that D2D communications generally require incur unacceptable network overhead \cite{li2014can}. While one-hope communications generally require low the delay (since it do not need to transfer a large volume of task contents hop by hop) and ensure framework choose local reliable services only.
+Besides, some existing researches, e.g, \cite{chang2015progressive,tuncay2013participant,wu2013homing,jiang2016exploiting,liu2013exploring}, show that a mobile user usually finds sufficient one-hop neighbors to support its applications and thus multi-hop ones are rarely considered.
 
 As done by various existing works discussed in the previous section, it is also assumed that MSON has the following properties:
 
@@ -214,36 +233,33 @@ As done by various existing works discussed in the previous section, it is also 
 
 3) Dynamicity: Mobile services shared in an MSON are transient because the relative distance between any two services keeps changing and could rise above the permitted transmission distance at any time. 
 
-We use an simple user case to illustrate the related features of service provision over MSON. 
-Consider a mobile user who is in a crowded subway and his mobile phone has low battery. 
-Now he wants to edit some videos, add some effects and share these video clips to his friends. 
-If he do all these operations on his own mobile phone, his mobile phone will run out of energy because of limited battery. 
-As one option, he can upload original videos to cloud and use cloud service to get all things done, but offloading task into cloud will result in heavy cellular traffic, which means high energy consumption and expensive communication fee.
-But if he is a participant in MSON and several video processing services is provided by some nearby mobile devices, he can invoke such mobile services through D2D communications. 
-If these services cannot meet his requirement, several services can be composed. 
-Due to users' mobility, the availability of service can vary, invoking mobile services provided by other users may face new challenges that traditional composition methods cannot handle. 
-Thus, a mobile service composition model which can capture mobile services' availability need to be proposed.
+We use an simple example to explain how services are composed over opportunistic networks.
+Consider a mobile user situated in a crowded subway whose mobile phone has low battery. 
+The user now wants to edit some videos, add some visual effects, and share these video clips to his friends.
+Due to low battery of his mobile phone, the user gives up local editing and uploads original videos to a cloud and use cloud services carry out editing jobs. However, but offloading tasks into a cloud requires heavy cellular traffic, which requires a lot of energy consumption and expensive communication overhead.
+Luckily, several video processing services available on nearby mobile devices. The user thus simply decides to choose from and compose invoke such mobile services to get jobs done through D2D communications. 
+Since both the user and candidate services are with high mobility, the composition plan can thus be dynamically, rather than statically, decided based on the predicted availability of services only.  It is clear to see that traditional service composition strategies based on static model formulation are insufficient and a novel composition strategy considering dynamic availability is in high need.
 
-\subsection{Mobile Service Availability}
+\subsection{Service Availability Model}
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3in]{./img/pic3.pdf}
 \caption{Mobile service availability}
 \label{fig_sd}
 \end{figure}
-In an MSON, the availability of mobile service is varying with time and dynamically decided by users' mobility. 
-As illustrated by an example in Fig. 3, there are two mobile users $i$ and $j$ with identical transmission rage $R$. User $i$ is a mobile service requester while user $j$ a mobile service provider. Each user moves freely and it is assumed that the moving area is a circle with a radius of $r$ in a certain amount of time, note that this assumption is widely used in related works, e.g., \cite{Yang2010} \cite{wu2001personal}. $d$ is the distance between $i$ and $j$. If user $j$ moves outside the transmission range of its neighbouring user $i$, then user $j$ is unreachable for user $i$ and consequently the services on user $j$ become unavailable to user $i$.
+The availability of mobile services is varying with time and dynamically decided by users' mobility. 
+As illustrated by an example in Fig. 3, mobile users $i$ and $j$ are with identical transmission rage $R$. $i$ is a mobile service requester while user $j$ a mobile service provider. Each user moves freely and it is assumed that the moving area is a circle with a radius of $r$ (note that this assumption is widely used in related works, e.g., \cite{Yang2010} \cite{wu2001personal}). $d$ is the distance between $i$ and $j$. If $j$ moves outside the transmission range of its neighbouring $i$, then $j$ is unreachable for $i$ and consequently the services on $j$ become unavailable to $i$.
 
-Consider that a mobile service $s$ running on mobile node $j$ is a candidate service for a task requested by user $i$, and the availability of candidate service, $Ava(s)$ can be calculated as the probability that user $j$ keeps staying inside the transmission range of user $i$, it serve as the input into the availability-aware composition model and the scheduling algorithm proposed later:
+Consider that a mobile service $s$ on $j$ is a candidate service for a task requested by $i$, and its availability, $Ava(s)$ can be calculated as the probability that $j$ keeps staying inside the transmission range.
 \begin{equation}
 Ava(s) = \frac{S_{i \bigcap j}}{S_j}
 \end{equation}
-Where $S_{i \bigcap j}$ is the moving area of the user $j$ inside the transmission range of user $i$, $S_j$ the moving field area of the user $j$.
+Where $S_{i \bigcap j}$ is the moving area of $j$ within the transmission range of user $i$, $S_j$ the moving area of the $j$. $Ava(s)$ serves as an input into the availability-aware composition model and the scheduling algorithm proposed later.
 
 The transmission range of a node $R$ is a preset value (e.g., usually 10m for bluetooth and 25m for Wi-Fi). 
-Note that most of wireless transaction protocols have defined the RSSI (Received Signal Strength Indicator), then the distance $d$ between mobile user $i$ and user $j$ can be calculated by signal strength.
+Note that most wireless protocols have defined the RSSI (Received Signal Strength Indicator), then the distance $d$ between mobile user $i$ and user $j$ can be calculated by signal strength.
 
-The moving radius of a mobile user $r$ is decided by its moving speed $v$ multiplied by the average service time $\bar{t}$. $\bar{t}$ can be statistically calculated as the average service times of recent $n$ trials.
+The moving radius of a mobile user $r$ is decided by the product of its moving speed $v$ and the average service time $\bar{t}$. $\bar{t}$ can be statistically calculated as the average service times of recent $n$ trials.
 The speed of a mobile user $v$ can be measured and obtained through GPS data or mobile sensors (e.g., Gyro-sensor), then the moving radius can be calculated as the product of $\bar{t}$ and $v$.
 
 Therefore, $S_{i \bigcap j}$ can be calculated as follows:
@@ -266,12 +282,12 @@ S_j & = \pi r^2 \\\nonumber
 & = \pi \times (v \times \bar{t})^2
 \end{align}
 
-The availability of mobile service $s$ between requester $i$ and provider $j$ thus can be calculated as follow:
+The availability of mobile service $s$ between requester $i$ and provider $j$ thus can be estimated as follow:
 \begin{align}
 Ava(s) = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta cos\beta)}{\pi v^2 \bar{t}^2}
 \end{align}
 
-\subsection{System Model}
+\subsection{Service Composition Model}
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.5in]{./img/DAG2.pdf}
@@ -279,16 +295,16 @@ Ava(s) = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta 
 \label{A sample composite mobile service}
 \end{figure}
 
-A composite mobile service (CMS) can be modeled as a workflow $W = (T, E)$ \cite{el2010tqos}, and it is expressed as a directed acyclic graph (DAG), where $T = \{ t_1, t_2, ..., t_n \}$ is a set of tasks and $E$ is a set of directed edges. An edge $e_{i,j}$ of the form $(t_i,t_j)$ indicates that a data dependency between $t_i$ and $t_j$ exists and $t_i/t_j$ are the parent$/$child tasks respectively. A child task is executed after all its parent tasks are completed. 
-Furthermore, if there is data transmission $data_{i,j}$ attached onto $e_{i,j}$, then $t_j$ can start only after the data from $t_i$ has been received.
-To generalize the workflow with one entry and one exit, two dummy tasks $t_{entry}$ and $t_{exit}$ with zero execution time are added to the beginning and the end of the workflow, respectively. 
-A sample composite mobile service for arranging travel is illustrated in Fig. 4. We denote the composition patterns (i.e, sequence, choice, parallel and loop) by symbols $\rightarrow$, \encircle{C}, \encircle{P} and \encircle{L}, respectively.
-
+A composite mobile service (CMS) can be described by a two-tuple $W = (T, E)$ \cite{el2010tqos}, where $T = \{ t_1, t_2, ..., t_n \}$ is a set of tasks and $E$ is a set of directed edges. An edge $e_{i,j}$ of the form $(t_i,t_j)$ indicates that a data dependency between $t_i$ and $t_j$ exists and $t_i/t_j$ are the parent$/$child tasks respectively. A child task is executed after all its parent tasks are completed. 
+Furthermore, if there is data transmission $data_{i,j}$ attached onto $e_{i,j}$, $t_j$ can start only after the data from $t_i$ is received.
+A dummy tentry/texit task with zero execution time  can be added as a sole entry/exit task if the original composition process has multiple entry/exit tasks rather than a single one. 
+A sample composite mobile service for arranging travel plan \cite{wu2013transactional} is illustrated in Fig. 4. We denote the composition patterns (i.e, sequence, choice, parallel and loop) by symbols $\rightarrow$, \encircle{C}, \encircle{P} and \encircle{L}, respectively.
 The execution order of a workflow can be expressed by assigning an index to each task. The index ranges from $1$ to $m$ and the $i$-th item indicates the order of executing $t_i$. The relationship between each task and its index can be described by a function $l : T \rightarrow N^+$ and encoded as a vector containing a permutation of $1$ to $m$. The starting time of tasks is decided by the completion time of their preceding tasks.
 
-A MSON participant can perceive services exposed by other participant and these available service can be described as service pool $P = \{s_1^{(i)}, s_2^{(j)}, ..., s_m^{(k)} \}$, $s_m^{(k)}$ means there are $k$ candidate services for task $t_m$. Once a user initiate a CMS request, tasks in workflow will be scheduled to the service selected from services pool and executed. 
+An MSON participant can perceive services exposed by other participants and these available services can be described as service pool $P = \{s_1^{(i)}, s_2^{(j)}, ..., s_m^{(k)} \}$, $s_m^{(k)}$ means there are $k$ candidate services for task $t_m$. Once a user initiates a service composition request, tasks in the composite service is scheduled to the service selected from services pool and executed. 
 
-The response time of a CMS request consists of tasks execution time and data transfer time. If task $t_i$ connects $t_k$ through edge $e_{i,k}$ and they are executed by different service providers, the transfer time, $data_{i,k}$, is inevitable because inter-provider data and control signal transfer is required. Otherwise, $data_{i,k} = 0 $ if both tasks are on the same provider.
+% The response time of a CMS request consists of tasks execution time and data transfer time. 
+If task $t_i$ connects $t_k$ through edge $e_{i,k}$ and they are executed by different service providers, the transfer time, $data_{i,k}$, is inevitable because inter-provider data and control signal transfer is required. Otherwise, $data_{i,k} = 0 $.
 
 Tasks in a CMS request are executed by different tasks providers (i.e, different mobile devices) usually exhibit varying performance. Moreover, a task executed by the same provider at different time may exhibit fluctuating performance. In this paper, we use the average execution time of recent $n$ trials to represent expected execution time.
 
@@ -310,13 +326,13 @@ loop     &  $[Ava(s_i)]^{k}$ \\
 \end{table}
 
 
-\subsection{Problem Formulation}
-Given a CMS request initiated by a MSON participant, perceive nearby services and select suitable concrete services to achieve an optimal service composition schedule with the best response time $RT$ while meeting the service reliability constraint. The resulting problem can therefore be formulated as:
+\subsection{Problem Formulation for Optimal Service Composition over MSON}
+As mentioned earlier, a key issue of service composition over opportunistic networks is its promised performance, in terms of deadline of composite service execution, which is decided by the composition schedule carried out at run-time. It should be noted that schedules with high performance but low reliability guarantee should be avoided. The resulting problem can therefore be formulated as:
 \begin{align}
 Min  \ \ \  : \ \ \ & RT   \\\nonumber
-s.t \ \ \ : \ \ \ & \tau \le C
+s.t \ \ \ : \ \ \ & \tau \le R
 \end{align}
-Where $C$ denotes the user-recommended constraint of the reliability of the composition schedule, user can make a tread-off between response time and reliability. $\tau$ is the estimated reliability to accomplish the workflow, it can be get by aggregation functions shown in Table 1.
+Where $R$ denotes the user-recommended constraint of the reliability. $\tau$ is the estimated reliability calculated based on the service reliability model by aggregation functions shown in Table 1.
 
 The derivation of $RT$ requires some efforts. $RT$ can be calculated as the estimated ending time of the last task in the CMS workflow:
 \begin{align}
@@ -355,24 +371,24 @@ b_1 = \delta + data_{entry, 1}
 \end{align}
 where $\delta$ is the time between initiate a CMS request and a corresponding schedule is generated.
 
-The aforementioned can be reduced to a knapsack problem. It's known that the optimization problem of a knapsack problem is NP-hard \cite{papadimitriou1998combinatorial}, then the problem we formulated is NP-hard.
+The aforementioned formulation can be reduced to a knapsack problem. It's known that the optimization problem of a knapsack problem is NP-hard \cite{papadimitriou1998combinatorial}, then the problem we formulated is NP-hard.
 
 
 \section{The kh-based algorithm for mobile service composition}
-Because the problem we formulated is NP-hard, there is no known polynomial algorithm which can tell, given a solution, whether it is optimal. Thus, meta-heuristic algorithms such as GA and PSO, can be utilized to find the near optimal solution in polynomial time.
+It is widely acknowledged that to schedule multi-task processes on distributed platforms is an NP-hard problem [5]. It is therefore extremely time-consuming to yield optimal service composition schedules through traversal-based algorithms. Fortunately, heuristic and meta-heuristic algorithms with polynomial complexity are able to produce approximate or near optimal solutions at the cost of acceptable optimality loss.
 
-Krill-Herd algorithm \cite{gandomi2012krill} is new generic stochastic optimization approach for the global optimization problem, it is inspired by predatory behavior and communication behavior of krill. 
-In this section, we will introduce a Krill-Herd based algorithm to solve the problem of mobile service composition over MSON.
+Krill-Herd algorithm \cite{gandomi2012krill} is novel meta-heuristic generic stochastic optimization algorithm for the global optimization problem, inspired by predatory behavior and communication behavior of krill. 
+Based on our problem descriptions introduced earlier, we present definitions of genetic operations of KH algorithm next and show how resulting composition schedules are generated.
 
 \subsection{Encoding}
-In KH, composite service instance is encoded as a krill individual, the krill individual with the best position corresponds to the optimal mobile service composition. The target of algorithm is to find the krill individual with the best position, which means to find the best mobile service composition with the best response time. Therefore, once the optimal krill individual is found, the best mobile service composition is obtained.
+A composite service instance is encoded as a krill individual, and the individual with the best position stands for the optimal composition schedule in terms of its corresponding estimated reliability of a composite service. The target of algorithm is to find the krill individual with the best position, which means to find the best mobile service composition with the best response time. Therefore, once the optimal krill individual is found, the best mobile service composition is obtained.
 
-In this paper, the position vector of each krill individual is represented by an integer array with its length equal to the number of involved tasks. The $i$-th entry in the array, in turn, refers to the selection result of the task $t_i$ . That is to say, given that the value of the $n$-th entry is $k$, it indicates that $s_{(n,k)}$ is the selected concrete service to execute $t_n$. Fig. 4 illustrates this krill encoding.
+The position vector of each krill individual is represented by an integer array with its length equal to the number of tasks of the service composition request. The $i$-th entry of the array, in turn, refers to the concrete service selected by task $t_i$ . That is to say, given that the value of the $n$-th entry is $k$, $s_{(n,k)}$ is the selected concrete service to execute $t_n$. Fig. 4 illustrates a simple example of  krill encoding.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3in]{./img/pic4.pdf}
-\caption{Krill encoding}
+\caption{An example of Krill encoding}
 \label{Krill encoding}
 \end{figure}
 
@@ -386,11 +402,11 @@ Motion operator is the key component of KH algorithm. As shown in e.q (11), the 
 \frac{dX_i}{dt} =N_i+F_i+D_i
 \end{equation}
 
-where individual $X_i = \{s_{(1,j)}, s_{(2,k)}, . . . , s_{(n,l)}\}$ represents the $i$-th composition service instance in population, $n$ is the number of tasks in the service composition, $N_i$, $F_i$, and $D_i$ denote the motion influenced by other krill individuals, the foraging motion, and the physical diffusion, respectively.
+where individual $X_i = \{s_{(1,j)}, s_{(2,k)}, . . . , s_{(n,l)}\}$ represents the $i$-th composition schedule in population, $n$ is the number of tasks, $N_i$ denote the motion influenced by other krill individuals, $F_i$ denote the foraging motion and $D_i$ denote the random physical diffusion.
 
 1) Movement induced by other krill individuals
 
-The motion induced by other krill individuals $N_i$ means to learn from neighbor mobile service compositions. It can be formulated as follow:
+The motion induced by other krill individuals $N_i$ refers to learning from neighboring individuals with different composition schedules.
 \begin{equation}
 N^{new}_i = N_{max}\alpha_i + \omega_n N^{old}_i
 \end{equation}
@@ -399,13 +415,13 @@ where
 \alpha_i = \alpha^{target} + \alpha^{local}
 \end{equation}
 
-$\alpha_i$ is the direction of the induced motion and it can be evaluated by target swarm density (target effect $\alpha^{target}$), local swarm density (local effect $\alpha^{local}$). $N_{max}$ is the maximum induced speed, $\omega_n \in [0, 1]$ the inertia weight of the induced motion, $N^{old}_{i}$ is the last induced motion influenced by other krill individuals.
+$\alpha_i$ is the direction of the induced motion estimated by target swarm density (target effect $\alpha^{target}$) and local swarm density (local effect $\alpha^{local}$). $N_{max}$ the maximum induced speed, $\omega_n \in [0, 1]$ the inertia weight of the induced motion, $N^{old}_{i}$ the last induced motion influenced by other krill individuals.
 
 2) Foraging Motion
 
-Similarly, the foraging motion $F_i$ is to learn from the current optimal composite service instance. 
-$F_i$ has two parts: the current food location and the information about the previous location. 
-For the individual $X_i$, we can formulate this motion as follow:
+Similarly, the foraging motion $F_i$ refers to learning from the highest estimated process reliability so far. 
+It has two parts: the current food location and the information about the previous location. 
+The foraging motion of individual $X_i$, can thus be obtained as follow:
 \begin{equation}
 F_i = V_f\beta_i + \omega_f F^{old}_i
 \end{equation}
@@ -413,31 +429,31 @@ where
 \begin{equation}
 \beta_i = \beta_i^{food}+\beta_i^{best}
 \end{equation}
-where $V_f$ is the foraging speed, $\omega_f \in [0, 1]$ is the inertia weight of foraging, and $F^{old}_i$ is the last foraging motion. $\beta_i$ is the direction of the foraging motion.
+where $V_f$ is the foraging speed, $\omega_f \in [0, 1]$ the inertia weight of foraging, and $F^{old}_i$ the last foraging motion, $\beta_i$ the direction of the foraging motion.
 
 3) Random diffusion
 
-For individual $X_i$, the physical diffusion is considered to be a random process. This motion includes two components: a maximum diffusion speed and a random directional vector, it can be formulated as follow
+The physical diffusion of individual $X_i$ is considered to be a random process. It includes two components: a maximum diffusion speed and a random directional vector:
 \begin{equation}
 D_i = D_{max}\delta
 \end{equation}
-where $D_{max}$ is the maximum diffusion speed and $\delta \in [-1, 1]$ is a random directional vector.
+where $D_{max}$ is the maximum diffusion speed and $\delta \in [-1, 1]$ a random directional vector.
 
 \subsection{Stud selection and crossover operator}
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=2.5in]{./img/pic5.pdf}
-\caption{Crossover operator}
+\caption{An example of Crossover operator}
 \label{Crossover operator}
 \end{figure}
 
 
-The crossover operator plays an important role in Genetic algorithm for global optimization, we use this operator in KH algorithm to enhance the search capability. The crossover operator in this paper is controlled by a dynamic crossover rate $C_{r}$ which can be obtain as follow
+Crossover operators aim at enhancing the search capability. The crossover operator for our proposed model is designed to be controlled by a dynamic crossover rate $C_{r}$:
 \begin{equation}
 C_{r} = r + (1-r) \times \frac{RT_{best}-RT_{i}}{RT_{best}-U_{worst}}
 \end{equation}
-Where $r$ is a pre-set fixed crossover rate, $RT_{i}$ is the $i$-th individual's response time, $U_{best}$ is the current best response time value, similarly, $U_{worst}$ is the current worst response time value.
+Where $r$ is a pre-set fixed crossover rate, $RT_{i}$ the $i$-th individual's response time, $U_{best}$ the current lowest response time value as far, and, $U_{worst}$ highest response time value so far.
 
 Then we can use $C_{r}$ to generate $i$-th individual's crossover vector $Cv = \{c_{1},c_{2},...,c_{n}\}$, it can be manipulated as follows
 \begin{equation}
@@ -447,8 +463,8 @@ c_{i}=
 0,& else\\
 \end{cases}
 \end{equation}
-Inspired by SGA \cite{wang2014stud} (a type of GA which employs the optimal genome for crossover at each generation), we introduce stud selection procedure to improve KH's search capability.
-From algorithm 1, we can see that for each individual $X_i$ to crossover, we choose the optimal individual $Stud$ (i.e., the individual with best response time value) to mating. As shown in Fig. 7, the characteristics from individual $Stud$ are copied to individual $X_i$ according to crossover vector $Cv$. 
+Inspired by SGA \cite{wang2014stud} (a type of GA which employs the optimal genome for crossover at each generation), we introduce a stud selection procedure to further improve KH's search capability.
+As shown in algorithm 1, we can see that for each individual $X_i$ to crossover, we choose the optimal individual $Stud$ (i.e., the individual with best response time value) to mating. As shown in Fig. 7, the characteristics from individual $Stud$ are copied to individual $X_i$ according to crossover vector $Cv$. 
 
 \begin{algorithm}
 \caption{Crossover operation}
@@ -457,7 +473,9 @@ From algorithm 1, we can see that for each individual $X_i$ to crossover, we cho
 
 \REQUIRE Population $X$; Individual $X_i$ to crossover; The number of tasks $taskNumber$; 
 \STATE Sort all krill individuals in population $X$ by its response time, get optimal individual $Stud$, save the best response time value as $RT_{best}$ and the worst response time value as $RT_{worst}$
+
 \STATE $C_{r} \leftarrow$ calcCrossoverRate($X_i$, $RT_{best}$, $RT_{worst}$)
+
 \FOR{$i=0$ \TO $taskNumber$}
 \STATE $r \leftarrow rand(0,1)$
 \IF{$r < C_{r}$}
@@ -466,25 +484,25 @@ From algorithm 1, we can see that for each individual $X_i$ to crossover, we cho
 \STATE $Cv[i] \leftarrow 0$
 \ENDIF
 \ENDFOR
+
 \FOR{$i=0$ \TO $taskNumber$}
 \STATE $X_i[i] \leftarrow X_i \wedge  (1-Cv[i]) + Stud \wedge Cv[i]$ 
 \ENDFOR
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Update position}
-After crossover, the offspring should be evaluated and updated to current evolutionary sequence.
-According to the three motion actions, the time-relied position from time $t$ and $\Delta t$ can be formulated by the following equation
+\subsection{Position update}
+The offspring should be evaluated and updated to current evolutionary sequence.
+According to the three motion actions proposed earlier, the time-dependent position from time $t$ and $\Delta t$ can be formulated by the following equation
 \begin{equation}
 X_{i+1} = X_i + \Delta t \frac{dX_i}{dt}
 \end{equation}
-
 where
 \begin{equation}
-\Delta t = C_t\sum_{j=1}^{n}(UB_j - LB_j)
+\Delta t = C_t\sum_{j=1}^{m}(UB_j - LB_j)
 \end{equation}
-
-where $n$ is the tasks number of composition service, $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space and we set it to $1/2n$ in this paper. Finally, the overall KH algorithm process can be describe in Algorithm 2.
+where $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space (usually $1/2n$). 
+Based on the above discussions, the KH algorithm is given in Algorithm 2.
 
 \begin{algorithm}
 \caption{KH algorithm}
@@ -494,7 +512,7 @@ where $n$ is the tasks number of composition service, $UB_j$ and $LB_j$ are uppe
 \REQUIRE Number of population size $PS$, Number of max iteration $MI$;
 
 \STATE Generate initial population as $X = (X_1, X_2, ..., X_{PS})$
-\STATE estimate response time of each krill individual in $X$
+\STATE Estimate response time of each krill individual in $X$
 \FOR{$i=0$ \TO $MI$}
   \FOR{$i=0$ \TO $PS$}
     \STATE $X_i^{'} \leftarrow motionOperator()$
@@ -513,10 +531,9 @@ where $n$ is the tasks number of composition service, $UB_j$ and $LB_j$ are uppe
 \end{algorithm}
 
 
-\section{SIMULATION AND EVALUATION}
-In this section, we first discussed the experimental environment settings, then we evaluate the impact of parameters and compare our algorithm with other non-availability algorithms in terms of success rate and response time.
+\section{CASE STUDY AND EVALUATION}
+In this section, we present a case study based on some well-known service composition templates and a real-world dataset for measured response time of D2D contact traces, to compare traditional scheduling approaches with our proposed one.
 
-\subsection{Simulation Setting}
 To evaluate the optimality and scalability of the proposed approaches, the experiment is run on a personal computer with an Intel Core i5 CPU with 2.4 GHz, 4 GB RAM, macOS and Matlab R2015b Edition.
 
 Since we can not find available realistic datasets which involving both user D2D contact traces and quality of mobile service so far, we attempt to simulate the scenarios for mobile services provision by integrating realistic user D2D contact traces with quality of Web service datasets. 
@@ -618,7 +635,6 @@ t6     & $s_1^{(2)}$, $s_4^{(3)}$, $s_5^{(3)}$, $s_6^{(2)}$, $s_7^{(1)}$ \\
 
 Table 2 is part of D2D contract traces in MIT Reality dataset. For example, there there are five nearby devices within D2D transmission distance at time $t1$ and these devices can be regarded as MSON participant who provision mobile services. Table 3 shows MSON participants and the services they exposed to nearby devices. These mobile service are random chosen from QWS dataset. Table 4 is the Cartesian product of Table 2 and Table 3, it shows how many kinds of services user can exploit at a certain time and how many candidates for each kind of service (i.e., task). For example, there are five kinds of service available at time $t1$ and there are three candidates for task $t_1$, three candidates for task $t_4$, two candidates for task $t_5$, one candidate for task $t_6$ and one candidate for task $t_7$.
 
-\subsection{Impact of Parameters}
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
 \caption{parameters configuration}
@@ -691,7 +707,6 @@ Fig. 7(d) shows the impact of the foraging speed $V_f$. The performance of KH in
 Fig. 7(e) shows the impact of the induced speed $N_{max}$. The performance of KH increases with $N_{max}$ firstly, then decrease, the best performance is achieved for $N_{max} = 0.3$.
 Fig. 7(f) shows the impact of the physical diffusion speed $D_{max}$. It shows that with the increase of $D_{max}$, the performance of KH fluctuation irregularly and slightly, we random generate $D_{max}$ from $[0.2 \sim 0.5]$ in this paper.
 
-\subsection{Case study}
 In this subsection, we present a case study of different composite mobile service in mobile environment, to compare representative non-availability algorithm proposed in \cite{Deng2017} \cite{sadiq2015service}. Fig. 7 shows three mobile service composition plans for case study. Fig. 8(a) is a well known composition plan for booking tickets \cite{wu2013transactional}, it has 6 tasks. Fig. 8(b) is a simple workflow with 12 tasks for Tensorflow \cite{abadi2016tensorflow}, Tensorflow is a heterogeneous distributed system for machine learning and it already can be deployed in mobile devices. Fig. 8(c) is a scientific workflow with 24 tasks for Montage. Montage is an astronomical image mosaic engine, it can be used for simulating some picture edit application in mobile phone. We use these three kinds of composition plans to represent different meaningful service composition with different tasks, eavh case was executed 50 times independently and the average performance was recorded.
 
 \begin{figure}[!t]
