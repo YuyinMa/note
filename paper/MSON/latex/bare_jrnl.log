@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  21 NOV 2017 18:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  23 NOV 2017 17:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -674,25 +674,15 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (12.63202pt too wide) in paragraph at lines 100--113
-[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--118
-
- []
+Overfull \vbox (1.68932pt too high) has occurred while \output is active []
 
 
-Overfull \hbox (5.86952pt too wide) in paragraph at lines 119--144
+Overfull \hbox (5.86952pt too wide) in paragraph at lines 114--139
 [] 
  []
 
@@ -706,21 +696,24 @@ Missing character: There is no ™ in font ptmr7t!
 <./img/pic1.pdf, id=16, 946.45128pt x 605.37967pt>
 File: ./img/pic1.pdf Graphic file (type pdf)
  <use ./img/pic1.pdf>
-Package pdftex.def Info: ./img/pic1.pdf used on input line 159.
+Package pdftex.def Info: ./img/pic1.pdf used on input line 154.
 (pdftex.def)             Requested size: 252.94499pt x 161.79196pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 159--160
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 154--155
  [][] 
  []
 
-[2 <./img/pic1.pdf>] <./img/pic2.pdf, id=76, 968.52129pt x 546.22238pt>
-File: ./img/pic2.pdf Graphic file (type pdf)
+[2 <./img/pic1.pdf>]
+Underfull \vbox (badness 1043) has occurred while \output is active []
 
-<use ./img/pic2.pdf>
-Package pdftex.def Info: ./img/pic2.pdf used on input line 217.
+
+<./img/pic2.pdf, id=76, 968.52129pt x 546.22238pt>
+File: ./img/pic2.pdf Graphic file (type pdf)
+ <use ./img/pic2.pdf>
+Package pdftex.def Info: ./img/pic2.pdf used on input line 211.
 (pdftex.def)             Requested size: 252.94499pt x 142.6479pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 217--218
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 211--212
  [][] 
  []
 
@@ -728,152 +721,96 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 217--218
 File: ./img/pic3.pdf Graphic file (type pdf)
 
 <use ./img/pic3.pdf>
-Package pdftex.def Info: ./img/pic3.pdf used on input line 246.
+Package pdftex.def Info: ./img/pic3.pdf used on input line 240.
 (pdftex.def)             Requested size: 216.81pt x 159.53609pt.
 
-Underfull \vbox (badness 2401) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [4 <./img/pic3.pdf>] <./img/DAG2.pdf, id=137, 836.69896pt x 226.96404pt>
+
+<./img/DAG2.pdf, id=105, 836.69896pt x 226.96404pt>
 File: ./img/DAG2.pdf Graphic file (type pdf)
+ <use ./img/DAG2.pdf>
+Package pdftex.def Info: ./img/DAG2.pdf used on input line 284.
+(pdftex.def)             Requested size: 238.49121pt x 64.69234pt.
 
-<use ./img/DAG2.pdf>
-Package pdftex.def Info: ./img/DAG2.pdf used on input line 293.
-(pdftex.def)             Requested size: 252.94499pt x 68.61267pt.
-
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 293--294
- [][] 
- []
-
-[5 <./img/DAG2.pdf>] <./img/pic4.pdf, id=171, 826.73235pt x 485.82011pt>
+[4 <./img/pic3.pdf>] [5 <./img/DAG2.pdf>]
+<./img/pic4.pdf, id=166, 826.73235pt x 485.82011pt>
 File: ./img/pic4.pdf Graphic file (type pdf)
-
-<use ./img/pic4.pdf>
-Package pdftex.def Info: ./img/pic4.pdf used on input line 390.
+ <use ./img/pic4.pdf>
+Package pdftex.def Info: ./img/pic4.pdf used on input line 383.
 (pdftex.def)             Requested size: 216.81pt x 127.40736pt.
- [6 <./img/pic4.pdf>]
-<./img/pic5.pdf, id=193, 873.18059pt x 590.72643pt>
+
+<./img/pic5.pdf, id=167, 873.18059pt x 590.72643pt>
 File: ./img/pic5.pdf Graphic file (type pdf)
  <use ./img/pic5.pdf>
-Package pdftex.def Info: ./img/pic5.pdf used on input line 446.
+Package pdftex.def Info: ./img/pic5.pdf used on input line 456.
 (pdftex.def)             Requested size: 180.67499pt x 122.22641pt.
 
-[7 <./img/pic5.pdf>]
-Overfull \hbox (3.66724pt too wide) in paragraph at lines 643--655
- [][] 
- []
-
-<./img/Param-PS.pdf, id=216, 433.62pt x 289.08pt>
-File: ./img/Param-PS.pdf Graphic file (type pdf)
- <use ./img/Param-PS.pdf>
-Package pdftex.def Info: ./img/Param-PS.pdf used on input line 664.
-(pdftex.def)             Requested size: 144.54pt x 96.35828pt.
-
-<./img/Param-MI.pdf, id=217, 433.62pt x 289.08pt>
-File: ./img/Param-MI.pdf Graphic file (type pdf)
- <use ./img/Param-MI.pdf>
-Package pdftex.def Info: ./img/Param-MI.pdf used on input line 668.
-(pdftex.def)             Requested size: 144.54pt x 96.35828pt.
-
-<./img/Param-CR.pdf, id=218, 433.62pt x 289.08pt>
-File: ./img/Param-CR.pdf Graphic file (type pdf)
- <use ./img/Param-CR.pdf>
-Package pdftex.def Info: ./img/Param-CR.pdf used on input line 673.
-(pdftex.def)             Requested size: 144.54pt x 96.35828pt.
-
-<./img/Param-Vf.pdf, id=219, 433.62pt x 289.08pt>
-File: ./img/Param-Vf.pdf Graphic file (type pdf)
- <use ./img/Param-Vf.pdf>
-Package pdftex.def Info: ./img/Param-Vf.pdf used on input line 677.
-(pdftex.def)             Requested size: 144.54pt x 96.35828pt.
-
-<./img/Param-Nmax.pdf, id=220, 433.62pt x 289.08pt>
-File: ./img/Param-Nmax.pdf Graphic file (type pdf)
- <use ./img/Param-Nmax.pdf>
-Package pdftex.def Info: ./img/Param-Nmax.pdf used on input line 681.
-(pdftex.def)             Requested size: 144.54pt x 96.35828pt.
-
-<./img/Param-Dmax.pdf, id=221, 433.62pt x 289.08pt>
-File: ./img/Param-Dmax.pdf Graphic file (type pdf)
- <use ./img/Param-Dmax.pdf>
-Package pdftex.def Info: ./img/Param-Dmax.pdf used on input line 685.
-(pdftex.def)             Requested size: 144.54pt x 96.35828pt.
-
-<./img/DAG.pdf, id=222, 1817.8715pt x 1210.71548pt>
+[6 <./img/pic4.pdf>] [7 <./img/pic5.pdf>]
+<./img/DAG.pdf, id=210, 1817.8715pt x 1210.71548pt>
 File: ./img/DAG.pdf Graphic file (type pdf)
  <use ./img/DAG.pdf>
-Package pdftex.def Info: ./img/DAG.pdf used on input line 692.
+Package pdftex.def Info: ./img/DAG.pdf used on input line 635.
 (pdftex.def)             Requested size: 361.34999pt x 240.66089pt.
 
-[8]
-Underfull \vbox (badness 6944) has occurred while \output is active []
-
-
-<./img/Task-6.pdf, id=226, 597.51233pt x 681.04443pt>
+<./img/Task-6.pdf, id=211, 597.51233pt x 681.04443pt>
 File: ./img/Task-6.pdf Graphic file (type pdf)
  <use ./img/Task-6.pdf>
-Package pdftex.def Info: ./img/Task-6.pdf used on input line 714.
+Package pdftex.def Info: ./img/Task-6.pdf used on input line 644.
 (pdftex.def)             Requested size: 238.49121pt x 271.831pt.
 
-<./img/Task-12.pdf, id=227, 597.51233pt x 682.28687pt>
+<./img/Task-12.pdf, id=212, 597.51233pt x 682.28687pt>
 File: ./img/Task-12.pdf Graphic file (type pdf)
  <use ./img/Task-12.pdf>
-Package pdftex.def Info: ./img/Task-12.pdf used on input line 722.
+Package pdftex.def Info: ./img/Task-12.pdf used on input line 652.
 (pdftex.def)             Requested size: 238.49121pt x 272.32689pt.
 
-<./img/Task-24.pdf, id=228, 597.51233pt x 692.45511pt>
+<./img/Task-24.pdf, id=213, 597.51233pt x 692.45511pt>
 File: ./img/Task-24.pdf Graphic file (type pdf)
  <use ./img/Task-24.pdf>
-Package pdftex.def Info: ./img/Task-24.pdf used on input line 729.
+Package pdftex.def Info: ./img/Task-24.pdf used on input line 659.
 (pdftex.def)             Requested size: 238.49121pt x 276.38544pt.
 
-Underfull \vbox (badness 6944) has occurred while \output is active []
-
- [9 <./img/Param-PS.pdf> <./img/Param-MI.pdf> <./img/Param-CR.pdf> <./img/Param
--Vf.pdf> <./img/Param-Nmax.pdf> <./img/Param-Dmax.pdf> <./img/DAG.pdf>] [10 <./
-img/Task-6.pdf> <./img/Task-12.pdf> <./img/Task-24.pdf>] (./bare_jrnl.bbl
+(./bare_jrnl.bbl [8]
 Underfull \hbox (badness 2875) in paragraph at lines 46--49
 \OT1/ptm/m/n/8 cel-lu-lar net-works,'' \OT1/ptm/m/it/8 On-line Http-nesl Ee Ucl
 a Edufw-doc-u-mentsre-
  []
 
-
+[9 <./img/DAG.pdf> <./img/Task-6.pdf> <./img/Task-12.pdf>]
 Underfull \hbox (badness 2856) in paragraph at lines 113--117
 \OT1/ptm/m/n/8 mand, T. Louail, R. Menezes, J. J. Ra-m-asco, F. Si-mini, and
  []
 
-) [11] (./bare_jrnl.aux) ) 
+) [10 <./img/Task-24.pdf>] (./bare_jrnl.aux) ) 
 Here is how much of TeX's memory you used:
- 14366 strings out of 492995
- 281242 string characters out of 6132703
- 329878 words of memory out of 5000000
- 17620 multiletter control sequences out of 15000+600000
- 48317 words of font info for 93 fonts, out of 8000000 for 9000
+ 14319 strings out of 492995
+ 280430 string characters out of 6132703
+ 331744 words of memory out of 5000000
+ 17580 multiletter control sequences out of 15000+600000
+ 47239 words of font info for 92 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 55i,10n,54p,1034b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/b
-ase/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmext
-ra/cmex7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
-extra/cmex8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
-pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fo
-nts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (11 pages, 867214 bytes).
+ 55i,10n,54p,1011b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-di
+st/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/te
+xlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on bare_jrnl.pdf (10 pages, 726939 bytes).
 PDF statistics:
- 495 PDF objects out of 1000 (max. 8388607)
- 363 compressed objects within 4 object streams
+ 373 PDF objects out of 1000 (max. 8388607)
+ 265 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

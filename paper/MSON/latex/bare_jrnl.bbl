@@ -31,7 +31,7 @@ E.~Bastug, M.~Bennis, M.~M{\'e}dard, and M.~Debbah, ``Toward interconnected
   virtual reality: Opportunities, challenges, and enablers,'' \emph{IEEE
   Communications Magazine}, vol.~55, no.~6, pp. 110--117, 2017.
 
-\bibitem{abadi2016tensorflow}
+\bibitem{abadi2016TensorFlow}
 M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
   A.~Davis, J.~Dean, M.~Devin \emph{et~al.}, ``Tensorflow: Large-scale machine
   learning on heterogeneous distributed systems,'' \emph{arXiv preprint
@@ -175,10 +175,27 @@ H.-K. Wu, M.-H. Jin, J.-T. Horng, and C.-Y. Ke, ``Personal paging area design
   Proceedings. IEEE}, vol.~1.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
   2001, pp. 21--30.
 
+\bibitem{benkic2008using}
+K.~Benkic, M.~Malajner, P.~Planinsic, and Z.~Cucej, ``Using rssi value for
+  distance estimation in wireless sensor networks based on zigbee,'' in
+  \emph{Systems, signals and image processing, 2008. IWSSIP 2008. 15th
+  international conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2008, pp. 303--306.
+
 \bibitem{el2010tqos}
 J.~El~Hadad, M.~Manouvrier, and M.~Rukoz, ``Tqos: Transactional and qos-aware
   selection algorithm for automatic web service composition,'' \emph{IEEE
   Transactions on Services Computing}, vol.~3, no.~1, pp. 73--85, 2010.
+
+\bibitem{wu2013transactional}
+Q.~Wu and Q.~Zhu, ``Transactional and qos-aware dynamic service composition
+  based on ant colony optimization,'' \emph{Future Generation Computer
+  Systems}, vol.~29, no.~5, pp. 1112--1119, 2013.
+
+\bibitem{xia2009novel}
+Y.~Xia, Q.~Zhu, Y.~Huang, and Z.~Wang, ``A novel reduction approach to
+  analyzing qos of workflow processes,'' \emph{Concurrency and Computation:
+  Practice and Experience}, vol.~21, no.~2, pp. 205--223, 2009.
 
 \bibitem{papadimitriou1998combinatorial}
 C.~H. Papadimitriou and K.~Steiglitz, \emph{Combinatorial optimization:
@@ -203,10 +220,5 @@ N.~Eagle and A.~S. Pentland, ``Reality mining: sensing complex social
 Z.~Zheng, Y.~Zhang, and M.~R. Lyu, ``Investigating qos of real-world web
   services,'' \emph{IEEE Transactions on Services Computing}, vol.~7, no.~1,
   pp. 32--39, 2014.
-
-\bibitem{wu2013transactional}
-Q.~Wu and Q.~Zhu, ``Transactional and qos-aware dynamic service composition
-  based on ant colony optimization,'' \emph{Future Generation Computer
-  Systems}, vol.~29, no.~5, pp. 1112--1119, 2013.
 
 \end{thebibliography}
