@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  23 NOV 2017 17:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  24 NOV 2017 22:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -682,7 +682,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--113
 Overfull \vbox (1.68932pt too high) has occurred while \output is active []
 
 
-Overfull \hbox (5.86952pt too wide) in paragraph at lines 114--139
+Overfull \hbox (6.31699pt too wide) in paragraph at lines 114--139
 [] 
  []
 
@@ -703,13 +703,10 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 154--155
  [][] 
  []
 
-[2 <./img/pic1.pdf>]
-Underfull \vbox (badness 1043) has occurred while \output is active []
-
-
-<./img/pic2.pdf, id=76, 968.52129pt x 546.22238pt>
+[2 <./img/pic1.pdf>] <./img/pic2.pdf, id=76, 968.52129pt x 546.22238pt>
 File: ./img/pic2.pdf Graphic file (type pdf)
- <use ./img/pic2.pdf>
+
+<use ./img/pic2.pdf>
 Package pdftex.def Info: ./img/pic2.pdf used on input line 211.
 (pdftex.def)             Requested size: 252.94499pt x 142.6479pt.
 
@@ -717,100 +714,106 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 211--212
  [][] 
  []
 
-[3 <./img/pic2.pdf>] <./img/pic3.pdf, id=104, 915.72945pt x 673.84525pt>
+[3 <./img/pic2.pdf>] <./img/pic3.pdf, id=104, 904.13297pt x 675.9812pt>
 File: ./img/pic3.pdf Graphic file (type pdf)
 
 <use ./img/pic3.pdf>
-Package pdftex.def Info: ./img/pic3.pdf used on input line 240.
-(pdftex.def)             Requested size: 216.81pt x 159.53609pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-<./img/DAG2.pdf, id=105, 836.69896pt x 226.96404pt>
+Package pdftex.def Info: ./img/pic3.pdf used on input line 253.
+(pdftex.def)             Requested size: 195.12877pt x 145.8901pt.
+ <./img/DAG2.pdf, id=105, 836.69896pt x 226.96404pt>
 File: ./img/DAG2.pdf Graphic file (type pdf)
- <use ./img/DAG2.pdf>
-Package pdftex.def Info: ./img/DAG2.pdf used on input line 284.
-(pdftex.def)             Requested size: 238.49121pt x 64.69234pt.
 
-[4 <./img/pic3.pdf>] [5 <./img/DAG2.pdf>]
-<./img/pic4.pdf, id=166, 826.73235pt x 485.82011pt>
+<use ./img/DAG2.pdf>
+Package pdftex.def Info: ./img/DAG2.pdf used on input line 289.
+(pdftex.def)             Requested size: 238.49121pt x 64.69234pt.
+ [4 <./img/pic3.pdf>]
+<./img/pic-extra.pdf, id=138, 1006.28645pt x 577.56268pt>
+File: ./img/pic-extra.pdf Graphic file (type pdf)
+
+<use ./img/pic-extra.pdf>
+Package pdftex.def Info: ./img/pic-extra.pdf used on input line 309.
+(pdftex.def)             Requested size: 216.81pt x 124.43794pt.
+ [5 <./img/DAG2.pdf> <./img/pic-extra.pdf>]
+<./img/pic4.pdf, id=202, 826.73235pt x 485.82011pt>
 File: ./img/pic4.pdf Graphic file (type pdf)
  <use ./img/pic4.pdf>
-Package pdftex.def Info: ./img/pic4.pdf used on input line 383.
+Package pdftex.def Info: ./img/pic4.pdf used on input line 396.
 (pdftex.def)             Requested size: 216.81pt x 127.40736pt.
 
-<./img/pic5.pdf, id=167, 873.18059pt x 590.72643pt>
+[6 <./img/pic4.pdf>] <./img/pic5.pdf, id=222, 873.18059pt x 590.72643pt>
 File: ./img/pic5.pdf Graphic file (type pdf)
- <use ./img/pic5.pdf>
-Package pdftex.def Info: ./img/pic5.pdf used on input line 456.
-(pdftex.def)             Requested size: 180.67499pt x 122.22641pt.
 
-[6 <./img/pic4.pdf>] [7 <./img/pic5.pdf>]
-<./img/DAG.pdf, id=210, 1817.8715pt x 1210.71548pt>
+<use ./img/pic5.pdf>
+Package pdftex.def Info: ./img/pic5.pdf used on input line 469.
+(pdftex.def)             Requested size: 180.67499pt x 122.22641pt.
+ [7 <./img/pic5.pdf>]
+<./img/DAG.pdf, id=245, 1817.8715pt x 1210.71548pt>
 File: ./img/DAG.pdf Graphic file (type pdf)
  <use ./img/DAG.pdf>
-Package pdftex.def Info: ./img/DAG.pdf used on input line 635.
+Package pdftex.def Info: ./img/DAG.pdf used on input line 650.
 (pdftex.def)             Requested size: 361.34999pt x 240.66089pt.
 
-<./img/Task-6.pdf, id=211, 597.51233pt x 681.04443pt>
+<./img/Task-6.pdf, id=246, 597.51233pt x 681.04443pt>
 File: ./img/Task-6.pdf Graphic file (type pdf)
  <use ./img/Task-6.pdf>
-Package pdftex.def Info: ./img/Task-6.pdf used on input line 644.
+Package pdftex.def Info: ./img/Task-6.pdf used on input line 661.
 (pdftex.def)             Requested size: 238.49121pt x 271.831pt.
 
-<./img/Task-12.pdf, id=212, 597.51233pt x 682.28687pt>
+<./img/Task-12.pdf, id=247, 597.51233pt x 682.28687pt>
 File: ./img/Task-12.pdf Graphic file (type pdf)
  <use ./img/Task-12.pdf>
-Package pdftex.def Info: ./img/Task-12.pdf used on input line 652.
+Package pdftex.def Info: ./img/Task-12.pdf used on input line 669.
 (pdftex.def)             Requested size: 238.49121pt x 272.32689pt.
 
-<./img/Task-24.pdf, id=213, 597.51233pt x 692.45511pt>
+<./img/Task-24.pdf, id=248, 597.51233pt x 692.45511pt>
 File: ./img/Task-24.pdf Graphic file (type pdf)
  <use ./img/Task-24.pdf>
-Package pdftex.def Info: ./img/Task-24.pdf used on input line 659.
+Package pdftex.def Info: ./img/Task-24.pdf used on input line 676.
 (pdftex.def)             Requested size: 238.49121pt x 276.38544pt.
 
-(./bare_jrnl.bbl [8]
+[8] [9 <./img/DAG.pdf> <./img/Task-6.pdf> <./img/Task-12.pdf>] (./bare_jrnl.bbl
+
 Underfull \hbox (badness 2875) in paragraph at lines 46--49
 \OT1/ptm/m/n/8 cel-lu-lar net-works,'' \OT1/ptm/m/it/8 On-line Http-nesl Ee Ucl
 a Edufw-doc-u-mentsre-
  []
 
-[9 <./img/DAG.pdf> <./img/Task-6.pdf> <./img/Task-12.pdf>]
+
 Underfull \hbox (badness 2856) in paragraph at lines 113--117
 \OT1/ptm/m/n/8 mand, T. Louail, R. Menezes, J. J. Ra-m-asco, F. Si-mini, and
  []
 
-) [10 <./img/Task-24.pdf>] (./bare_jrnl.aux) ) 
+[10 <./img/Task-24.pdf>]) [11
+
+] (./bare_jrnl.aux) ) 
 Here is how much of TeX's memory you used:
- 14319 strings out of 492995
- 280430 string characters out of 6132703
- 331744 words of memory out of 5000000
- 17580 multiletter control sequences out of 15000+600000
+ 14325 strings out of 492995
+ 280553 string characters out of 6132703
+ 326753 words of memory out of 5000000
+ 17585 multiletter control sequences out of 15000+600000
  47239 words of font info for 92 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 55i,10n,54p,1011b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-di
-st/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
-ublic/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a
-.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
-r/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (10 pages, 726939 bytes).
+ 55i,10n,54p,966b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8
+r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
+ex7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
+fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2017/texm
+f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fon
+ts/type1/urw/times/utmri8a.pfb>
+Output written on bare_jrnl.pdf (11 pages, 785296 bytes).
 PDF statistics:
- 373 PDF objects out of 1000 (max. 8388607)
- 265 compressed objects within 3 object streams
+ 411 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 
