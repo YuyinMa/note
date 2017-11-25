@@ -129,10 +129,10 @@ $P$           &   A pool of available mobile services \\
 $pred(i)$     &   The function to identify $t_i$'s earlier tasks \\
 $R$           &   Transmission range of a node \\
 $RT$          &   The estimated execution time of a schedule \\
-$t_i$         &   The $i$-th task of a workflow \\
+$t_i$         &   The $i$-th task of a service composition \\
 $\bar{t}$     &   The average service time of a concrete service \\
-$t_{entry}$   &   The dummy beginning task of a workflow \\
-$t_{exit}$    &   The dummy ending task of a workflow \\
+$t_{entry}$   &   The dummy beginning task of a service composition \\
+$t_{exit}$    &   The dummy ending task of a service composition \\
 $w(i)$        &   The function to identify the provider that $t_i$ is scheduled into \\
 $y_i$         &   the estimated earliest time that all immediately preceding tasks successfully terminate and transfer data \\
 \end{tabular}
@@ -333,10 +333,10 @@ Tasks in a service composition are executed by different tasks providers (i.e, d
 
 As mentioned earlier, a key issue of service composition over opportunistic networks is its promised performance, in terms of deadline of composite service execution, which is decided by the composition schedule carried out at run-time. It should be noted that schedules with high performance but low reliability guarantee should be avoided. The resulting problem can therefore be formulated as:
 \begin{align}
-Max  \ \ \  : \ \ \ & R   \\\nonumber
-s.t \ \ \ : \ \ \ & \tau \le D
+Max    : \ \ \ & R   \\\nonumber
+s.t    : \ \ \ & \tau \le D
 \end{align}
-Where $R$ is the reliability of a service composition schedule plan, it can be obtained by aggregating all tasks' availability thorough a reduction technology, more details are given in our previous work \cite{xia2009novel}. $\tau$ is the estimated response time required to accomplish service composition. 
+Where $R$ is the reliability of a service composition schedule plan, it can be obtained by aggregating all tasks availability thorough a reduction technology, more details about how to estimate it are given in our previous work \cite{xia2009novel}. $\tau$ is the estimated response time required to accomplish service composition. 
 
 The derivation of $\tau$ requires some efforts. $\tau$ can be calculated as the estimated ending time of the last task in service composition template:
 \begin{align}
@@ -352,20 +352,20 @@ where $b_i$ denotes the estimated starting time of executing $t_i$ and $e_i$ the
 
 $b_i$ is decided by the estimated ending time of its immediately preceding tasks and the time required for data transfer. Let $\gamma_i$ denote the estimated time that all earlier tasks scheduled to the same provider to $t_i$ finished, we have:
 \begin{align}
-\gamma_i =  max\{d_j \mid j \in pred(i) \wedge w(i) = w(j) \}
+\gamma_i =  max\{d_j \mid t_j \in ^{*}t_i \wedge w(t_i) = w(t_j) \}
 \end{align}
-where $pred(i)$ is the index of $t_i$'s earlier tasks, $w(i)$ is the function to identify the provider that $t_i$ is scheduled into. $w(i) = w(j)$ indicates that $t_i$ and $t_j$ are scheduled into the same provider.
+where $^{*}t_i$ denotes the immediately preceding tasks of $t_i$ , i.e., those which directly connect $t_i$ through edges in the template. 
+$w(t_i)$ is the function to identify the provider that $t_i$ is scheduled into. $w(t_i) = w(t_i)$ indicates that $t_i$ and $t_j$ are scheduled into the same provider.
 
 Note that the dependency constraint requires that a task be executed only if its all immediately preceding ones successfully terminate and transfer data. We use $y_i$ to denote the estimated earliest time that the described condition holds for $t_i$.
 \begin{align}
 y_i = max \{d_k + data_{k,i} \mid t_k \ \in \ ^{*}t_i \} 
 \end{align}
-where $^{*}t_i$ denotes the immediately preceding tasks of $t_i$ , i.e., those which directly connect $t_i$ through edges in the workflow.
 The earliest possible time to execute $t_i$, $b_i$, can therefore be calculated as:
 \begin{align}
 b_i = max \{ \gamma_i, y_i \}
 \end{align}
-The entry task of a workflow has no preceding tasks and therefore its estimated ending time is obtained as:
+The first task of a service composition has no preceding tasks and therefore its estimated ending time is obtained as:
 \begin{align}
 d_1 = b_1 + e_1
 \end{align}
@@ -381,10 +381,10 @@ where $\delta$ is the time between issue a service composition and a correspondi
 \section{The kh-based algorithm for mobile service composition}
 % It is widely acknowledged that to schedule multi-task processes on distributed platforms is an NP-hard problem [5]. 
 
-The aforementioned problem we formulated can be reduced to a knapsack problem. It's known that the optimization problem of a knapsack problem is NP-hard \cite{papadimitriou1998combinatorial}, then the problem we formulated is NP-hard. It is therefore extremely time-consuming to yield optimal service composition schedules through traversal-based algorithms. Fortunately, heuristic and meta-heuristic algorithms with polynomial complexity are able to produce approximate or near optimal solutions at the cost of acceptable optimality loss.
+The optimization problem we formulated can be reduced to a knapsack problem. It's known that the optimization problem of a knapsack problem is NP-hard \cite{papadimitriou1998combinatorial}, then the problem we formulated is NP-hard. It is therefore extremely time-consuming to yield optimal service composition schedules through traversal-based algorithms. Fortunately, heuristic and meta-heuristic algorithms with polynomial complexity are able to produce approximate or near optimal solutions at the cost of acceptable optimality loss.
 
 Krill-Herd algorithm \cite{gandomi2012krill} is novel meta-heuristic generic stochastic optimization algorithm for the global optimization problem, inspired by predatory behavior and communication behavior of krill. 
-Based on our problem descriptions introduced earlier, we present definitions of genetic operations of KH algorithm next and show how resulting composition schedules are generated.
+Based on our problem descriptions introduced earlier, we present definitions of motion and crossover operations of KH algorithm next and show how resulting composition schedules are generated.
 
 \subsection{Encoding}
 A service composition schedule is encoded as a krill individual, and the individual with the best position stands for the optimal schedule in terms of its corresponding estimated reliability of a composite service. The target of algorithm is to find the krill individual with the best position, which means to find the best mobile service composition with the best response time. Therefore, once the optimal krill individual is found, the best mobile service composition is obtained.
