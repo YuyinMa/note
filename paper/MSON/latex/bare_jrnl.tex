@@ -115,26 +115,34 @@ Mobile Computing, Mobile Opportunistic Network, Mobile Service Composition, Serv
 \begin{tabular}{@{} l p{7.36cm} }
 $\alpha$      &   Half of service consumer central angle \\
 $\beta$       &   Half of service provider central angle \\
-$\gamma_{i}$  &   The estimated time that all earlier tasks scheduled to the same provider to $t_i$ are accomplished  \\
-$\delta$      &   The time between the arrival of a CMS request and the generation of its corresponding schedule \\
-$\tau$        &   The estimated response time required to accomplish service composition \\
+$\gamma_{i}$  &   The estimated time that all earlier tasks scheduled to the same candidate service to $t_i$ are accomplished  \\
+$\delta$      &   The time between the arrival of a service composition request and the generation of its corresponding schedule \\
+$\tau$        &   The estimated response time required to accomplish a service composition \\
 $Ava(s)$      &   The function to identify availability of mobile service $s$ \\
 $b_i$         &   The estimated starting time of $t_i$ \\
-$D$           &   The user-recommended constraint of the response time of the schedule \\
+$C_{r}$       &   The crossover rate of a KH algorithm \\
+$C_{t}$       &   The crossover vector of a KH algorithm \\
+$D$           &   The user-recommended constraint of the response time of a service composition \\
 $data_{i,k}$  &   The transfer time between $t_i$ and $t_k$ \\
 $d_i$         &   The estimated ending time of $t_i$ \\
+$D_i$         &   The random physical diffusion of a krill individual \\
 $e_i$         &   The estimated execution time of $t_i$ \\
 $e_{i,j}$     &   The edge connecting $t_i$ and $t_j$ \\
+$F_i$         &   The foraging action of a krill individual \\ 
+$MI$          &   The max iteration of a KH algorithm \\
+$N_i$         &   The motion influenced by other krill \\
 $P$           &   A pool of available mobile services \\
-$pred(i)$     &   The function to identify $t_i$'s earlier tasks \\
-$R$           &   Transmission range of a node \\
-$RT$          &   The estimated execution time of a schedule \\
+$PS$          &   The population size of a KH algorithm \\
+$R$           &   Transmission range of a mobile device \\
+$RT$          &   The estimated response time of a schedule \\
 $t_i$         &   The $i$-th task of a service composition \\
 $\bar{t}$     &   The average service time of a concrete service \\
 $t_{entry}$   &   The dummy beginning task of a service composition \\
 $t_{exit}$    &   The dummy ending task of a service composition \\
-$w(i)$        &   The function to identify the provider that $t_i$ is scheduled into \\
-$y_i$         &   the estimated earliest time that all immediately preceding tasks successfully terminate and transfer data \\
+$w(t_i)$      &   The function to identify the concrete service that $t_i$ is scheduled into \\
+$X$           &   The population of krill \\
+$X_i$         &   The $i$-th individual in a krill population \\
+$y_i$         &   The estimated earliest time that all immediately preceding tasks successfully terminate and transfer data \\
 \end{tabular}
 
 \IEEEpeerreviewmaketitle
@@ -215,7 +223,7 @@ The above limitations could be well avoided by using a reliability-aware deadlin
 
 \subsection{Mobile Service Composition over Opportunistic Network Framework}
 
-Mobile service composition over opportunistic have three properties:
+Mobile service composition over opportunistic network have three properties:
 
 1) Locality: rather than stable internet, service composition over opportunistic bases itself on mobile networks and exploits user mobility. Mobile users can perceive nearby services and establish self-organized local communication within permitted transmission distance.
 
@@ -302,12 +310,12 @@ As shown in Fig. 5, a mobile user can perceive services exposed by other users a
 % The response time of a CMS request consists of tasks execution time and data transfer time. 
 If task $t_i$ connects $t_k$ through edge $e_{i,k}$ and they are executed by different service providers, the transfer time, $data_{i,k}$, is inevitable because inter-provider data and control signal transfer is required. Otherwise, $data_{i,k} = 0 $.
 
-Tasks in a service composition are executed by different tasks providers (i.e, different mobile devices) usually exhibit varying performance. Moreover, a task executed by the same provider at different time may exhibit fluctuating performance. In this paper, we use the average execution time of recent $n$ trials to represent expected execution time.
+% Tasks in a service composition are executed by different tasks providers (i.e, different mobile devices) usually exhibit varying performance. Moreover, a task executed by the same provider at different time may exhibit fluctuating performance. In this paper, we use the average execution time of recent $n$ trials to represent expected execution time.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3in]{./img/pic-extra.pdf}
-\caption{An example of Resource Pool}
+\caption{An example of resource pool}
 \label{Resource Pool}
 \end{figure}
 
@@ -352,7 +360,7 @@ where $b_i$ denotes the estimated starting time of executing $t_i$ and $e_i$ the
 
 $b_i$ is decided by the estimated ending time of its immediately preceding tasks and the time required for data transfer. Let $\gamma_i$ denote the estimated time that all earlier tasks scheduled to the same provider to $t_i$ finished, we have:
 \begin{align}
-\gamma_i =  max\{d_j \mid t_j \in ^{*}t_i \wedge w(t_i) = w(t_j) \}
+\gamma_i =  max\{d_j \mid t_j \ \in \ ^{*}t_i \ \wedge \ w(t_i) = w(t_j) \}
 \end{align}
 where $^{*}t_i$ denotes the immediately preceding tasks of $t_i$ , i.e., those which directly connect $t_i$ through edges in the template. 
 $w(t_i)$ is the function to identify the provider that $t_i$ is scheduled into. $w(t_i) = w(t_i)$ indicates that $t_i$ and $t_j$ are scheduled into the same provider.
@@ -394,7 +402,7 @@ The position vector of each krill individual is represented by an integer array 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3in]{./img/pic4.pdf}
-\caption{An example of Krill encoding}
+\caption{An example of krill encoding}
 \label{Krill encoding}
 \end{figure}
 
@@ -441,9 +449,9 @@ where $V_f$ is the foraging speed, $\omega_f \in [0, 1]$ the inertia weight of f
 
 The physical diffusion of individual $X_i$ is considered to be a random process. It includes two components: a maximum diffusion speed and a random directional vector:
 \begin{equation}
-D_i = D_{max}\delta
+D_i = D_{max}\theta
 \end{equation}
-where $D_{max}$ is the maximum diffusion speed and $\delta \in [-1, 1]$ a random directional vector.
+where $D_{max}$ is the maximum diffusion speed and $\theta \in [-1, 1]$ a random directional vector.
 
 \subsection{Stud selection and crossover operator}
 
@@ -464,15 +472,6 @@ c_{i}=
 \end{cases}
 \end{equation}
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=2.5in]{./img/pic5.pdf}
-\caption{An example of Crossover operator}
-\label{Crossover operator}
-\end{figure}
-
-As shown in algorithm 1, we can see that for each individual $X_i$ to crossover, we choose the optimal individual $Stud$ (i.e., the individual with highest reliability value) to mating. As shown in Fig. 7, the characteristics from individual $Stud$ are copied to individual $X_i$ according to crossover vector $Cv$. 
-
 \begin{algorithm}
 \caption{Crossover operation}
 \label{alg1}
@@ -484,7 +483,7 @@ As shown in algorithm 1, we can see that for each individual $X_i$ to crossover,
 % \STATE $C_{r} \leftarrow$ calcCrossoverRate($X_i$, $R_{best}$, $R_{worst}$)
 \STATE Calculate crossover rate as $C_{r}$ by e.q (20)
 
-\FOR{$i=0$ \TO $taskNumber$}
+\FOR{$i=1$ \TO $taskNumber$}
 \STATE $r \leftarrow rand(0,1)$
 \IF{$r < C_{r}$}
 \STATE $Cv[i] \leftarrow 1$
@@ -493,11 +492,20 @@ As shown in algorithm 1, we can see that for each individual $X_i$ to crossover,
 \ENDIF
 \ENDFOR
 
-\FOR{$i=0$ \TO $taskNumber$}
+\FOR{$i=1$ \TO $taskNumber$}
 \STATE $X_i[i] \leftarrow X_i \wedge  (1-Cv[i]) + Stud \wedge Cv[i]$ 
 \ENDFOR
 \end{algorithmic}
 \end{algorithm}
+
+As shown in algorithm 1, we can see that for each individual $X_i$ to crossover, we choose the optimal individual $Stud$ (i.e., the individual with highest reliability value) to mating. As shown in Fig. 7, the characteristics from individual $Stud$ are copied to individual $X_i$ according to crossover vector $Cv$. 
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{./img/pic5.pdf}
+\caption{An example of crossover operator}
+\label{Crossover operator}
+\end{figure}
 
 \subsection{Position update}
 The offspring generated by crossover operations should be evaluated and updated to current evolutionary sequence.
@@ -512,8 +520,9 @@ where
 where $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space (usually $1/2n$). 
 Based on the above discussions, the improved KH algorithm is given in Algorithm 2.
 
+
 \begin{algorithm}
-\caption{KH algorithm}
+\caption{Improved KH algorithm}
 \label{alg2}
 \begin{algorithmic}[1]
 
@@ -521,19 +530,19 @@ Based on the above discussions, the improved KH algorithm is given in Algorithm 
 
 \STATE Generate initial population as $X = (X_1, X_2, ..., X_{PS})$
 \STATE Estimate response time of each krill individual in $X$
-\FOR{$i=0$ \TO $MI$}
-  \FOR{$i=0$ \TO $PS$}    
+\FOR{$j=1$ \TO $MI$}
+  \FOR{$k=1$ \TO $PS$}    
     \STATE Calculate movement induced by other krill individuals ($N_i$) by e.q (15)
     \STATE Calculate foraging motion ($F_i$) by e.q (17)
     \STATE Calculate random diffusion motion ($D_i$) by e.q (19)
-    \STATE $X_i^{'} \leftarrow updatePosition(N_i,F_i,D_i)$
-    \STATE $X_i^{''} \leftarrow crossoverOperator(X_i^{'})$
-    \STATE $RT_i^{'} \leftarrow estimateResponseTime(X_i^{'})$
-    \STATE $RT_i^{''} \leftarrow estimateResponseTime(X_i^{''})$
-    \IF{$RT_i^{''} < RT_i^{'}$}
-      \STATE update position by e.q (24) as $X_{i+1}$
+    \STATE Update position by e.q (22) and save as $X_k^{'}$
+    \STATE $X_k^{''} \leftarrow crossoverOperator(X_k^{'})$
+    \STATE $R_k^{'} \leftarrow estimateReliability(X_k^{'})$
+    \STATE $R_k^{''} \leftarrow estimateReliability(X_k^{''})$
+    \IF{$R_k^{''} < R_k^{'}$}
+      \STATE accept $X_k^{'}$ as $X_{k+1}$
     \ELSE
-      \STATE accept $X_i^{''}$ as $X_{i+1}$
+      \STATE accept $X_k^{''}$ as $X_{k+1}$
     \ENDIF
   \ENDFOR
 \ENDFOR
@@ -542,19 +551,20 @@ Based on the above discussions, the improved KH algorithm is given in Algorithm 
 \end{algorithm}
 
 
+
 \section{CASE STUDY AND EVALUATION}
 In this section, we present a case study based on some well-known service composition templates and a real-world dataset for measured response time of D2D contact traces, to compare traditional scheduling approaches with our proposed one.
 
 To evaluate the optimality and scalability of the proposed approaches, the experiment is run on a personal computer with an Intel Core i5 CPU with 2.4 GHz, 4 GB RAM, macOS and Matlab R2015b Edition.
 
 Since we can not find available realistic datasets which involving both user D2D contact traces and quality of mobile service so far, we attempt to simulate the scenarios for mobile services provision by integrating realistic user D2D contact traces with quality of Web service datasets. 
-We consider MIT Reality dataset \cite{eagle2006reality} as user D2D opportunistic contact traces, where user location, Bluetooth devices in proximity, application usage, and phone status (such as charging and idle) were collected from 100 users over several months. This dataset can really reflect diverse network scenarios.
+We consider MIT Reality dataset \cite{eagle2006reality} as user D2D opportunistic contact traces, where user location, Bluetooth devices in proximity, application usage, and phone status (such as charging and idle) were collected from 100 users for several months. This dataset can really reflect diverse network scenarios.
 The publicly available quality of Web service (QWS) dataset\cite{zheng2014investigating} can be used to characterize the service candidates. This dataset consists of 4500 Web services from 142 users over 64 different time slices (at 15-minute interval) and each QoS data includes two measurements (response time and throughput).
 % for a mobile service, response time attribute is randomly selected from the QWS dataset. 
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.5}
-\caption{User $u$ 's D2D contract traces}
+\caption{User D2D contract traces}
 \label{D2D contract traces}
 \centering
 \begin{tabular}{c c}
@@ -614,10 +624,14 @@ Tony        & $s_1$, $s_4$\\
 \end{tabular}
 \end{table}
 
+
+Table 1 shows part of one user's opportunistic contacts data extracted from MIT Reality dataset, it can be seen that there are five nearby devices within D2D transmission distance at time $t1$ and ,these devices can be regarded as service providers. Table 3 shows service providers and the services they exposed to nearby devices. These mobile service are random chosen from QWS dataset. Table 3 is the Cartesian product of Table 1 and Table 2, it shows how many kinds of services user can exploit at a certain time and how many candidates for each kind of service (i.e., task). As shown in Table 3, there are five kinds of service available at time $t1$ and there are three candidates for task $t_1$, three candidates for task $t_4$, two candidates for task $t_5$, one candidate for task $t_6$ and one candidate for task $t_7$. These changes suggests that mobile services are usually with unreliable and time-varying availability.
+The success or failure of a composition schedule can be judged by these contacts data. For example, if a composition schedule was made in time point $t_1$ and its estimated response time is $t_3$, then the contact time series data from $t_1$ to $t_5$ is used to identify whether an unavailable services incur composition schedule failure.
+
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.8}
-\caption{Available candidates}
-\label{Available candidates}
+\caption{Available candidate services}
+\label{Available candidate services}
 \centering
 \begin{tabular}{c c}
 \hline
@@ -642,9 +656,6 @@ t6     & $s_1^{(2)}$, $s_4^{(3)}$, $s_5^{(3)}$, $s_6^{(2)}$, $s_7^{(1)}$ \\
 \end{tabular}
 \end{table}
 
-Table 1 shows part of one user's opportunistic contacts data extracted from MIT Reality dataset, it can be seen that there are five nearby devices within D2D transmission distance at time $t1$ and ,these devices can be regarded as service providers. Table 3 shows service providers and the services they exposed to nearby devices. These mobile service are random chosen from QWS dataset. Table 3 is the Cartesian product of Table 1 and Table 2, it shows how many kinds of services user can exploit at a certain time and how many candidates for each kind of service (i.e., task). As shown in Table 3, there are five kinds of service available at time $t1$ and there are three candidates for task $t_1$, three candidates for task $t_4$, two candidates for task $t_5$, one candidate for task $t_6$ and one candidate for task $t_7$. These changes suggests that mobile services are usually with unreliable and time-varying availability.
-The success or failure of a composition schedule can be judged by these contacts data. For example, if a composition schedule was made in time point $t_1$ and its estimated response time is $t_3$, then the contact time series data from $t_1$ to $t_5$ is used to identify whether an unavailable services incur composition schedule failure.
-
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=5in]{./img/DAG.pdf}
@@ -656,27 +667,27 @@ We present a case study based on three different real mobile service composition
 The data transmission time can be estimated by the throughput divided by the average bandwidth, we consider 20Mbps as average bandwidth after testing different D2D protocols. 
 We extract 50 people's consecutive 250 minutes user opportunistic contact time series data from MIT Reality dataset and three cases are executed every 5 minutes. Whole experiment is executed 50 times independently and the average performance is recorded. 
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.3in]{./img/Task-6.pdf}
-\caption{Case I}
+\includegraphics[width=6in]{./img/Task-6.pdf}
+\caption{Case study for travel arrange}
 \label{Task-6}
-\end{figure}
+\end{figure*}
 
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.3in]{./img/Task-12.pdf}
-\caption{Case II}
+\includegraphics[width=6in]{./img/Task-12.pdf}
+\caption{Case study for tensorflow}
 \label{Task-12}
-\end{figure}
+\end{figure*}
 
-\begin{figure}[!t]
+\begin{figure*}[!t]
 \centering
-\includegraphics[width=3.3in]{./img/Task-24.pdf}
-\caption{Case III}
+\includegraphics[width=6in]{./img/Task-24.pdf}
+\caption{Case study for montage}
 \label{Task-24}
-\end{figure}
+\end{figure*}
 
 As shown by Fig. 9(a), Fig. 10(a) and Fig. 11(a), our proposed method achieves higher success probability (average $99.9\%$ vs. $97.3\%$ for Case I, average $92.1\%$ vs. $75.7\%$ for Case II, and average $89\%$ vs. $54.9\%$ for Case III) compared with non-availability approach.
 The average response time is shown in Fig. 9(b), Fig. 10(b) and Fig. 11(b), from the figure we can clearly our method has different different degrees of reducing response time in three cases, especially average $17.51\%$ response time reduced for Case II and average $36.68\%$ time reduced for Case III. Intuitively, the disadvantage of a non-availability approaches lie in that they consider the availability of mobile service is fully stable during execution. It therefore tends to choose a candidate service which has lower response time but with high probability becomes unavailability during execution because of users mobility.

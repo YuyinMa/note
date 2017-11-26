@@ -8,14 +8,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: mybibtex.bib
-Repeated entry---line 632 of file mybibtex.bib
- : @article{dinh2013survey
- :                        ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 643 of file mybibtex.bib
- : @article{groba2014opportunistic
- :                                ,
-I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -62,4 +54,3 @@ warning$ -- 0
 while$ -- 163
 width$ -- 40
 write$ -- 401
-(There were 2 error messages)
