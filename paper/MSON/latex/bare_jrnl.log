@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  18 DEC 2017 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  18 DEC 2017 22:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -744,41 +744,53 @@ Package pdftex.def Info: ./img/pic4.pdf used on input line 404.
 File: ./img/pic5.pdf Graphic file (type pdf)
 
 <use ./img/pic5.pdf>
-Package pdftex.def Info: ./img/pic5.pdf used on input line 505.
+Package pdftex.def Info: ./img/pic5.pdf used on input line 508.
 (pdftex.def)             Requested size: 180.67499pt x 122.22641pt.
  [7 <./img/pic5.pdf>]
-<./img/DAG.pdf, id=245, 1817.8715pt x 1210.71548pt>
-File: ./img/DAG.pdf Graphic file (type pdf)
- <use ./img/DAG.pdf>
-Package pdftex.def Info: ./img/DAG.pdf used on input line 663.
-(pdftex.def)             Requested size: 361.34999pt x 240.66089pt.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-<./img/Task-6.pdf, id=246, 624.85925pt x 215.99776pt>
+<./img/DAG.pdf, id=245, 1817.8715pt x 1210.71548pt>
+File: ./img/DAG.pdf Graphic file (type pdf)
+ <use ./img/DAG.pdf>
+Package pdftex.def Info: ./img/DAG.pdf used on input line 670.
+(pdftex.def)             Requested size: 361.34999pt x 240.66089pt.
+
+<./img/Task-6.pdf, id=246, 361.06169pt x 147.66211pt>
 File: ./img/Task-6.pdf Graphic file (type pdf)
  <use ./img/Task-6.pdf>
-Package pdftex.def Info: ./img/Task-6.pdf used on input line 674.
-(pdftex.def)             Requested size: 433.62pt x 149.89223pt.
+Package pdftex.def Info: ./img/Task-6.pdf used on input line 678.
+(pdftex.def)             Requested size: 433.62pt x 177.34908pt.
 
-<./img/Task-12.pdf, id=247, 623.55763pt x 214.0237pt>
+<./img/Task-12.pdf, id=247, 363.3609pt x 147.31442pt>
 File: ./img/Task-12.pdf Graphic file (type pdf)
  <use ./img/Task-12.pdf>
-Package pdftex.def Info: ./img/Task-12.pdf used on input line 682.
-(pdftex.def)             Requested size: 433.62pt x 148.83583pt.
+Package pdftex.def Info: ./img/Task-12.pdf used on input line 686.
+(pdftex.def)             Requested size: 433.62pt x 175.80533pt.
 
-<./img/Task-24.pdf, id=248, 619.91028pt x 216.64047pt>
+<./img/Task-24.pdf, id=248, 364.3712pt x 144.88086pt>
 File: ./img/Task-24.pdf Graphic file (type pdf)
  <use ./img/Task-24.pdf>
-Package pdftex.def Info: ./img/Task-24.pdf used on input line 689.
-(pdftex.def)             Requested size: 433.62pt x 151.5349pt.
+Package pdftex.def Info: ./img/Task-24.pdf used on input line 693.
+(pdftex.def)             Requested size: 433.62pt x 172.42802pt.
 
 [8]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9 <./img/DAG.pdf> <./img/Task-6.pdf, page is rotated 270 degrees> <./img/Task
--12.pdf, page is rotated 270 degrees>] (./bare_jrnl.bbl
+LaTeX Warning: Text page 9 contains only floats.
+
+
+Overfull \vbox (18.81139pt too high) has occurred while \output is active []
+
+
+
+LaTeX Warning: Text page 9 contains only floats.
+
+
+Overfull \vbox (18.81139pt too high) has occurred while \output is active []
+
+
+[9 <./img/DAG.pdf> <./img/Task-6.pdf> <./img/Task-12.pdf>] (./bare_jrnl.bbl
 Underfull \hbox (badness 2875) in paragraph at lines 46--49
 \OT1/ptm/m/n/8 cel-lu-lar net-works,'' \OT1/ptm/m/it/8 On-line Http-nesl Ee Ucl
 a Edufw-doc-u-mentsre-
@@ -789,13 +801,13 @@ Underfull \hbox (badness 2856) in paragraph at lines 113--117
 \OT1/ptm/m/n/8 mand, T. Louail, R. Menezes, J. J. Ra-m-asco, F. Si-mini, and
  []
 
-[10 <./img/Task-24.pdf, page is rotated 270 degrees>]) [11
+[10 <./img/Task-24.pdf>]) [11
 
 ] (./bare_jrnl.aux) ) 
 Here is how much of TeX's memory you used:
  14327 strings out of 492995
  280600 string characters out of 6132703
- 326761 words of memory out of 5000000
+ 325761 words of memory out of 5000000
  17587 multiletter control sequences out of 15000+600000
  47239 words of font info for 92 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -816,7 +828,7 @@ l/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/
 2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (11 pages, 786567 bytes).
+Output written on bare_jrnl.pdf (11 pages, 787674 bytes).
 PDF statistics:
  405 PDF objects out of 1000 (max. 8388607)
  284 compressed objects within 3 object streams

@@ -44,7 +44,7 @@
 
 \begin{document}
 
-\title{Reliability-aware and Deadline-constrained Mobile Service Composition Over Opportunistic Networks}
+\title{Reliability-aware and Deadline-constrained Mobile Service Composition over Opportunistic Networks}
 
 \author{Qinglan Peng,
         Mengchu Zhou, ~\IEEEmembership{Fellow,~IEEE,}
@@ -117,12 +117,13 @@ $\alpha$      &   Half of service consumer central angle \\
 $\beta$       &   Half of service provider central angle \\
 $\gamma_{i}$  &   The estimated time that all earlier tasks scheduled to the same candidate service to $t_i$ are accomplished  \\
 $\delta$      &   The time between the arrival of a service composition request and the generation of its corresponding schedule \\
-$\tau$        &   The estimated response time required to accomplish a service composition \\
+$\tau$        &   The estimated time required to accomplish a service composition \\
 $Ava(s)$      &   The function to identify availability of mobile service $s$ \\
 $b_i$         &   The estimated starting time of $t_i$ \\
 $C_{r}$       &   The crossover rate of a KH algorithm \\
 $C_{t}$       &   The crossover vector of a KH algorithm \\
-$D$           &   The user-recommended constraint of the response time of a service composition \\
+% $CT$          &   The estimated completion time of a schedule plan \\
+$D$           &   The user-recommended constraint of the completion time of a service composition \\
 $data_{i,k}$  &   The transfer time between $t_i$ and $t_k$ \\
 $d_i$         &   The estimated ending time of $t_i$ \\
 $D_i$         &   The random physical diffusion of a krill individual \\
@@ -134,7 +135,6 @@ $N_i$         &   The motion influenced by other krill \\
 $P$           &   A pool of available mobile services \\
 $PS$          &   The population size of a KH algorithm \\
 $R$           &   Transmission range of a mobile device \\
-$RT$          &   The estimated response time of a schedule \\
 $t_i$         &   The $i$-th task of a service composition \\
 $\bar{t}$     &   The average service time of a concrete service \\
 $t_{entry}$   &   The dummy beginning task of a service composition \\
@@ -302,7 +302,7 @@ Ava(s) = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta 
 A mobile service composition can be described by a two-tuple $SC = (T, E)$ \cite{el2010tqos}, where $T = \{ t_1, t_2, ..., t_n \}$ is a set of tasks and $E$ is a set of directed edges. An edge $e_{i,j}$ of the form $(t_i,t_j)$ indicates that a data dependency between $t_i$ and $t_j$ exists and $t_i/t_j$ are the parent$/$child tasks respectively. A child task is executed after all its parent tasks are completed. 
 Furthermore, if there is data transmission attached onto $e_{i,j}$, $t_j$ can start only after the data from $t_i$ is received.
 A dummy tentry/texit task with zero execution time  can be added as a sole entry/exit task if the original composition process has multiple entry/exit tasks rather than a single one. 
-$D$ denotes the user-recommended constraint of the response time of the service composition. Note that this constraint can be either hard or soft one. In this work we consider hard constraint where the actual service composition response time is bounded by $D$.
+$D$ denotes the user-recommended constraint of the completion time of the service composition. Note that this constraint can be either hard or soft one. In this work we consider hard constraint where the actual service composition complement time is bounded by $D$.
 A sample composite mobile service for arranging travel plan \cite{wu2013transactional} is illustrated in Fig. 4. We denote the composition patterns (i.e, sequence, choice, parallel and loop) by symbols $\rightarrow$, \encircle{C}, \encircle{P} and \encircle{L}, respectively.
 
 As shown in Fig. 5, a mobile user can perceive services exposed by other users and these available services can be described as service pool $P = \{s_1^{(i)}, s_2^{(j)}, ..., s_m^{(k)} \}$, $s_m^{(k)}$ means there are $k$ candidate services for task $t_m$. Once a user issues a service composition request, tasks in the composite service is scheduled to the service selected from services pool and executed. 
@@ -344,7 +344,7 @@ As mentioned earlier, a key issue of service composition over opportunistic netw
 Max    : \ \ \ & R   \\\nonumber
 s.t    : \ \ \ & \tau \le D
 \end{align}
-Where $R$ is the reliability of a service composition schedule plan, it can be obtained by aggregating all tasks availability thorough a reduction technology, more details about how to estimate it are given in our previous work \cite{xia2009novel}. $\tau$ is the estimated response time required to accomplish service composition. 
+Where $R$ is the reliability of a service composition schedule plan, it can be obtained by aggregating all tasks availability thorough a reduction technology, more details about how to estimate it are given in our previous work \cite{xia2009novel}. $\tau$ is the estimated time required to accomplish service composition. 
 
 The derivation of $\tau$ requires some efforts. $\tau$ can be calculated as the estimated ending time of the last task in service composition template:
 \begin{align}
@@ -389,13 +389,13 @@ where $\delta$ is the time between issue a service composition and a correspondi
 \section{The kh-based algorithm for mobile service composition}
 % It is widely acknowledged that to schedule multi-task processes on distributed platforms is an NP-hard problem [5]. 
 
-The optimization problem discussed in th previous section can be reduced to a knapsack problem. It's widely known that knapsack problem is NP-hard \cite{papadimitriou1998combinatorial}, then the optimization problem is also NP-hard. It is therefore extremely time-consuming to yield optimal service composition schedules through traversal-based algorithms. Fortunately, heuristic and meta-heuristic algorithms with polynomial complexity are able to produce approximate or near optimal solutions at the cost of acceptable optimality loss.
+The optimization problem discussed in the previous section can be reduced to a knapsack problem. It's widely known that knapsack problem is NP-hard \cite{papadimitriou1998combinatorial}, then the optimization problem is also NP-hard. It is therefore extremely time-consuming to yield optimal service composition schedules through traversal-based algorithms. Fortunately, heuristic and meta-heuristic algorithms with polynomial complexity are able to produce approximate or near optimal solutions at the cost of acceptable optimality loss.
 
 Krill-Herd algorithm \cite{gandomi2012krill} is novel meta-heuristic generic stochastic optimization algorithm for the global optimization problem, inspired by predatory behavior and communication behavior of krill. 
 Based on our problem descriptions introduced earlier, we present definitions of motion and crossover operations of KH algorithm next and show how resulting composition schedules are generated.
 
 \subsection{Encoding}
-A service composition schedule is encoded as a krill individual, and the individual with the best position stands for the optimal schedule in terms of its corresponding estimated reliability of a composite service. The target of algorithm is to find the krill individual with the best position, which means to find the best mobile service composition with the best response time. Therefore, once the optimal krill individual is found, the best mobile service composition is obtained.
+A service composition schedule is encoded as a krill individual, and the individual with the best position stands for the optimal schedule in terms of its corresponding estimated reliability of a composite service. The target of algorithm is to find the krill individual with the best position, which means to find the best mobile service composition with the best completion time. Therefore, once the optimal krill individual is found, the best mobile service composition is obtained.
 
 The position vector of each krill individual is represented by an integer array with its length equal to the number of tasks of the service composition request. The $i$-th entry of the array, in turn, refers to the concrete service selected by task $t_i$ . That is to say, given that the value of the $n$-th entry is $k$, $s_{(n,k)}$ is the selected concrete service to execute $t_n$. Fig. 6 illustrates a simple example of  krill encoding.
 
@@ -478,6 +478,8 @@ c_{i}=
 \begin{algorithmic}[1]
 
 \REQUIRE Population $X$; Individual $X_i$ to crossover; The number of tasks $taskNumber$; 
+\ENSURE A new individual after crossover operation
+
 \STATE Sort all krill individuals in population $X$ by its reliability value, get optimal individual $Stud$, save the best reliability value as $R_{best}$ and the worst reliability value as $R_{worst}$
 
 % \STATE $C_{r} \leftarrow$ calcCrossoverRate($X_i$, $R_{best}$, $R_{worst}$)
@@ -495,6 +497,7 @@ c_{i}=
 \FOR{$i=1$ \TO $taskNumber$}
 \STATE $X_i[i] \leftarrow X_i \wedge  (1-Cv[i]) + Stud \wedge Cv[i]$ 
 \ENDFOR
+\STATE return $X_i$
 \end{algorithmic}
 \end{algorithm}
 
@@ -527,9 +530,9 @@ Based on the above discussions, the improved KH algorithm is given in Algorithm 
 \begin{algorithmic}[1]
 
 \REQUIRE Number of population size $PS$, Number of max iteration $MI$;
-
+\ENSURE The best solution
 \STATE Generate initial population as $X = (X_1, X_2, ..., X_{PS})$
-\STATE Estimate response time of each krill individual in $X$
+\STATE Estimate completion time of each krill individual in $X$
 \FOR{$j=1$ \TO $MI$}
   \FOR{$k=1$ \TO $PS$}    
     \STATE Calculate movement induced by other krill individuals ($N_i$) by e.q (15)
@@ -546,14 +549,14 @@ Based on the above discussions, the improved KH algorithm is given in Algorithm 
     \ENDIF
   \ENDFOR
 \ENDFOR
-\STATE Output the best solution
+\STATE Evaluate all individuals and return the best one
 \end{algorithmic}
 \end{algorithm}
 
 
 
 \section{CASE STUDY AND EVALUATION}
-In this section, we present a case study based on some well-known service composition templates and a real-world dataset of measured response time of D2D contact traces, We apply compare traditional scheduling approaches and our proposed to schedule such service composition templates and show the advantage of our proposed one.
+In this section, we present a case study based on some well-known service composition templates and a real-world dataset of measured completion time of D2D contact traces, We apply compare traditional scheduling approaches and our proposed to schedule such service composition templates and show the advantage of our proposed one.
 
 The case study is based on a personal computer with an Intel Core i5 CPU with 2.4 GHz, 4 GB RAM, macOS and Matlab R2015b Edition.
 
@@ -589,6 +592,7 @@ $T_6$ & S25, S10, NORTHOLT, BlueRadios, Rabbit\\
 \end{tabular}
 \end{table}
 
+
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.3}
 \caption{Services exposed by providers}
@@ -623,12 +627,15 @@ Tony        & $s_1$, $s_4$\\
 \end{tabular}
 \end{table}
 
-
-Table 1 shows a part of opportunistic contact traces of a mobile user in the MIT Reality dataset, it can be seen that there are 5 nearby devices within D2D transmission distance at time $T_1$ and thus they are potential service providers. Table 2 shows an example of service providers and the services they exposed to nearby devices. These mobile service are random chosen from QWS dataset. Table 3 shows the Cartesian product of two tables, and suggests the set of service types (i.e., tasks in composition template) user exploit able and the set of candidate services. 
-As shown in Table 3, 5 types of services $s_1/s_4/s_5/s_6/s_7$ are available at $T_1$ and they have $3/3/2/1/1$ candidate services, respectively.
+Table 1 shows a part of opportunistic contact traces of a mobile user in the MIT Reality dataset, it can be seen that there are 5 nearby devices within D2D transmission distance at time $T_1$ and thus they are potential service providers. Table 2 shows an example of service providers and the services they exposed to nearby devices. These mobile service are random chosen from QWS dataset. Table 3 shows the Cartesian product of two tables, and suggests the set of service types user exploit able and the set of its candidate services. 
+As shown in Table 3, 5 kinds of services $s_1/s_4/s_5/s_6/s_7$ are available at $T_1$ and they have $3/3/2/1/1$ candidate services, respectively.
 This table clearly shows that mobile services are with a time-varying set of supporting mobile services. 
 %（看出service process和supporting mobile service）混淆了吧
 A smart algorithm able to exploit the rum-time dynamicness of time-varying availability of mobile services is thus in high need. The run-time contact time of a mobile service is decided by its corresponding record in the MIT reality dataset. Consider that a composition schedule is applied at $T_1$ and its estimated completion time is $T_3$, then the contact time data from $T_1$ to $T_3$ is used to identify whether an unavailable services incur composition schedule failure.
+
+We employ representative existing algorithms \cite{Deng2017} \cite{sadiq2015service} which consider time-invariant availability and our proposed one to schedule mobile service compositions based on 3 well-known composition templates given in Fig. 8. 
+The templates represent composite services and business processes for airline-ticket-booking, TensorFlow-based data processing, and astronomical image processing applications. As usually done by various existing works \cite{Meena2016Cost, Rodriguez2014Deadline}, data transmission time can be calculated as the throughput (20Mbps as suggested by the MIT Reality dataset) divided by the average bandwidth. 
+The test is based on 50 people’s opportunistic contract data from MIT Reality dataset. The test includes 50 results of scheduling service compositions based our algorithms and baseline ones in consecutive periods of 5 minutes. 
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.8}
@@ -665,9 +672,6 @@ $T_6$     & $s_1^{(2)}$, $s_4^{(3)}$, $s_5^{(3)}$, $s_6^{(2)}$, $s_7^{(1)}$ \\
 \label{DAG}
 \end{figure*}
 
-We employ representative existing algorithms \cite{Deng2017} \cite{sadiq2015service} which consider time-invariant availability and our proposed one to schedule mobile service compositions based on 3 well-known composition templates given in Fig. 8. 
-The templates represent composite services and business processes for airline-ticket-booking, TensorFlow-based data processing, and astronomical image processing applications. As usually done by various existing works \cite{Meena2016Cost, Rodriguez2014Deadline}, data transmission time can be calculated as the throughput (20Mbps as suggested by the MIT Reality dataset) divided by the average bandwidth. 
-The test is based on 50 people’s opportunistic contract data from MIT Reality dataset. The test includes 50 results of scheduling service compositions based our algorithms and baseline ones in consecutive periods of 5 minutes. 
 
 \begin{figure*}[!t]
 \centering
@@ -692,11 +696,12 @@ The test is based on 50 people’s opportunistic contract data from MIT Reality 
 \end{figure*}
 
 As shown by Fig. 9(a), Fig. 10(a) and Fig. 11(a), our proposed method achieves higher success probability (average $99.9\%$ vs. $97.3\%$ for Case I, average $92.1\%$ vs. $75.7\%$ for Case II, and average $89\%$ vs. $54.9\%$ for Case III) compared with baseline algorithms.
-Fig. 9(b), Fig. 10(b) and Fig. 11(b) shows the comparisons of process completion time where our proposed algorithm achieves 2.20\%, 17.7\%, and 38.2\% time savings in each case. The case study result shows the more complex composition template is, the better our algorithm perform.
+Fig. 9(b), Fig. 10(b) and Fig. 11(b) shows the comparisons of process completion time where our proposed algorithm achieves 2.2\%, 17.7\%, and 38.2\% time savings in each case. 
+The result of case study shows that the more complex composition template is, the better our algorithm perform.
 Intuitively, our algorithm outperforms traditional ones because traditional ones consider fully available mobile services and thus they tend to choose services with low response time but high risk to be unavailable during service provision.
 
 \section{Conclusion}
-In this paper, we propose a comprehensive framework for optimal mobile service composition in mobile environment. We present a mobile service opportunistic network model that fully integrates human mobility behavior factors for mobile service provisioning and introduce an reliability-aware and deadline-constrained mobile service composition model. Then we formulate the developed model as an optimization problem aiming at maximizing the quality of composite service and propose a Krill-Herd-based algorithm to solve it. We also carry out a case study based on a real-world opportunistic network and some well-known mobile service composition templates and shows that our proposed approach outperforms traditional ones, especially those who consider constant/time-invariant availability of mobile services, in terms of success rate and response time.
+In this paper, we propose a comprehensive framework for optimal mobile service composition in mobile environment. We present a mobile service opportunistic network model that fully integrates human mobility behavior factors for mobile service provisioning and introduce an reliability-aware and deadline-constrained mobile service composition model. Then we formulate the developed model as an optimization problem aiming at maximizing the quality of composite service and propose a Krill-Herd-based algorithm to solve it. We also carry out a case study based on a real-world opportunistic network and some well-known mobile service composition templates and shows that our proposed approach outperforms traditional ones, especially those who consider constant/time-invariant availability of mobile services, in terms of success rate and completion time.
 
 We consider the following topics for future work as well: 1) Some prediction methods, e.g., time-series model, hidden Markov models and neural networks can be used to predict user's future movement and help to achieve further improved performance of composite services; 2) more metrics, e.g., service scalability and service reputation are supposed to be modeled and  analyzed; 3) this work consider hard constraints. We intend to consider soft constraints (where completion time of composite services is allowed to exceed a threshold value with a bounded given rate) and introduce corresponding algorithms for optimal run-time scheduling.
 
