@@ -221,4 +221,14 @@ Z.~Zheng, Y.~Zhang, and M.~R. Lyu, ``Investigating qos of real-world web
   services,'' \emph{IEEE Transactions on Services Computing}, vol.~7, no.~1,
   pp. 32--39, 2014.
 
+\bibitem{Meena2016Cost}
+J.~Meena, M.~Kumar, and M.~Vardhan, ``Cost effective genetic algorithm for
+  workflow scheduling in cloud under deadline constraint,'' \emph{IEEE Access},
+  vol.~4, pp. 5065--5082, 2016.
+
+\bibitem{Rodriguez2014Deadline}
+M.~A. Rodriguez and R.~Buyya, ``Deadline based resource provisioningand
+  scheduling algorithm for scientific workflows on clouds,'' \emph{Cloud
+  Computing IEEE Transactions on}, vol.~2, no.~2, pp. 222--235, 2014.
+
 \end{thebibliography}
