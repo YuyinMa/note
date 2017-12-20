@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  18 DEC 2017 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  19 DEC 2017 20:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -566,18 +566,18 @@ File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 ))) (./bare_jrnl.aux)
 \openout1 = `bare_jrnl.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
-LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 
 -- Lines per column: 58 (exact).
 Package caption Info: Begin \AtBeginDocument code.
@@ -650,45 +650,41 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
 \OT1/ptm/m/n/8 of com-put-ers, Chongqing Uni-ver-sity, Chongqing 400030, China
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--78
+Underfull \hbox (badness 10000) in paragraph at lines 82--82
 \OT1/ptm/m/n/8 (emails: qlp@cqu.edu.cn, xi-ayunni@hotmail.com, qszhu@cqu.edu.cn
 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--99
+Underfull \hbox (badness 10000) in paragraph at lines 100--103
 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 101.
+LaTeX Font Info:    Try loading font information for U+msa on input line 105.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 101.
+LaTeX Font Info:    Try loading font information for U+msb on input line 105.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 111--113
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
 
  []
 
 
 Overfull \vbox (1.68932pt too high) has occurred while \output is active []
 
-
-Overfull \hbox (5.86952pt too wide) in paragraph at lines 114--147
-[] 
- []
-
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
+
 [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -696,10 +692,10 @@ Missing character: There is no ™ in font ptmr7t!
 <./img/pic1.pdf, id=16, 946.45128pt x 605.37967pt>
 File: ./img/pic1.pdf Graphic file (type pdf)
  <use ./img/pic1.pdf>
-Package pdftex.def Info: ./img/pic1.pdf used on input line 162.
+Package pdftex.def Info: ./img/pic1.pdf used on input line 163.
 (pdftex.def)             Requested size: 252.94499pt x 161.79196pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 162--163
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 163--164
  [][] 
  []
 
@@ -707,10 +703,10 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 162--163
 File: ./img/pic2.pdf Graphic file (type pdf)
 
 <use ./img/pic2.pdf>
-Package pdftex.def Info: ./img/pic2.pdf used on input line 219.
+Package pdftex.def Info: ./img/pic2.pdf used on input line 214.
 (pdftex.def)             Requested size: 252.94499pt x 142.6479pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 219--220
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 214--215
  [][] 
  []
 
@@ -718,35 +714,47 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 219--220
 File: ./img/pic3.pdf Graphic file (type pdf)
 
 <use ./img/pic3.pdf>
-Package pdftex.def Info: ./img/pic3.pdf used on input line 261.
+Package pdftex.def Info: ./img/pic3.pdf used on input line 256.
 (pdftex.def)             Requested size: 195.12877pt x 145.8901pt.
  [4 <./img/pic3.pdf>]
 <./img/DAG2.pdf, id=137, 836.69896pt x 226.96404pt>
 File: ./img/DAG2.pdf Graphic file (type pdf)
  <use ./img/DAG2.pdf>
-Package pdftex.def Info: ./img/DAG2.pdf used on input line 297.
+Package pdftex.def Info: ./img/DAG2.pdf used on input line 292.
 (pdftex.def)             Requested size: 238.49121pt x 64.69234pt.
 
 <./img/pic-extra.pdf, id=138, 1006.28645pt x 577.56268pt>
 File: ./img/pic-extra.pdf Graphic file (type pdf)
 
 <use ./img/pic-extra.pdf>
-Package pdftex.def Info: ./img/pic-extra.pdf used on input line 317.
+Package pdftex.def Info: ./img/pic-extra.pdf used on input line 312.
 (pdftex.def)             Requested size: 216.81pt x 124.43794pt.
  [5 <./img/DAG2.pdf> <./img/pic-extra.pdf>]
 <./img/pic4.pdf, id=202, 826.73235pt x 485.82011pt>
 File: ./img/pic4.pdf Graphic file (type pdf)
  <use ./img/pic4.pdf>
-Package pdftex.def Info: ./img/pic4.pdf used on input line 404.
+Package pdftex.def Info: ./img/pic4.pdf used on input line 399.
 (pdftex.def)             Requested size: 216.81pt x 127.40736pt.
 
 [6 <./img/pic4.pdf>] <./img/pic5.pdf, id=222, 873.18059pt x 590.72643pt>
 File: ./img/pic5.pdf Graphic file (type pdf)
 
 <use ./img/pic5.pdf>
-Package pdftex.def Info: ./img/pic5.pdf used on input line 508.
+Package pdftex.def Info: ./img/pic5.pdf used on input line 503.
 (pdftex.def)             Requested size: 180.67499pt x 122.22641pt.
- [7 <./img/pic5.pdf>]
+
+Overfull \hbox (16.92056pt too wide) in paragraph at lines 597--597
+[][] 
+ []
+
+
+Overfull \hbox (8.91203pt too wide) in paragraph at lines 637--658
+ [][] 
+ []
+
+[7 <./img/pic5.pdf>]
+Underfull \vbox (badness 3826) has occurred while \output is active []
+
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
@@ -754,43 +762,36 @@ Missing character: There is no ™ in font ptmr7t!
 <./img/DAG.pdf, id=245, 1817.8715pt x 1210.71548pt>
 File: ./img/DAG.pdf Graphic file (type pdf)
  <use ./img/DAG.pdf>
-Package pdftex.def Info: ./img/DAG.pdf used on input line 670.
+Package pdftex.def Info: ./img/DAG.pdf used on input line 685.
 (pdftex.def)             Requested size: 361.34999pt x 240.66089pt.
 
-<./img/Task-6.pdf, id=246, 361.06169pt x 147.66211pt>
+<./img/Task-6.pdf, id=246, 827.62361pt x 262.1223pt>
 File: ./img/Task-6.pdf Graphic file (type pdf)
  <use ./img/Task-6.pdf>
-Package pdftex.def Info: ./img/Task-6.pdf used on input line 678.
-(pdftex.def)             Requested size: 433.62pt x 177.34908pt.
+Package pdftex.def Info: ./img/Task-6.pdf used on input line 693.
+(pdftex.def)             Requested size: 476.98244pt x 151.07112pt.
 
-<./img/Task-12.pdf, id=247, 363.3609pt x 147.31442pt>
+<./img/Task-12.pdf, id=247, 827.98427pt x 262.3663pt>
 File: ./img/Task-12.pdf Graphic file (type pdf)
  <use ./img/Task-12.pdf>
-Package pdftex.def Info: ./img/Task-12.pdf used on input line 686.
-(pdftex.def)             Requested size: 433.62pt x 175.80533pt.
+Package pdftex.def Info: ./img/Task-12.pdf used on input line 701.
+(pdftex.def)             Requested size: 476.98244pt x 151.14369pt.
 
-<./img/Task-24.pdf, id=248, 364.3712pt x 144.88086pt>
+<./img/Task-24.pdf, id=248, 828.22026pt x 262.78928pt>
 File: ./img/Task-24.pdf Graphic file (type pdf)
  <use ./img/Task-24.pdf>
-Package pdftex.def Info: ./img/Task-24.pdf used on input line 693.
-(pdftex.def)             Requested size: 433.62pt x 172.42802pt.
+Package pdftex.def Info: ./img/Task-24.pdf used on input line 708.
+(pdftex.def)             Requested size: 476.98244pt x 151.34724pt.
 
-[8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Text page 9 contains only floats.
-
-
-Overfull \vbox (18.81139pt too high) has occurred while \output is active []
+ [8]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Text page 9 contains only floats.
-
-
-Overfull \vbox (18.81139pt too high) has occurred while \output is active []
-
-
-[9 <./img/DAG.pdf> <./img/Task-6.pdf> <./img/Task-12.pdf>] (./bare_jrnl.bbl
+ [9 <./img/DAG.pdf> <./img/Task-6.pdf> <./img/Task-12.pdf>] (./bare_jrnl.bbl
 Underfull \hbox (badness 2875) in paragraph at lines 46--49
 \OT1/ptm/m/n/8 cel-lu-lar net-works,'' \OT1/ptm/m/it/8 On-line Http-nesl Ee Ucl
 a Edufw-doc-u-mentsre-
@@ -807,11 +808,11 @@ Underfull \hbox (badness 2856) in paragraph at lines 113--117
 Here is how much of TeX's memory you used:
  14327 strings out of 492995
  280600 string characters out of 6132703
- 325761 words of memory out of 5000000
+ 335761 words of memory out of 5000000
  17587 multiletter control sequences out of 15000+600000
  47239 words of font info for 92 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 55i,10n,54p,966b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,54p,972b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8
 r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
@@ -828,10 +829,10 @@ l/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/
 2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2017/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (11 pages, 787674 bytes).
+Output written on bare_jrnl.pdf (11 pages, 809965 bytes).
 PDF statistics:
- 405 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
+ 402 PDF objects out of 1000 (max. 8388607)
+ 283 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  68 words of extra memory for PDF output out of 10000 (max. 10000000)
 
