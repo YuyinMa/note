@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex bare_jrnl"] 1513684528 "bare_jrnl.aux" "bare_jrnl.bbl" "bare_jrnl" 1513684530
+["bibtex bare_jrnl"] 1514441954 "bare_jrnl.aux" "bare_jrnl.bbl" "bare_jrnl" 1514441977
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/IEEEtran/IEEEtran.bst" 1480098433 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "bare_jrnl.aux" 1513684529 6520 e6e502ff42a9d82730f7793494941012 ""
+  "bare_jrnl.aux" 1514441976 6520 ea6204fe86d41f9ec86f298009893af3 ""
   "mybibtex.bib" 1513588576 25962 04c3fdd6da3c87131a03d01d2b19072c ""
   (generated)
-  "bare_jrnl.bbl"
   "bare_jrnl.blg"
-["pdflatex"] 1513684529 "bare_jrnl.tex" "bare_jrnl.pdf" "bare_jrnl" 1513684530
+  "bare_jrnl.bbl"
+["pdflatex"] 1514441975 "bare_jrnl.tex" "bare_jrnl.pdf" "bare_jrnl" 1514441977
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -112,9 +112,9 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1510806064 3678532 1b511fa312ff328e76d7fc87e4ce1716 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "bare_jrnl.aux" 1513684529 6520 e6e502ff42a9d82730f7793494941012 ""
-  "bare_jrnl.bbl" 1513684528 10641 3b0846f49661be1da02cdde9eca51c45 "bibtex bare_jrnl"
-  "bare_jrnl.tex" 1513684526 51094 49a29952afbbfba7d216320ca64e5b41 ""
+  "bare_jrnl.aux" 1514441976 6520 ea6204fe86d41f9ec86f298009893af3 ""
+  "bare_jrnl.bbl" 1514441954 10641 3b0846f49661be1da02cdde9eca51c45 "bibtex bare_jrnl"
+  "bare_jrnl.tex" 1514441974 51099 07a17f11099cf59516ad69ccd6cd6736 ""
   "img/DAG.pdf" 1508390075 27275 a730f2faf7ae106966e77fe98dcfb337 ""
   "img/DAG2.pdf" 1510126193 24200 c65ad257a8955b00ac709c45beb9ae93 ""
   "img/Task-12.pdf" 1513677885 41458 9576d0db4db9224472bc224b0ada226e ""
@@ -127,6 +127,6 @@
   "img/pic4.pdf" 1509509188 16963 1af70750078c0e9b28c0aec353e7ef93 ""
   "img/pic5.pdf" 1509509184 17815 a0e2774ed7a42a109aa189dc2f360670 ""
   (generated)
-  "bare_jrnl.pdf"
   "bare_jrnl.aux"
   "bare_jrnl.log"
+  "bare_jrnl.pdf"

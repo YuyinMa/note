@@ -1,5 +1,8 @@
 \documentclass[journal]{IEEEtran}
 
+\usepackage{xeCJK, fontspec, xunicode, xltxtra}  
+\setCJKmainfont{Hiragino Sans GB}  
+
 % *** graph PACKAGES ***
 %
 \ifCLASSOPTIONcompsoc 
@@ -557,6 +560,27 @@ Based on the above discussions, the improved KH algorithm is given in Algorithm 
 \STATE Rank all individuals by reliability and return the best one
 \end{algorithmic}
 \end{algorithm}
+
+\subsection{Complexity Analysis}
+可靠性感知的磷虾群算法（可不可以称为RAKH啊？，Reliability Aware Krill Herd Algorithm)的时间复杂度的计算基于它的：初始化阶段、运动操作、交叉操作和Rank操作。
+我们先分别计算他们的时间复杂度，最后再组合成RAKH的时间复杂度。
+假设用户请求的组合服务W=（T，E）中有m个任务，CEGA算法的种群数量为n，此时周围有k个用户可以提供服务调用。
+
+按照编码过程生成一个个体所需的时间复杂度为O(mk)，因为对于每一个任务我们需要从k个潜在提供者找出提供这项服务的真正提供者，并随机选取一个。所以整个初始化阶段的时间复杂度为O(mkn)。运动操作中的三项小操作包括：movement induced by presence of other individuals, foraging motion, and random diffusion, movement induced by presence of other individuals和foraging motion的时间复杂度为O(n), random diffusion子操作的时间复杂度为O(1),因此运动算子的时间复杂度为O(n)+O(n)+O(1) = O(n)。
+
+交叉操作的时间复杂度为O(m)，每一轮操作后都要对当前种群进行排序，而rank操作的时间复杂度为O(nlogn)。因此总的时间复杂度为O(mk + M(n+m+nlogn))，其中M为最大迭代次数。
+
+The computational complexity of the Reliability-aware Krill-Herd Algorithm (RAKH), is calculated based on their initialization, motion, crossover, update and fitness evaluation operations. 
+Initially we calculate the time complexity of each method, then combined to complexity of each method to compute the overall complexity of the proposed RAKH algorithm.
+
+Suppose the mobile user has submitted a composite service request with $n$ tasks, and there are $k$ available service provider within transmission range. $S$ and $M$ is the population size and max iteration of the proposed RAKH algorithm.
+The time complexity of generating an individual is $O(nk)$, because for each task we need traverse these $k$ potential providers to find the set of actual providers (not all available providers provide a certain kind of service). So, the initial population has the total time complexity of $O(nkS)$.
+The motion operator consists three sub-operator: 1) motion influenced by other krill; 2) foraging action; 3) physical diffusion, and their time complexity is $O(S)$, $O(S)$, $O(1)$, respectively. Therefor, The time complexity of motion operator is $O(S)+O(S)+O(1) \approx O(S)$.
+The time complexity for crossover operation is $O(n)$. The time complexity for crossover operation is $O(1)$.
+Thus, the total time complexity of motion, crossover, update with $M$ generations is $O(MS) + O(Mn) + O(M) \approx O(M(S+n))$. 
+The fitness evaluation method for each individual has the time complexity of $O(n^2)$. The fitness evaluation method for initial population of size $S$, with $M$ generations has the time complexity of $O(SMn^2)$.
+The total time complexity of motion, crossover, update and fitness evaluation is $O(M(S+n)) + O(MSn^2) \approx O(MSn^2)$, where $n^2 > S$.
+Thus the total time complexity of RAKH algorithm is $O(nkS) + O(MSn^2) \approx O(MSn^2)$
 
 
 
