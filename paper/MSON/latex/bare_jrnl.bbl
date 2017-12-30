@@ -182,11 +182,6 @@ K.~Benkic, M.~Malajner, P.~Planinsic, and Z.~Cucej, ``Using rssi value for
   international conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
   2008, pp. 303--306.
 
-\bibitem{el2010tqos}
-J.~El~Hadad, M.~Manouvrier, and M.~Rukoz, ``Tqos: Transactional and qos-aware
-  selection algorithm for automatic web service composition,'' \emph{IEEE
-  Transactions on Services Computing}, vol.~3, no.~1, pp. 73--85, 2010.
-
 \bibitem{wu2013transactional}
 Q.~Wu and Q.~Zhu, ``Transactional and qos-aware dynamic service composition
   based on ant colony optimization,'' \emph{Future Generation Computer
@@ -210,6 +205,10 @@ A.~H. Gandomi and A.~H. Alavi, ``Krill herd: a new bio-inspired optimization
 \bibitem{wang2014stud}
 G.-G. Wang, A.~H. Gandomi, and A.~H. Alavi, ``Stud krill herd algorithm,''
   \emph{Neurocomputing}, vol. 128, pp. 363--370, 2014.
+
+\bibitem{whitley1994genetic}
+D.~Whitley, ``A genetic algorithm tutorial,'' \emph{Statistics and computing},
+  vol.~4, no.~2, pp. 65--85, 1994.
 
 \bibitem{eagle2006reality}
 N.~Eagle and A.~S. Pentland, ``Reality mining: sensing complex social

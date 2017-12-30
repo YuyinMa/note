@@ -1,8 +1,4 @@
 \documentclass[journal]{IEEEtran}
-
-\usepackage{xeCJK, fontspec, xunicode, xltxtra}  
-\setCJKmainfont{Hiragino Sans GB}  
-
 % *** graph PACKAGES ***
 %
 \ifCLASSOPTIONcompsoc 
@@ -137,7 +133,7 @@ $D_{i,k}$     &   The data transfer time between $t_i$ and $t_k$ \\
 $e_i$         &   The estimated execution time of $t_i$ \\
 $e_{i,j}$     &   The edge connecting $t_i$ and $t_j$ \\
 $F_i$         &   The foraging action of a krill individual \\ 
-$M$           &   The max iteration of a KH algorithm \\
+$G$           &   The number of max iteration generations of a KH algorithm \\
 $N_i$         &   The motion influenced by other krill \\
 $P$           &   A pool of available mobile services \\
 $R$           &   Transmission range of a mobile device \\
@@ -173,9 +169,13 @@ Note that, mobile tasks usually require huge computational resources or data tra
 
 However, due to the completely different application patterns compared with traditional service computing, service computing in mobile environment faces two inherent challenges.
 
-1) Constant Mobility: Mobile users may change their locations very frequently in mobile environment and thus service availability could be fluctuating and time-varying. It is therefore difficult to guarantee high reliability of service composition when their underlying mobile services are with time-varying availability or even unavailable. Thus, determining how to handle service availability is a major challenge for providing reliable mobile services in highly dynamic mobile environments.
+1) Unguaranteed reliability: Mobile users may change their locations very frequently in mobile environment and thus service availability could be fluctuating and time-varying. It is therefore difficult to guarantee high reliability of service composition when their underlying mobile services are with time-varying availability or even unavailable. Thus, determining how to handle service availability is a major challenge for providing reliable mobile services in highly dynamic mobile environments.
 
-2) Limited Resource: mobile devices have limited computing capability compared with stationary ones. Designing scheduling algorithms with high time-complexity should be avoided.
+2) Neglect of deadline-constrain: Different with large workflows executed in stationary IaaS cloud, a mobile service composition usually completed within a few seconds to tens of seconds. Few studies have concluded that mobile users can tolerance a maximum of 30 seconds for a response in average, if a service composition algorithm doesn't consider deadline-constrained, it is likely to generate a composition plan with high make span, and these high make span schedule plans usually have low reliability and will result in poor user experience. Thus, it's important to introduce deadline-constrained mechanism in such a highly dynamic mobile environment.
+
+% 1) Constant Mobility: Mobile users may change their locations very frequently in mobile environment and thus service availability could be fluctuating and time-varying. It is therefore difficult to guarantee high reliability of service composition when their underlying mobile services are with time-varying availability or even unavailable. Thus, determining how to handle service availability is a major challenge for providing reliable mobile services in highly dynamic mobile environments.
+
+% 2) Limited Resource: mobile devices have limited computing capability compared with stationary ones. Designing scheduling algorithms with high time-complexity should be avoided.
 Moreover, such algorithms are supposed to be highly time-efficient because mobile services themselves are with time-varying availability/QoS and only fast ones avoid ineffective scheduling, as well. 
 Nevertheless, the underlying problem for optimal scheduling and composition is well acknowledged to be NP-hard. It is therefore a great challenge to guarantee both low time-complexity and optimality of such algorithms.
 
@@ -256,7 +256,7 @@ Where $S_{i \bigcap j}$ is the moving area of $j$ within the transmission range 
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.7in]{./img/pic3.pdf}
+\includegraphics[width=3.5in]{./img/pic3.pdf}
 \caption{Mobile service availability}
 \label{fig_sd}
 \end{figure}
@@ -292,48 +292,32 @@ A(s) = \frac{\alpha r^2 + \beta R^2 - (r^2 sin\alpha cos\alpha + R^2 sin\beta co
 \subsection{Service Composition Model}
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3.3in]{./img/DAG2.pdf}
+\includegraphics[width=3.3in]{./img/pic4.pdf}
 \caption{A sample composite mobile service for arranging travel}
 \label{A sample composite mobile service}
 \end{figure}
 
-A mobile service composition can be described by a two-tuple $SC = (T, E)$ \cite{el2010tqos}, where $T = \{ t_1, t_2, ..., t_n \}$ is a set of tasks and $E$ is a set of directed edges. An edge $e_{i,j}$ of the form $(t_i,t_j)$ indicates that a data dependency between $t_i$ and $t_j$ exists and $t_i/t_j$ are the parent$/$child tasks respectively. A child task is executed after all its parent tasks are completed. 
+% In template-based mobile service composition \cite{Wu2016}, an abstract composite service, consisting of a collection of abstract services orchestrated by workflow patterns 
+A mobile service composition can be described by a two-tuple $SC = (T, E)$ , where $T = \{ t_1, t_2, ..., t_n \}$ is a set of tasks and $E$ is a set of directed edges. An edge $e_{i,j}$ of the form $(t_i,t_j)$ indicates that a data dependency between $t_i$ and $t_j$ exists and $t_i/t_j$ are the parent$/$child tasks respectively. 
+A child task is executed after all its parent tasks are completed. 
 Furthermore, if there is data transmission attached onto $e_{i,j}$, $t_j$ can start only after the data from $t_i$ is received.
-A dummy tentry/texit task with zero execution time  can be added as a sole entry/exit task if the original composition process has multiple entry/exit tasks rather than a single one. 
+A dummy tentry/texit task with zero execution time can be added as a sole entry/exit task if the original composition process has multiple entry/exit tasks rather than a single one. 
 $D$ denotes the user-recommended constraint of the completion time of the service composition. Note that this constraint can be either hard or soft one. In this work we consider hard constraint where the actual service composition complement time is bounded by $D$.
 A sample composite mobile service for arranging travel plan \cite{wu2013transactional} is illustrated in Fig. 4. We denote the composition patterns (i.e., sequence, choice, parallel and loop) by symbols $\rightarrow$, \encircle{C}, \encircle{P} and \encircle{L}, respectively.
 
-As shown in Fig. 5, a mobile user can perceive services exposed by other users and these available services can be described as service pool $P = \{s_1^{(i)}, s_2^{(j)}, ..., s_m^{(k)} \}$, $s_m^{(k)}$ means there are $k$ candidate services for task $t_m$. Once a user issues a service composition request, tasks in the composite service is scheduled to the service selected from services pool and executed. 
+As shown in Fig. 5, a mobile user can perceive services exposed by other users and these available services can be described as service pool $P = \{s_1^{(i)}, s_2^{(j)}, ..., s_m^{(k)} \}$, $s_m^{(k)}$ means there are $k$ candidate services for task $t_m$. Once a user issues a service composition request, tasks in the composite service is scheduled to the service selected from services pool and executed.
+% Once a user issues a service composition request, it will be instantiated and executed at run time by binding abstract services to concrete ones which selected from resources pool.
 
-% The response time of a CMS request consists of tasks execution time and data transfer time. 
+tasks in the composite service is scheduled to the service selected from services pool and executed. 
+
 If task $t_i$ connects $t_k$ through edge $e_{i,k}$ and they are executed by different service providers, the transfer time, $D_{i,k}$, is inevitable because inter-provider data and control signal transfer is required. Otherwise, $D_{i,k} = 0$.
-
-% Tasks in a service composition are executed by different tasks providers (i.e, different mobile devices) usually exhibit varying performance. Moreover, a task executed by the same provider at different time may exhibit fluctuating performance. In this paper, we use the average execution time of recent $n$ trials to represent expected execution time.
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3in]{./img/pic-extra.pdf}
+\includegraphics[width=3in]{./img/pic5.pdf}
 \caption{An example of resource pool}
 \label{Resource Pool}
 \end{figure}
-
-% \begin{table}[!t]
-% \renewcommand{\arraystretch}{1.5}
-% \caption{Aggregation functions for Reliability}
-% \label{aggregation functions}
-% \centering
-% \begin{tabular}{cc}
-% \hline
-% \bfseries Pattern &  \bfseries Reliability \\
-% \hline
-% sequence &  $\prod_{i=1}^{n}Ava(s_i)$ \\
-% parallel &  $\prod_{i=1}^{n}Ava(s_i)$ \\
-% choice   &  $\sum_{i=1}^{n} p_i \times Ava(s_i)$ \\
-% loop     &  $[Ava(s_i)]^{k}$ \\
-% \hline
-% \end{tabular}
-% \end{table}
-
 
 \subsection{Problem Formulation for Optimal Service Composition over Opportunistic Network}
 
@@ -381,15 +365,15 @@ b_1 = \delta + D_{entry, 1}
 \end{align}
 where $\delta$ is the time between issue a service composition and a corresponding schedule is generated.
 
-
-
-
 \section{The kh-based algorithm for mobile service composition}
 % It is widely acknowledged that to schedule multi-task processes on distributed platforms is an NP-hard problem [5]. 
 
 The optimization problem discussed in the previous section can be reduced to a knapsack problem. It's widely known that knapsack problem is NP-hard \cite{papadimitriou1998combinatorial}, then the optimization problem is also NP-hard. It is therefore extremely time-consuming to yield optimal service composition schedules through traversal-based algorithms. Fortunately, heuristic and meta-heuristic algorithms with polynomial complexity are able to produce approximate or near optimal solutions at the cost of acceptable optimality loss.
 
-Krill-Herd algorithm \cite{gandomi2012krill} is novel meta-heuristic generic stochastic optimization algorithm for the global optimization problem, inspired by predatory behavior and communication behavior of krill. 
+Krill-Herd algorithm \cite{gandomi2012krill} is novel meta-heuristic generic stochastic optimization algorithm for the global optimization problem, inspired by predatory behavior, communication behavior and random diffusion behavior of krill. 
+% The three essential actions determining the time-dependent position of an individual are: movement induced by presence of other individuals, foraging activity, and random diffusion. 
+These actions work in parallel resulting in notable efficiency of KH algorithm. Experiments in \cite{gandomi2012krill} and \cite{wang2014stud} show that KH-based algorithm can get the same optimization level in a shorter time compared with other meta-heuristic algorithms such as GA(Gene Algorithm), PSO(Particle Swarm Optimization) and DE(Differential Evolution). Thus, KH-based algorithm is more suitable running in resource-limited devices such as mobile and tablet.
+
 Based on our problem descriptions introduced earlier, we present definitions of motion and crossover operations of KH algorithm next and show how resulting composition schedules are generated.
 
 \subsection{Encoding}
@@ -399,15 +383,12 @@ The position vector of each krill individual is represented by an integer array 
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3in]{./img/pic4.pdf}
+\includegraphics[width=3.5in]{./img/pic6.pdf}
 \caption{An example of krill encoding}
 \label{Krill encoding}
 \end{figure}
 
-
 \subsection{Motion operator}
-% 
-% 
 
 Motion operator is the key component of KH algorithm. As shown in e.q (14), the position of each krill individual is determined by three main factors: 1) motion influenced by other krill; 2) foraging action; 3) physical diffusion. 
 \begin{equation}
@@ -451,7 +432,7 @@ D_i = D_{max}\theta
 \end{equation}
 where $D_{max}$ is the maximum diffusion speed and $\theta \in [-1, 1]$ a random directional vector.
 
-\subsection{Stud selection and crossover operator}
+\subsection{Crossover operator}
 
 Crossover operators aim at enhancing the search capability. Inspired by SGA \cite{wang2014stud} (a type of genetic algorithm which employs the optimal genome for crossover at each generation), we introduce a stud selection procedure to further improve KH's search capability.
 
@@ -472,19 +453,19 @@ c_{i}=
 
 \begin{algorithm}
 \caption{Crossover operation}
-\label{alg1}
+\label{Crossover operation}
 \begin{algorithmic}[1]
 
-\REQUIRE Population $X$; Individual $X_i$ to crossover; The number of tasks $taskNumber$; 
-\ENSURE A new individual after crossover operation;
+\REQUIRE Population $X$; Individual $X_i$ to crossover; $n$: the number of tasks in $SC$; 
+\ENSURE A new individual;
 
-\STATE Sort all krill individuals in population $X$ by its reliability value, get optimal individual $Stud$, save the best reliability value as $R_{best}$ and the worst reliability value as $R_{worst}$
+\STATE rank all krill individuals in population $X$ by its reliability value, get optimal individual $Stud$, save the best reliability value as $R_{best}$ and the worst reliability value as $R_{worst}$
 
 % \STATE $C_{r} \leftarrow$ calcCrossoverRate($X_i$, $R_{best}$, $R_{worst}$)
-\STATE Calculate crossover rate as $C_{r}$ by e.q (20)
+\STATE calculate crossover rate as $C_{r}$ by e.q (20)
 
-\FOR{$i=1$ \TO $taskNumber$}
-\STATE $r \leftarrow rand(0,1)$
+\FOR{$i=1$ \TO $n$}
+\STATE $r \leftarrow$ rand($0,1$)
 \IF{$r < C_{r}$}
 \STATE $Cv[i] \leftarrow 1$
 \ELSE
@@ -492,7 +473,7 @@ c_{i}=
 \ENDIF
 \ENDFOR
 
-\FOR{$i=1$ \TO $taskNumber$}
+\FOR{$i=1$ \TO $n$}
 \STATE $X_i[i] \leftarrow X_i \wedge  (1-Cv[i]) + Stud \wedge Cv[i]$ 
 \ENDFOR
 \STATE return $X_i$
@@ -503,7 +484,7 @@ As shown in algorithm 1, we can see that for each individual $X_i$ to crossover,
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=2.5in]{./img/pic5.pdf}
+\includegraphics[width=2.5in]{./img/pic7.pdf}
 \caption{An example of crossover operator}
 \label{Crossover operator}
 \end{figure}
@@ -519,70 +500,85 @@ where
 \Delta t = C_t\sum_{j=1}^{m}(UB_j - LB_j)
 \end{equation}
 where $UB_j$ and $LB_j$ are upper and lower bounds of candidate services for the $j$-th task, respectively. $C_t$ is a constant value to scale the searching space (usually $1/2n$). 
-Based on the above discussions, the improved KH algorithm is given in Algorithm 2.
+
+
+\subsection{Initialize population}
+The search space of solutions usually grows exponentially with the scale of a composite service. To accelerate the search speed and convergence of the KH algorithm, the initial population are defined and generated in a way that each individual of the population complies with the structural constraint of the service composition and its position vector are decided randomly from resource pool. The pseudocode of generating an individual is given in Algorithm 1. This procedure starts with constructing a resource pool through summarizing service exposed by available service provider. Then we choose concrete service randomly from resource pool for each individual. 
+
+\begin{algorithm}
+\caption{Initialize population}
+\label{Initialize population}
+\begin{algorithmic}[1]
+
+\REQUIRE Population size $S$; The set of available service provider $P$; Composite service $SC$ requested;
+\ENSURE Population $X$;
+
+\STATE initialize ResourcePool $RP$ with empty
+\STATE initialize Population $X$ with empty
+
+\FOR{each service provider $p$ in $P$}
+  \FOR{each task $t$ in $SC$}
+    \IF{provider $p$ provide concrete service $s$ for $t$}
+      \STATE add service $s$ to ResourcePool $RP[t]$
+    \ENDIF
+  \ENDFOR  
+\ENDFOR
+
+\FOR{$i=1$ \TO $S$}
+  \STATE initialize individual $X_i \leftarrow \{0,0,...,0\}$
+  \FOR{each task $t$ in $SC$}
+    \STATE $X_i[j] \leftarrow$ RandomChoose($RP[t]$)
+  \ENDFOR
+  \STATE add individual $X_i$ to population $X$
+\ENDFOR
+\STATE return population $X$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Fitness evaluation and selection}
+The fitness of an individual solution is decided by its maximization of estimated reliability on condition that the deadline constraint is met.
+
+The selection strategy is therefore based on the fitness estimation and implemented through a tournament-based method \cite{whitley1994genetic}. To be specific, we employ a constraint handling strategy described below to select individuals for new generations: 1) if the $\tau$ values of two solutions are feasible, then the one with lower reliability is discarded, 2) if the $\tau$ value of only one solution is feasible, then the infeasible one is simply discarded; and 3) if the $\tau$ values of both solutions are infeasible, then the one with higher estimated reliability time is discarded.
+Based on the above discussions, the RDKH algorithm is given in Algorithm 3.
 
 
 \begin{algorithm}
-\caption{Improved KH algorithm}
-\label{alg2}
+\caption{Reliability-aware and Deadline-constrained Krill Herd algorithm}
+\label{RDKH}
 \begin{algorithmic}[1]
 
-\REQUIRE Number of population size $S$; Number of max iteration $M$; Complement time constrain $D$;
+\REQUIRE Number of population size $S$; Number of max iteration generations $G$; The set of available providers $P$;  Composite service $SC$ requested;
 \ENSURE The best solution;
-\STATE Generate initial population as $X \leftarrow \{X_1, X_2, ..., X_{S}\}$
-\FOR{$i=1$ \TO $S$}
-  \STATE $\tau \leftarrow estimateCompletionTime(X_i)$
-  \IF{$\tau > D$}
-      \STATE $X \leftarrow remove(X, X_i)$
-      \STATE Generate a valid individual $X_v$
-      \STATE $X \leftarrow add(X, X_v)$
-  \ENDIF
-\ENDFOR
+\STATE $X \leftarrow InitializePopulation(S,P,SC)$
 
-
-\FOR{$i=1$ \TO $M$}
-  \FOR{$j=1$ \TO $S$}    
-    \STATE Calculate movement induced by other krill individuals by e.q (15)
-    \STATE Calculate foraging motion by e.q (17)
-    \STATE Calculate random diffusion motion by e.q (19)
-    \STATE Update position by e.q (22) and save as $X_j^{'}$
-    \STATE $X_j^{''} \leftarrow crossoverOperator(X_j^{'})$
-    \STATE $R_j^{'} \leftarrow estimateReliability(X_j^{'})$
-    \STATE $R_j^{''} \leftarrow estimateReliability(X_j^{''})$
-    \STATE $\tau \leftarrow estimateCompletionTime(X_j^{''})$
-    \IF{$R_j^{''} > R_j^{'} \land \tau < D $}
-      \STATE accept $X_j^{''}$ as $X_{j+1}$
-    \ELSE
-      \STATE accept $X_j^{'}$ as $X_{j+1}$
-    \ENDIF
+\FOR{$i=1$ \TO $G$}
+  \STATE rank all individuals by its fitness
+  \FOR{each individual $X_j$ in population $X$}
+    \STATE calculate movement induced by other krill individuals by e.q (15)
+    \STATE calculate foraging motion by e.q (17)
+    \STATE calculate random diffusion motion by e.q (19)
+    \STATE update position by e.q (22) and save as $offspring_1$
+    \STATE $offspring_2 \leftarrow $ CrossoverOperator($offspring_1$)
+    \STATE $offspring \leftarrow $ tournament($offspring_1, offspring_2$)
+    \STATE mark $offspring$ as $X_j$
   \ENDFOR
 \ENDFOR
-\STATE Rank all individuals by reliability and return the best one
+\STATE return the best one individual
 \end{algorithmic}
 \end{algorithm}
 
 \subsection{Complexity Analysis}
-可靠性感知的磷虾群算法（可不可以称为RAKH啊？，Reliability Aware Krill Herd Algorithm)的时间复杂度的计算基于它的：初始化阶段、运动操作、交叉操作和Rank操作。
-我们先分别计算他们的时间复杂度，最后再组合成RAKH的时间复杂度。
-假设用户请求的组合服务W=（T，E）中有m个任务，CEGA算法的种群数量为n，此时周围有k个用户可以提供服务调用。
+The computational complexity of the Reliability-aware and Deadline-constrained Krill-Herd Algorithm (RDKH), is calculated based on their initialization, motion, crossover, update and fitness evaluation operations. 
+Initially we calculate the time complexity of each method, then combined to complexity of each method to compute the overall complexity of the proposed RDKH algorithm.
 
-按照编码过程生成一个个体所需的时间复杂度为O(mk)，因为对于每一个任务我们需要从k个潜在提供者找出提供这项服务的真正提供者，并随机选取一个。所以整个初始化阶段的时间复杂度为O(mkn)。运动操作中的三项小操作包括：movement induced by presence of other individuals, foraging motion, and random diffusion, movement induced by presence of other individuals和foraging motion的时间复杂度为O(n), random diffusion子操作的时间复杂度为O(1),因此运动算子的时间复杂度为O(n)+O(n)+O(1) = O(n)。
-
-交叉操作的时间复杂度为O(m)，每一轮操作后都要对当前种群进行排序，而rank操作的时间复杂度为O(nlogn)。因此总的时间复杂度为O(mk + M(n+m+nlogn))，其中M为最大迭代次数。
-
-The computational complexity of the Reliability-aware Krill-Herd Algorithm (RAKH), is calculated based on their initialization, motion, crossover, update and fitness evaluation operations. 
-Initially we calculate the time complexity of each method, then combined to complexity of each method to compute the overall complexity of the proposed RAKH algorithm.
-
-Suppose the mobile user has submitted a composite service request with $n$ tasks, and there are $k$ available service provider within transmission range. $S$ and $M$ is the population size and max iteration of the proposed RAKH algorithm.
-The time complexity of generating an individual is $O(nk)$, because for each task we need traverse these $k$ potential providers to find the set of actual providers (not all available providers provide a certain kind of service). So, the initial population has the total time complexity of $O(nkS)$.
+Suppose the mobile user has submitted a composite service request with $m$ tasks, and there are $k$ available service provider within transmission range. $S$ and $G$ are two constant parameters indicate the population size and max iteration generations of the proposed RDKH algorithm.
+The time complexity of generating initial population is $O(mk)+O(mS) = O((k+S)m) \approx O(km)$.
+The time complexity of evaluating the fitness of an individual is $O(2m+|E|)$, thus the time complexity of evaluating all individuals and ranking them through a tournament-based method is $O(S^2logS(2m+|E|)) \approx O(m+|E|)$.
 The motion operator consists three sub-operator: 1) motion influenced by other krill; 2) foraging action; 3) physical diffusion, and their time complexity is $O(S)$, $O(S)$, $O(1)$, respectively. Therefor, The time complexity of motion operator is $O(S)+O(S)+O(1) \approx O(S)$.
-The time complexity for crossover operation is $O(n)$. The time complexity for crossover operation is $O(1)$.
-Thus, the total time complexity of motion, crossover, update with $M$ generations is $O(MS) + O(Mn) + O(M) \approx O(M(S+n))$. 
-The fitness evaluation method for each individual has the time complexity of $O(n^2)$. The fitness evaluation method for initial population of size $S$, with $M$ generations has the time complexity of $O(SMn^2)$.
-The total time complexity of motion, crossover, update and fitness evaluation is $O(M(S+n)) + O(MSn^2) \approx O(MSn^2)$, where $n^2 > S$.
-Thus the total time complexity of RAKH algorithm is $O(nkS) + O(MSn^2) \approx O(MSn^2)$
-
-
+The time complexity for crossover operation is $O(m)$.
+The time complexity for update operation is $O(1)$.
+Thus, the total time complexity of fitness evaluation, motion, crossover, update with $G$ generations is $O(G(m+|E|)) + O(GS) + O(Gm) + O(G) \approx O(m+|E|)$. 
+Finally, the total time complexity of RDKH algorithm is $O(km) + O(m+|E|) \approx O(km+|E|)$.
 
 \section{CASE STUDY AND EVALUATION}
 \begin{table*}
@@ -706,7 +702,7 @@ The test is based on 50 people’s opportunistic contract data from MIT Reality 
 
 \begin{figure*}[!t]
 \centering
-\includegraphics[width=5in]{./img/DAG.pdf}
+\includegraphics[width=6.8in]{./img/DAG.pdf}
 \caption{The mobile service composition templates for the case study}
 \label{DAG}
 \end{figure*}
