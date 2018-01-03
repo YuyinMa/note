@@ -157,10 +157,10 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5
 INPUT ./img/pic1.pdf
 INPUT ./img/pic2.pdf
 INPUT ./img/pic3.pdf
-INPUT ./img/DAG2.pdf
-INPUT ./img/pic-extra.pdf
 INPUT ./img/pic4.pdf
 INPUT ./img/pic5.pdf
+INPUT ./img/pic6.pdf
+INPUT ./img/pic7.pdf
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
@@ -177,6 +177,7 @@ INPUT ./img/DAG.pdf
 INPUT ./img/Task-6.pdf
 INPUT ./img/Task-12.pdf
 INPUT ./img/Task-24.pdf
+INPUT ./img/Task-12-random.pdf
 INPUT bare_jrnl.bbl
 INPUT bare_jrnl.bbl
 INPUT bare_jrnl.aux

@@ -85,7 +85,7 @@ Technology, Chongqing 400714, China (luoxin21@gmail.com)}
 \begin{abstract}
 An opportunistic link between two mobile devices or nodes takes place when they are within communication range of each other. Typically, cyber-physical environments comprise a number of mobile devices that are potentially able to establish opportunistic contacts and serve mobile applications in a cost-effective way.
 Opportunistic mobile service computing is a promising paradigm capable of utilizing the pervasive mobile computational resources around users. Mobile users are thus allowed to exploit nearby mobile services to boost their computing power without investment into their own resource pool. 
-Nevertheless, various challenges, especially its quality-of-service (QoS) and optimal scheduling, are yet to be addressed. Existing studies and related scheduling strategies consider mobile users to be fully stable and available.
+Nevertheless, various challenges, especially its quality-of-service (QoS) and reliability-aware scheduling, are yet to be addressed. Existing studies and related scheduling strategies consider mobile users to be fully stable and available.
 In this paper, instead, we propose a framework named mobile service opportunistic network and an reliability-aware and deadline-constrained schedule model for service composition. 
 We then formulate the problem into an optimization problem and utilize an improved Krill-Herd algorithm to solve it.
 Finally, we carry out a case study based on some well-known mobile service composition templates and a real-world dataset. The comparison suggest that our proposed approach outperforms traditional approaches, especially those which consider stable and fully available mobile services  in their models and algorithms.
@@ -103,13 +103,19 @@ Mobile Computing, Mobile Opportunistic Network, Mobile Service Composition, Serv
 \noindent
 \begin{tabular}{@{} l p{7.36cm} }
 \textbf{C2M}   &   Cloud to Mobile pattern\\
+\textbf{DE}    &   Differential Evolution \\
 \textbf{D2D}   &   Device to Device communications \\
+\textbf{GA}    &   Genetic Algorithm \\
 \textbf{KH}    &   Krill-Herd algorithm \\
 \textbf{M2M}   &   Mobile to Mobile pattern \\
-\textbf{RWP}   &   Random way point mobility model \\
-\textbf{QoS}   &   Quality of Service \\
-\textbf{SLA}   &   Service-level-agreement \\
+\textbf{PSO}   &   Particle Swarm Optimization \\
 \end{tabular}
+
+\noindent \textbf{RWP}   $\ $   Random way point mobility model \\
+\noindent \textbf{QoS}   $\ \ $   Quality of Service \\
+\noindent \textbf{SLA}   $\ \ $   Service-level-agreement \\
+
+
 
 \noindent List of symbols: 
 ~\\
@@ -147,6 +153,7 @@ $X$           &   The population of krill \\
 $X_i$         &   The $i$-th individual in a krill population \\
 $y_i$         &   The estimated earliest time that all immediately preceding tasks successfully terminate and transfer data \\
 \end{tabular}
+~\\
 
 \IEEEpeerreviewmaketitle
 
@@ -157,13 +164,6 @@ $y_i$         &   The estimated earliest time that all immediately preceding tas
 The number of mobile devices is still booming and it has already surpassed stationary Internet hosts.
 Mobile services are also developed and provided at a significant rate, at the same time, the requirements from mobile users are becoming more demanding, i.e., more complicated applications are needed to be run on mobile devices such as virtual reality applications on mobile phones \cite{bastug2017toward} or machine learning applications \cite{abadi2016TensorFlow} on mobile phones. However, because of the limited hardware resources of mobile devices (e.g., computational resource, battery life, memory, and storage), these resources-intensive tasks are usually offloaded to mobile computing cloud \cite{dinh2013survey}, which result in high data transfer costs (energy cost and communication fee) and high latency.
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.5in]{./img/pic1.pdf}
-\caption{Opportunistic computing}
-\label{Opportunistic computing}
-\end{figure}
-
 Opportunistic computing is a promising complementary to conventional mobile cloud computing. As illustrated in Fig. 1, the basic idea of opportunistic computing is to allow the users to utilize the resources and services that other users share, by exploiting the direct physical contacts between the users, and the resulting potential to exchange data through a direct connection between their devices (e.g., through Wi-Fi or Bluetooth). Resources and services available on mobile devices can be directly shared among users in a elastic and on-demand way without time-consuming and energy-requiring interactions with pre-existing infrastructure, either at the networking level (e.g., cellular networks) or at the computing/service level (e.g., the mobile computing cloud). 
 Note that, mobile tasks usually require huge computational resources or data transfer (e.g., TensorFlow on mobile, Video editor on mobile and Online video). Nearby mobile service provider are thus more adept, in terms of energy-efficiency, at executing these tasks than the online services or nodes with the help of device to device (D2D) communications such as Bluetooth, Wi-Fi and NFC \cite{balani2007energy}. D2D communications are featured by extensively-reduced data transfer delays and required energy than traditional cellular network. Thus it provides better user-perceived service quality in terms of reduced waiting time and improved service responsiveness. It is widely believed to have potential to replenish traditional cellular communications by providing increased user throughput, reduced cellular traffic, and extened network coverage.
 
@@ -171,13 +171,20 @@ However, due to the completely different application patterns compared with trad
 
 1) Unguaranteed reliability: Mobile users may change their locations very frequently in mobile environment and thus service availability could be fluctuating and time-varying. It is therefore difficult to guarantee high reliability of service composition when their underlying mobile services are with time-varying availability or even unavailable. Thus, determining how to handle service availability is a major challenge for providing reliable mobile services in highly dynamic mobile environments.
 
-2) Neglect of deadline-constrain: Different with large workflows executed in stationary IaaS cloud, a mobile service composition usually completed within a few seconds to tens of seconds. Few studies have concluded that mobile users can tolerance a maximum of 30 seconds for a response in average, if a service composition algorithm doesn't consider deadline-constrained, it is likely to generate a composition plan with high make span, and these high make span schedule plans usually have low reliability and will result in poor user experience. Thus, it's important to introduce deadline-constrained mechanism in such a highly dynamic mobile environment.
+2) Neglect of deadline-constrain: Unlike large workflows executed in stationary IaaS cloud for hours, a mobile service composition usually completed within a few seconds to tens of seconds in highly dynamic mobile environment. Some studies \cite{nakhimovsky2009mobile, merz2016perceived, zhou2016define} have concluded that mobile users can tolerance a maximum of 38 seconds for a request in average. So if a service composition algorithm does not consider deadline-constrain, it is more likely to generate composition schedules with high makespan which brings bad user experience. Besides, these high-makespan schedules usually have low reliability, which will result in low success rate and high SLA (Service-level-agreement) violated rate. Thus, it is necessary to introduce deadline-constrained mechanism in a highly dynamic mobile environments.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{./img/pic1.pdf}
+\caption{Opportunistic computing}
+\label{Opportunistic computing}
+\end{figure}
 
 % 1) Constant Mobility: Mobile users may change their locations very frequently in mobile environment and thus service availability could be fluctuating and time-varying. It is therefore difficult to guarantee high reliability of service composition when their underlying mobile services are with time-varying availability or even unavailable. Thus, determining how to handle service availability is a major challenge for providing reliable mobile services in highly dynamic mobile environments.
 
 % 2) Limited Resource: mobile devices have limited computing capability compared with stationary ones. Designing scheduling algorithms with high time-complexity should be avoided.
-Moreover, such algorithms are supposed to be highly time-efficient because mobile services themselves are with time-varying availability/QoS and only fast ones avoid ineffective scheduling, as well. 
-Nevertheless, the underlying problem for optimal scheduling and composition is well acknowledged to be NP-hard. It is therefore a great challenge to guarantee both low time-complexity and optimality of such algorithms.
+%Moreover, such algorithms are supposed to be highly time-efficient because mobile services themselves are with time-varying availability/QoS and only fast ones avoid ineffective scheduling, as well. 
+%Nevertheless, the underlying problem for optimal scheduling and composition is well acknowledged to be NP-hard. It is therefore a great challenge to guarantee both low time-complexity and optimality of such algorithms.
 
 To address the aforementioned challenges and concerns in this work, we propose an reliability-aware and deadline-constrained mobile service composition approach, where mobile users in mobile service opportunistic network are allowed to combine and exploit, through D2D communications, nearby devices' resources. Instead of assuming fully available mobile services, we consider time-varying availability of services due to their run-time mobility and develop reliability-aware deadline/reliability estimation models for service compositions. Based on the estimation model, we present a Krill-Herd-based algorithm to decide optimal composition schedules at run-time aiming at maximized reliability with guaranteed deadline. To validate our proposed approach, we carry out a case study based on some well-known mobile service composition templates and a real-world dataset (the D2D contact traces of MIT Reality dataset and the response time data of QWS dataset).
 
@@ -203,6 +210,13 @@ Yang \emph{et al}. \cite{Yang2010} present a comprehensive QoS model for pervasi
 zhang \emph{et al}. \cite{Zhang2016qos} consider a bio-inspired and context-aware mobile service selection algorithm, They introduce a tree-encoding method to improve the capacity and efficiency of genetic operations of genetic algorithm. However, for simplicity, they do not consider user mobility.
 Wang \emph{et al}. \cite{wang2011exploiting} employ a probability-free model and a probabilistic model to characterize the uncertainty during service invoking. They assume services are able to tolerate a certain level of the mobility of service providers. However, for simplicity, they consider the sequential pattern of service compositions only.
 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{./img/pic2.pdf}
+\caption{Mobile services composition over opportunistic network}
+\label{fig_MSCON}
+\end{figure}
+
 It can be seen that, existing works are limited in several ways: 
 1) for simplicity, most works consider fully-available services in their QoS determination models and scheduling algorithms. However, real-world mobile services are usually with unreliable and time-varying availability, as suggested by our test data given later.
 2) various works consider RWP and Levy model where mobility of services are assumed to follow random walks and Brownian motion patterns. However, recent several studies, e.g., \cite{barbosa2017human, bettstetter2003node, navidi2004improving}, show that individual trajectories are far from random, possessing a high degree of regularity and predictability. And different mobility model applies to different application environment \cite{camp2002survey}, e.g., mobility pattern of office is different from that of subway. Thus, using a general model to describe such different mobility patterns could be unrealistic.
@@ -212,12 +226,6 @@ They assume the probability that a provider stays within the required distance t
 The above limitations could be well avoided by using a reliability-aware and deadline-constrained service composition mechanism and a Krill-Herd-based algorithm to decide composition schedules, where the reliability of a composition schedule which can be obtained by aggregating availability of its tasks is evaluated and regarded as optimization object to improve successful rate.
 
 \section{modeling reliability-aware mobile service composition}
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.5in]{./img/pic2.pdf}
-\caption{Mobile services composition over opportunistic network}
-\label{fig_MSCON}
-\end{figure}
 
 \subsection{Mobile Service Composition over Opportunistic Network Framework}
 
@@ -314,7 +322,7 @@ If task $t_i$ connects $t_k$ through edge $e_{i,k}$ and they are executed by dif
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=3in]{./img/pic5.pdf}
+\includegraphics[width=3.5in]{./img/pic5.pdf}
 \caption{An example of resource pool}
 \label{Resource Pool}
 \end{figure}
@@ -368,11 +376,11 @@ where $\delta$ is the time between issue a service composition and a correspondi
 \section{The kh-based algorithm for mobile service composition}
 % It is widely acknowledged that to schedule multi-task processes on distributed platforms is an NP-hard problem [5]. 
 
-The optimization problem discussed in the previous section can be reduced to a knapsack problem. It's widely known that knapsack problem is NP-hard \cite{papadimitriou1998combinatorial}, then the optimization problem is also NP-hard. It is therefore extremely time-consuming to yield optimal service composition schedules through traversal-based algorithms. Fortunately, heuristic and meta-heuristic algorithms with polynomial complexity are able to produce approximate or near optimal solutions at the cost of acceptable optimality loss.
+The optimization problem discussed in the previous section can be reduced to a knapsack problem. It is widely known that knapsack problem is NP-hard \cite{papadimitriou1998combinatorial}, then the optimization problem is also NP-hard. It is therefore extremely time-consuming to yield optimal service composition schedules through traversal-based algorithms. Fortunately, heuristic and meta-heuristic algorithms with polynomial complexity are able to produce approximate or near optimal solutions at the cost of acceptable optimality loss.
 
-Krill-Herd algorithm \cite{gandomi2012krill} is novel meta-heuristic generic stochastic optimization algorithm for the global optimization problem, inspired by predatory behavior, communication behavior and random diffusion behavior of krill. 
+Krill-Herd algorithm \cite{gandomi2012krill} is novel light-wight meta-heuristic generic stochastic optimization algorithm for the global optimization problem, inspired by predatory behavior, communication behavior and random diffusion behavior of krill. 
 % The three essential actions determining the time-dependent position of an individual are: movement induced by presence of other individuals, foraging activity, and random diffusion. 
-These actions work in parallel resulting in notable efficiency of KH algorithm. Experiments in \cite{gandomi2012krill} and \cite{wang2014stud} show that KH-based algorithm can get the same optimization level in a shorter time compared with other meta-heuristic algorithms such as GA(Gene Algorithm), PSO(Particle Swarm Optimization) and DE(Differential Evolution). Thus, KH-based algorithm is more suitable running in resource-limited devices such as mobile and tablet.
+These behaviors work in parallel resulting in notable efficiency of KH algorithm. Experiments in \cite{gandomi2012krill} and \cite{wang2014stud} show that KH-based algorithm can get the same optimization level in a shorter time compared with other meta-heuristic algorithms such as GA (genetic  Algorithm), PSO (Particle Swarm Optimization) and DE (Differential Evolution). Thus, this light-wight meta-heuristic algorithm is more suitable for running in resource-limited devices such as mobile phone and tablet.
 
 Based on our problem descriptions introduced earlier, we present definitions of motion and crossover operations of KH algorithm next and show how resulting composition schedules are generated.
 
@@ -434,13 +442,20 @@ where $D_{max}$ is the maximum diffusion speed and $\theta \in [-1, 1]$ a random
 
 \subsection{Crossover operator}
 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.8in]{./img/pic7.pdf}
+\caption{An example of crossover operator}
+\label{Crossover operator}
+\end{figure}
+
 Crossover operators aim at enhancing the search capability. Inspired by SGA \cite{wang2014stud} (a type of genetic algorithm which employs the optimal genome for crossover at each generation), we introduce a stud selection procedure to further improve KH's search capability.
 
 The crossover operator for our proposed problem is designed to be controlled by a dynamic crossover rate $C_{r}$:
 \begin{equation}
-C_{r} = r + (1-r) \times \frac{R_{best}-R_{i}}{R_{best}-R_{worst}}
+C_{r} = r + (1-r) \times \frac{R_{h}-R_{i}}{R_{h}-R_{l}}
 \end{equation}
-Where $r$ is a preset parameter to control crossover rate baseline, $R_{i}$ the $i$-th individual's reliability, $R_{best}$ the current highest reliability value as far, and, $R_{worst}$ lowest reliability value so far.
+Where $r$ is a preset parameter to control crossover rate baseline, $R_{i}$ the $i$-th individual's reliability, $R_{h}$ the current highest reliability value as far, and, $R_{l}$ lowest reliability value so far.
 
 Then a crossover vector $Cv = \{c_{1},c_{2},...,c_{n}\}$ can be generated by $C_{r}$:
 \begin{equation}
@@ -459,7 +474,7 @@ c_{i}=
 \REQUIRE Population $X$; Individual $X_i$ to crossover; $n$: the number of tasks in $SC$; 
 \ENSURE A new individual;
 
-\STATE rank all krill individuals in population $X$ by its reliability value, get optimal individual $Stud$, save the best reliability value as $R_{best}$ and the worst reliability value as $R_{worst}$
+\STATE rank all krill individuals in population $X$ by its reliability value, get optimal individual $Stud$, save the highest reliability value as $R_{h}$ and the lowest reliability value as $R_{l}$
 
 % \STATE $C_{r} \leftarrow$ calcCrossoverRate($X_i$, $R_{best}$, $R_{worst}$)
 \STATE calculate crossover rate as $C_{r}$ by e.q (20)
@@ -482,12 +497,6 @@ c_{i}=
 
 As shown in algorithm 1, we can see that for each individual $X_i$ to crossover, we choose the optimal individual $Stud$ (i.e., the individual with highest reliability value) to mating. As shown in Fig. 7, the characteristics from individual $Stud$ are copied to individual $X_i$ according to crossover vector $Cv$. 
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=2.5in]{./img/pic7.pdf}
-\caption{An example of crossover operator}
-\label{Crossover operator}
-\end{figure}
 
 \subsection{Position update}
 The offspring generated by crossover operations should be evaluated and updated to current evolutionary sequence.
@@ -513,13 +522,13 @@ The search space of solutions usually grows exponentially with the scale of a co
 \REQUIRE Population size $S$; The set of available service provider $P$; Composite service $SC$ requested;
 \ENSURE Population $X$;
 
-\STATE initialize ResourcePool $RP$ with empty
+\STATE initialize Resource Pool $P$ with empty
 \STATE initialize Population $X$ with empty
 
 \FOR{each service provider $p$ in $P$}
   \FOR{each task $t$ in $SC$}
     \IF{provider $p$ provide concrete service $s$ for $t$}
-      \STATE add service $s$ to ResourcePool $RP[t]$
+      \STATE add service $s$ to Resource Pool $P[t]$
     \ENDIF
   \ENDFOR  
 \ENDFOR
@@ -527,7 +536,7 @@ The search space of solutions usually grows exponentially with the scale of a co
 \FOR{$i=1$ \TO $S$}
   \STATE initialize individual $X_i \leftarrow \{0,0,...,0\}$
   \FOR{each task $t$ in $SC$}
-    \STATE $X_i[j] \leftarrow$ RandomChoose($RP[t]$)
+    \STATE $X_i[j] \leftarrow$ RandomChoose($P[t]$)
   \ENDFOR
   \STATE add individual $X_i$ to population $X$
 \ENDFOR
@@ -538,13 +547,12 @@ The search space of solutions usually grows exponentially with the scale of a co
 \subsection{Fitness evaluation and selection}
 The fitness of an individual solution is decided by its maximization of estimated reliability on condition that the deadline constraint is met.
 
-The selection strategy is therefore based on the fitness estimation and implemented through a tournament-based method \cite{whitley1994genetic}. To be specific, we employ a constraint handling strategy described below to select individuals for new generations: 1) if the $\tau$ values of two solutions are feasible, then the one with lower reliability is discarded, 2) if the $\tau$ value of only one solution is feasible, then the infeasible one is simply discarded; and 3) if the $\tau$ values of both solutions are infeasible, then the one with higher estimated reliability time is discarded.
-Based on the above discussions, the RDKH algorithm is given in Algorithm 3.
-
+The selection strategy is therefore based on the fitness estimation and implemented through a tournament-based method \cite{whitley1994genetic}. To be specific, we employ a constraint handling strategy described below to select individuals for new generations: 1) if the $\tau$ values of two solutions are feasible, then the one with lower reliability is discarded, 2) if the $\tau$ value of only one solution is feasible, then the infeasible one is simply discarded; and 3) if the $\tau$ values of both solutions are infeasible, then the one with lower estimated reliability is discarded.
+Based on the above discussions, the KH-based composition algorithm is given in Algorithm 3.
 
 \begin{algorithm}
-\caption{Reliability-aware and Deadline-constrained Krill Herd algorithm}
-\label{RDKH}
+\caption{KH-based composition algorithm}
+\label{KH}
 \begin{algorithmic}[1]
 
 \REQUIRE Number of population size $S$; Number of max iteration generations $G$; The set of available providers $P$;  Composite service $SC$ requested;
@@ -568,17 +576,17 @@ Based on the above discussions, the RDKH algorithm is given in Algorithm 3.
 \end{algorithm}
 
 \subsection{Complexity Analysis}
-The computational complexity of the Reliability-aware and Deadline-constrained Krill-Herd Algorithm (RDKH), is calculated based on their initialization, motion, crossover, update and fitness evaluation operations. 
-Initially we calculate the time complexity of each method, then combined to complexity of each method to compute the overall complexity of the proposed RDKH algorithm.
+The computational complexity of the KH-based composition algorithm, is calculated based on their initialization, motion, crossover, fitness evaluation and rank operations. 
+Initially we calculate the time complexity of each method, then combined to complexity of each method to compute the overall complexity of the proposed KH-based algorithm.
 
-Suppose the mobile user has submitted a composite service request with $m$ tasks, and there are $k$ available service provider within transmission range. $S$ and $G$ are two constant parameters indicate the population size and max iteration generations of the proposed RDKH algorithm.
+Suppose the mobile user has submitted a composite service request with $m$ tasks, and there are $k$ available service provider within transmission range. $S$ and $G$ are two constant parameters indicate the population size and max iteration generations of the proposed KH-based algorithm
 The time complexity of generating initial population is $O(mk)+O(mS) = O((k+S)m) \approx O(km)$.
 The time complexity of evaluating the fitness of an individual is $O(2m+|E|)$, thus the time complexity of evaluating all individuals and ranking them through a tournament-based method is $O(S^2logS(2m+|E|)) \approx O(m+|E|)$.
 The motion operator consists three sub-operator: 1) motion influenced by other krill; 2) foraging action; 3) physical diffusion, and their time complexity is $O(S)$, $O(S)$, $O(1)$, respectively. Therefor, The time complexity of motion operator is $O(S)+O(S)+O(1) \approx O(S)$.
 The time complexity for crossover operation is $O(m)$.
 The time complexity for update operation is $O(1)$.
 Thus, the total time complexity of fitness evaluation, motion, crossover, update with $G$ generations is $O(G(m+|E|)) + O(GS) + O(Gm) + O(G) \approx O(m+|E|)$. 
-Finally, the total time complexity of RDKH algorithm is $O(km) + O(m+|E|) \approx O(km+|E|)$.
+Finally, the total time complexity of KH-based composition algorithm is $O(km) + O(m+|E|) \approx O(km+|E|)$.
 
 \section{CASE STUDY AND EVALUATION}
 \begin{table*}
@@ -694,11 +702,9 @@ This table clearly shows that mobile services are with a time-varying set of sup
 A smart algorithm able to exploit the rum-time dynamicness of time-varying availability of mobile services is thus in high need. The run-time contact time of a mobile service is decided by its corresponding record in the MIT reality dataset. Consider that a composition schedule is applied at $T_1$ and its estimated completion time is $T_3$, then the corresponding contact data, which suggests availability status of candidate services, is used decide whether an unsuccessful composition occurs due to unavailability of required services between $T_1$ and $T_3$.
 % Once a failure occurs, schedule plan will be remade and applied.
 
-We employ representative existing algorithms \cite{Deng2017} \cite{sadiq2015service} which consider time-invariant availability and our proposed one to schedule mobile service compositions based on 3 well-known composition templates given in Fig. 8. 
-The templates represent composite services and business processes for travel-arranging, TensorFlow-based data processing, and astronomical image processing applications. As usually done by various existing works \cite{Meena2016Cost, Rodriguez2014Deadline}, data transmission time can be calculated as the throughput (20Mbps as suggested by the MIT Reality dataset) divided by the average bandwidth. 
+We employ representative existing algorithms \cite{Deng2017} \cite{sadiq2015service} which consider time-invariant availability and our proposed one to schedule mobile service compositions based on 3 well-known and 1 random generated composition templates given in Fig. 8. 
+The 3 well-known templates represent composite services and business processes for travel-arranging, TensorFlow-based data processing, and astronomical image processing applications. As usually done by various existing works \cite{Meena2016Cost, Rodriguez2014Deadline}, data transmission time can be calculated as the throughput (20Mbps as suggested by the MIT Reality dataset) divided by the average bandwidth. 
 The test is based on 50 people’s opportunistic contract data from MIT Reality dataset. The test includes 50 results of scheduling service compositions based our algorithms and baseline ones in consecutive periods of 5 minutes. 
-
-
 
 \begin{figure*}[!t]
 \centering
@@ -706,32 +712,33 @@ The test is based on 50 people’s opportunistic contract data from MIT Reality 
 \caption{The mobile service composition templates for the case study}
 \label{DAG}
 \end{figure*}
-
-
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=6.6in]{./img/Task-6.pdf}
 \caption{Case study for travel arrange}
 \label{Task-6}
 \end{figure*}
-
-
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=6.6in]{./img/Task-12.pdf}
 \caption{Case study for tensorflow}
 \label{Task-12}
 \end{figure*}
-
 \begin{figure*}[!t]
 \centering
 \includegraphics[width=6.6in]{./img/Task-24.pdf}
 \caption{Case study for montage}
 \label{Task-24}
 \end{figure*}
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=6.6in]{./img/Task-12-random.pdf}
+\caption{Case study for random generated composition template}
+\label{Task-random}
+\end{figure*}
 
-As shown by Fig. 9(a), Fig. 10(a) and Fig. 11(a), our proposed method achieves higher success rate ($99.9\%$ vs. $97.3\%$ for Case I in average, $92.1\%$ vs. $75.7\%$ for Case II in average, and $89\%$ vs. $54.9\%$ for Case III in average) compared with baseline algorithms.
-Fig. 9(b), Fig. 10(b) and Fig. 11(b) shows the comparisons of process completion time where our proposed algorithm achieves 2.2\%, 17.7\%, and 38.2\% time savings in each case. 
+As shown by Fig. 9(a), Fig. 10(a), Fig. 11(a) and Fig. 12(a), our proposed method achieves higher success rate ($99.9\%$ vs. $97.3\%$ for Case I in average, $92.1\%$ vs. $75.7\%$ for Case II in average, and $89\%$ vs. $54.9\%$ for Case III in average, and $91.8\%$ vs. $75.6\%$ for Case IV in average) compared with baseline algorithms.
+Fig. 9(b), Fig. 10(b), Fig. 11(b) and Fig. 12(b) shows the comparisons of process completion time where our proposed algorithm achieves 2.2\%, 17.7\%, 38.2\%, and 17.7\% time savings in each case. 
 Intuitively, our algorithm outperforms traditional ones because traditional ones consider fully available mobile services and thus they tend to choose services with low response time, and thus fast services with high risks unavailability due to high mobility are selected. 
 
 \section{Conclusion}
