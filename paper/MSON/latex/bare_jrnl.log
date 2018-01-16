@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  9 JAN 2018 17:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  16 JAN 2018 22:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -687,38 +687,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--122
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--157
+Underfull \hbox (badness 10000) in paragraph at lines 123--158
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--157
+Underfull \hbox (badness 10000) in paragraph at lines 123--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--157
+Underfull \hbox (badness 10000) in paragraph at lines 123--158
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-
 <./img/pic1.pdf, id=16, 946.45128pt x 605.37967pt>
 File: ./img/pic1.pdf Graphic file (type pdf)
  <use ./img/pic1.pdf>
-Package pdftex.def Info: ./img/pic1.pdf used on input line 178.
+Package pdftex.def Info: ./img/pic1.pdf used on input line 179.
 (pdftex.def)             Requested size: 252.94499pt x 161.79196pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 178--179
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 179--180
  [][] 
  []
 
@@ -726,10 +719,10 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 178--179
 File: ./img/pic2.pdf Graphic file (type pdf)
 
 <use ./img/pic2.pdf>
-Package pdftex.def Info: ./img/pic2.pdf used on input line 215.
+Package pdftex.def Info: ./img/pic2.pdf used on input line 216.
 (pdftex.def)             Requested size: 252.94499pt x 142.6479pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 215--216
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 216--217
  [][] 
  []
 
@@ -737,41 +730,38 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 215--216
 File: ./img/pic3.pdf Graphic file (type pdf)
 
 <use ./img/pic3.pdf>
-Package pdftex.def Info: ./img/pic3.pdf used on input line 267.
+Package pdftex.def Info: ./img/pic3.pdf used on input line 268.
 (pdftex.def)             Requested size: 252.94499pt x 149.19333pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 267--268
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 268--269
  [][] 
  []
 
-
-Underfull \vbox (badness 1400) has occurred while \output is active []
-
- [4 <./img/pic3.pdf>] <./img/pic4.pdf, id=143, 836.69896pt x 226.96404pt>
+[4 <./img/pic3.pdf>] <./img/pic4.pdf, id=145, 836.69896pt x 226.96404pt>
 File: ./img/pic4.pdf Graphic file (type pdf)
 
 <use ./img/pic4.pdf>
-Package pdftex.def Info: ./img/pic4.pdf used on input line 303.
+Package pdftex.def Info: ./img/pic4.pdf used on input line 304.
 (pdftex.def)             Requested size: 238.49121pt x 64.69234pt.
- <./img/pic5.pdf, id=144, 1415.02002pt x 812.43625pt>
+ <./img/pic5.pdf, id=146, 1415.02002pt x 812.43625pt>
 File: ./img/pic5.pdf Graphic file (type pdf)
 
 <use ./img/pic5.pdf>
-Package pdftex.def Info: ./img/pic5.pdf used on input line 325.
+Package pdftex.def Info: ./img/pic5.pdf used on input line 326.
 (pdftex.def)             Requested size: 252.94499pt x 145.22807pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 325--326
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 326--327
  [][] 
  []
 
 [5 <./img/pic4.pdf> <./img/pic5.pdf>]
-<./img/pic6.pdf, id=209, 826.73235pt x 485.82011pt>
+<./img/pic6.pdf, id=210, 826.73235pt x 485.82011pt>
 File: ./img/pic6.pdf Graphic file (type pdf)
  <use ./img/pic6.pdf>
-Package pdftex.def Info: ./img/pic6.pdf used on input line 394.
+Package pdftex.def Info: ./img/pic6.pdf used on input line 393.
 (pdftex.def)             Requested size: 252.94499pt x 148.63823pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 394--395
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 393--394
  [][] 
  []
 
@@ -779,67 +769,60 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 394--395
 File: ./img/pic7.pdf Graphic file (type pdf)
 
 <use ./img/pic7.pdf>
-Package pdftex.def Info: ./img/pic7.pdf used on input line 447.
+Package pdftex.def Info: ./img/pic7.pdf used on input line 446.
 (pdftex.def)             Requested size: 202.35622pt x 136.89178pt.
  [7 <./img/pic7.pdf>]
-Overfull \hbox (2.61362pt too wide) in paragraph at lines 570--571
+Overfull \hbox (2.61362pt too wide) in paragraph at lines 569--570
 [] []$\OML/cmm/m/it/10 offspring \OMS/cmsy/m/n/10  $ \OT1/ptm/m/n/10 tournament
 ($\OML/cmm/m/it/10 offspring[]; offspring[]$\OT1/ptm/m/n/10 ) 
  []
 
 
-Overfull \hbox (16.92056pt too wide) in paragraph at lines 625--625
+Overfull \hbox (16.92056pt too wide) in paragraph at lines 624--624
 [][] 
  []
 
 
-Overfull \hbox (8.91203pt too wide) in paragraph at lines 665--686
+Overfull \hbox (8.91203pt too wide) in paragraph at lines 664--685
  [][] 
  []
 
 [8]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 <./img/DAG.pdf, id=255, 2560.11266pt x 1339.62666pt>
 File: ./img/DAG.pdf Graphic file (type pdf)
  <use ./img/DAG.pdf>
-Package pdftex.def Info: ./img/DAG.pdf used on input line 711.
+Package pdftex.def Info: ./img/DAG.pdf used on input line 710.
 (pdftex.def)             Requested size: 491.43622pt x 257.14816pt.
 
 <./img/Task-6.pdf, id=256, 827.62361pt x 262.1223pt>
 File: ./img/Task-6.pdf Graphic file (type pdf)
  <use ./img/Task-6.pdf>
-Package pdftex.def Info: ./img/Task-6.pdf used on input line 717.
+Package pdftex.def Info: ./img/Task-6.pdf used on input line 716.
 (pdftex.def)             Requested size: 476.98244pt x 151.07112pt.
 
 <./img/Task-12.pdf, id=257, 827.98427pt x 262.3663pt>
 File: ./img/Task-12.pdf Graphic file (type pdf)
  <use ./img/Task-12.pdf>
-Package pdftex.def Info: ./img/Task-12.pdf used on input line 723.
+Package pdftex.def Info: ./img/Task-12.pdf used on input line 722.
 (pdftex.def)             Requested size: 476.98244pt x 151.14369pt.
 
 <./img/Task-24.pdf, id=258, 828.22026pt x 262.78928pt>
 File: ./img/Task-24.pdf Graphic file (type pdf)
  <use ./img/Task-24.pdf>
-Package pdftex.def Info: ./img/Task-24.pdf used on input line 729.
+Package pdftex.def Info: ./img/Task-24.pdf used on input line 728.
 (pdftex.def)             Requested size: 476.98244pt x 151.34724pt.
 
 <./img/Task-12-random.pdf, id=259, 794.85103pt x 262.32945pt>
 File: ./img/Task-12-random.pdf Graphic file (type pdf)
 
 <use ./img/Task-12-random.pdf>
-Package pdftex.def Info: ./img/Task-12-random.pdf used on input line 735.
+Package pdftex.def Info: ./img/Task-12-random.pdf used on input line 734.
 (pdftex.def)             Requested size: 476.98244pt x 157.4189pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [9]
-Overfull \vbox (11.05902pt too high) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -862,11 +845,11 @@ Underfull \hbox (badness 2856) in paragraph at lines 131--135
 Here is how much of TeX's memory you used:
  14337 strings out of 492995
  280823 string characters out of 6132703
- 334794 words of memory out of 5000000
+ 336794 words of memory out of 5000000
  17596 multiletter control sequences out of 15000+600000
  47239 words of font info for 92 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 55i,11n,54p,972b,538s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,54p,977b,538s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/b
 ase/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmext
@@ -882,7 +865,7 @@ sr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/t
 exlive/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/20
 17/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (12 pages, 832074 bytes).
+Output written on bare_jrnl.pdf (12 pages, 832175 bytes).
 PDF statistics:
  438 PDF objects out of 1000 (max. 8388607)
  307 compressed objects within 4 object streams
