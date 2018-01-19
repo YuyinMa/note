@@ -141,7 +141,7 @@ $F_i$         &   The foraging action of a krill individual \\
 % $G$           &   The max iteration count of a KH algorithm \\
 $G$           &   The number of max iteration generations of a KH algorithm \\
 $N_i$         &   The motion influenced by other krills \\
-$P$           &   The pool of available mobile services \\
+$P$           &   The resources pool of available mobile services \\
 $R$           &   Transmission range of a mobile device \\
 $S$           &   The population size of a KH algorithm \\
 $t_i$         &   The $i$-th task of a service composition \\
@@ -173,7 +173,7 @@ However, because of the completely different application patterns compared with 
 
 1) Unguaranteed reliability: Mobile users may change their locations very frequently in a mobile environment and thus service availability tends to be fluctuating and time-varying. It is therefore difficult to guarantee high reliability of service composition when their underlying mobile services are of time-varying availability or even unavailable. Thus, determining how to handle service availability is a major challenge for providing reliable mobile services in highly dynamic mobile environments.
 
-2) Neglect of deadline-constrain: Different from large scientific workflows executed in stationary IaaS cloud for hours, a mobile service composition usually completed within a few seconds to tens of seconds in a highly dynamic mobile environment. Some studies, e.g., \cite{Niida2010} and \cite{zhou2016define} , have concluded that mobile users can tolerance a certain maximum time for a composition request. Once a timeout happens, they may lose their patience and interrupt requested service which result in failure. More specifically, if a service composition algorithm does not consider deadline-constrain, it is more likely to generate composition schedules with high makespan which brings bad user experience and result in high SLA (Service-level-agreement) violated rate. Thus, it is necessary to introduce deadline-constrained mechanism in such a highly dynamic mobile environments.
+2) Neglect of deadline-constrain: Different from large scientific workflows executed in stationary IaaS cloud for hours, a mobile service composition usually completed within a few seconds to tens of seconds in a highly dynamic mobile environment. Some studies, e.g., \cite{Niida2010} and \cite{zhou2016define} , have concluded that mobile users can tolerance a certain maximum time for a composition request. Once timeout happens, they may lose their patience and interrupt requested service thus result in failure. More specifically, if a service composition algorithm does not consider deadline-constrain, it is more likely to generate composition schedules with high makespan which brings bad user experience and result in high SLA (Service-level-agreement) violated rate. Thus, it is necessary to introduce deadline-constrained mechanism in such a highly dynamic mobile environments.
 
 \begin{figure}[!t]
 \centering

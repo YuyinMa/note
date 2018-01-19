@@ -14,17 +14,32 @@
 
 ### 2. 主板
 
+* New Apple iMac 27" A1419 late 2015 3.2GHz Cpu 2Gb Gpu 5k Retina motherboard.   485$
+
 ### 3. 外设
+
+* 普通显示器可接[2] 应该是DP接口？
+
+
+* 普通鼠标键盘可以识别 [2]
 
 ### 4. 存储
 
 ### 5. 机箱(电源键)
 
+* 火牛
+
 ### 6. Kext 文件的修改
+
+### 7. 裸板启动
+
+* iMac G5 可以裸板启动 [2]
 
 ### 参考
 
 [1] supermartin, http://www.insanelymac.com/forum/topic/307924-using-a-broken-imacs-hardware-as-a-desktop-computer-kext-help/
+
+[2] souhu, http://my.tv.sohu.com/us/49163264/14720446.shtml
 
 
 
