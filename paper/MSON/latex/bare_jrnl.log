@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  25 JAN 2018 21:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.16)  29 JAN 2018 23:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -711,10 +711,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <./img/pic1.pdf, id=16, 946.45128pt x 605.37967pt>
 File: ./img/pic1.pdf Graphic file (type pdf)
  <use ./img/pic1.pdf>
-Package pdftex.def Info: ./img/pic1.pdf used on input line 182.
+Package pdftex.def Info: ./img/pic1.pdf used on input line 184.
 (pdftex.def)             Requested size: 252.94499pt x 161.79196pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 182--183
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 184--185
  [][] 
  []
 
@@ -722,10 +722,10 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 182--183
 File: ./img/pic2.pdf Graphic file (type pdf)
 
 <use ./img/pic2.pdf>
-Package pdftex.def Info: ./img/pic2.pdf used on input line 219.
+Package pdftex.def Info: ./img/pic2.pdf used on input line 221.
 (pdftex.def)             Requested size: 252.94499pt x 142.6479pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 219--220
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 221--222
  [][] 
  []
 
@@ -736,30 +736,30 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: ./img/pic3.pdf Graphic file (type pdf)
 
 <use ./img/pic3.pdf>
-Package pdftex.def Info: ./img/pic3.pdf used on input line 271.
+Package pdftex.def Info: ./img/pic3.pdf used on input line 274.
 (pdftex.def)             Requested size: 252.94499pt x 149.19333pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 271--272
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 274--275
  [][] 
  []
 
 
-Underfull \vbox (badness 1112) has occurred while \output is active []
+Underfull \vbox (badness 1270) has occurred while \output is active []
 
  [4 <./img/pic3.pdf>] <./img/pic4.pdf, id=145, 836.69896pt x 226.96404pt>
 File: ./img/pic4.pdf Graphic file (type pdf)
 
 <use ./img/pic4.pdf>
-Package pdftex.def Info: ./img/pic4.pdf used on input line 305.
+Package pdftex.def Info: ./img/pic4.pdf used on input line 309.
 (pdftex.def)             Requested size: 238.49121pt x 64.69234pt.
  <./img/pic5.pdf, id=146, 1415.02002pt x 812.43625pt>
 File: ./img/pic5.pdf Graphic file (type pdf)
 
 <use ./img/pic5.pdf>
-Package pdftex.def Info: ./img/pic5.pdf used on input line 326.
+Package pdftex.def Info: ./img/pic5.pdf used on input line 330.
 (pdftex.def)             Requested size: 252.94499pt x 145.22807pt.
 
-Overfull \hbox (0.94499pt too wide) in paragraph at lines 326--327
+Overfull \hbox (0.94499pt too wide) in paragraph at lines 330--331
  [][] 
  []
 
@@ -767,60 +767,60 @@ Overfull \hbox (0.94499pt too wide) in paragraph at lines 326--327
 <./img/pic6.pdf, id=210, 1163.8344pt x 682.40726pt>
 File: ./img/pic6.pdf Graphic file (type pdf)
  <use ./img/pic6.pdf>
-Package pdftex.def Info: ./img/pic6.pdf used on input line 393.
+Package pdftex.def Info: ./img/pic6.pdf used on input line 397.
 (pdftex.def)             Requested size: 216.81pt x 127.11803pt.
 
 [6 <./img/pic6.pdf>] <./img/pic7.pdf, id=230, 873.18059pt x 590.72643pt>
 File: ./img/pic7.pdf Graphic file (type pdf)
 
 <use ./img/pic7.pdf>
-Package pdftex.def Info: ./img/pic7.pdf used on input line 446.
+Package pdftex.def Info: ./img/pic7.pdf used on input line 450.
 (pdftex.def)             Requested size: 202.35622pt x 136.89178pt.
  [7 <./img/pic7.pdf>]
-Overfull \hbox (5.14377pt too wide) in paragraph at lines 568--569
+Overfull \hbox (5.14377pt too wide) in paragraph at lines 572--573
 [] []$\OML/cmm/m/it/10 offspring \OMS/cmsy/m/n/10  $ \OT1/ptm/m/n/10 Tournament
 ($\OML/cmm/m/it/10 offspring[]; offspring[]$\OT1/ptm/m/n/10 ) 
  []
 
 
-Overfull \hbox (16.92056pt too wide) in paragraph at lines 617--617
+Overfull \hbox (16.92056pt too wide) in paragraph at lines 621--621
 [][] 
  []
 
 
-Overfull \hbox (8.91203pt too wide) in paragraph at lines 657--678
+Overfull \hbox (8.91203pt too wide) in paragraph at lines 661--682
  [][] 
  []
 
 [8] <./img/DAG.pdf, id=255, 2560.11266pt x 1339.62666pt>
 File: ./img/DAG.pdf Graphic file (type pdf)
  <use ./img/DAG.pdf>
-Package pdftex.def Info: ./img/DAG.pdf used on input line 702.
+Package pdftex.def Info: ./img/DAG.pdf used on input line 706.
 (pdftex.def)             Requested size: 491.43622pt x 257.14816pt.
 
 <./img/Task-6.pdf, id=256, 827.62361pt x 262.1223pt>
 File: ./img/Task-6.pdf Graphic file (type pdf)
  <use ./img/Task-6.pdf>
-Package pdftex.def Info: ./img/Task-6.pdf used on input line 708.
+Package pdftex.def Info: ./img/Task-6.pdf used on input line 712.
 (pdftex.def)             Requested size: 476.98244pt x 151.07112pt.
 
 <./img/Task-12.pdf, id=257, 827.98427pt x 262.3663pt>
 File: ./img/Task-12.pdf Graphic file (type pdf)
  <use ./img/Task-12.pdf>
-Package pdftex.def Info: ./img/Task-12.pdf used on input line 714.
+Package pdftex.def Info: ./img/Task-12.pdf used on input line 718.
 (pdftex.def)             Requested size: 476.98244pt x 151.14369pt.
 
 <./img/Task-24.pdf, id=258, 828.22026pt x 262.78928pt>
 File: ./img/Task-24.pdf Graphic file (type pdf)
  <use ./img/Task-24.pdf>
-Package pdftex.def Info: ./img/Task-24.pdf used on input line 720.
+Package pdftex.def Info: ./img/Task-24.pdf used on input line 724.
 (pdftex.def)             Requested size: 476.98244pt x 151.34724pt.
 
 <./img/Task-12-random.pdf, id=259, 794.85103pt x 262.32945pt>
 File: ./img/Task-12-random.pdf Graphic file (type pdf)
 
 <use ./img/Task-12-random.pdf>
-Package pdftex.def Info: ./img/Task-12-random.pdf used on input line 726.
+Package pdftex.def Info: ./img/Task-12-random.pdf used on input line 730.
 (pdftex.def)             Requested size: 476.98244pt x 157.4189pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -842,7 +842,7 @@ a Edufw-doc-u-mentsre-
 Underfull \vbox (badness 1642) has occurred while \output is active []
 
 
-Underfull \hbox (badness 2856) in paragraph at lines 124--128
+Underfull \hbox (badness 2856) in paragraph at lines 113--117
 \OT1/ptm/m/n/8 mand, T. Louail, R. Menezes, J. J. Ra-m-asco, F. Si-mini, and
  []
 
@@ -850,13 +850,13 @@ Underfull \hbox (badness 2856) in paragraph at lines 124--128
 
 ] (./bare_jrnl.aux) ) 
 Here is how much of TeX's memory you used:
- 14336 strings out of 492995
- 280792 string characters out of 6132703
- 335790 words of memory out of 5000000
- 17595 multiletter control sequences out of 15000+600000
+ 14334 strings out of 492995
+ 280765 string characters out of 6132703
+ 335782 words of memory out of 5000000
+ 17593 multiletter control sequences out of 15000+600000
  47239 words of font info for 92 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 55i,11n,54p,977b,538s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,11n,54p,911b,538s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8
 r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cmextra/cm
@@ -872,7 +872,7 @@ cal/texlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texliv
 e/2017/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2017/te
 xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on bare_jrnl.pdf (12 pages, 830412 bytes).
+Output written on bare_jrnl.pdf (12 pages, 830159 bytes).
 PDF statistics:
  438 PDF objects out of 1000 (max. 8388607)
  307 compressed objects within 4 object streams

@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex bare_jrnl"] 1516088470 "bare_jrnl.aux" "bare_jrnl.bbl" "bare_jrnl" 1516088528
+["bibtex bare_jrnl"] 1517219997 "bare_jrnl.aux" "bare_jrnl.bbl" "bare_jrnl" 1517219999
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/IEEEtran/IEEEtran.bst" 1480098433 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "bare_jrnl.aux" 1516088471 7418 ab21c7c5fab7ea79822fb6db81cadf59 ""
-  "mybibtex.bib" 1514648076 27515 078bc1066f518294642f2bb13a29e26b ""
+  "bare_jrnl.aux" 1517219998 7198 d0e8e30ac43419bb71a7731a19aff2d7 ""
+  "mybibtex.bib" 1516177607 27813 0fe5d797d25b22a20d91c898869212e9 ""
   (generated)
   "bare_jrnl.bbl"
   "bare_jrnl.blg"
-["pdflatex"] 1516088470 "bare_jrnl.tex" "bare_jrnl.pdf" "bare_jrnl" 1516088528
+["pdflatex"] 1517219997 "bare_jrnl.tex" "bare_jrnl.pdf" "bare_jrnl" 1517219999
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -112,9 +112,9 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1510806064 3678532 1b511fa312ff328e76d7fc87e4ce1716 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "bare_jrnl.aux" 1516088471 7418 ab21c7c5fab7ea79822fb6db81cadf59 ""
-  "bare_jrnl.bbl" 1516088470 11487 f83bccdc8b25314c741ee30c138c3567 "bibtex bare_jrnl"
-  "bare_jrnl.tex" 1516088527 56791 91c58e85c1bc463e108144e710ff10ca ""
+  "bare_jrnl.aux" 1517219998 7198 d0e8e30ac43419bb71a7731a19aff2d7 ""
+  "bare_jrnl.bbl" 1517219997 10539 2da08b9d8d8e6bd635ce1fd0c8d15d15 "bibtex bare_jrnl"
+  "bare_jrnl.tex" 1517215496 55921 32610d46aa5dd68fbfc33f6fdc6b088f ""
   "img/DAG.pdf" 1514539146 32469 512c820edfb4cdc78ee0d7a8b78939fd ""
   "img/Task-12-random.pdf" 1514705269 43410 e9f61b9c39a55dc6fb58bc5124089bfc ""
   "img/Task-12.pdf" 1513677885 41458 9576d0db4db9224472bc224b0ada226e ""
@@ -125,9 +125,9 @@
   "img/pic3.pdf" 1514535802 60081 9b77c2c19d520d9d29fd9a76b8371e97 ""
   "img/pic4.pdf" 1510126193 24200 c65ad257a8955b00ac709c45beb9ae93 ""
   "img/pic5.pdf" 1514536412 62993 674df0e2bf578045c5846d5168535a32 ""
-  "img/pic6.pdf" 1509509188 16963 1af70750078c0e9b28c0aec353e7ef93 ""
+  "img/pic6.pdf" 1516870743 17058 89069b4751bdb06e7d494e72a7f79501 ""
   "img/pic7.pdf" 1509509184 17815 a0e2774ed7a42a109aa189dc2f360670 ""
   (generated)
-  "bare_jrnl.log"
-  "bare_jrnl.aux"
   "bare_jrnl.pdf"
+  "bare_jrnl.aux"
+  "bare_jrnl.log"
