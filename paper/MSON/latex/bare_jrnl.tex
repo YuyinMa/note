@@ -52,7 +52,7 @@
 
 \author{Qinglan Peng,
         MengChu Zhou, ~\IEEEmembership{Fellow,~IEEE,}
-        Yunni Xia{\color{red}{*}}, ~\IEEEmembership{Senior Member,~IEEE,}
+        Yunni Xia{*}, ~\IEEEmembership{Senior Member,~IEEE,}
         Shuiguang Deng, ~\IEEEmembership{Senior Member,~IEEE,}
         Xin Luo, ~\IEEEmembership{Senior Member,~IEEE,}
         Qingsheng Zhu,
@@ -60,7 +60,7 @@
 
 
 \thanks{This work is in part supported by NSFC under Grant No. 61472051; Fundamental Research Funds for the Central Universities under project Nos. 106112014CDJZR185503 and CDJZR12180012; Science foundation of
-Chongqing Nos. cstc2014jcyjA40010 and cstc2014jcyjA90027; Chongqing Social Undertakings and Livelihood Security Science and Technology Innovation Project Special Program No. cstc2016shmszx90002; China Postdoctoral Science Foundation No. 2015M570770; Chongqing Postdoctoral Science special Foundation No. Xm2015078; Universities’ Sci-tech Achievements Transformation Project of Chongqing No. KJZH17104. {\color{blue}{Yunni Xia is the corresponding author of this work.}}}
+Chongqing Nos. cstc2014jcyjA40010 and cstc2014jcyjA90027; Chongqing Social Undertakings and Livelihood Security Science and Technology Innovation Project Special Program No. cstc2016shmszx90002; China Postdoctoral Science Foundation No. 2015M570770; Chongqing Postdoctoral Science special Foundation No. Xm2015078; Universities’ Sci-tech Achievements Transformation Project of Chongqing No. KJZH17104. Yunni Xia is the corresponding author of this work.}
 
 \thanks{Qinglan Peng, Yunni Xia, and Qingsheng Zhu are with the school of computers, Chongqing University, Chongqing 400030, China (emails: qlp@cqu.edu.cn, xiayunni@hotmail.com, qszhu@cqu.edu.cn, wbzheng2008@cqu.edu.cn)}
 
@@ -86,15 +86,15 @@ Technology, Chongqing 400714, China (luoxin21@gmail.com)}
 \begin{abstract}
 An opportunistic link between two mobile devices or nodes can be constructed when they are within each other's communication. Typically, cyber-physical environments consist of a number of mobile devices that are potentially able to establish opportunistic contacts and serve mobile applications in a cost-effective way.
 Opportunistic mobile service computing is a promising paradigm capable of utilizing the pervasive mobile computational resources around users. Mobile users are thus allowed to exploit nearby mobile services to boost their computing power without investment into their own resource pool. 
-Nevertheless, various challenges, especially its quality-of-service (QoS) and reliability-aware scheduling, are yet to be addressed. Existing studies and related scheduling strategies consider mobile users to be fully stable and available.
+Nevertheless, various challenges, especially its quality-of-service and reliability-aware scheduling, are yet to be addressed. Existing studies and related scheduling strategies consider mobile users to be fully stable and available.
 In this paper, instead, we propose a framework, named a mobile service opportunistic network, and a reliability-aware and deadline-constrained scheduling algorithm for service composition. 
-We then formulate the problem into an optimization problem and propose a Krill-Herd-based algorithm to solve it.
-Finally, we carry out a case study based on some well-known mobile service composition templates and a real-world dataset. The comparison suggest that our proposed approach outperforms traditional approaches, especially those considering stable and fully available mobile services in their models and algorithms.
+We formulate the scheduling problem into an optimization problem and propose a Krill-Herd-based algorithm to solve it.
+We carry out a case study based on some well-known mobile service composition templates and a real-world dataset. The comparison results suggest that our proposed approach outperforms the existing ones in terms
+of success rate and completion time of composed services.
 
-\vline
+% \vline
 
-\textit{Note to Practitioners}---{\color{red}{Recently, the rapidly development of mobile devices and mobile communication leads to the prosperity of mobile service computing. Services running on mobile devices within limited range are allowed to be composed to coordinate together through wireless communication technologies and perform complex tasks and business processes. Despite its great potential, mobile service compositions remains a challenge due to the fact that mobility of users and devices in mobile environment imposes high unpredictability on the execution of the tasks. A careful investigation into existing methods has found their various limitations, especially consideration of time-invariant availability of mobile services in performance models and scheduling algorithms. In this paper, we introduce a novel reliability-aware and deadline-constrained service composition method for mobile opportunistic networks. Instead of considering time-invariant availability of mobile nodes, our proposed method is capable of estimating service availability at run-time and leveraging a Krill-Herd-based algorithm to yield deadline-constrained and reliability-aware service composition schedules. Extensive case studies based on well-known service composition templates and real-world QoS datasets clearly suggest that our proposed method outperform traditional ones in terms of increased success rates. The proposed method can aid the design and optimization of mobile service compositions in a mobile environment and help practitioners better manage reliability and performance of real-world applications built upon mobile services.
-}}
+% \textit{Note to Practitioners}---Recently, the rapid development of mobile devices and mobile communication leads to the prosperity of mobile service computing. Services running on mobile devices within a limited range are allowed to be composed to coordinate through wireless communication technologies and perform complex tasks and business processes. Despite its great potential, mobile service compositions remains a challenge since the mobility of users and devices imposes high unpredictability on the execution of the tasks. A careful investigation into existing methods has found their various limitations, e.g., assuming time-invariant availability of mobile services. In this paper, we introduce a novel reliability-aware and deadline-constrained service composition method for mobile opportunistic networks. Instead of considering time-invariant availability of mobile nodes, our proposed method is capable of estimating service availability at run-time and leveraging a Krill-Herd-based algorithm to yield deadline-constrained and reliability-aware service composition schedules. Case studies based on well-known service composition templates and real-world QoS datasets clearly suggest that our proposed method outperforms the traditional ones in terms of increased success rates. It can thus aid the design and optimization of mobile service compositions in a mobile environment and help practitioners better manage reliability and performance of real-world applications built upon mobile services.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
@@ -103,6 +103,7 @@ Mobile Computing, Mobile Opportunistic Network, Mobile Service Composition, Serv
 \end{IEEEkeywords}
 
 \noindent List of abbreviations:
+~\\
 
 \noindent
 \begin{tabular}{@{} l p{7.36cm} }
@@ -114,13 +115,24 @@ KH    &   Krill-Herd algorithm \\
 M2M   &   Mobile to Mobile pattern \\
 PSO   &   Particle Swarm Optimization \\
 RWP   &   Random way point mobility model \\
-QoS   &   Quality of Service \\
-SGA   &   Stud Genetic algorithm \\
-SLA   &   Service-level-agreement \\
-SLAW  &   Self-similar Least Action Walk model
 \end{tabular}
 
+% \noindent
+% \begin{tabular}{@{} l p{7.36cm} }
+% QoS   &   Quality of Service \\
+% SGA   &   Stud Genetic algorithm \\
+% SLA   &   Service-level-agreement \\
+% SLAW  &   Self-similar Least Action Walk model
+% \end{tabular}
+
+\noindent QoS $\ \; \,$ Quality of Service \\
+\noindent SGA $\ \; $ Stud Genetic algorithm \\
+\noindent SLA $\ \ $ Service-level-agreement \\
+\noindent SLAW$\ \,$Self-similar Least Action Walk model \\
+
+~\\
 \noindent List of symbols: 
+~\\
 
 \noindent
 \begin{tabular}{@{} l p{7.36cm} }
@@ -135,10 +147,7 @@ $b_i$         &   The estimated start time of $t_i$ \\
 $C_{r}$       &   The crossover rate of a KH algorithm \\
 $C_{v}$       &   The crossover vector of a KH algorithm \\
 % $CT$          &   The estimated completion time of a schedule plan \\
-\end{tabular}
 
-\noindent
-\begin{tabular}{@{} l p{7.36cm} }
 $d_i$         &   The estimated end time of $t_i$ \\
 $D$           &   The user-recommended constraint of the completion time of a service composition \\
 $D_i$         &   The random physical diffusion of a krill individual \\
@@ -155,6 +164,10 @@ $R$           &   Transmission range of a mobile device \\
 $S$           &   The population size of a KH algorithm \\
 $t_i$         &   The $i$-th task of a service composition \\
 % $\bar{t}$     &   The average service time of a concrete service \\
+\end{tabular}
+
+\noindent
+\begin{tabular}{@{} l p{7.36cm} }
 $t_{entry}$   &   The dummy start task of a service composition \\
 $t_{exit}$    &   The dummy end task of a service composition \\
 $w(t_i)$      &   The function to identify the concrete service that $t_i$ is scheduled into \\
@@ -215,19 +228,12 @@ Zhan \emph{el al}. \cite{zhan2017time} propose a incentive-aware and time-sensit
 Mobile service composition technique allows users to issue composite services with the help of fine-grained services over mobile networks. Recent technological advances made in the hardware and software of mobile devices, especially wireless networking, materialize a vision where devices all around a user, either carried by nearby users, or embedded as a part of smart spaces, are enabled to present services probably useful. Users sometimes demand novel services which are not pre-existent on any devices. Otherwise, they dynamically build new services by appropriately combining already existing ones. Extensive studies are carried out in this direction. 
 For example, Deng \emph{et al}. \cite{Deng2016} classify mobile service composition methods into three categories: Cloud to Mobile (C2M), Mobile to Mobile (M2M) and Hybrid. They also discuss related challenges, e.g., performance guarantee, energy efficiency, and security.
 Later, Deng \emph{et al}. \cite{Deng2017} propose a mobile-service-sharing-community model and extend the random way point (RWP) model to model user mobility. They utilize a meta-heuristic algorithm to decide the optimal compositional schedule. They consider services shared in a community are fully available all the time.
-Sadiq \emph{et al}. \cite{sadiq2015service} use a Levy walk model and Self-similar Least Action Walk {\color{red}{(SLAW)}} model to generate user traces, where each node is equally likely to meet any other one and 
-{\color{blue}{the connectivity between devices is implemented using multi-hop paths.}}
+Sadiq \emph{et al}. \cite{sadiq2015service} use a Levy walk model and Self-similar Least Action Walk (SLAW) model to generate user traces, where each node is equally likely to meet any other one and 
+the connectivity between devices is implemented using multi-hop paths.
 Christin Groba \emph{et al}. \cite{groba2014opportunistic} present a schedule protocol for service composition. Their protocol allocates service providers opportunistically to service consumers to minimize the impact of change on topology. However, their protocol only support a sequences and parallel service flows.
 Yang \emph{et al}. \cite{Yang2010} propose a QoS model for mobile service selection. They consider not only mobile wireless network characteristics but also user-perceived factors. However, their algorithm considers single service selection rather than multiple service selection for composite service processes.
 Zhang \emph{et al}. \cite{Zhang2016qos} consider a bio-inspired and context-aware mobile service selection algorithm. They introduce a tree-encoding method to improve the capacity and efficiency of genetic operations of a genetic algorithm. However, for simplicity, they do not consider user mobility.
 Wang \emph{et al}. \cite{wang2011exploiting} employ a probability-free model and a probabilistic model to characterize the uncertainty during service invoking. They assume that services are able to tolerate a certain level of the mobility of service providers. However, for simplicity, they consider the sequential pattern of service compositions only.
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=3.5in]{./img/pic2.pdf}
-\caption{Mobile services composition over opportunistic network}
-\label{fig_MSCON}
-\end{figure}
 
 It can be seen that, existing studies are limited in several ways: 
 1) for simplicity, most of them consider fully-available services in their QoS determination models and scheduling algorithms. However, real-world mobile services are usually of unreliable and time-varying availability, as suggested by our test data given later.
@@ -248,6 +254,13 @@ Mobile service composition over an opportunistic network has three distinctive p
 2) Mobility: Service requesters and providers keep moving in the mobile network even when they are requesting or provisioning mobile services.
 
 3) Dynamicity: The availability of mobile services is time-varying because it is decided by the relative distance between service providers and consumers and such distance is changing.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{./img/pic2.pdf}
+\caption{Mobile services composition over opportunistic network}
+\label{fig_MSCON}
+\end{figure}
 
 Fig. 2 illustrates how mobile service discovery and provision function over an opportunistic network: a mobile service requester perceives mobile services exposed by nearby devices through D2D links and launches a service composition request. 
 A composer process can be implemented and deployed on mobile devices, and it allow mobile devices to discover available mobile services nearby, select appropriate concrete services, and compose selected services into a service composition. 
@@ -289,14 +302,14 @@ Then the moving radius can be calculated as the product of $\bar{t}$ and $v$.
 
 Therefore, $S_{i \bigcap j}$ can be calculated as follows:
 \begin{align}
-S_{i \bigcap j} & =  [(\frac{2\alpha}{2\pi} \times \pi r^2)-(\frac{r^2 {\color{blue}{\sin}}\alpha {\color{blue}{\cos}}\alpha}{2} \times 2)]\\\nonumber
-& \ \ \ \ +[(\frac{2\beta}{2\pi} \times \pi R^2)-(\frac{R^2 {\color{blue}{\sin}}\beta {\color{blue}{\cos}}\beta}{2} \times 2)]\\\nonumber
-& = \alpha r^2 + \beta R^2 - (r^2 {\color{blue}{\sin}}\alpha {\color{blue}{\cos}}\alpha + R^2 {\color{blue}{\sin}}\beta {\color{blue}{\cos}}\beta)
+S_{i \bigcap j} & =  [(\frac{2\alpha}{2\pi} \times \pi r^2)-(\frac{r^2 \sin\alpha \cos\alpha}{2} \times 2)]\\\nonumber
+& \ \ \ \ +[(\frac{2\beta}{2\pi} \times \pi R^2)-(\frac{R^2 \sin\beta \cos\beta}{2} \times 2)]\\\nonumber
+& = \alpha r^2 + \beta R^2 - (r^2 \sin\alpha \cos\alpha + R^2 \sin\beta \cos\beta)
 \end{align}
 where $\alpha$ and $\beta$ are half of service provider/consumer central angles, respectively as shown in Fig. 3, and they can be calculated as follows:
 \begin{eqnarray}
-\alpha = {\color{blue}{\arccos}}(\frac{r^2+d^2-R^2}{2r\times d}) \\\nonumber
-\beta = {\color{blue}{\arccos}}(\frac{R^2+d^2-r^2}{2R\times d})
+\alpha = \arccos(\frac{r^2+d^2-R^2}{2r\times d}) \\\nonumber
+\beta = \arccos(\frac{R^2+d^2-r^2}{2R\times d})
 \end{eqnarray}
 
 Finally, $S_j$ can be obtained as:
@@ -307,7 +320,7 @@ S_j & = \pi r^2 \\\nonumber
 
 The availability of mobile service $s$ between requester $i$ and provider $j$ can thus be estimated as:
 \begin{align}
-A(s) = \frac{\alpha r^2 + \beta R^2 - (r^2 {\color{blue}{\sin}}\alpha {\color{blue}{\cos}}\alpha + R^2 {\color{blue}{\sin}}\beta {\color{blue}{\cos}}\beta)}{\pi v^2 \bar{t}^2}
+A(s) = \frac{\alpha r^2 + \beta R^2 - (r^2 \sin\alpha \cos\alpha + R^2 \sin\beta \cos\beta)}{\pi v^2 \bar{t}^2}
 \end{align}
 
 \subsection{Service Composition Model}
@@ -555,8 +568,7 @@ The search space of solutions usually grows exponentially with the scale of a co
 \subsection{Fitness evaluation and selection}
 The fitness of an individual solution is decided by its estimated reliability on condition that the deadline constraint is met.
 The selection strategy is therefore based on the fitness estimation and implemented through a tournament-based method \cite{whitley1994genetic}. To be specific, we employ a constraint-handling strategy described below to select individuals for new generations: 
-{\color{blue}{1) if the $\tau$ values of two solutions meet the user-defined deadline, then discard the one with lower estimated reliability, 2) if the $\tau$ value of only one solution meets the deadline, then discard the unsatisfied one; and 3) if the $\tau$ values of both solutions exceed the deadline, then discard the one with lower}}
-{\color{blue}{estimated reliability.}}
+1) if the $\tau$ values of two solutions meet the user-defined deadline, then discard the one with lower estimated reliability, 2) if the $\tau$ value of only one solution meets the deadline, then discard the unsatisfied one; and 3) if the $\tau$ values of both solutions exceed the deadline, then discard the one with lower estimated reliability.
 Based on the above discussions, the KH-based composition algorithm is given in Algorithm 3.
 
 \begin{algorithm}
@@ -744,9 +756,9 @@ Fig. 9(b), Fig. 10(b), Fig. 11(b) and Fig. 12(b) shows the comparisons of proces
 Intuitively, our algorithm outperforms traditional ones because traditional ones consider fully available mobile services and therefore ignore the reliability of a composite service, thus they tend to choose services with low response time. As a result, the service composition constructed by these low response time services may have a poor reliability and would eventually lead to a failure.
 
 \section{Conclusion}
-This paper presents a comprehensive framework for optimal mobile service composition in a mobile environment. It fully leverages service mobility with a reliability-aware and deadline-constrained mobile service composition model. Then we formulate the developed model as an optimization problem aiming at maximizing the quality of composite service and propose a Krill-Herd-based algorithm to solve it. We also carry out a case study based on a real-world opportunistic network and some well-known mobile service composition templates and shows that our proposed approach outperforms traditional approaches, especially those who consider constant/time-invariant availability of mobile services, in terms of success rate and completion time.
+This paper presents a comprehensive framework for optimal mobile service composition in a mobile environment. It fully leverages service mobility with a reliability-aware and deadline-constrained mobile service composition model. Then we formulate the developed model as an optimization problem aiming at maximizing the quality of composite service and propose a Krill-Herd-based algorithm to solve it. We also conduct a case study based on a real-world opportunistic network and some well-known mobile service composition templates. Our results show that the proposed approach outperforms traditional approaches, especially those that consider constant/time-invariant availability of mobile services, in terms of success rate and completion time.
 
-The following issues should be addressed as future work: 1) Some prediction methods, e.g., time-series model, hidden Markov models and neural networks can be used to predict a user's future movement and to achieve further improved performance of composite services; 2) more metrics, e.g., service scalability and service reputation should be modeled and  analyzed; 3) soft constraints should be considered. They allow to exceed a threshold value with a bounded given rate, while the corresponding algorithms for optimal run-time scheduling should be developed.
+The following issues should be addressed as future work: 1) Some prediction methods, e.g., time-series model, hidden Markov models and neural networks can be used to predict a user's future movement and to achieve further improved performance of composite services; 2) more metrics, e.g., service scalability and service reputation should be modeled and  analyzed; and 3) soft constraints should be considered. 
 
 
 
@@ -768,14 +780,7 @@ received the B.S. degree in software engineering from the Xinjiang University, U
 
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{./bios/zhou.pdf}}]{MengChu Zhou}
-(S'88-M'90-SM'93-F'03) received the B.S. degree in control engineering from the Nanjing University of Science and Technology, Nanjing, China, in 1983, the M.S. degree in automatic control from the Beijing Institute of Technology, Beijing, China, in 1986, and the Ph.D. degree in computer and systems engineering from Rensselaer Polytechnic Institute, Troy, NY, USA, in 1990.
-
-He joined the New Jersey Institute of Technology,
-Newark, NJ, USA, in 1990, where he is currently a Distinguished Professor of Electrical and Computer Engineering. He has over 680 publications, including 12 books, 360+ journal papers (over 260 in the IEEE TRANSACTIONS), and 28 book-chapters. His research interests include Petri nets, big data, Internet of things, semiconductor manufacturing,
-transportation, and energy systems.
-
-Dr. Zhou is the Founding Editor of the IEEE Press Book Series on Systems
-Science and Engineering. He is a Fellow of the International Federation of Automatic Control and The American Association for the Advancement of Science.
+MengChu Zhou (S'88-M'90-SM'93-F'03) received his B.S. degree in Control Engineering from Nanjing University of Science and Technology, Nanjing, China in 1983, M.S. degree in Automatic Control from Beijing Institute of Technology, Beijing, China in 1986, and Ph. D. degree in Computer and Systems Engineering from Rensselaer Polytechnic Institute, Troy, NY in 1990. He joined New Jersey Institute of Technology (NJIT), Newark, NJ in 1990, and is now a Distinguished Professor of Electrical and Computer Engineering. His research interests are in Petri nets, intelligent automation, Internet of Things, big data, web services, and intelligent transportation. He has over 700 publications including 12 books, 400+ journal papers (300+ in IEEE transactions), 11 patents and 28 book-chapters. He is the founding Editor of IEEE Press Book Series on Systems Science and Engineering and Editor-in-Chief of IEEE/CAA Journal of Automatica Sinica. He is a recipient of Humboldt Research Award for US Senior Scientists from Alexander von Humboldt Foundation, Franklin V. Taylor Memorial Award and the Norbert Wiener Award from IEEE Systems, Man and Cybernetics Society. He is a life member of Chinese Association for Science and Technology-USA and served as its President in 1999. He is a Fellow of International Federation of Automatic Control (IFAC), American Association for the Advancement of Science (AAAS) and Chinese Association of Automation (CAA).
 \end{IEEEbiography}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{./bios/xia.pdf}}]{Yunni Xia}
@@ -788,7 +793,7 @@ Science and Engineering. He is a Fellow of the International Federation of Autom
 He is currently a Professor with the College of Computer Science and Technology, Zhejiang University. He was a Visiting Scholar with the Massachusetts Institute of Technology, Cambridge, MA, USA, in 2014, and Stanford University, Stanford, CA, USA, in 2015. His research interests include service computing, business process management, and data management.
 \end{IEEEbiography}
 
-\enlargethispage{-1.5in}
+% \enlargethispage{-1.5in}
 
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{./bios/luo.pdf}}]{Xin Luo}
 (M'14-SM'17) received the B.S. degree in computer science from the University of Electronic

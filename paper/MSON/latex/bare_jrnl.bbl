@@ -23,8 +23,8 @@
 
 \bibitem{satyanarayanan2010mobile}
 M.~Satyanarayanan, ``Mobile computing: the next decade,'' in \emph{Proceedings
-  of the 1st ACM workshop on mobile cloud computing \& services: social
-  networks and beyond}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2010, p.~5.
+  of the 1st ACM Workshop on Mobile Cloud Computing \& Services: Social
+  Networks and Beyond}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2010, p.~5.
 
 \bibitem{bastug2017toward}
 E.~Bastug, M.~Bennis, M.~M{\'e}dard, and M.~Debbah, ``Toward interconnected
@@ -40,7 +40,7 @@ M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
 \bibitem{dinh2013survey}
 H.~T. Dinh, C.~Lee, D.~Niyato, and P.~Wang, ``A survey of mobile cloud
   computing: architecture, applications, and approaches,'' \emph{Wireless
-  communications and mobile computing}, vol.~13, no.~18, pp. 1587--1611, 2013.
+  Communications and Mobile Computing}, vol.~13, no.~18, pp. 1587--1611, 2013.
 
 \bibitem{balani2007energy}
 R.~Balani, ``Energy consumption analysis for bluetooth, wifi and cellular
@@ -55,7 +55,7 @@ M.~Conti and S.~Giordano, ``{Mobile ad hoc networking: milestones, challenges,
 \bibitem{turkes2016cocoon}
 O.~Turkes, H.~Scholten, and P.~J. Havinga, ``Cocoon: A lightweight
   opportunistic networking middleware for community-oriented smart mobile
-  applications,'' \emph{Computer networks}, vol. 111, pp. 93--108, 2016.
+  applications,'' \emph{Computer Networks}, vol. 111, pp. 93--108, 2016.
 
 \bibitem{giordano2011human}
 S.~Giordano and D.~Puccinelli, ``The human element as the key enabler of
@@ -71,8 +71,8 @@ L.~Pu, X.~Chen, J.~Xu, and X.~Fu, ``Crowd foraging: A qos-oriented
 
 \bibitem{zhan2017time}
 Y.~Zhan, Y.~Xia, Y.~Liu, F.~Li, and Y.~Wang, ``Time-sensitive data collection
-  with incentive-aware for mobile opportunistic crowdsensing,'' \emph{IEEE
-  Transactions on Vehicular Technology}, 2017.
+  with incentiveaware for mobile opportunistic crowdsensing,'' \emph{IEEE
+  Trans. on Vehicular Technology}, vol.~66, no.~9, pp. 7849--7861, 2017.
 
 \bibitem{Deng2016}
 S.~Deng, L.~Huang, H.~Wu, W.~Tan, J.~Taheri, A.~Y. Zomaya, and Z.~Wu, ``{Toward
@@ -96,7 +96,7 @@ C.~Groba and S.~Clarke, ``Opportunistic service composition in dynamic ad hoc
   no.~4, pp. 642--653, 2014.
 
 \bibitem{Yang2010}
-K.~Yang, A.~Galis, and H.-H. Chen, ``{Qos-aware service selection algorithms
+K.~Yang, A.~Galis, and H.-H. Chen, ``{QoS-aware service selection algorithms
   for pervasive service composition in mobile wireless environments},''
   \emph{Mobile Networks and Applications}, vol.~15, no.~4, pp. 488--501, 2010.
 
@@ -118,7 +118,7 @@ H.~Barbosa-Filho, M.~Barthelemy, G.~Ghoshal, C.~R. James, M.~Lenormand,
 \bibitem{bettstetter2003node}
 C.~Bettstetter, G.~Resta, and P.~Santi, ``The node distribution of the random
   waypoint mobility model for wireless ad hoc networks,'' \emph{IEEE
-  Transactions on mobile computing}, vol.~2, no.~3, pp. 257--269, 2003.
+  Transactions on Mobile Computing}, vol.~2, no.~3, pp. 257--269, 2003.
 
 \bibitem{navidi2004improving}
 W.~Navidi, T.~Camp, and N.~Bauer, ``Improving the accuracy of random waypoint
@@ -128,17 +128,17 @@ W.~Navidi, T.~Camp, and N.~Bauer, ``Improving the accuracy of random waypoint
 
 \bibitem{camp2002survey}
 T.~Camp, J.~Boleng, and V.~Davies, ``A survey of mobility models for ad hoc
-  network research,'' \emph{Wireless communications and mobile computing},
+  network research,'' \emph{Wireless Communications and Mobile Computing},
   vol.~2, no.~5, pp. 483--502, 2002.
 
 \bibitem{Deng2016-2}
 S.~Deng, L.~Huang, Y.~Li, H.~Zhou, Z.~Wu, X.~Cao, M.~Y. Kataev, and L.~Li,
   ``{Toward risk reduction for mobile service composition},'' \emph{IEEE
-  transactions on cybernetics}, vol.~46, no.~8, pp. 1807--1816, 2016.
+  Transactions on Cybernetics}, vol.~46, no.~8, pp. 1807--1816, 2016.
 
 \bibitem{li2014can}
 Y.~Li and W.~Wang, ``Can mobile cloudlets support mobile applications?'' in
-  \emph{Infocom, 2014 proceedings ieee}.\hskip 1em plus 0.5em minus 0.4em\relax
+  \emph{Infocom, 2014 Proceedings IEEE}.\hskip 1em plus 0.5em minus 0.4em\relax
   IEEE, 2014, pp. 1060--1068.
 
 \bibitem{chang2015progressive}
@@ -193,8 +193,8 @@ Y.~Xia, Q.~Zhu, Y.~Huang, and Z.~Wang, ``A novel reduction approach to
   Practice and Experience}, vol.~21, no.~2, pp. 205--223, 2009.
 
 \bibitem{papadimitriou1998combinatorial}
-C.~H. Papadimitriou and K.~Steiglitz, \emph{Combinatorial optimization:
-  algorithms and complexity}.\hskip 1em plus 0.5em minus 0.4em\relax Courier
+C.~H. Papadimitriou and K.~Steiglitz, \emph{Combinatorial Optimization:
+  Algorithms and Complexity}.\hskip 1em plus 0.5em minus 0.4em\relax Courier
   Corporation, 1998.
 
 \bibitem{gandomi2012krill}
@@ -227,7 +227,7 @@ J.~Meena, M.~Kumar, and M.~Vardhan, ``Cost effective genetic algorithm for
 
 \bibitem{Rodriguez2014Deadline}
 M.~A. Rodriguez and R.~Buyya, ``Deadline based resource provisioningand
-  scheduling algorithm for scientific workflows on clouds,'' \emph{Cloud
-  Computing IEEE Transactions on}, vol.~2, no.~2, pp. 222--235, 2014.
+  scheduling algorithm for scientific workflows on clouds,'' \emph{IEEE
+  Transactions on Cloud Computing}, vol.~2, no.~2, pp. 222--235, 2014.
 
 \end{thebibliography}

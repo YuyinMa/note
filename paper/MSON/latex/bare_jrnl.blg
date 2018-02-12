@@ -15,42 +15,42 @@ Database file #1: mybibtex.bib
 Done.
 You've used 40 entries,
             4087 wiz_defined-function locations,
-            1061 strings with 15316 characters,
-and the built_in function-call counts, 34409 in all, are:
-= -- 2821
-> -- 848
-< -- 342
-+ -- 473
+            1063 strings with 15303 characters,
+and the built_in function-call counts, 35007 in all, are:
+= -- 2877
+> -- 858
+< -- 355
++ -- 481
 - -- 138
-* -- 1672
-:= -- 5011
+* -- 1704
+:= -- 5081
 add.period$ -- 89
 call.type$ -- 40
 change.case$ -- 39
-chr.to.int$ -- 783
+chr.to.int$ -- 813
 cite$ -- 40
-duplicate$ -- 2398
-empty$ -- 2620
+duplicate$ -- 2428
+empty$ -- 2650
 format.name$ -- 174
-if$ -- 8066
+if$ -- 8211
 int.to.chr$ -- 0
 int.to.str$ -- 40
-missing$ -- 399
+missing$ -- 402
 newline$ -- 143
 num.names$ -- 40
-pop$ -- 866
+pop$ -- 864
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2657
+skip$ -- 2705
 stack$ -- 0
-substring$ -- 1867
-swap$ -- 2079
-text.length$ -- 81
+substring$ -- 1937
+swap$ -- 2124
+text.length$ -- 84
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 40
 warning$ -- 0
-while$ -- 171
+while$ -- 175
 width$ -- 42
-write$ -- 422
+write$ -- 425
