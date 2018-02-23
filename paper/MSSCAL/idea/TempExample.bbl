@@ -5,4 +5,10 @@ Web Service, Qos Forecasting, Approach Using, and Multivariate Time.
 \newblock {一种基于多元时间序列的 Web Service QoS 预测方法}.
 \newblock (Lm):1--18, 2018.
 
+\bibitem{li2016load}
+Tao Li, Jingyu Wang, Wei Li, Tong Xu, and Qi~Qi.
+\newblock Load prediction-based automatic scaling cloud computing.
+\newblock In {\em Networking and Network Applications (NaNA), 2016
+  International Conference on}, pages 330--335. IEEE, 2016.
+
 \end{thebibliography}

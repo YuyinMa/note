@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex TempExample"] 1518423533 "TempExample.aux" "TempExample.bbl" "TempExample" 1518423780
-  "./TempExample.bib" 1518356308 422 47fb3274c575e18b3be1cd941f72a3d7 ""
+["bibtex TempExample"] 1519275041 "TempExample.aux" "TempExample.bbl" "TempExample" 1519275145
+  "./TempExample.bib" 1519275024 750 d0820f91176f07f2f78a766c0d962209 ""
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/base/unsrt.bst" 1480098433 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "TempExample.aux" 1518423780 2016 e16092de596e2f923783912bf5762afb ""
+  "TempExample.aux" 1519275144 2062 fc9e48449be7cf973acf176a6e4a5b16 ""
   (generated)
   "TempExample.blg"
   "TempExample.bbl"
-["xdvipdfmx"] 1518423780 "TempExample.xdv" "TempExample.pdf" "TempExample" 1518423780
-  "TempExample.xdv" 1518423780 44848 03689cd5c7c7efc2e0a1b14bf4099232 "xelatex"
+["xdvipdfmx"] 1519275145 "TempExample.xdv" "TempExample.pdf" "TempExample" 1519275145
+  "TempExample.xdv" 1519275144 51788 b962478f5296abe3d137202193c88434 "xelatex"
   (generated)
   "TempExample.pdf"
-["xelatex"] 1518423777 "TempExample.tex" "TempExample.xdv" "TempExample" 1518423780
+["xelatex"] 1519275142 "TempExample.tex" "TempExample.xdv" "TempExample" 1519275145
   "/Library/Fonts/Songti.ttc" 1470021522 66954320 afb3198e641fa1b263f1b34aa518e75d ""
-  "/dev/null" 1518423772 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "/dev/null" 1519275052 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1480098689 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -227,9 +227,9 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1510806064 3678532 1b511fa312ff328e76d7fc87e4ce1716 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "TempExample.aux" 1518423780 2016 e16092de596e2f923783912bf5762afb ""
-  "TempExample.bbl" 1518423533 246 9f8abbfa376ef0f8671398f9182fcdd0 "bibtex TempExample"
-  "TempExample.tex" 1518423615 10209 f9d8769cc2d9fc106e6985191812a3a5 ""
+  "TempExample.aux" 1519275144 2062 fc9e48449be7cf973acf176a6e4a5b16 ""
+  "TempExample.bbl" 1519275051 511 d6ee5885c7fff445f1e45fa354a4a795 "bibtex TempExample"
+  "TempExample.tex" 1519275141 10893 ca64718d4a83f6e974bafb415987baa1 ""
   "cite.sty" 1503667214 14119 101124fed797c2f4dc820c6da37d156a ""
   "image/1.pdf" 1518350670 34289 57e37929e8ccc92ddab1302d678de23a ""
   "image/2.pdf" 1518353695 11740 e7088cd0cf425900674ac984aa06fac4 ""
@@ -240,6 +240,6 @@
   "image/7.pdf" 1518355376 14861 690740561ab74d1ca7024bbb818747c3 ""
   "jbuaa.cls" 1518423775 10303 fe1363ad80802a751db288bd256a1bbd ""
   (generated)
-  "TempExample.log"
-  "TempExample.xdv"
   "TempExample.aux"
+  "TempExample.xdv"
+  "TempExample.log"

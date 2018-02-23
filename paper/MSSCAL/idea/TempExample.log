@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.16)  12 FEB 2018 16:22
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2017.11.16)  22 FEB 2018 12:52
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -2380,11 +2380,8 @@ File: ./image/2.pdf Graphic file (type QTm)
  <use  "./image/2.pdf" >
 File: ./image/3.pdf Graphic file (type QTm)
  <use  "./image/3.pdf" >
-File: ./image/7.pdf Graphic file (type QTm)
- <use  "./image/7.pdf" >
 File: ./image/4.pdf Graphic file (type QTm)
-
-<use  "./image/4.pdf" >
+ <use  "./image/4.pdf" >
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 File: ./image/5.pdf Graphic file (type QTm)
@@ -2392,17 +2389,16 @@ File: ./image/5.pdf Graphic file (type QTm)
 <use  "./image/5.pdf" >
 
 LaTeX Font Warning: Font shape `U/wasy/m/n' in size <4.2> not available
-(Font)              size <5> substituted on input line 149.
+(Font)              size <5> substituted on input line 143.
 
 File: ./image/6.pdf Graphic file (type QTm)
 <use  "./image/6.pdf" >
 Underfull \vbox (badness 1132) has occurred while \output is active []
 
  [2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+File: ./image/7.pdf Graphic file (type QTm)
 
-
-(./TempExample.bbl) [3] (./TempExample.aux)
+<use  "./image/7.pdf" > (./TempExample.bbl) [3] [4] (./TempExample.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0625pt have occurred.
@@ -2412,12 +2408,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 35906 strings out of 493005
- 750037 string characters out of 6134595
- 739668 words of memory out of 5000000
- 39267 multiletter control sequences out of 15000+600000
- 41209 words of font info for 205 fonts, out of 8000000 for 9000
+ 35909 strings out of 493005
+ 750148 string characters out of 6134595
+ 742671 words of memory out of 5000000
+ 39269 multiletter control sequences out of 15000+600000
+ 41217 words of font info for 206 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,14n,69p,10418b,743s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on TempExample.xdv (3 pages, 44848 bytes).
+Output written on TempExample.xdv (4 pages, 51788 bytes).

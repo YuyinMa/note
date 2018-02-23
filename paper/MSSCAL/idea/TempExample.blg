@@ -5,45 +5,45 @@ The style file: unsrt.bst
 Database file #1: ./TempExample.bib
 Warning--empty journal in Service2018
 Warning--there's a number but no volume in Service2018
-You've used 1 entry,
+You've used 2 entries,
             1791 wiz_defined-function locations,
-            452 strings with 3706 characters,
-and the built_in function-call counts, 260 in all, are:
-= -- 20
-> -- 14
-< -- 0
-+ -- 5
-- -- 4
-* -- 24
-:= -- 48
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 1
+            459 strings with 3923 characters,
+and the built_in function-call counts, 671 in all, are:
+= -- 61
+> -- 31
+< -- 1
++ -- 11
+- -- 9
+* -- 49
+:= -- 103
+add.period$ -- 7
+call.type$ -- 2
+change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 9
-empty$ -- 22
-format.name$ -- 4
-if$ -- 50
+cite$ -- 4
+duplicate$ -- 30
+empty$ -- 60
+format.name$ -- 9
+if$ -- 151
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 1
-pop$ -- 4
+int.to.str$ -- 2
+missing$ -- 2
+newline$ -- 13
+num.names$ -- 2
+pop$ -- 10
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1
+skip$ -- 15
 stack$ -- 0
-substring$ -- 16
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 48
+swap$ -- 11
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 2
-while$ -- 3
-width$ -- 2
-write$ -- 12
+while$ -- 7
+width$ -- 3
+write$ -- 24
 (There were 2 warnings)
